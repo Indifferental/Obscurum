@@ -59,7 +59,7 @@
                                     color: white;
                                     font-style: oblique;
 
-                                    position: absolute;
+                                    position: fixed;
                                     top: 0.5em;
                                     left: 1em;
                                     z-index: 9999;
