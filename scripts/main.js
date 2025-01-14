@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.83'
+        var version = 'v0.84'
 
         // изменение иконки на вкладке браузера
 
@@ -23,7 +23,7 @@
 
         body.appendChild(variableHeader);
 
-        // массив глобальных значений (для последующего изменения функциями)
+        // массив глобальных значений для функций
 
         var globalProperties = [
 
@@ -71,6 +71,8 @@
                             selector: `.${variableHeader.className.slice(0, 8)}`,
                             style: `
                                     position: fixed;
+                                    display: flex;
+                                    justify-content: center;
                                     z-index: -1;
                                     pointer-events: none;
                             `
