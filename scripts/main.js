@@ -148,6 +148,8 @@
                                     --least-general-color: ${globalProperties[0].least_color};
 
                                     --general-animation: ${globalProperties[0].animation};
+
+                                    justify-content: center;
                             `
                     },
 
