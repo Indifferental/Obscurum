@@ -1027,7 +1027,7 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container:before',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient:before',
                             style: `
                                     content: '';
 
@@ -1051,7 +1051,7 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container:after',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient:after',
                             style: `
                                     content: '';
 
@@ -1241,7 +1241,7 @@
                     // блок кнопки "Играть"
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .Common-displayFlex',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex',
                             style: `
                                     position: absolute;
                                     margin: unset;
@@ -1253,7 +1253,7 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay',
                             style: `
                                     background: var(--general-bg);
                                     outline: var(--general-outline);
@@ -1269,14 +1269,14 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay:hover',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay:hover',
                             style: `
                                     background: var(--general-bg-hover);
                             `
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay > span',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay > span',
                             style: `
                                     color: var(--general-color) !important;
                                     text-shadow: 0 0 1.5em;
@@ -1284,7 +1284,7 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .MainScreenComponentStyle-blockMainMenu',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .MainScreenComponentStyle-blockMainMenu',
                             style: `
                                     position: absolute;
                                     margin: unset;
@@ -1295,7 +1295,7 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .MainScreenComponentStyle-blockMainMenu > ul',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .MainScreenComponentStyle-blockMainMenu > ul',
                             style: `
                                     width: inherit;
                                     height: inherit;
@@ -1334,7 +1334,7 @@
                     // блок нижнего колонтитула в меню
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .FooterComponentStyle-footer',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer',
                             style: `
                                     background: var(--general-bg);
                                     outline: var(--general-outline);
@@ -1350,7 +1350,7 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .FooterComponentStyle-footer > ul',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer > ul',
                             style: `
                                     position: absolute;
                                     left: 1em;
@@ -1364,7 +1364,7 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .FooterComponentStyle-footer > ul > li',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer > ul > li',
                             style: `
                                     background: var(--general-bg);
                                     outline: var(--general-outline);
@@ -1379,21 +1379,21 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .FooterComponentStyle-footer > ul > li:hover',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer > ul > li:hover',
                             style: `
                                     background: var(--general-bg-hover);
                             `
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .FooterComponentStyle-footer > ul > li > div',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer > ul > li > div',
                             style: `
                                     background-color: var(--general-color) !important;
                             `
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-container > .FooterComponentStyle-footer > .FooterComponentStyle-musicLink',
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer > .FooterComponentStyle-musicLink',
                             style: `
                                     visibility: hidden;
                             `
@@ -3716,7 +3716,8 @@
                                     top: 0em;
                                     left: 0em;
                                     width: 25em;
-                                    height: 50.5%;
+                                    height: max-content;
+                                    padding: 1em 0;
                                     z-index: 1;
 
                                     transition: var(--general-transition);
