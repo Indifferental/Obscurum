@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.91'
+        var version = 'v0.92'
 
         // изменение иконки на вкладке браузера
 
@@ -674,9 +674,10 @@
                     },
 
                     {
-                            selector: '.PrimaryMenuItemComponentStyle-discountNotification',
+                            selector: '.PrimaryMenuItemComponentStyle-discountNotification, .Common-discount',
                             style: `
-                                    background-color: var(--least-general-color);
+                                    background-color: var(--general-color);
+                                    border-radius: 0.5em;
                             `
                     },
 
@@ -3658,6 +3659,13 @@
                     },
 
                     {
+                            selector: '.GarageSuppliesComponentStyle-containerButtons',
+                            style: `
+                                    height: auto;
+                            `
+                    },
+
+                    {
                             selector: '.MountedItemsStyle-containerBlockGarage',
                             style: `
                                     justify-content: center;
@@ -3717,7 +3725,7 @@
                                     left: 0em;
                                     width: 25em;
                                     height: max-content;
-                                    padding: 1em 0;
+                                    padding: unset;
                                     z-index: 1;
 
                                     transition: var(--general-transition);
@@ -3777,7 +3785,7 @@
                                     top: 0em;
                                     left: 0em;
                                     margin-top: 5.5em;
-                                    padding: 1.25em 0;
+                                    padding: 1.5em 0;
                                     width: 25em;
                                     height: max-content;
                                     z-index: 1;
@@ -3827,8 +3835,8 @@
                     },
 
                     {
-                            selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations:nth-child(2) > .Common-flexCenterAlignCenter,
-                                       .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations:nth-child(2) > div > .SkinsIconComponentStyle-cellSkins > .Common-flexCenterAlignCenter`,
+                        selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter,
+                                   .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > div > .SkinsIconComponentStyle-cellSkins > .Common-flexCenterAlignCenter`,
                             style: `
                                     background: var(--general-bg);
                                     outline: var(--general-outline);
@@ -3841,8 +3849,17 @@
                     },
 
                     {
-                            selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations:nth-child(2) > .Common-flexCenterAlignCenter:hover,
-                                       .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations:nth-child(2) > div > .SkinsIconComponentStyle-cellSkins > .Common-flexCenterAlignCenter:hover`,
+                        selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > h2,
+                                   .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > h3`,
+                            style: `
+                                    position: absolute;
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                        selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter:hover,
+                                   .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > div > .SkinsIconComponentStyle-cellSkins > .Common-flexCenterAlignCenter:hover`,
                             style: `
                                     background: var(--general-bg-hover);
                             `
@@ -4072,41 +4089,61 @@
                     {
                             selector: '.ListItemsComponentStyle-itemsListContainer',
                             style: `
-                                    background: transparent;
-                            `
-                    },
-
-                    {
-                            selector: '.ListItemsComponentStyle-itemsWrapper',
-                            style: `
                                     background: var(--general-bg);
                                     border-top: var(--general-outline);
                                     box-shadow: var(--general-box-shadow);
-                                    backdrop-filter: var(--least-backdrop-filter);
+                                    backdrop-filter: var(--general-backdrop-filter);
 
-                                    transition: var(--general-transition);
                                     animation: var(--general-animation);
                             `
                     },
 
                     {
-                            selector: '.ListItemsComponentStyle-itemsWrapper > .Common-flexCenterAlignCenter',
+                            selector: '.ListItemsComponentStyle-itemsListContainer > .Common-flexCenterAlignCenter',
                             style: `
                                     background: transparent;
+
+                                    visibility: hidden;
+                                    position: absolute;
                             `
                     },
 
                     {
                             selector: '.ListItemsComponentStyle-itemsContainer',
                             style: `
-                                    padding: 1.25em;
+                                    border-radius: var(--general-border-radius);
+                                    box-shadow: var(--general-box-shadow);
+
+                                    margin-left: 1.25em;
+                                    margin-right: 1.25em;
+                                    padding: unset;
+
+                                    transition: var(--general-transition);
                             `
                     },
 
                     {
                             selector: '.ListItemsComponentStyle-itemsContainer > .Common-flexSpaceBetweenAlignCenterColumn',
                             style: `
-                                    margin-right: 1.25em;
+                                    margin-right: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.ListItemsComponentStyle-itemsContainer > .Common-flexSpaceBetweenAlignCenterColumn:first-child > .Common-itemStyle',
+                            style: `
+                                    border-left: var(--general-outline);
+                                    border-top-left-radius: var(--general-border-radius);
+                                    border-bottom-left-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.ListItemsComponentStyle-itemsContainer > .Common-flexSpaceBetweenAlignCenterColumn:last-child > .Common-itemStyle',
+                            style: `
+                                    border-right: var(--general-outline);
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
                             `
                     },
 
@@ -4114,9 +4151,10 @@
                             selector: '.Common-itemStyle',
                             style: `
                                     background: var(--general-bg);
-                                    outline: var(--general-outline);
-                                    box-shadow: var(--general-box-shadow) !important;
-                                    border-radius: var(--general-border-radius);
+                                    box-shadow: unset !important;
+                                    border-top: var(--general-outline);
+                                    border-bottom: var(--general-outline);
+                                    border-radius: unset;
 
                                     transition: var(--general-transition);
                             `
@@ -4143,7 +4181,8 @@
                     },
 
                     {
-                            selector: '.SuppliesComponentStyle-decorLine',
+                            selector: `.SuppliesComponentStyle-decorLine,
+                                       .SuppliesComponentStyle-discountLabel`,
                             style: `
                                     position: absolute;
                                     visibility: hidden;
@@ -4173,6 +4212,9 @@
                     {
                             selector: '.SuppliesComponentStyle-commonBlockSupplies > .SuppliesComponentStyle-containersBlocks > .SuppliesComponentStyle-blocksCell',
                             style: `
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+
                                     width: calc(100% - 3em);
                             `
                     },
@@ -4181,11 +4223,15 @@
                             selector: '.SuppliesComponentStyle-cellAdd',
                             style: `
                                     background: var(--general-bg);
-                                    outline: var(--general-outline);
-                                    box-shadow: var(--general-box-shadow) !important;
-                                    border-radius: var(--general-border-radius);
+                                    box-shadow: unset !important;
+                                    border-top: var(--general-outline);
+                                    border-bottom: var(--general-outline);
+                                    border-radius: unset;
 
-                                    margin-right: 1.5em;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-right: unset;
 
                                     transition: var(--general-transition);
                             `
@@ -4199,9 +4245,56 @@
                     },
 
                     {
-                            selector: '.SuppliesComponentStyle-cell',
+                            selector: '.SuppliesComponentStyle-cellAdd:first-child',
                             style: `
-                                    width: 1.5em;
+                                    border-left: var(--general-outline);
+                                    border-top-left-radius: var(--general-border-radius);
+                                    border-bottom-left-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.SuppliesComponentStyle-cellAdd:last-child',
+                            style: `
+                                    border-right: var(--general-outline);
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.SuppliesComponentStyle-cellAdd span',
+                            style: `
+                                    position: absolute;
+                                    margin: unset;
+                                    opacity: 0;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.SuppliesComponentStyle-cellAdd:hover span',
+                            style: `
+                                    opacity: 1;
+                                    margin-top: 2em;
+                            `
+                    },
+
+                    {
+                            selector: '.SuppliesComponentStyle-cellAdd > .SuppliesComponentStyle-cell',
+                            style: `
+                                    position: absolute;
+                                    margin: unset;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.SuppliesComponentStyle-cellAdd:hover > .SuppliesComponentStyle-cell',
+                            style: `
+                                    margin-bottom: 1.5em;
                             `
                     },
 
@@ -4444,105 +4537,145 @@
 
                 function color() {
 
-                        var tankResistances = [{
+                        var tankResistances = [
+
+                            {
 
                                   oldPicture: "https://tankionline.com/play/static/images/crit_resistance.7fb68893.svg",
                                   picture: "https://tankionline.com/play/static/images/resistances/crit_resistance.3f4d1cc2.svg"
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/firebird_resistance.785a9d6b.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/firebird_resistance.00ac2221.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/freeze_resistance.33bdf642.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/freeze_resistance.d26eb338.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/isis_resistance.30a69ffc.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/isis_resistance.5b05887a.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/tesla_resistance.3e686c8e.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/tesla_resistance.663d3597.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/hammer_resistance.6c549d29.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/hammer_resistance.28e73097.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/twins_resistance.ad189f61.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/twins_resistance.fbbc4d72.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/ricochet_resistance.8247beaa.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/ricochet_resistance.69c6c7ee.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/smoky_resistance.845afc14.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/smoky_resistance.c4c202ca.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/rocket_launcher_resistance.b7dfd64f.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/rocket_launcher_resistance.5772cbaa.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/vulcan_resistance.824f6f0e.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/vulcan_resistance.9aebf267.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/thunder_resistance.6d7f4531.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/thunder_resistance.9dab2abf.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/scorpio_resistance.e8f1787f.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/scorpio_resistance.d40f8fbb.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/railgun_resistance.636a554f.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/railgun_resistance.7577c7a1.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/artillery_resistance.9b4cbc34.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/artillery_resistance.bd49fc96.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/gauss_resistance.bb8f409c.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/gauss_resistance.acf358ed.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/shaft_resistance.0778fd3e.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/shaft_resistance.7e58bc19.svg'
 
-                        }, {
+                            },
+
+                            {
 
                                   oldPicture: 'https://tankionline.com/play/static/images/mine_resistance.dd581c90.svg',
                                   picture: 'https://tankionline.com/play/static/images/resistances/mine_resistance.0d0d3c98.svg'
 
-                        }];
+                            },
+
+                        ];
 
                         new MutationObserver((mutations) => { mutations.forEach(({ addedNodes, target }) => { if (addedNodes.length && ('tbody' === target.localName || target.className.includes('BattleComponentStyle-canvasContainer'))) {
 
-                                const user = document.querySelector('.UserInfoContainerStyle-textDecoration')?.textContent?.split(' ').pop();
+                                let user = document.querySelector('.UserInfoContainerStyle-textDecoration')?.textContent?.split(' ').pop();
 
                                 target.querySelectorAll('.Common-maskImage').forEach((element) => {
 
-                                        const maskImage = window.getComputedStyle(element).getPropertyValue('-webkit-mask-image')?.split('"')?.[1]; const resistance = tankResistances.find(({ oldPicture }) => maskImage === oldPicture);
+                                        let maskImage = window.getComputedStyle(element).getPropertyValue('-webkit-mask-image')?.split('"')?.[1];
+
+                                        let resistance = tankResistances.find(({ oldPicture }) => maskImage === oldPicture);
 
                                         if (resistance) {
 
@@ -5120,7 +5253,7 @@
 
                                                 for (let i = 0; i < mainNotification.length; i++) {
 
-                                                      mainNotification[i].src = notificationImage
+                                                    mainNotification[i].src = notificationImage
 
                                                 };
 
@@ -5128,7 +5261,7 @@
 
                                                 for (let i = 0; i < footerNotification.length; i++) {
 
-                                                      footerNotification[i].src = notificationImage
+                                                    footerNotification[i].src = notificationImage
 
                                                 };
 
@@ -5186,7 +5319,7 @@
 
                                         function developerDetails() {
 
-                                                let mainHeader = document.getElementsByClassName('MainScreenComponentStyle-container')[0];
+                                                let mainHeader = document.getElementsByClassName('MainScreenComponentStyle-containerForMenuGradient')[0];
 
                                                 let holdingCard = document.createElement('div');
                                                     holdingCard.className = 'obscDOMElement-holdingCard'
@@ -5272,7 +5405,7 @@
 
                                                 if (mainHeader) {
 
-                                                      mainHeader.appendChild(window);
+                                                    mainHeader.appendChild(window);
 
                                                 };
 
