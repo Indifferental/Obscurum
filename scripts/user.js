@@ -5,7 +5,7 @@
 // @description  none
 // @author       Indifferental
 // @match        https://*.tankionline.com/*
-// @icon         https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/obscurum.png
+// @icon         https://github.com/Indifferental/Obscurum/blob/main/assets/icons/flame90.png?raw=true
 // @grant        GM_xmlhttpRequest
 // @run-at       document-start
 // ==/UserScript==
