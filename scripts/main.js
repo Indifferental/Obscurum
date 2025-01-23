@@ -1,6 +1,19 @@
+// ==UserScript==
+// @name         Obscurum [inDev]
+// @namespace    http://tampermonkey.net/
+// @version      none
+// @description  An open-source theme for Tanki Online
+// @author       Indifferental
+// @match        https://*.tankionline.com/*
+// @icon         https://github.com/Indifferental/Obscurum/blob/main/assets/icons/flame90.png?raw=true
+// @grant        GM_xmlhttpRequest
+// @grant        unsafeWindow
+// @run-at       document-start
+// ==/UserScript==
+
 (function() {
 
-        var version = 'v0.92'
+        var version = 'v0.95'
 
         // изменение иконки на вкладке браузера
 
@@ -154,8 +167,8 @@
                             style: `
                                     display: flex;
                                     align-items: center;
-                                    margin: 0.35em 0.35em 0.35em 0;
-                                    transform: translate(56px, 12px);
+                                    margin: 0.5em 0;
+                                    transform: translate(3em, 1em);
                             `
                     },
 
@@ -165,6 +178,12 @@
                                     color: white;
                                     font-size: 1.5em;
                                     font-family: 'BaseFontMedium';
+                                    font-weight: unset;
+
+                                    position: relative;
+                                    top: 0.575em;
+                                    left: 2em;
+                                    margin: unset;
                             `
                     },
 
@@ -182,7 +201,7 @@
                                         position: absolute;
                                         width: 1em;
                                         height: 1em;
-                                        transform: translatex(-40px);
+                                        transform: translatex(-1.3em);
                             `
                     },
 
@@ -235,13 +254,13 @@
                             style: `
                                     content: '';
                                     background-position: center;
-                                    background-size: contain;
+                                    background-size: 1em;
                                     background-repeat: no-repeat;
 
                                     position: absolute;
-                                    width: 1em;
-                                    height: 1em;
-                                    transform: translatex(-36px);
+                                    width: 1.5em;
+                                    height: 1.5em;
+                                    transform: translatex(-2em);
                             `
                     },
 
@@ -604,7 +623,7 @@
                     {
                             selector: '.MainScreenComponentStyle-gradientBlock',
                             style: `
-                                    background: radial-gradient(transparent 35%, black);
+                                    background: radial-gradient(transparent 25%, black);
 
                                     width: 100%;
                                     opacity: 1;
@@ -627,6 +646,7 @@
                                     position: absolute;
                                     width: 100%;
                                     height: 100%;
+                                    top: 0em;
                                     right: 0em;
                                     margin: unset;
                                     opacity: 0.1;
@@ -1028,54 +1048,6 @@
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-containerForMenuGradient:before',
-                            style: `
-                                    content: '';
-
-                                    background: var(--general-bg);
-                                    outline: var(--general-outline);
-                                    box-shadow: var(--general-box-shadow);
-                                    border-top-right-radius: var(--general-border-radius);
-                                    border-bottom-right-radius: var(--general-border-radius);
-                                    backdrop-filter: var(--least-backdrop-filter);
-
-                                    position: absolute;
-                                    top: 7em;
-                                    left: 0em;
-                                    width: 31em;
-                                    height: 78%;
-                                    z-index: 1;
-                                    pointer-events: none;
-
-                                    transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.MainScreenComponentStyle-containerForMenuGradient:after',
-                            style: `
-                                    content: '';
-
-                                    background: var(--general-bg);
-                                    outline: var(--general-outline);
-                                    box-shadow: var(--general-box-shadow);
-                                    border-top-left-radius: var(--general-border-radius);
-                                    border-bottom-left-radius: var(--general-border-radius);
-                                    backdrop-filter: var(--least-backdrop-filter);
-
-                                    position: absolute;
-                                    bottom: 1em;
-                                    right: 0em;
-                                    width: 31em;
-                                    height: 88%;
-                                    z-index: 1;
-                                    pointer-events: none;
-
-                                    transition: var(--general-transition);
-                            `
-                    },
-
-                    {
                             selector: '.BreadcrumbsComponentStyle-rightButtonsContainer > div',
                             style: `
                                     background: var(--general-bg);
@@ -1400,6 +1372,54 @@
                             `
                     },
 
+                    {
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient:before',
+                            style: `
+                                    content: '';
+
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    position: absolute;
+                                    top: 7em;
+                                    left: 0em;
+                                    width: 31em;
+                                    height: 78%;
+                                    z-index: 1;
+                                    pointer-events: none;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient:after',
+                            style: `
+                                    content: '';
+
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-top-left-radius: var(--general-border-radius);
+                                    border-bottom-left-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    position: absolute;
+                                    bottom: 1em;
+                                    right: 0em;
+                                    width: 31em;
+                                    height: 88%;
+                                    z-index: 1;
+                                    pointer-events: none;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
                     // блок обычного БП
 
                     {
@@ -1608,6 +1628,109 @@
                             style: `
                                     color: white;
                                     text-shadow: 0 0 5px black;
+                            `
+                    },
+
+                    // блок стилей гаража
+
+                    {
+                            selector: '.obscDOMElement-buttonsHeader',
+                            style: `
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: flex-start;
+                                    place-self: center;
+                                    margin-top: 7em;
+                                    width: 30em;
+                                    height: 3em;
+                                    pointer-events: all;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-garageVisibility, .obscDOMElement-defaultButton, .obscDOMElement-eveningButton, .obscDOMElement-nightButton',
+                            style: `
+                                    background-color: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    margin: 0 0.5em;
+                                    width: 5em;
+                                    height: 2em;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-garageVisibility:hover, .obscDOMElement-defaultButton:hover, .obscDOMElement-eveningButton:hover, .obscDOMElement-nightButton:hover',
+                            style: `
+                                    background-color: var(--general-bg-hover);
+
+                                    cursor: pointer;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-garageVisibility',
+                            style: `
+                                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD4klEQVR4nO2cW4hNYRTHf3N1GfHiMjIkDIMYoyEpMrmFMYaSJB4oomYaubyJoZFbGQ9STF4keaCU4sFMbqVxSSOXEE1hKJd4mRqG0TfWqTOnc87e+/v22WePvf+1al5mnfX9Zu31fWvt7wz01FgCrIVAO3CEAC++SyxQEMbFLD5iBwiQauMACFwm1IYQCCEohZlACKFbYSbwbyvscnGLzACGABOA2UA5sByYA0wFhvOfQegDLAb2AdeArwl8RdsX4AZwDFgE5NLLIGQB84EG4JuNBVvZD+AisBTIxMcQcoCNwGsXFp3IlO8aIM9vEC4ArSlceKx9BLYKdN9A6EqDvQTKgg7hD3AaGNQbINwHDsnWVwyMAIbKtrgEqAOeaoJ4C8zwI4SfwBlgigO/hbKLdDqE0AFUpWKhWcDmBEUnGYRmhwuP1SSgUSMbTgHZuKR+wGVxfMkhBJXSplILqdeAoA5e/U0/fCBwJ8axUwhuTZaqNCA0mUDIA24lcHxVjrleN1AnNCDcBgbopP1dC8fpyIRs+aumNBMyZXF2HKcDwmSN3UHZdbuFsd6hY10IJcAaYJ38rFplu2rQAKDspJXjGk3HCgIOILxP0OissglgvGacyqoTOS3TTC1lLS6eGPfahPBMM1a1xgWxzvKlw9KlalXlnUJYaQNAnUG8bcDg6KKnc9qKtgobATuB8MpGTVhmGPOVyGdsM3SkrNQGAKcQVGFMpiIX4t6CpIOpo5E2ATiBsNbCT74LcX/A8NmP2DAHAOxCUFtkMhW4EHebcrTbBUeqn8dlCGpekEzTXYh7B3Kmf2HoSE1scRHCOxu/W2EY8/Pokfss4LeBM5O2V7eBOmoQ7y9gZqxDnZ47YmqMZSKd3uGhQbx74jnMlQmOrtNCDyEUG8R5L1lTNNrm66t4phoUPIJwVjPGz8AYqyDKNetBp8zwUg2hWJ5hp/Gp4ew8u0FUaxJudGkYmWzG2Kz57mCT0yAOa0JQxdRvL1926gZxXPMDq3wEYb9JABmyH+tmQiofBztpvwuXVKNZGJtkhuc1BFXwNuCyKoHvmrtDg4yxvIDwSS5opESFwBOD51GNsQ7KMKNIusgCOZaukONti8agNWI3vbhn1Ffe8OrsxU7MKYQH8g7TM5UCj3wGwfML3hnAapnheQ3BV/cYc4D10mgEMhOiVSJngDcuAmiVIklvgRDRRGA7cA54LDc4rBbbIY/UeelJpmEtX0OIVra03Kqjmyt3hSrlTY263zPKoJL3GgiplK8KY7oUQiCE0K0wEwghdCvMBOJvkerLoupLo4HMhPZ4t0SCAiGwi0fU418E/AUDDbZehjbRwQAAAABJRU5ErkJggg==');
+                                    background-position: center;
+                                    background-size: 2em;
+                                    background-repeat: no-repeat;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-defaultButton',
+                            style: `
+                                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAChklEQVR4nO2az07bQBDGRwIBKUg9g1AhkcoDpKCAeI48S49w7Btkg5QDkCIagcQdOPEnPRTeABBIRUU8xIeGYEhNbG/T3fXank8aKXIce79f7N2ZsYlEIpFIJBKJUhAatI4GfaPCmleE5ygaBPSbLxoEDDJfFAiIM593CNAxnyUI2KBZNKmuFQ3qaJt/iwPt42/QrHsATaoPYcpONKkuADJzBfyYAo5ngJ8V4HIB+PUZOPkEHE33vsvlFbA9DnQrwN0S8LgaH7wPw9kazwGA1ihwXgYeVpKNh4N/czYPtEYyCqBdAq6r/248HDdfgJ1SxgDsfwTul//ffBD3td4xMwHge6k3YFPmXyEsAzsfPAfQGgVuDFz2kbdDdfCc4A2A87I980HwxOgFgEYoveWlbpjZfpjV4f0SeZB+YdOt2DcfBOcJaRVQiKrqdJIcU8HnGjQG2xAQZb4z5c58EFFpsy0IiKvnObd3DeBoJjovMA0BSc0MviddA+A5J25MpiBAp5PDVZ1rABcLyTWCCQhQ9DXxRFzS+ghA0ZqZq0AlQDiZ8+8WMGVeC8LhtF+ToGnziRB4SXINYHfSrflECLeL7szzudIwHwvB5VLYLadnPhAUtf8awOYY8CelYqhJHfKiHD6btw/gdM7jfkBrxG5D5Nr3hoiy2BL7Xes1Wged0ysAKmiK1sya38tKU1S9RHsCuDLRFq9msC2u+uYEnhiHaZXxisITXmYfjKi+4GWL8wSdZIn3yc2jMRWRNnMez8UMV3Qc/Jm37eb14aiyHAKA6n6/IqNCabPev9rx+hUZK52ltAobzyDk07wmhHybT4BQDPMREIplPvS6/PrrBpFIJBKJRCJypydnHOy8jo2EgwAAAABJRU5ErkJggg==');
+                                    background-position: center;
+                                    background-size: 2em;
+                                    background-repeat: no-repeat;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-eveningButton',
+                            style: `
+                                    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADZklEQVR4nO1aS09TQRS+G/6AJD7X+Af6A0w6U5CZqm3P3LRdlBboK1CIJD5WrH3ECD9At+pCXRoWxkTjQl2w8R1x61tUykKIYcy5cO20Fiu9z5L5ki9p6O2Z+b6Ze+acezEMDQ0NDQ0NDQ0PET2W2RflIkMYzBMmFiiH14TDMmGwZpHDsvU3JhbwGrwWf2P0MgYHzT2UmzXKxBPKheyCG5TBY4yBsYxeQZSbhwiDOcJhtUvhf3Er1mV6PHPQCCsikXJflIsz7YQPx005I7Lyam5E3h0fla+qRfmxVpbfpyoW8fPLatH6Dq85KbLWb9oZQZh5GscywgQynD5MuVhsnXAllZG3C3n5qVaWq9OVHRFNuVUoWDHa7IpFylMDRhgQ42aSMrHSKvxhaWzHorfjg+KYLKXSzSYwsRKNpxKBiifcLBMGv+xJ8bgpb+TzcsUl4Sox5vV83hrjzy1hjQ2lwMRTzNRbk8kn0/J5tei68FY+q47LXKJpN2z4bkKMm0l15ScgI9/XSp6Lt/lusiwnlNyAcyEMTviX8FjjnkfxX6Z2nuScEsdsMoHDD88TYyRS7lOzPW57P1e+3U5ouR0WPT0iKYez9mAsLuTTivf3fCdi3lETI2VwyrsKjzeKHMz2QYu3eW1kRDWgPjSUPOC6AYTBnHrOe3HUdUuci1onEAaX3BWfSPSrq+9mkeMW7xdHm0vmRKLfNQModnXK6gctth3r0xVZVk6F2DBMumcAa7S0WNsHLXY73izklV0gHrki/ggz99sVH3Zo3TQ2fhEbqKPxRoUYiyX3urD6kLVdxZY2aJGdOC2yjV0QN9OODSAM5u2A2KsHLbATr+Ry6mkw54IBYsEOeG98NHCBnYgPVZTK8I5jAyiHJTsgPskJWmAnvqgW1R3wxvkO4PDVDvhhMrwJUO0PlKrws3MDGKzZAfH5XdACO/HbVMMAwsVPxwZQLt5uBoQlo0fg6pwpTw0QBjOheQi5S+esoaERUlAOFymHdbfe8/lHWKcMLjg3gEE9eDFdkkHdsQGEi/NqMdQr3JwznHNsgIaGhsb/vjPE/97YfHvkHXEMHMsIbwcm/Djjw9eZUm1AaoBwmLXqBk8Js7rN1dDQ2IXtNbjTvoYd9F/ttRvta9hBtmmvdfuqoaGhoaGhYfiM3/dAM3T1ibwfAAAAAElFTkSuQmCC');
+                                    background-position: center;
+                                    background-size: 2em;
+                                    background-repeat: no-repeat;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-nightButton',
+                            style: `
+                                    background-image: url('data:image/png;base64,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');
+                                    background-position: center;
+                                    background-size: 2em;
+                                    background-repeat: no-repeat;
+                            `
+                    },
+
+                    {
+                            selector: '',
+                            style: `
+
+                            `
+                    },
+
+                    {
+                            selector: '',
+                            style: `
+
+                            `
+                    },
+
+                    {
+                            selector: '',
+                            style: `
+
                             `
                     },
 
@@ -3010,11 +3133,11 @@
                     {
                             selector: '.BattleTabStatisticComponentStyle-containerInsideTeams',
                             style: `
-                                    background: rgb(0 0 0 / 40%);
+                                    background: rgb(0 0 0 / 35%);
                                     outline: var(--general-outline);
                                     box-shadow: var(--general-box-shadow);
-                                    border-radius: var(--general-border-radius);
-                                    backdrop-filter: var(--least-backdrop-filter);
+                                    border-radius: 0.5em;
+                                    backdrop-filter: blur(4px);
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
@@ -3037,6 +3160,14 @@
                             style: `
                                     opacity: 1;
                                     margin-top: 0.5em;
+                            `
+                    },
+
+                    {
+                            selector: `.BattleTabStatisticComponentStyle-containerInsideTeams:hover > .BattleTabStatisticComponentStyle-pinResistances,
+                                       .BattleTabStatisticComponentStyle-containerInsideTeams:hover > .BattleTabStatisticComponentStyle-showResistances`,
+                            style: `
+                                    opacity: 1;
                             `
                     },
 
@@ -3163,6 +3294,20 @@
                     },
 
                     {
+                            selector: '.BattleTabStatisticComponentStyle-nicknameCell > div > div > div > span',
+                            style: `
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleTabStatisticComponentStyle-nicknameCell > div > div > div > span:hover',
+                            style: `
+                                    color: var(--general-color);
+                            `
+                    },
+
+                    {
                             selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+6),
                                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+7),
                                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+6),
@@ -3279,14 +3424,6 @@
                             `
                     },
 
-                    {
-                            selector: `.BattleTabStatisticComponentStyle-containerInsideTeams:hover > .BattleTabStatisticComponentStyle-pinResistances,
-                                       .BattleTabStatisticComponentStyle-containerInsideTeams:hover > .BattleTabStatisticComponentStyle-showResistances`,
-                            style: `
-                                    opacity: 1;
-                            `
-                    },
-
                     // блок ингейм дисплея с кнопками
 
                     {
@@ -3294,12 +3431,13 @@
                                        .BattleHudComponentStyle-pauseButton,
                                        .BattleHudComponentStyle-tabButton`,
                             style: `
-                                    background: rgb(0 0 0 / 30%) !important;
+                                    background: rgb(0 0 0 / 35%) !important;
                                     outline: var(--general-outline);
                                     box-shadow: var(--general-box-shadow);
                                     border-radius: 0.75em !important;
-                                    backdrop-filter: var(--least-backdrop-filter);
+                                    backdrop-filter: blur(4px);
 
+                                    margin-bottom: 0.65em !important;
                                     width: 6em;
 
                                     transition: var(--general-transition);
@@ -3311,7 +3449,7 @@
                                        .BattleHudComponentStyle-pauseButton:hover,
                                        .BattleHudComponentStyle-tabButton:hover`,
                             style: `
-                                    background: rgb(255 255 255 / 1.5%);
+                                    background: rgb(255 255 255 / 1.5%) !important;
                             `
                     },
 
@@ -3325,7 +3463,7 @@
                     {
                             selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer',
                             style: `
-                                    background: rgb(0 0 0 / 30%) !important;
+                                    background: rgb(0 0 0 / 35%) !important;
                                     outline: var(--general-outline);
                                     box-shadow: var(--general-box-shadow);
                                     border: unset;
@@ -3350,12 +3488,12 @@
                     {
                             selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen',
                             style: `
-                                    background: rgb(0 0 0 / 30%) !important;
+                                    background: rgb(0 0 0 / 35%) !important;
                                     outline: var(--general-outline);
                                     box-shadow: var(--general-box-shadow);
                                     border: unset;
                                     border-radius: var(--general-border-radius);
-                                    backdrop-filter: var(--least-backdrop-filter);
+                                    backdrop-filter: blur(4px);
 
                                     margin-left: 0.5em;
                                     width: 13em;
@@ -3725,10 +3863,17 @@
                                     left: 0em;
                                     width: 25em;
                                     height: max-content;
-                                    padding: unset;
+                                    padding: 1em 0;
                                     z-index: 1;
 
                                     transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.TankPreviewComponentStyle-visible',
+                            style: `
                                     animation: var(--general-animation);
                             `
                     },
@@ -3879,6 +4024,27 @@
                             style: `
                                     position: absolute;
                                     visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .GarageProtectionsComponentStyle-blockParametersProtection > .GarageProtectionsComponentStyle-aboutDefence',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    padding: 1.25em 0 1.25em 2em;
+                                    width: 23em;
+                                    height: max-content;
+                                    z-index: 1;
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
                             `
                     },
 
@@ -4358,20 +4524,6 @@
                                     background: var(--general-bg-hover);
 
                                     cursor: pointer;
-                            `
-                    },
-
-                    {
-                            selector: '',
-                            style: `
-
-                            `
-                    },
-
-                    {
-                            selector: '',
-                            style: `
-
                             `
                     },
 
@@ -5243,8 +5395,6 @@
 
                                         };
 
-                                        // функция изменения уведомлений в меню
-
                                         function primaryNotification() {
 
                                                 let notificationImage = 'data:image/webp;base64,UklGRngDAABXRUJQVlA4WAoAAAAQAAAAHwMAFAIAQUxQSCIAAAABBxARERAIJPurD1BE/zP+85///Oc///nPf/7zn//85/8PVlA4IDADAACwXgCdASogAxUCPpFIoU0lpCMiIAgAsBIJaW7hd2EbQAnsA99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPekAAP7/3gioPGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA='
@@ -5266,8 +5416,6 @@
                                                 };
 
                                         };
-
-                                        // функция часов в лобби
 
                                         function lobbyClocks() {
 
@@ -5315,7 +5463,546 @@
 
                                         };
 
-                                        //
+                                        function garageStyles() {
+
+                                                let mainHeader = document.getElementsByClassName('MainScreenComponentStyle-gradientBlock')[0];
+
+                                                if (mainHeader) {
+
+                                                        let buttonsHeader = document.createElement('div');
+                                                            buttonsHeader.className = 'obscDOMElement-buttonsHeader'
+
+                                                        mainHeader.appendChild(buttonsHeader);
+
+                                                        if (buttonsHeader) {
+
+                                                                function visibilityON() {
+
+                                                                        let elements = [
+
+                                                                                {
+                                                                                        selector: '.obscDOMElement-garageVisibility',
+                                                                                        style: `
+                                                                                                background-color: rgba(255, 255, 255, 0.05) !important;
+                                                                                        `
+                                                                                },
+
+                                                                                {
+                                                                                        selector: '.Common-container, .NotificationViewStyle-commonBlockNotification',
+                                                                                        style: `
+                                                                                                pointer-events: none;
+                                                                                        `
+                                                                                },
+
+                                                                                {
+                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient:before',
+                                                                                        style: `
+                                                                                                opacity: 0;
+                                                                                        `
+                                                                                },
+
+                                                                                {
+                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient:after',
+                                                                                        style: `
+                                                                                                opacity: 0;
+                                                                                        `
+                                                                                },
+
+
+                                                                                {
+                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex',
+                                                                                        style: `
+                                                                                                opacity: 0;
+                                                                                        `
+                                                                                },
+
+
+                                                                                {
+                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .MainScreenComponentStyle-blockMainMenu',
+                                                                                        style: `
+                                                                                                opacity: 0;
+                                                                                        `
+                                                                                },
+
+
+                                                                                {
+                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer',
+                                                                                        style: `
+                                                                                                opacity: 0;
+                                                                                        `
+                                                                                },
+
+                                                                                {
+                                                                                        selector: '.obscDOMElement-holdingCard',
+                                                                                        style: `
+                                                                                                opacity: 0;
+                                                                                        `
+                                                                                },
+
+                                                                                {
+                                                                                        selector: '.BattlePassLobbyComponentStyle-menuBattlePass',
+                                                                                        style: `
+                                                                                                opacity: 0;
+                                                                                        `
+                                                                                },
+
+                                                                                {
+                                                                                        selector: '.EventBattlePassLobbyComponentStyle-buttonEventBattlePass',
+                                                                                        style: `
+                                                                                                opacity: 0;
+                                                                                        `
+                                                                                },
+
+                                                                                {
+                                                                                        selector: '.AnnouncementHomeScreenComponentStyle-mainContainer',
+                                                                                        style: `
+                                                                                                opacity: 0;
+                                                                                        `
+                                                                                },
+
+                                                                        ];
+
+                                                                        let cssStyles = document.createElement(`style`);
+                                                                            cssStyles.className = `obscStyleSheet-garageVisibility`
+
+                                                                        elements.forEach((element) => {
+
+                                                                                let css = `${element.selector} {${element.style}}\n`
+
+                                                                                cssStyles.textContent += css.split(`                `).join(``);
+
+                                                                        });
+
+                                                                        variableHeader.appendChild(cssStyles);
+
+                                                                };
+
+                                                                function visibilityOFF() {
+
+                                                                        let cssStyles = document.getElementsByClassName('obscStyleSheet-garageVisibility')[0];
+
+                                                                        if (cssStyles) {
+
+                                                                                variableHeader.removeChild(cssStyles);
+
+                                                                        };
+
+                                                                };
+
+                                                                let visibility = document.createElement('div');
+                                                                    visibility.className = 'obscDOMElement-garageVisibility'
+
+                                                                buttonsHeader.appendChild(visibility);
+
+                                                                let pressCount = 0
+
+                                                                if (visibility) {
+
+                                                                        visibility.addEventListener('click', function() {
+
+                                                                                pressCount++
+
+                                                                                if (pressCount == 1) {
+
+                                                                                        visibilityON();
+
+                                                                                };
+
+                                                                                if (pressCount == 2) {
+
+                                                                                        pressCount = 0
+
+                                                                                        visibilityOFF();
+
+                                                                                };
+
+                                                                        });
+
+                                                                };
+
+                                                                let pressCount1 = localStorage.getItem('obscLocalStorageVariable-garageDefault-pressCount');
+                                                                let pressCount2 = localStorage.getItem('obscLocalStorageVariable-garageEvening-pressCount');
+                                                                let pressCount3 = localStorage.getItem('obscLocalStorageVariable-garageNight-pressCount');
+
+                                                                let defaultButton = document.createElement('div');
+                                                                    defaultButton.className = 'obscDOMElement-defaultButton'
+
+                                                                buttonsHeader.appendChild(defaultButton);
+
+                                                                if (defaultButton) {
+
+                                                                        defaultButton.addEventListener('click', function() {
+
+                                                                                pressCount1++
+
+                                                                                pressCount2 = 0
+                                                                                pressCount3 = 0
+
+                                                                                if (pressCount1 == 1) {
+
+                                                                                        defaultButton.style = 'background-color: rgb(255 255 255 / 5%)'
+
+                                                                                        eveningButton.style = ''
+                                                                                        nightButton.style = ''
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 1);
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 0);
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 0);
+
+                                                                                };
+
+                                                                                if (pressCount1 == 2) {
+
+                                                                                        pressCount1 = 0
+
+                                                                                        defaultButton.style = ''
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 0);
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
+
+                                                                                };
+
+                                                                        });
+
+                                                                };
+
+                                                                var eveningButton = document.createElement('div');
+                                                                    eveningButton.className = 'obscDOMElement-eveningButton'
+
+                                                                buttonsHeader.appendChild(eveningButton);
+
+                                                                if (eveningButton) {
+
+                                                                        eveningButton.addEventListener('click', function() {
+
+                                                                                pressCount2++
+
+                                                                                pressCount1 = 0
+                                                                                pressCount3 = 0
+
+                                                                                if (pressCount2 == 1) {
+
+                                                                                        eveningButton.style = 'background-color: rgb(255 255 255 / 10%)'
+
+                                                                                        defaultButton.style = ''
+                                                                                        nightButton.style = ''
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'evening');
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 1);
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 0);
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 0);
+
+                                                                                };
+
+                                                                                if (pressCount2 == 2) {
+
+                                                                                        pressCount2 = 0
+
+                                                                                        eveningButton.style = ''
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 0);
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
+
+                                                                                };
+
+                                                                        });
+
+                                                                };
+
+                                                                var nightButton = document.createElement('div');
+                                                                    nightButton.className = 'obscDOMElement-nightButton'
+
+                                                                buttonsHeader.appendChild(nightButton);
+
+                                                                if (nightButton) {
+
+                                                                        nightButton.addEventListener('click', function() {
+
+                                                                                pressCount3++
+
+                                                                                pressCount1 = 0
+                                                                                pressCount2 = 0
+
+                                                                                if (pressCount3 == 1) {
+
+                                                                                        nightButton.style = 'background-color: rgb(255 255 255 / 10%)'
+
+                                                                                        defaultButton.style = ''
+                                                                                        eveningButton.style = ''
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'night');
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 1);
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 0);
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 0);
+
+                                                                                };
+
+                                                                                if (pressCount3 == 2) {
+
+                                                                                        pressCount3 = 0
+
+                                                                                        nightButton.style = ''
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 0);
+
+                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
+
+                                                                                };
+
+                                                                        });
+
+                                                                };
+
+                                                        };
+
+                                                };
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'evening') {
+
+                                                        if (eveningButton) {
+
+                                                                eveningButton.style = 'background-color: rgb(255 255 255 / 10%)'
+
+                                                        };
+
+                                                        let resources = [
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/bg1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bg1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/bl.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bl.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/flr1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/flr1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/gar1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/gar1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/pl1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/pl2.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl2.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/race1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/race1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/sky1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/sky1.webp"
+                                                                },
+
+                                                        ];
+
+                                                        let originFetch = unsafeWindow.fetch
+
+                                                        window.unsafeWindow.fetch = async (url, options) => {
+
+                                                                return originFetch(url, options).then(async (response) => {
+
+                                                                        for (let resource of resources) {
+
+                                                                                let createPreview = (url) => {
+
+                                                                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+                                                                                        return new RegExp(replacedURL);
+
+                                                                                };
+
+                                                                                let preview = createPreview(resource.orig);
+
+                                                                                if (preview.test(url)) {
+
+                                                                                        return new Promise((resolve, reject) => {
+
+                                                                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
+
+                                                                                                        onload: response => {
+
+                                                                                                                if (response.status == 200) {
+
+                                                                                                                        resolve(new Response(response.response, {
+
+                                                                                                                                status: 200,
+                                                                                                                                statusText: "OK",
+                                                                                                                                headers: { "Content-Type": response.response.type }
+
+                                                                                                                        }));
+
+                                                                                                                } else {
+
+                                                                                                                        reject();
+
+                                                                                                                };
+
+                                                                                                        },
+
+                                                                                                        onerror: reject
+
+                                                                                                });
+
+                                                                                        });
+
+                                                                                };
+
+                                                                        };
+
+                                                                        return response
+
+                                                                });
+
+                                                        };
+
+                                                };
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'night') {
+
+                                                        if (nightButton) {
+
+                                                                nightButton.style = 'background-color: rgb(255 255 255 / 10%)'
+
+                                                        };
+
+                                                        let darkening = document.getElementsByClassName('MainScreenComponentStyle-gradientBlockRight')[0];
+
+                                                        if (darkening) {
+
+                                                                darkening.style = 'background: radial-gradient(black 10%, transparent 60%); visibility: visible; position: absolute; right: 2em; width: 100%; height: 100%; opacity: 0.35'
+
+                                                        };
+
+                                                        let resources = [
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/bg1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bg1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/bl.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bl.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/flr1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/flr1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/gar1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/gar1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/pl1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/pl2.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl2.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/race1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/race1.webp"
+                                                                },
+
+                                                                {
+                                                                        orig: "/601/166176/165/206/31167700267244/sky1.webp",
+                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/sky1.webp"
+                                                                },
+
+                                                        ];
+
+                                                        let originFetch = unsafeWindow.fetch
+
+                                                        window.unsafeWindow.fetch = async (url, options) => {
+
+                                                                return originFetch(url, options).then(async (response) => {
+
+                                                                        for (let resource of resources) {
+
+                                                                                let createPreview = (url) => {
+
+                                                                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+                                                                                        return new RegExp(replacedURL);
+
+                                                                                };
+
+                                                                                let preview = createPreview(resource.orig);
+
+                                                                                if (preview.test(url)) {
+
+                                                                                        return new Promise((resolve, reject) => {
+
+                                                                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
+
+                                                                                                        onload: response => {
+
+                                                                                                                if (response.status == 200) {
+
+                                                                                                                        resolve(new Response(response.response, {
+
+                                                                                                                                status: 200,
+                                                                                                                                statusText: "OK",
+                                                                                                                                headers: { "Content-Type": response.response.type }
+
+                                                                                                                        }));
+
+                                                                                                                } else {
+
+                                                                                                                        reject();
+
+                                                                                                                };
+
+                                                                                                        },
+
+                                                                                                        onerror: reject
+
+                                                                                                });
+
+                                                                                        });
+
+                                                                                };
+
+                                                                        };
+
+                                                                        return response
+
+                                                                });
+
+                                                        };
+
+                                                };
+
+                                        };
 
                                         function developerDetails() {
 
@@ -5330,7 +6017,7 @@
 
                                                         if (holdingCard) {
 
-                                                                let text1 = document.createElement('a');
+                                                                let text1 = document.createElement('h1');
                                                                     text1.className = 'obscDOMElement-holdingCard-text1'
                                                                     text1.innerHTML = `Obscurum ${version}`
 
@@ -5382,11 +6069,11 @@
 
                                         };
 
-                                        // определение никнейма
-
                                         primaryNotification();
 
                                         lobbyClocks();
+
+                                        garageStyles();
 
                                         developerDetails();
 
@@ -5405,7 +6092,7 @@
 
                                                 if (mainHeader) {
 
-                                                    mainHeader.appendChild(window);
+                                                        mainHeader.appendChild(window);
 
                                                 };
 
