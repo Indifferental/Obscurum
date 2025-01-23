@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.95'
+        var version = 'v0.96'
 
         var originFetch = unsafeWindow.fetch
 
@@ -5807,7 +5807,7 @@
 
                                                         ];
 
-                                                        window.unsafeWindow.fetch = async (url, options) => {
+                                                        unsafeWindow.fetch = async (url, options) => {
 
                                                                 return originFetch(url, options).then(async (response) => {
 
@@ -5883,6 +5883,14 @@
 
                                                         };
 
+                                                        let vignette = document.getElementsByClassName('MainScreenComponentStyle-gradientBlock')[0];
+
+                                                        if (vignette) {
+
+                                                                vignette.style = 'opacity: 0.5'
+
+                                                        };
+
                                                         let resources = [
 
                                                                 {
@@ -5927,7 +5935,7 @@
 
                                                         ];
 
-                                                        window.unsafeWindow.fetch = async (url, options) => {
+                                                        unsafeWindow.fetch = async (url, options) => {
 
                                                                 return originFetch(url, options).then(async (response) => {
 
