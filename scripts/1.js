@@ -93,7 +93,7 @@
 
         // console.log(`${originFetch} ready`);
 
-        window.unsafeWindow.fetch = async (url, options) => {
+        window.unsafeWindow.fetch = async function(url, options) => {
 
                 return originFetch(url, options).then(async (response) => {
 
