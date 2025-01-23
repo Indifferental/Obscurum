@@ -5887,7 +5887,7 @@
 
                                                         if (vignette) {
 
-                                                                vignette.style = 'background: radial-gradient(transparent 25%, rgb(0 0 0 / 50%))'
+                                                                vignette.style = 'background: radial-gradient(transparent 25%, rgb(0 0 0 / 20%))'
 
                                                         };
 
