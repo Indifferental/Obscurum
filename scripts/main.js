@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.961'
+        var version = 'v0.97'
 
         var originFetch = unsafeWindow.fetch
 
@@ -93,6 +93,57 @@
                     },
 
                     {
+                            selector: '.obscDOMElement-startScreen-logo',
+                            style: `
+                                    background-color: white;
+                                    mask-image: url(data:image/png;base64,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);
+                                    mask-position: center;
+                                    mask-size: contain;
+
+                                    position: absolute;
+                                    top: -6em;
+                                    width: 8em;
+                                    height: 8em;
+                                    opacity: 0;
+
+                                    animation: translateDown .75s cubic-bezier(.25, .1, .25, 1) forwards;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-startScreen-h1',
+                            style: `
+                                    font-size: 4em;
+                                    font-family: 'BaseFontBold';
+                                    text-transform: uppercase;
+                                    font-weight: unset;
+                                    position: absolute;
+                                    top: 0.6em;
+                                    margin: unset;
+                                    opacity: 0;
+
+                                    animation: translateUp .75s cubic-bezier(.25, .1, .25, 1) forwards;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-startScreen-h2',
+                            style: `
+                                    color: rgb(255 255 255 / 50%);
+                                    font-size: 1.5em;
+                                    font-family: 'BaseFontRegular';
+                                    font-weight: unset;
+                                    text-transform: uppercase;
+                                    position: absolute;
+                                    top: 4.4em;
+                                    margin: unset;
+                                    opacity: 0;
+
+                                    animation: translateUp .75s cubic-bezier(.25, .1, .25, 1) forwards;
+                            `
+                    },
+
+                    {
                             selector: '.obscDOMElement-svgGradient',
                             style: `
                                     background: linear-gradient(0deg, rgb(0 0 0 / 50%), transparent 40%);
@@ -173,6 +224,26 @@
                     },
 
                     {
+                            selector: '.StartScreenComponentStyle-mainContainer > img',
+                            style: `
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: '.StartScreenComponentStyle-text',
+                            style: `
+                                    position: absolute;
+                                    top: 10em;
+                                    margin: unset;
+                                    opacity: 0;
+
+                                    animation: blend .75s cubic-bezier(.25, .1, .25, 1) .75s forwards;
+                            `
+                    },
+
+                    {
                             selector: 'body',
                             style: `
                                     --general-bg: ${globalProperties[0].background};
@@ -230,7 +301,7 @@
                     {
                             selector: '.ApplicationLoaderComponentStyle-logo, .ApplicationLoaderComponentStyle-loader, .ApplicationLoaderComponentStyle-container.Common-flexCenterAlignCenterColumn > div:nth-child(1)',
                             style: `
-                                    visibility: hidden
+                                    visibility: hidden;
                             `
                     },
 
@@ -313,7 +384,16 @@
                     },
 
                     {
-                            selector: '.Common-buttonQE',
+                            selector: '.ContainerInfoComponentStyle-rewardsMenuHotkey',
+                            style: `
+                                    width: 2.5em;
+                                    height: 1.25em;
+                            `
+                    },
+
+                    {
+                            selector: `.Common-buttonQE,
+                                       .ContainerInfoComponentStyle-rewardsMenuHotkey h3`,
                             style: `
                                     background: var(--general-bg);
                                     outline: var(--general-outline);
@@ -331,14 +411,16 @@
                     },
 
                     {
-                            selector: '.Common-buttonQE:hover',
+                            selector: `.Common-buttonQE:hover,
+                                       .ContainerInfoComponentStyle-rewardsMenuHotkey h3:hover`,
                             style: `
                                     background: var(--general-bg-hover);
                             `
                     },
 
                     {
-                            selector: '.Common-buttonQE span',
+                            selector: `.Common-buttonQE span,
+                                       .ContainerInfoComponentStyle-rewardsMenuHotkey h3`,
                             style: `
                                     color: var(--least-general-color);
                             `
@@ -1076,6 +1158,13 @@
                             `
                     },
 
+                    {
+                            selector: '.BreadcrumbsComponentStyle-headerContainer > .BreadcrumbsComponentStyle-breadcrumbs > .BreadcrumbsComponentStyle-rootTitle',
+                            style: `
+                                    animation: var(--general-animation);
+                            `
+                    },
+
                     // блок кнопки "Играть"
 
                     {
@@ -1141,7 +1230,8 @@
                     },
 
                     {
-                            selector: `.Common-container > .ProBattlesComponentStyle-navigationBlock,
+                            selector: `.Common-container > .ContainersComponentStyle-navigationBlockForCategories,
+                                       .Common-container > .ProBattlesComponentStyle-navigationBlock,
                                        .Common-container > .GarageMenuComponentStyle-garageMenuContainer,
                                        .Common-container > .Common-flexStartAlignStart > .GarageMenuComponentStyle-garageMenuContainer,
                                        .Common-container > .Common-flexStartAlignCenterColumn > .GarageMenuComponentStyle-garageMenuContainer,
@@ -1159,6 +1249,13 @@
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.Common-container > .ContainersComponentStyle-navigationContainer > .ContainersComponentStyle-navigationBlock > .Common-flexCenterAlignCenterColumn',
+                            style: `
+                                    padding: unset;
                             `
                     },
 
@@ -1184,7 +1281,7 @@
                                     position: absolute;
                                     bottom: 1em;
                                     width: 31em;
-                                    height: 7em;
+                                    height: 6.5em;
                             `
                     },
 
@@ -1212,6 +1309,7 @@
 
                                     margin-right: 1em;
                                     width: 6.25em;
+                                    height: 4.5em;
 
                                     transition: var(--general-transition);
                             `
@@ -1579,27 +1677,6 @@
                             `
                     },
 
-                    {
-                            selector: '',
-                            style: `
-
-                            `
-                    },
-
-                    {
-                            selector: '',
-                            style: `
-
-                            `
-                    },
-
-                    {
-                            selector: '',
-                            style: `
-
-                            `
-                    },
-
                     // блок раздела с друзьями
 
                     {
@@ -1847,6 +1924,322 @@
                             selector: '.nickNameClass:hover > div > div > span',
                             style: `
                                     color: var(--general-color) !important;
+                            `
+                    },
+
+                    // блок раздела с контейнерами
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    position: absolute;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    top: 10em;
+                                    left: 0em;
+                                    margin-top: 5.5em;
+                                    padding: 1.5em 0;
+                                    width: 25em;
+                                    height: max-content;
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > div > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ItemDescriptionComponentStyle-nameItem',
+                            style: `
+                                    margin-left: 0.75em;
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > div > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ContainersComponentStyle-description',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > div > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ContainersComponentStyle-description:hover',
+                            style: `
+                                    background: var(--general-bg-hover);
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > div > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ContainersComponentStyle-description > .ItemDescriptionComponentStyle-textClipped',
+                            style: `
+                                    -webkit-line-clamp: 5;
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > div > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ContainersComponentStyle-description > .Common-flexStartAlignStart',
+                            style: `
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: unset;
+
+                                    padding: 0.75em 0;
+                                    height: max-content;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock:hover',
+                            style: `
+                                    background: var(--general-bg-hover);
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock > .ContainersComponentStyle-rewards',
+                            style: `
+                                    margin: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock > .ContainersComponentStyle-rewards > .Common-flexCenterAlignCenterColumn',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: unset;
+
+                                    margin: 4px;
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock > .ContainersComponentStyle-rewards > .Common-flexCenterAlignCenterColumn > div:nth-child(1)',
+                            style: `
+                                    width: 2em;
+                                    height: 2em;
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock > .DeviceButtonComponentStyle-blockAlterations',
+                            style: `
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: `.ContainersComponentStyle-leftPane,
+                                       .ContainersComponentStyle-rightPane`,
+                            style: `
+                                    opacity: 0;
+                            `
+                    },
+
+                    {
+                            selector: '.ContainerInfoComponentStyle-lootBoxDescriptionContainer',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    height: calc(100% - 3.5em);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.ContainerInfoComponentStyle-itemsContainer > .Common-flexStartAlignStretchColumn > .Common-flexCenterAlignCenterColumn',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: var(--general-border-radius);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.ContainerInfoComponentStyle-itemsContainer > .Common-flexStartAlignStretchColumn > .Common-flexCenterAlignCenterColumn:hover',
+                            style: `
+                                    background: var(--general-bg-hover);
+                            `
+                    },
+
+                    {
+                            selector: '.ContainerInfoComponentStyle-itemsContainer > .Common-flexStartAlignStretchColumn > .Common-flexCenterAlignCenterColumn > div:nth-child(2)',
+                            style: `
+                                    width: 2em;
+                                    height: 2em;
+                            `
+                    },
+
+                    {
+                            selector: '.RewardCardComponentStyle-probabilityBlock',
+                            style: `
+                                    justify-content: center;
+                                    width: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.RewardCardComponentStyle-probabilityBlock > .RewardCardComponentStyle-probability',
+                            style: `
+                                    color: rgb(255 255 255 / 35%);
+
+                                    margin-top: 0.25em;
+                                    margin-right: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > h2',
+                            style: `
+                                    color: var(--general-color);
+                                    text-shadow: 0 0 2.5em;
+                                    overflow: visible;
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter,
+                                       .ContainersComponentStyle-moreButton`,
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: 1em;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    visibility: visible;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter:hover,
+                                       .ContainersComponentStyle-moreButton:hover`,
+                            style: `
+                                    background: var(--general-bg-hover);
+                            `
+                    },
+
+                    {
+                            selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter > span,
+                                       .ContainersComponentStyle-moreButton > span`,
+                            style: `
+                                    color: var(--general-color);
+                                    text-shadow: 0 0 3em;
+
+                                    margin: unset !important;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter > div,
+                                       .ContainersComponentStyle-moreButton > div`,
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.GarageTurretsAlterationsComponentStyle-hotkeyG',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: 0.5em;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    color: var(--general-color);
+                                    text-shadow: 0 0 16px;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.AnimationOpenContainerComponentStyle-controlButton > .DeviceButtonComponentStyle-blockAlterations > h2',
+                            style: `
+                                    color: rgb(255 255 255 / 60%);
+                            `
+                    },
+
+                    {
+                            selector: '.AnimationOpenContainerComponentStyle-rewardContainer',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.AnimationOpenContainerComponentStyle-rewardContainer > .Common-flexCenterAlignCenterColumn',
+                            style: `
+                                    background: transparent;
+                                    box-shadow: unset;
+                                    border-radius: inherit;
+                            `
+                    },
+
+                    {
+                            selector: '.AnimationOpenContainerComponentStyle-rewardContainer > .Common-flexCenterAlignCenterColumn > div:nth-child(1)',
+                            style: `
+                                    width: 2em;
+                                    height: 2em;
                             `
                     },
 
@@ -2479,7 +2872,8 @@
                     },
 
                     {
-                            selector: '.ProBattlesComponentStyle-chatBlock',
+                            selector: `.ProBattlesComponentStyle-chatBlock,
+                                       .ContainersComponentStyle-chatBlock`,
                             style: `
                                     background: var(--general-bg);
                                     outline: var(--general-outline);
@@ -2502,14 +2896,16 @@
                     },
 
                     {
-                            selector: '.ProBattlesComponentStyle-chatBlock:hover',
+                            selector: `.ProBattlesComponentStyle-chatBlock:hover,
+                                       .ContainersComponentStyle-chatBlock:hover`,
                             style: `
                                     background: var(--general-bg-hover);
                             `
                     },
 
                     {
-                            selector: '.ProBattlesComponentStyle-chatBlock > h3',
+                            selector: `.ProBattlesComponentStyle-chatBlock > h3,
+                                       .ContainersComponentStyle-chatBlock > h3`,
                             style: `
                                     visibility: hidden;
                                     position: absolute;
@@ -2517,7 +2913,8 @@
                     },
 
                     {
-                            selector: '.ProBattlesComponentStyle-chatIcon',
+                            selector: `.ProBattlesComponentStyle-chatIcon,
+                                       .ContainersComponentStyle-chatIcon`,
                             style: `
                                     background-color: var(--general-color) !important;
 
@@ -3001,9 +3398,9 @@
                             style: `
                                     background: rgb(0 0 0 / 35%);
                                     outline: var(--general-outline);
-                                    box-shadow: var(--general-box-shadow);
+                                    box-shadow: 0 0 10em 0 rgb(0 0 0 / 75%);
                                     border-radius: 0.5em;
-                                    backdrop-filter: blur(4px);
+                                    backdrop-filter: blur(6px);
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
@@ -5245,6 +5642,743 @@
 
                 if (isArrayAvailable == true) {
 
+                        function primaryNotification() {
+
+                                let notificationImage = 'data:image/webp;base64,UklGRngDAABXRUJQVlA4WAoAAAAQAAAAHwMAFAIAQUxQSCIAAAABBxARERAIJPurD1BE/zP+85///Oc///nPf/7zn//85/8PVlA4IDADAACwXgCdASogAxUCPpFIoU0lpCMiIAgAsBIJaW7hd2EbQAnsA99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPekAAP7/3gioPGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA='
+
+                                let mainNotification = document.querySelectorAll('.PrimaryMenuItemComponentStyle-notificationIconNewNews');
+
+                                for (let i = 0; i < mainNotification.length; i++) {
+
+                                    mainNotification[i].src = notificationImage
+
+                                };
+
+                                let footerNotification = document.querySelectorAll('.MainScreenComponentStyle-new.FooterComponentStyle-marginEllips');
+
+                                for (let i = 0; i < footerNotification.length; i++) {
+
+                                    footerNotification[i].src = notificationImage
+
+                                };
+
+                        };
+
+                        function lobbyClocks() {
+
+                                let mainHeader = document.getElementsByClassName('UserInfoContainerStyle-blockForIconTankiOnline')[0];
+
+                                if (mainHeader) {
+
+                                        let days
+
+                                        let date = new Date();
+
+                                        let clockDays = document.createElement('div');
+                                            clockDays.className = 'obscDOMElement-clockDays'
+
+                                        mainHeader.appendChild(clockDays);
+
+                                        let clockTime = document.createElement('div');
+                                            clockTime.className = 'obscDOMElement-clockTime'
+
+                                        mainHeader.appendChild(clockTime);
+
+                                        if (localStorage.getItem('language_store_key') == 'RU') {
+
+                                                days = [ 'Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота' ];
+
+                                        } else {
+
+                                                days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
+
+                                        };
+
+                                        clockDays.innerHTML = `${days[new Date().getDay().toLocaleString()]}, ${new Date().toISOString().slice(0,10).split('-').reverse().join('.')}`
+
+                                        clockTime.innerHTML = new Date().toLocaleString().slice(12, 20).split('-').join('.');
+
+                                        setInterval(function() {
+
+                                                clockDays.innerHTML = `${days[new Date().getDay().toLocaleString()]}, ${new Date().toISOString().slice(0,10).split('-').reverse().join('.')}`
+
+                                                clockTime.innerHTML = new Date().toLocaleString().slice(12, 20).split('-').join('.');
+
+                                        }, 1000);
+
+                                };
+
+                        };
+
+                        function garageStyles() {
+
+                                let mainHeader = document.getElementsByClassName('MainScreenComponentStyle-gradientBlock')[0];
+
+                                if (mainHeader) {
+
+                                        let buttonsHeader = document.createElement('div');
+                                            buttonsHeader.className = 'obscDOMElement-buttonsHeader'
+
+                                        mainHeader.appendChild(buttonsHeader);
+
+                                        if (buttonsHeader) {
+
+                                                function visibilityON() {
+
+                                                        let elements = [
+
+                                                                {
+                                                                        selector: '.obscDOMElement-garageVisibility',
+                                                                        style: `
+                                                                                background-color: rgb(255 255 255 / 10%) !important;
+                                                                        `
+                                                                },
+
+                                                                {
+                                                                        selector: '.Common-container, .NotificationViewStyle-commonBlockNotification',
+                                                                        style: `
+                                                                                pointer-events: none;
+                                                                        `
+                                                                },
+
+                                                                {
+                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient:before',
+                                                                        style: `
+                                                                                opacity: 0;
+                                                                        `
+                                                                },
+
+                                                                {
+                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient:after',
+                                                                        style: `
+                                                                                opacity: 0;
+                                                                        `
+                                                                },
+
+
+                                                                {
+                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex',
+                                                                        style: `
+                                                                                opacity: 0;
+                                                                        `
+                                                                },
+
+
+                                                                {
+                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .MainScreenComponentStyle-blockMainMenu',
+                                                                        style: `
+                                                                                opacity: 0;
+                                                                        `
+                                                                },
+
+
+                                                                {
+                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer',
+                                                                        style: `
+                                                                                opacity: 0;
+                                                                        `
+                                                                },
+
+                                                                {
+                                                                        selector: '.BattlePassLobbyComponentStyle-menuBattlePass',
+                                                                        style: `
+                                                                                opacity: 0;
+                                                                        `
+                                                                },
+
+                                                                {
+                                                                        selector: '.EventBattlePassLobbyComponentStyle-buttonEventBattlePass',
+                                                                        style: `
+                                                                                opacity: 0;
+                                                                        `
+                                                                },
+
+                                                                {
+                                                                        selector: '.AnnouncementHomeScreenComponentStyle-mainContainer',
+                                                                        style: `
+                                                                                opacity: 0;
+                                                                        `
+                                                                },
+
+                                                        ];
+
+                                                        let cssStyles = document.createElement(`style`);
+                                                            cssStyles.className = `obscStyleSheet-garageVisibility`
+
+                                                        elements.forEach((element) => {
+
+                                                                let css = `${element.selector} {${element.style}}\n`
+
+                                                                cssStyles.textContent += css.split(`                `).join(``);
+
+                                                        });
+
+                                                        variableHeader.appendChild(cssStyles);
+
+                                                };
+
+                                                function visibilityOFF() {
+
+                                                        let cssStyles = document.getElementsByClassName('obscStyleSheet-garageVisibility')[0];
+
+                                                        if (cssStyles) {
+
+                                                                variableHeader.removeChild(cssStyles);
+
+                                                        };
+
+                                                };
+
+                                                let visibility = document.createElement('div');
+                                                    visibility.className = 'obscDOMElement-garageVisibility'
+
+                                                buttonsHeader.appendChild(visibility);
+
+                                                let pressCount = 0
+
+                                                if (visibility) {
+
+                                                        visibility.addEventListener('click', function() {
+
+                                                                pressCount++
+
+                                                                if (pressCount == 1) {
+
+                                                                        visibilityON();
+
+                                                                };
+
+                                                                if (pressCount == 2) {
+
+                                                                        pressCount = 0
+
+                                                                        visibilityOFF();
+
+                                                                };
+
+                                                        });
+
+                                                };
+
+                                                function reloadPage() {
+
+                                                        setTimeout(function() {
+
+                                                                window.location.reload();
+
+                                                        }, 500);
+
+                                                };
+
+                                                let pressCount1 = localStorage.getItem('obscLocalStorageVariable-garageDefault-pressCount');
+                                                let pressCount2 = localStorage.getItem('obscLocalStorageVariable-garageEvening-pressCount');
+                                                let pressCount3 = localStorage.getItem('obscLocalStorageVariable-garageNight-pressCount');
+
+                                                let defaultButton = document.createElement('div');
+                                                    defaultButton.className = 'obscDOMElement-defaultButton'
+
+                                                buttonsHeader.appendChild(defaultButton);
+
+                                                if (defaultButton) {
+
+                                                        defaultButton.addEventListener('click', function() {
+
+                                                                pressCount1++
+
+                                                                pressCount2 = 0
+                                                                pressCount3 = 0
+
+                                                                if (pressCount1 == 1) {
+
+                                                                        defaultButton.style = 'background-color: rgb(255 255 255 / 5%)'
+
+                                                                        eveningButton.style = ''
+                                                                        nightButton.style = ''
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 1);
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 0);
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 0);
+
+                                                                        reloadPage();
+
+                                                                };
+
+                                                                if (pressCount1 == 2) {
+
+                                                                        pressCount1 = 0
+
+                                                                        defaultButton.style = ''
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 0);
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
+
+                                                                        reloadPage();
+
+                                                                };
+
+                                                        });
+
+                                                };
+
+                                                var eveningButton = document.createElement('div');
+                                                    eveningButton.className = 'obscDOMElement-eveningButton'
+
+                                                buttonsHeader.appendChild(eveningButton);
+
+                                                if (eveningButton) {
+
+                                                        eveningButton.addEventListener('click', function() {
+
+                                                                pressCount2++
+
+                                                                pressCount1 = 0
+                                                                pressCount3 = 0
+
+                                                                if (pressCount2 == 1) {
+
+                                                                        eveningButton.style = 'background-color: rgb(255 255 255 / 10%)'
+
+                                                                        defaultButton.style = ''
+                                                                        nightButton.style = ''
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'evening');
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 1);
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 0);
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 0);
+
+                                                                        reloadPage();
+
+                                                                };
+
+                                                                if (pressCount2 == 2) {
+
+                                                                        pressCount2 = 0
+
+                                                                        eveningButton.style = ''
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 0);
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
+
+                                                                        reloadPage();
+
+                                                                };
+
+                                                        });
+
+                                                };
+
+                                                var nightButton = document.createElement('div');
+                                                    nightButton.className = 'obscDOMElement-nightButton'
+
+                                                buttonsHeader.appendChild(nightButton);
+
+                                                if (nightButton) {
+
+                                                        nightButton.addEventListener('click', function() {
+
+                                                                pressCount3++
+
+                                                                pressCount1 = 0
+                                                                pressCount2 = 0
+
+                                                                if (pressCount3 == 1) {
+
+                                                                        nightButton.style = 'background-color: rgb(255 255 255 / 10%)'
+
+                                                                        defaultButton.style = ''
+                                                                        eveningButton.style = ''
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'night');
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 1);
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 0);
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 0);
+
+                                                                        reloadPage();
+
+                                                                };
+
+                                                                if (pressCount3 == 2) {
+
+                                                                        pressCount3 = 0
+
+                                                                        nightButton.style = ''
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 0);
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
+
+                                                                        reloadPage();
+
+                                                                };
+
+                                                        });
+
+                                                };
+
+                                        };
+
+                                };
+
+                                if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'evening') {
+
+                                        if (eveningButton) {
+
+                                                eveningButton.style = 'background-color: rgb(255 255 255 / 10%)'
+
+                                        };
+
+                                        let resources = [
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/bg1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bg1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/bl.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bl.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/flr1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/flr1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/gar1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/gar1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/pl1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/pl2.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl2.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/race1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/race1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/sky1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/sky1.webp"
+                                                },
+
+                                        ];
+
+                                        unsafeWindow.fetch = async (url, options) => {
+
+                                                return originFetch(url, options).then(async (response) => {
+
+                                                        for (let resource of resources) {
+
+                                                                let createPreview = (url) => {
+
+                                                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+                                                                        return new RegExp(replacedURL);
+
+                                                                };
+
+                                                                let preview = createPreview(resource.orig);
+
+                                                                if (preview.test(url)) {
+
+                                                                        return new Promise((resolve, reject) => {
+
+                                                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
+
+                                                                                        onload: response => {
+
+                                                                                                if (response.status == 200) {
+
+                                                                                                        resolve(new Response(response.response, {
+
+                                                                                                                status: 200,
+                                                                                                                statusText: "OK",
+                                                                                                                headers: { "Content-Type": response.response.type }
+
+                                                                                                        }));
+
+                                                                                                } else {
+
+                                                                                                        reject();
+
+                                                                                                };
+
+                                                                                        },
+
+                                                                                        onerror: reject
+
+                                                                                });
+
+                                                                        });
+
+                                                                };
+
+                                                        };
+
+                                                        return response
+
+                                                });
+
+                                        };
+
+                                };
+
+                                if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'night') {
+
+                                        if (nightButton) {
+
+                                                nightButton.style = 'background-color: rgb(255 255 255 / 10%)'
+
+                                        };
+
+                                        let darkening = document.getElementsByClassName('MainScreenComponentStyle-gradientBlockRight')[0];
+
+                                        if (darkening) {
+
+                                                darkening.style = 'background: radial-gradient(black 10%, transparent 60%); visibility: visible; position: absolute; right: 2em; width: 100%; height: 100%; opacity: 0.35'
+
+                                        };
+
+                                        let vignette = document.getElementsByClassName('MainScreenComponentStyle-gradientBlock')[0];
+
+                                        if (vignette) {
+
+                                                vignette.style = 'background: radial-gradient(transparent 25%, rgb(0 0 0 / 20%))'
+
+                                        };
+
+                                        let resources = [
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/bg1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bg1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/bl.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bl.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/flr1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/flr1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/gar1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/gar1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/pl1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/pl2.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl2.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/race1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/race1.webp"
+                                                },
+
+                                                {
+                                                        orig: "/601/166176/165/206/31167700267244/sky1.webp",
+                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/sky1.webp"
+                                                },
+
+                                        ];
+
+                                        unsafeWindow.fetch = async (url, options) => {
+
+                                                return originFetch(url, options).then(async (response) => {
+
+                                                        for (let resource of resources) {
+
+                                                                let createPreview = (url) => {
+
+                                                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+                                                                        return new RegExp(replacedURL);
+
+                                                                };
+
+                                                                let preview = createPreview(resource.orig);
+
+                                                                if (preview.test(url)) {
+
+                                                                        return new Promise((resolve, reject) => {
+
+                                                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
+
+                                                                                        onload: response => {
+
+                                                                                                if (response.status == 200) {
+
+                                                                                                        resolve(new Response(response.response, {
+
+                                                                                                                status: 200,
+                                                                                                                statusText: "OK",
+                                                                                                                headers: { "Content-Type": response.response.type }
+
+                                                                                                        }));
+
+                                                                                                } else {
+
+                                                                                                        reject();
+
+                                                                                                };
+
+                                                                                        },
+
+                                                                                        onerror: reject
+
+                                                                                });
+
+                                                                        });
+
+                                                                };
+
+                                                        };
+
+                                                        return response
+
+                                                });
+
+                                        };
+
+                                };
+
+                        };
+
+                        function rankImage() {
+
+                                let img = document.getElementsByClassName('UserInfoContainerStyle-titleRankIcon')[0];
+
+                                if (img) {
+
+                                        if (img.src === 'https://tankionline.com/play/static/images/31.06d52fbe.webp') {
+
+                                                img.src = 'data:image/webp;base64,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'
+
+                                        };
+
+                                };
+
+                        };
+
+                        function startScreen() {
+
+                                let mainHeader = document.querySelector('.StartScreenComponentStyle-mainContainer');
+
+                                if (mainHeader) {
+
+                                        let mainHeaderimg = document.createElement('div');
+                                            mainHeaderimg.className = 'obscDOMElement-startScreen-logo'
+
+                                        mainHeader.appendChild(mainHeaderimg);
+
+                                        let mainHeaderh1 = document.createElement('h1');
+                                            mainHeaderh1.className = 'obscDOMElement-startScreen-h1'
+                                            mainHeaderh1.innerHTML = 'Obscurum'
+
+                                        mainHeader.appendChild(mainHeaderh1);
+
+                                        let mainHeaderh2 = document.createElement('h2');
+                                            mainHeaderh2.className = 'obscDOMElement-startScreen-h2'
+                                            mainHeaderh2.innerHTML = version
+
+                                        mainHeader.appendChild(mainHeaderh2);
+
+                                };
+
+                        };
+
+
+                        function createWindow() {
+
+                                let mainHeader = document.getElementsByClassName('ModalStyle-rootHover')[0];
+
+                                let window = document.createElement('div');
+                                    window.className = 'ModalStyle-surfaceWindow'
+
+                                if (mainHeader) {
+
+                                        mainHeader.appendChild(window);
+
+                                };
+
+                        };
+
+                        function applicationLoader() {
+
+                                let mainHeader = document.getElementsByClassName('ApplicationLoaderComponentStyle-container')[0];
+
+                                if (mainHeader) {
+
+                                        let innerGear = document.createElement('div');
+                                            innerGear.className = 'loadingAnimation-innerGear'
+
+                                            mainHeader.appendChild(innerGear);
+
+                                        let innerRing = document.createElement('div');
+                                            innerRing.className = 'loadingAnimation-innerRing'
+
+                                            mainHeader.appendChild(innerRing);
+
+                                        let outerRing = document.createElement('div');
+                                            outerRing.className = 'loadingAnimation-outerRing'
+
+                                            innerRing.appendChild(outerRing);
+
+                                };
+
+                        };
+
+                        function lobbyLoader() {
+
+                                let mainHeader = document.getElementsByClassName('LobbyLoaderComponentStyle-container')[0];
+
+                                if (mainHeader) {
+
+                                        let innerGear = document.createElement('div');
+                                            innerGear.className = 'loadingAnimation-innerGear'
+
+                                            mainHeader.appendChild(innerGear);
+
+                                        let innerRing = document.createElement('div');
+                                            innerRing.className = 'loadingAnimation-innerRing'
+
+                                            mainHeader.appendChild(innerRing);
+
+                                        let outerRing = document.createElement('div');
+                                            outerRing.className = 'loadingAnimation-outerRing'
+
+                                            innerRing.appendChild(outerRing);
+
+                                };
+
+                        };
+
                         function mutationsObserver() {
 
                                 let Observer = new MutationObserver(function(inspect) { inspect.forEach(function(Mutation) { if (Mutation.addedNodes.length && Mutation.type === 'childList') { Mutation.addedNodes.forEach(function(element) {
@@ -5261,628 +6395,6 @@
 
                                         };
 
-                                        function primaryNotification() {
-
-                                                let notificationImage = 'data:image/webp;base64,UklGRngDAABXRUJQVlA4WAoAAAAQAAAAHwMAFAIAQUxQSCIAAAABBxARERAIJPurD1BE/zP+85///Oc///nPf/7zn//85/8PVlA4IDADAACwXgCdASogAxUCPpFIoU0lpCMiIAgAsBIJaW7hd2EbQAnsA99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPekAAP7/3gioPGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA='
-
-                                                let mainNotification = document.querySelectorAll('.PrimaryMenuItemComponentStyle-notificationIconNewNews');
-
-                                                for (let i = 0; i < mainNotification.length; i++) {
-
-                                                    mainNotification[i].src = notificationImage
-
-                                                };
-
-                                                let footerNotification = document.querySelectorAll('.MainScreenComponentStyle-new.FooterComponentStyle-marginEllips');
-
-                                                for (let i = 0; i < footerNotification.length; i++) {
-
-                                                    footerNotification[i].src = notificationImage
-
-                                                };
-
-                                        };
-
-                                        function lobbyClocks() {
-
-                                                let mainHeader = document.getElementsByClassName('UserInfoContainerStyle-blockForIconTankiOnline')[0];
-
-                                                if (mainHeader) {
-
-                                                        let days
-
-                                                        let date = new Date();
-
-                                                        let clockDays = document.createElement('div');
-                                                            clockDays.className = 'obscDOMElement-clockDays'
-
-                                                        mainHeader.appendChild(clockDays);
-
-                                                        let clockTime = document.createElement('div');
-                                                            clockTime.className = 'obscDOMElement-clockTime'
-
-                                                        mainHeader.appendChild(clockTime);
-
-                                                        if (localStorage.getItem('language_store_key') == 'RU') {
-
-                                                                days = [ 'Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота' ];
-
-                                                        } else {
-
-                                                                days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
-
-                                                        };
-
-                                                        clockDays.innerHTML = `${days[new Date().getDay().toLocaleString()]}, ${new Date().toISOString().slice(0,10).split('-').reverse().join('.')}`
-
-                                                        clockTime.innerHTML = new Date().toLocaleString().slice(12, 20).split('-').join('.');
-
-                                                        setInterval(function() {
-
-                                                                clockDays.innerHTML = `${days[new Date().getDay().toLocaleString()]}, ${new Date().toISOString().slice(0,10).split('-').reverse().join('.')}`
-
-                                                                clockTime.innerHTML = new Date().toLocaleString().slice(12, 20).split('-').join('.');
-
-                                                        }, 1000);
-
-                                                };
-
-                                        };
-
-                                        function garageStyles() {
-
-                                                let mainHeader = document.getElementsByClassName('MainScreenComponentStyle-gradientBlock')[0];
-
-                                                if (mainHeader) {
-
-                                                        let buttonsHeader = document.createElement('div');
-                                                            buttonsHeader.className = 'obscDOMElement-buttonsHeader'
-
-                                                        mainHeader.appendChild(buttonsHeader);
-
-                                                        if (buttonsHeader) {
-
-                                                                function visibilityON() {
-
-                                                                        let elements = [
-
-                                                                                {
-                                                                                        selector: '.obscDOMElement-garageVisibility',
-                                                                                        style: `
-                                                                                                background-color: rgb(255 255 255 / 10%) !important;
-                                                                                        `
-                                                                                },
-
-                                                                                {
-                                                                                        selector: '.Common-container, .NotificationViewStyle-commonBlockNotification',
-                                                                                        style: `
-                                                                                                pointer-events: none;
-                                                                                        `
-                                                                                },
-
-                                                                                {
-                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient:before',
-                                                                                        style: `
-                                                                                                opacity: 0;
-                                                                                        `
-                                                                                },
-
-                                                                                {
-                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient:after',
-                                                                                        style: `
-                                                                                                opacity: 0;
-                                                                                        `
-                                                                                },
-
-
-                                                                                {
-                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex',
-                                                                                        style: `
-                                                                                                opacity: 0;
-                                                                                        `
-                                                                                },
-
-
-                                                                                {
-                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .MainScreenComponentStyle-blockMainMenu',
-                                                                                        style: `
-                                                                                                opacity: 0;
-                                                                                        `
-                                                                                },
-
-
-                                                                                {
-                                                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer',
-                                                                                        style: `
-                                                                                                opacity: 0;
-                                                                                        `
-                                                                                },
-
-                                                                                {
-                                                                                        selector: '.BattlePassLobbyComponentStyle-menuBattlePass',
-                                                                                        style: `
-                                                                                                opacity: 0;
-                                                                                        `
-                                                                                },
-
-                                                                                {
-                                                                                        selector: '.EventBattlePassLobbyComponentStyle-buttonEventBattlePass',
-                                                                                        style: `
-                                                                                                opacity: 0;
-                                                                                        `
-                                                                                },
-
-                                                                                {
-                                                                                        selector: '.AnnouncementHomeScreenComponentStyle-mainContainer',
-                                                                                        style: `
-                                                                                                opacity: 0;
-                                                                                        `
-                                                                                },
-
-                                                                        ];
-
-                                                                        let cssStyles = document.createElement(`style`);
-                                                                            cssStyles.className = `obscStyleSheet-garageVisibility`
-
-                                                                        elements.forEach((element) => {
-
-                                                                                let css = `${element.selector} {${element.style}}\n`
-
-                                                                                cssStyles.textContent += css.split(`                `).join(``);
-
-                                                                        });
-
-                                                                        variableHeader.appendChild(cssStyles);
-
-                                                                };
-
-                                                                function visibilityOFF() {
-
-                                                                        let cssStyles = document.getElementsByClassName('obscStyleSheet-garageVisibility')[0];
-
-                                                                        if (cssStyles) {
-
-                                                                                variableHeader.removeChild(cssStyles);
-
-                                                                        };
-
-                                                                };
-
-                                                                let visibility = document.createElement('div');
-                                                                    visibility.className = 'obscDOMElement-garageVisibility'
-
-                                                                buttonsHeader.appendChild(visibility);
-
-                                                                let pressCount = 0
-
-                                                                if (visibility) {
-
-                                                                        visibility.addEventListener('click', function() {
-
-                                                                                pressCount++
-
-                                                                                if (pressCount == 1) {
-
-                                                                                        visibilityON();
-
-                                                                                };
-
-                                                                                if (pressCount == 2) {
-
-                                                                                        pressCount = 0
-
-                                                                                        visibilityOFF();
-
-                                                                                };
-
-                                                                        });
-
-                                                                };
-
-                                                                let pressCount1 = localStorage.getItem('obscLocalStorageVariable-garageDefault-pressCount');
-                                                                let pressCount2 = localStorage.getItem('obscLocalStorageVariable-garageEvening-pressCount');
-                                                                let pressCount3 = localStorage.getItem('obscLocalStorageVariable-garageNight-pressCount');
-
-                                                                let defaultButton = document.createElement('div');
-                                                                    defaultButton.className = 'obscDOMElement-defaultButton'
-
-                                                                buttonsHeader.appendChild(defaultButton);
-
-                                                                if (defaultButton) {
-
-                                                                        defaultButton.addEventListener('click', function() {
-
-                                                                                pressCount1++
-
-                                                                                pressCount2 = 0
-                                                                                pressCount3 = 0
-
-                                                                                if (pressCount1 == 1) {
-
-                                                                                        defaultButton.style = 'background-color: rgb(255 255 255 / 5%)'
-
-                                                                                        eveningButton.style = ''
-                                                                                        nightButton.style = ''
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 1);
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 0);
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 0);
-
-                                                                                };
-
-                                                                                if (pressCount1 == 2) {
-
-                                                                                        pressCount1 = 0
-
-                                                                                        defaultButton.style = ''
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 0);
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
-
-                                                                                };
-
-                                                                        });
-
-                                                                };
-
-                                                                var eveningButton = document.createElement('div');
-                                                                    eveningButton.className = 'obscDOMElement-eveningButton'
-
-                                                                buttonsHeader.appendChild(eveningButton);
-
-                                                                if (eveningButton) {
-
-                                                                        eveningButton.addEventListener('click', function() {
-
-                                                                                pressCount2++
-
-                                                                                pressCount1 = 0
-                                                                                pressCount3 = 0
-
-                                                                                if (pressCount2 == 1) {
-
-                                                                                        eveningButton.style = 'background-color: rgb(255 255 255 / 10%)'
-
-                                                                                        defaultButton.style = ''
-                                                                                        nightButton.style = ''
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'evening');
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 1);
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 0);
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 0);
-
-                                                                                };
-
-                                                                                if (pressCount2 == 2) {
-
-                                                                                        pressCount2 = 0
-
-                                                                                        eveningButton.style = ''
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 0);
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
-
-                                                                                };
-
-                                                                        });
-
-                                                                };
-
-                                                                var nightButton = document.createElement('div');
-                                                                    nightButton.className = 'obscDOMElement-nightButton'
-
-                                                                buttonsHeader.appendChild(nightButton);
-
-                                                                if (nightButton) {
-
-                                                                        nightButton.addEventListener('click', function() {
-
-                                                                                pressCount3++
-
-                                                                                pressCount1 = 0
-                                                                                pressCount2 = 0
-
-                                                                                if (pressCount3 == 1) {
-
-                                                                                        nightButton.style = 'background-color: rgb(255 255 255 / 10%)'
-
-                                                                                        defaultButton.style = ''
-                                                                                        eveningButton.style = ''
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'night');
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 1);
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageDefault-pressCount', 0);
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageEvening-pressCount', 0);
-
-                                                                                };
-
-                                                                                if (pressCount3 == 2) {
-
-                                                                                        pressCount3 = 0
-
-                                                                                        nightButton.style = ''
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageNight-pressCount', 0);
-
-                                                                                        localStorage.setItem('obscLocalStorageVariable-garageStyle', 'default');
-
-                                                                                };
-
-                                                                        });
-
-                                                                };
-
-                                                        };
-
-                                                };
-
-                                                if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'evening') {
-
-                                                        if (eveningButton) {
-
-                                                                eveningButton.style = 'background-color: rgb(255 255 255 / 10%)'
-
-                                                        };
-
-                                                        let resources = [
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/bg1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bg1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/bl.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bl.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/flr1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/flr1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/gar1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/gar1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/pl1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/pl2.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl2.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/race1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/race1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/sky1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/sky1.webp"
-                                                                },
-
-                                                        ];
-
-                                                        unsafeWindow.fetch = async (url, options) => {
-
-                                                                return originFetch(url, options).then(async (response) => {
-
-                                                                        for (let resource of resources) {
-
-                                                                                let createPreview = (url) => {
-
-                                                                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-                                                                                        return new RegExp(replacedURL);
-
-                                                                                };
-
-                                                                                let preview = createPreview(resource.orig);
-
-                                                                                if (preview.test(url)) {
-
-                                                                                        return new Promise((resolve, reject) => {
-
-                                                                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
-
-                                                                                                        onload: response => {
-
-                                                                                                                if (response.status == 200) {
-
-                                                                                                                        resolve(new Response(response.response, {
-
-                                                                                                                                status: 200,
-                                                                                                                                statusText: "OK",
-                                                                                                                                headers: { "Content-Type": response.response.type }
-
-                                                                                                                        }));
-
-                                                                                                                } else {
-
-                                                                                                                        reject();
-
-                                                                                                                };
-
-                                                                                                        },
-
-                                                                                                        onerror: reject
-
-                                                                                                });
-
-                                                                                        });
-
-                                                                                };
-
-                                                                        };
-
-                                                                        return response
-
-                                                                });
-
-                                                        };
-
-                                                };
-
-                                                if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'night') {
-
-                                                        if (nightButton) {
-
-                                                                nightButton.style = 'background-color: rgb(255 255 255 / 10%)'
-
-                                                        };
-
-                                                        let darkening = document.getElementsByClassName('MainScreenComponentStyle-gradientBlockRight')[0];
-
-                                                        if (darkening) {
-
-                                                                darkening.style = 'background: radial-gradient(black 10%, transparent 60%); visibility: visible; position: absolute; right: 2em; width: 100%; height: 100%; opacity: 0.35'
-
-                                                        };
-
-                                                        let vignette = document.getElementsByClassName('MainScreenComponentStyle-gradientBlock')[0];
-
-                                                        if (vignette) {
-
-                                                                vignette.style = 'background: radial-gradient(transparent 25%, rgb(0 0 0 / 20%))'
-
-                                                        };
-
-                                                        let resources = [
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/bg1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bg1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/bl.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bl.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/flr1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/flr1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/gar1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/gar1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/pl1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/pl2.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl2.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/race1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/race1.webp"
-                                                                },
-
-                                                                {
-                                                                        orig: "/601/166176/165/206/31167700267244/sky1.webp",
-                                                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/sky1.webp"
-                                                                },
-
-                                                        ];
-
-                                                        unsafeWindow.fetch = async (url, options) => {
-
-                                                                return originFetch(url, options).then(async (response) => {
-
-                                                                        for (let resource of resources) {
-
-                                                                                let createPreview = (url) => {
-
-                                                                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-                                                                                        return new RegExp(replacedURL);
-
-                                                                                };
-
-                                                                                let preview = createPreview(resource.orig);
-
-                                                                                if (preview.test(url)) {
-
-                                                                                        return new Promise((resolve, reject) => {
-
-                                                                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
-
-                                                                                                        onload: response => {
-
-                                                                                                                if (response.status == 200) {
-
-                                                                                                                        resolve(new Response(response.response, {
-
-                                                                                                                                status: 200,
-                                                                                                                                statusText: "OK",
-                                                                                                                                headers: { "Content-Type": response.response.type }
-
-                                                                                                                        }));
-
-                                                                                                                } else {
-
-                                                                                                                        reject();
-
-                                                                                                                };
-
-                                                                                                        },
-
-                                                                                                        onerror: reject
-
-                                                                                                });
-
-                                                                                        });
-
-                                                                                };
-
-                                                                        };
-
-                                                                        return response
-
-                                                                });
-
-                                                        };
-
-                                                };
-
-                                        };
-
-                                        function rankImage() {
-
-                                                let img = document.getElementsByClassName('UserInfoContainerStyle-titleRankIcon')[0];
-
-                                                if (img) {
-
-                                                        if (img.src === 'https://tankionline.com/play/static/images/31.06d52fbe.webp') {
-
-                                                                img.src = 'data:image/webp;base64,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'
-
-                                                        };
-
-                                                };
-
-                                        };
-
                                         primaryNotification();
 
                                         lobbyClocks();
@@ -5891,24 +6403,11 @@
 
                                         rankImage();
 
+                                        startScreen();
+
                                 };
 
                                 if (element.nodeType === 1 && element.classList.contains('ModalStyle-rootHover')) {
-
-                                        function createWindow() {
-
-                                                let mainHeader = document.getElementsByClassName('ModalStyle-rootHover')[0];
-
-                                                let window = document.createElement('div');
-                                                    window.className = 'ModalStyle-surfaceWindow'
-
-                                                if (mainHeader) {
-
-                                                        mainHeader.appendChild(window);
-
-                                                };
-
-                                        };
 
                                         createWindow();
 
@@ -5918,31 +6417,6 @@
 
                                 if (element.nodeType === 1 && element.classList.contains('ApplicationLoaderComponentStyle-container') && element.classList.contains('Common-flexCenterAlignCenterColumn')) {
 
-                                        function applicationLoader() {
-
-                                                let mainHeader = document.getElementsByClassName('ApplicationLoaderComponentStyle-container')[0];
-
-                                                if (mainHeader) {
-
-                                                        let innerGear = document.createElement('div');
-                                                            innerGear.className = 'loadingAnimation-innerGear'
-
-                                                            mainHeader.appendChild(innerGear);
-
-                                                        let innerRing = document.createElement('div');
-                                                            innerRing.className = 'loadingAnimation-innerRing'
-
-                                                            mainHeader.appendChild(innerRing);
-
-                                                        let outerRing = document.createElement('div');
-                                                            outerRing.className = 'loadingAnimation-outerRing'
-
-                                                            innerRing.appendChild(outerRing);
-
-                                                };
-
-                                        };
-
                                         applicationLoader();
 
                                 };
@@ -5951,38 +6425,21 @@
 
                                 if (element.nodeType === 1 && element.classList.contains('LobbyLoaderComponentStyle-container')) {
 
-                                        function lobbyLoader() {
-
-                                                let mainHeader = document.getElementsByClassName('LobbyLoaderComponentStyle-container')[0];
-
-                                                if (mainHeader) {
-
-                                                        let innerGear = document.createElement('div');
-                                                            innerGear.className = 'loadingAnimation-innerGear'
-
-                                                            mainHeader.appendChild(innerGear);
-
-                                                        let innerRing = document.createElement('div');
-                                                            innerRing.className = 'loadingAnimation-innerRing'
-
-                                                            mainHeader.appendChild(innerRing);
-
-                                                        let outerRing = document.createElement('div');
-                                                            outerRing.className = 'loadingAnimation-outerRing'
-
-                                                            innerRing.appendChild(outerRing);
-
-                                                };
-
-                                        };
-
                                         lobbyLoader();
 
                                 };
 
                                 }); }}); });
 
-                                let Configuration = { subtree: true, childList: true }; Observer.observe(document.body, Configuration);
+                                let Configuration = {
+
+                                        subtree: true,
+
+                                        childList: true
+
+                                };
+
+                                Observer.observe(document.body, Configuration);
 
                         };
 
@@ -6104,8 +6561,6 @@
 
                         applyBackground();
 
-                        resistancesArray();
-
                 } else {
 
                         console.log(`Obscurum ${version} is not available.\n` + window.location.href);
@@ -6115,6 +6570,8 @@
         };
 
         styleSheet();
+
+        resistancesArray();
 
         dynamicCheck();
 
