@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.96'
+        var version = 'v0.961'
 
         var originFetch = unsafeWindow.fetch
 
@@ -37,8 +37,8 @@
                         border_radius: '1.25em',
                         box_shadow: '0 0 2em 0 rgb(0 0 0 / 65%)',
 
-                        backdrop_filter: 'blur(16px)',
-                        least_backdrop_filter: 'blur(6px)',
+                        backdrop_filter: 'blur(12px)',
+                        least_backdrop_filter: 'blur(4px)',
 
                         color: 'rgb(255 157 71)',
                         least_color: 'rgb(255 157 71 / 25%)',
@@ -111,7 +111,7 @@
                             selector: '.obscDOMElement-clockDays',
                             style: `
                                     position: absolute;
-                                    margin-top: 1.5em;
+                                    margin-top: 1.6em;
                                     font-family: 'BaseFontRegular';
                                     font-size: 1.7em;
                                     color: rgb(255 255 255 / 50%);
@@ -122,134 +122,10 @@
                             selector: '.obscDOMElement-clockTime',
                             style: `
                                     position: absolute;
-                                    margin-bottom: 0.85em;
+                                    margin-bottom: 0.9em;
                                     font-family: 'BaseFontMedium';
                                     font-size: 2.25em;
                                     color: white;
-                            `
-                    },
-
-                    {
-                            selector: '.obscDOMElement-holdingCard',
-                            style: `
-                                    background: var(--general-bg);
-                                    outline: var(--general-outline);
-                                    box-shadow: var(--general-box-shadow);
-                                    border-radius: var(--general-border-radius);
-
-                                    position: absolute;
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: flex-start;
-                                    top: 48.5em;
-                                    left: 2em;
-                                    width: 28em;
-                                    height: 10em;
-                                    z-index: 20;
-
-                                    transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.obscDOMElement-holdingCard > a',
-                            style: `
-                                    display: flex;
-                                    align-items: center;
-                                    margin: 0.5em 0;
-                                    transform: translate(3em, 1em);
-                            `
-                    },
-
-                    {
-                            selector: '.obscDOMElement-holdingCard-text1',
-                            style: `
-                                    color: white;
-                                    font-size: 1.5em;
-                                    font-family: 'BaseFontMedium';
-                                    font-weight: unset;
-
-                                    position: relative;
-                                    top: 0.575em;
-                                    left: 2em;
-                                    margin: unset;
-                            `
-                    },
-
-                    {
-                            selector: '.obscDOMElement-holdingCard-text1:before',
-                            style: `
-                                        content: '';
-                                        background-color: var(--general-color);
-
-                                        mask-image: url(data:image/png;base64,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);
-                                        mask-position: center;
-                                        mask-size: contain;
-                                        mask-repeat: no-repeat;
-
-                                        position: absolute;
-                                        width: 1em;
-                                        height: 1em;
-                                        transform: translatex(-1.3em);
-                            `
-                    },
-
-                    {
-                            selector: `.obscDOMElement-holdingCard-text2,
-                                       .obscDOMElement-holdingCard-text3,
-                                       .obscDOMElement-holdingCard-text4`,
-                            style: `
-                                    color: rgb(255 255 255 / 75%);
-
-                                    transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: `.obscDOMElement-holdingCard-text2:hover,
-                                       .obscDOMElement-holdingCard-text3:hover,
-                                       .obscDOMElement-holdingCard-text4:hover`,
-                            style: `
-                                    color: white;
-                                    cursor: pointer;
-                            `
-                    },
-
-                    {
-                            selector: `.obscDOMElement-holdingCard-text2:before`,
-                            style: `
-                                    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMjMuMDRDMCAxMi4xNzg4IDAgNi43NDgyNiAzLjM3NDEzIDMuMzc0MTNDNi43NDgyNiAwIDEyLjE3ODggMCAyMy4wNCAwSDI0Ljk2QzM1LjgyMTIgMCA0MS4yNTE3IDAgNDQuNjI1OSAzLjM3NDEzQzQ4IDYuNzQ4MjYgNDggMTIuMTc4OCA0OCAyMy4wNFYyNC45NkM0OCAzNS44MjEyIDQ4IDQxLjI1MTcgNDQuNjI1OSA0NC42MjU5QzQxLjI1MTcgNDggMzUuODIxMiA0OCAyNC45NiA0OEgyMy4wNEMxMi4xNzg4IDQ4IDYuNzQ4MjYgNDggMy4zNzQxMyA0NC42MjU5QzAgNDEuMjUxNyAwIDM1LjgyMTIgMCAyNC45NlYyMy4wNFoiIGZpbGw9IiMwMDc3RkYiLz4KPHBhdGggZD0iTTI1LjU0IDM0LjU4MDFDMTQuNiAzNC41ODAxIDguMzYwMSAyNy4wODAxIDguMTAwMSAxNC42MDAxSDEzLjU4MDFDMTMuNzYwMSAyMy43NjAxIDE3LjggMjcuNjQwMSAyMSAyOC40NDAxVjE0LjYwMDFIMjYuMTYwMlYyMi41MDAxQzI5LjMyMDIgMjIuMTYwMSAzMi42Mzk4IDE4LjU2MDEgMzMuNzU5OCAxNC42MDAxSDM4LjkxOTlDMzguMDU5OSAxOS40ODAxIDM0LjQ1OTkgMjMuMDgwMSAzMS44OTk5IDI0LjU2MDFDMzQuNDU5OSAyNS43NjAxIDM4LjU2MDEgMjguOTAwMSA0MC4xMjAxIDM0LjU4MDFIMzQuNDM5OUMzMy4yMTk5IDMwLjc4MDEgMzAuMTgwMiAyNy44NDAxIDI2LjE2MDIgMjcuNDQwMVYzNC41ODAxSDI1LjU0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
-                            `
-                    },
-
-                    {
-                            selector: '.obscDOMElement-holdingCard-text3:before',
-                            style: `
-                                    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwLDAsMjU2LDI1NiIgd2lkdGg9IjYwcHgiIGhlaWdodD0iNjBweCIgZmlsbC1ydWxlPSJub256ZXJvIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzAuNzIsLTMwLjcyKSBzY2FsZSgxLjI0LDEuMjQpIj48ZyBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vbmUiIGZvbnQtc2l6ZT0ibm9uZSIgdGV4dC1hbmNob3I9Im5vbmUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48ZyB0cmFuc2Zvcm09InNjYWxlKDguNTMzMzMsOC41MzMzMykiPjxwYXRoIGQ9Ik0xNSwzYy02LjYyNywwIC0xMiw1LjM3MyAtMTIsMTJjMCw1LjYyMyAzLjg3MiwxMC4zMjggOS4wOTIsMTEuNjNjLTAuMDU2LC0wLjE2MiAtMC4wOTIsLTAuMzUgLTAuMDkyLC0wLjU4M3YtMi4wNTFjLTAuNDg3LDAgLTEuMzAzLDAgLTEuNTA4LDBjLTAuODIxLDAgLTEuNTUxLC0wLjM1MyAtMS45MDUsLTEuMDA5Yy0wLjM5MywtMC43MjkgLTAuNDYxLC0xLjg0NCAtMS40MzUsLTIuNTI2Yy0wLjI4OSwtMC4yMjcgLTAuMDY5LC0wLjQ4NiAwLjI2NCwtMC40NTFjMC42MTUsMC4xNzQgMS4xMjUsMC41OTYgMS42MDUsMS4yMjJjMC40NzgsMC42MjcgMC43MDMsMC43NjkgMS41OTYsMC43NjljMC40MzMsMCAxLjA4MSwtMC4wMjUgMS42OTEsLTAuMTIxYzAuMzI4LC0wLjgzMyAwLjg5NSwtMS42IDEuNTg4LC0xLjk2MmMtMy45OTYsLTAuNDExIC01LjkwMywtMi4zOTkgLTUuOTAzLC01LjA5OGMwLC0xLjE2MiAwLjQ5NSwtMi4yODYgMS4zMzYsLTMuMjMzYy0wLjI3NiwtMC45NCAtMC42MjMsLTIuODU3IDAuMTA2LC0zLjU4N2MxLjc5OCwwIDIuODg1LDEuMTY2IDMuMTQ2LDEuNDgxYzAuODk2LC0wLjMwNyAxLjg4LC0wLjQ4MSAyLjkxNCwtMC40ODFjMS4wMzYsMCAyLjAyNCwwLjE3NCAyLjkyMiwwLjQ4M2MwLjI1OCwtMC4zMTMgMS4zNDYsLTEuNDgzIDMuMTQ4LC0xLjQ4M2MwLjczMiwwLjczMSAwLjM4MSwyLjY1NiAwLjEwMiwzLjU5NGMwLjgzNiwwLjk0NSAxLjMyOCwyLjA2NiAxLjMyOCwzLjIyNmMwLDIuNjk3IC0xLjkwNCw0LjY4NCAtNS44OTQsNS4wOTdjMS4wOTgsMC41NzMgMS44OTksMi4xODMgMS44OTksMy4zOTZ2Mi43MzRjMCwwLjEwNCAtMC4wMjMsMC4xNzkgLTAuMDM1LDAuMjY4YzQuNjc2LC0xLjYzOSA4LjAzNSwtNi4wNzkgOC4wMzUsLTExLjMxNWMwLC02LjYyNyAtNS4zNzMsLTEyIC0xMiwtMTJ6Ij48L3BhdGg+PC9nPjwvZz48L2c+PC9zdmc+);
-                            `
-                    },
-
-                    {
-                            selector: '.obscDOMElement-holdingCard-text4:before',
-                            style: `
-                                    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwLDAsMjU2LDI1NiIgd2lkdGg9IjYwcHgiIGhlaWdodD0iNjBweCIgZmlsbC1ydWxlPSJub256ZXJvIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTEuNTIsLTExLjUyKSBzY2FsZSgxLjA5LDEuMDkpIj48ZyBmaWxsPSIjOGM5ZWZmIiBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0iYnV0dCIgc3Ryb2tlLWxpbmVqb2luPSJtaXRlciIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtZGFzaGFycmF5PSIiIHN0cm9rZS1kYXNob2Zmc2V0PSIwIiBmb250LWZhbWlseT0ibm9uZSIgZm9udC13ZWlnaHQ9Im5vbmUiIGZvbnQtc2l6ZT0ibm9uZSIgdGV4dC1hbmNob3I9Im5vbmUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTogbm9ybWFsIj48ZyB0cmFuc2Zvcm09InNjYWxlKDUuMzMzMzMsNS4zMzMzMykiPjxwYXRoIGQ9Ik00MCwxMmMwLDAgLTQuNTg1LC0zLjU4OCAtMTAsLTRsLTAuNDg4LDAuOTc2YzQuODk2LDEuMTk4IDcuMTQyLDIuOTE1IDkuNDg4LDUuMDI0Yy00LjA0NSwtMi4wNjUgLTguMDM5LC00IC0xNSwtNGMtNi45NjEsMCAtMTAuOTU1LDEuOTM1IC0xNSw0YzIuMzQ2LC0yLjEwOSA1LjAxOCwtNC4wMTUgOS40ODgsLTUuMDI0bC0wLjQ4OCwtMC45NzZjLTUuNjgxLDAuNTM3IC0xMCw0IC0xMCw0YzAsMCAtNS4xMjEsNy40MjUgLTYsMjJjNS4xNjIsNS45NTMgMTMsNiAxMyw2bDEuNjM5LC0yLjE4NWMtMi43ODIsLTAuOTY3IC01LjkyNCwtMi42OTQgLTguNjM5LC01LjgxNWMzLjIzOCwyLjQ1IDguMTI1LDUgMTYsNWM3Ljg3NSwwIDEyLjc2MiwtMi41NSAxNiwtNWMtMi43MTUsMy4xMjEgLTUuODU3LDQuODQ4IC04LjYzOSw1LjgxNWwxLjYzOSwyLjE4NWMwLDAgNy44MzgsLTAuMDQ3IDEzLC02Yy0wLjg3OSwtMTQuNTc1IC02LC0yMiAtNiwtMjJ6TTE3LjUsMzBjLTEuOTMzLDAgLTMuNSwtMS43OTEgLTMuNSwtNGMwLC0yLjIwOSAxLjU2NywtNCAzLjUsLTRjMS45MzMsMCAzLjUsMS43OTEgMy41LDRjMCwyLjIwOSAtMS41NjcsNCAtMy41LDR6TTMwLjUsMzBjLTEuOTMzLDAgLTMuNSwtMS43OTEgLTMuNSwtNGMwLC0yLjIwOSAxLjU2NywtNCAzLjUsLTRjMS45MzMsMCAzLjUsMS43OTEgMy41LDRjMCwyLjIwOSAtMS41NjcsNCAtMy41LDR6Ij48L3BhdGg+PC9nPjwvZz48L2c+PC9zdmc+);
-                            `
-                    },
-
-                    {
-                            selector: `.obscDOMElement-holdingCard-text2:before,
-                                       .obscDOMElement-holdingCard-text3:before,
-                                       .obscDOMElement-holdingCard-text4:before`,
-                            style: `
-                                    content: '';
-                                    background-position: center;
-                                    background-size: 1em;
-                                    background-repeat: no-repeat;
-
-                                    position: absolute;
-                                    width: 1.5em;
-                                    height: 1.5em;
-                                    transform: translatex(-2em);
                             `
                     },
 
@@ -1308,6 +1184,7 @@
                                     position: absolute;
                                     bottom: 1em;
                                     width: 31em;
+                                    height: 7em;
                             `
                     },
 
@@ -1377,7 +1254,7 @@
                                     top: 7em;
                                     left: 0em;
                                     width: 31em;
-                                    height: 78%;
+                                    height: 60%;
                                     z-index: 1;
                                     pointer-events: none;
 
@@ -3001,14 +2878,14 @@
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn > .UsersTableStyle-row',
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row',
                             style: `
                                     width: inherit;
                             `
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn > .UsersTableStyle-rowBattle',
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-rowBattle',
                             style: `
                                     width: inherit;
                             `
@@ -3031,8 +2908,8 @@
                     },
 
                     {
-                            selector: `.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn > .UsersTableStyle-row > .UsersTableStyle-rowBattle,
-                                       .UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn > .UsersTableStyle-row > .UsersTableStyle-rowBattleEmpty`,
+                            selector: `.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle,
+                                       .UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattleEmpty`,
                             style: `
                                     background: var(--general-bg);
                                     border-radius: unset;
@@ -3047,21 +2924,21 @@
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn > .UsersTableStyle-row > .UsersTableStyle-rowBattle:hover',
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle:hover',
                             style: `
                                     background: var(--general-bg-hover);
                             `
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer',
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer',
                             style: `
                                     width: 100%;
                             `
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn:first-child > .UsersTableStyle-row > td:first-child',
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row:first-child > td:first-child',
                             style: `
                                     border-top-left-radius: var(--general-border-radius);
                                     border-top-right-radius: 0.65em;
@@ -3070,7 +2947,7 @@
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn:first-child > .UsersTableStyle-row > td:last-child',
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row:first-child > td:last-child',
                             style: `
                                     border-top-left-radius: 0.65em;
                                     border-top-right-radius: var(--general-border-radius);
@@ -3079,7 +2956,7 @@
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn:last-child > .UsersTableStyle-row > td:first-child',
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row:last-child > td:first-child',
                             style: `
                                     border-bottom-left-radius: var(--general-border-radius);
                                     border-bottom-right-radius: 0.65em;
@@ -3088,7 +2965,7 @@
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .Common-flexStartAlignStartColumn:last-child > .UsersTableStyle-row > td:last-child',
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row:last-child > td:last-child',
                             style: `
                                     border-bottom-left-radius: 0.65em;
                                     border-bottom-right-radius: var(--general-border-radius);
@@ -5472,7 +5349,7 @@
                                                                                 {
                                                                                         selector: '.obscDOMElement-garageVisibility',
                                                                                         style: `
-                                                                                                background-color: rgba(255, 255, 255, 0.05) !important;
+                                                                                                background-color: rgb(255 255 255 / 10%) !important;
                                                                                         `
                                                                                 },
 
@@ -5516,13 +5393,6 @@
 
                                                                                 {
                                                                                         selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer',
-                                                                                        style: `
-                                                                                                opacity: 0;
-                                                                                        `
-                                                                                },
-
-                                                                                {
-                                                                                        selector: '.obscDOMElement-holdingCard',
                                                                                         style: `
                                                                                                 opacity: 0;
                                                                                         `
@@ -5997,55 +5867,6 @@
 
                                         };
 
-                                        function developerDetails() {
-
-                                                let mainHeader = document.getElementsByClassName('MainScreenComponentStyle-containerForMenuGradient')[0];
-
-                                                let holdingCard = document.createElement('div');
-                                                    holdingCard.className = 'obscDOMElement-holdingCard'
-
-                                                if (mainHeader) {
-
-                                                        mainHeader.appendChild(holdingCard);
-
-                                                        if (holdingCard) {
-
-                                                                let text1 = document.createElement('h1');
-                                                                    text1.className = 'obscDOMElement-holdingCard-text1'
-                                                                    text1.innerHTML = `Obscurum ${version}`
-
-                                                                holdingCard.appendChild(text1);
-
-                                                                let text2 = document.createElement('a');
-                                                                    text2.className = 'obscDOMElement-holdingCard-text2'
-                                                                    text2.innerHTML = 'https://vk.com/drawingwithblood'
-
-                                                                    text2.setAttribute('href', 'https://vk.com/drawingwithblood');
-                                                                    text2.target = '_blank'
-
-                                                                holdingCard.appendChild(text2);
-
-                                                                let text3 = document.createElement('a');
-                                                                    text3.className = 'obscDOMElement-holdingCard-text3'
-                                                                    text3.innerHTML = 'https://github.com/Indifferental'
-
-                                                                    text3.setAttribute('href', 'https://github.com/Indifferental');
-                                                                    text3.target = '_blank'
-
-                                                                holdingCard.appendChild(text3);
-
-                                                                let text4 = document.createElement('a');
-                                                                    text4.className = 'obscDOMElement-holdingCard-text4'
-                                                                    text4.innerHTML = 'Discord: drawingwithblood'
-
-                                                                holdingCard.appendChild(text4);
-
-                                                        };
-
-                                                };
-
-                                        };
-
                                         function rankImage() {
 
                                                 let img = document.getElementsByClassName('UserInfoContainerStyle-titleRankIcon')[0];
@@ -6067,8 +5888,6 @@
                                         lobbyClocks();
 
                                         garageStyles();
-
-                                        developerDetails();
 
                                         rankImage();
 
@@ -6180,7 +5999,7 @@
 
                                 let text = [
 
-                                        `Initialization complete\nObscurum Theme ${version}`
+                                        `Obscurum ${version}\nInitialization complete`
 
                                 ];
 
@@ -6188,7 +6007,7 @@
 
                                         text = [
 
-                                                `Initialization complete\nWelcome, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
+                                                `Obscurum ${version}\nWelcome, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
 
                                         ];
 
