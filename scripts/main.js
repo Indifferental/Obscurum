@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.97'
+        var version = 'v0.971'
 
         var originFetch = unsafeWindow.fetch
 
@@ -5113,9 +5113,9 @@
 
                 color();
 
-                function pin() {
+                new MutationObserver((mutations) => { mutations.forEach(({ target }) => { if (target.className.includes('BattleComponentStyle-canvasContainer')) {
 
-                        new MutationObserver((mutations) => { mutations.forEach(({ target }) => { if (target.className.includes('BattleComponentStyle-canvasContainer')) {
+                        function pin() {
 
                                 let mainHeader = document.getElementsByClassName('BattleTabStatisticComponentStyle-containerInsideTeams')[0];
 
@@ -5202,70 +5202,11 @@
 
                                 };
 
-                        }})}).observe(document, { subtree: true, childList: true });
-
-                        if (localStorage.getItem('pinResistances') === 'true') {
-
-                                let css = `
-
-                                .BattleTabStatisticComponentStyle-pinResistances {
-                                        background-color: var(--general-color) !important;
-                                }
-
-                                .BattleTabStatisticComponentStyle-containerInsideTeams > .Common-flexCenterAlignCenter {
-                                        opacity: 1;
-                                        margin-top: 0.5em;
-                                }
-
-                                `
-
-                                const body = document.body || document.getElementsByTagName('body')[0];
-
-                                const style = document.createElement('style');
-                                      style.className = 'pinResistances'
-
-                                if (style.styleSheet) {
-
-                                      style.styleSheet.cssText = css
-
-                                } else {
-
-                                      style.appendChild(document.createTextNode(css));
-
-                                };
-
-                                body.appendChild(style);
-
-                                let pressCount
-
-                                pressCount = 1
-
                         };
 
-                        if (localStorage.getItem('pinResistances') === 'false') {
+                        pin();
 
-                                const styleElement = document.querySelector('.pinResistances');
-
-                                if (styleElement) {
-
-                                      styleElement.remove();
-
-                                };
-
-                                let pressCount
-
-                                pressCount = 0
-
-                        };
-
-
-                };
-
-                pin();
-
-                function display() {
-
-                        new MutationObserver((mutations) => { mutations.forEach(({ target }) => { if (target.className.includes('BattleComponentStyle-canvasContainer')) {
+                        function show() {
 
                                 let mainHeader = document.getElementsByClassName('BattleTabStatisticComponentStyle-containerInsideTeams')[0];
 
@@ -5456,169 +5397,223 @@
 
                                 };
 
-                        }})}).observe(document, { subtree: true, childList: true });
+                        };
 
-                        if (localStorage.getItem('showResistances') === 'true') {
+                        show();
 
-                                let css = `
+                }})}).observe(document, { subtree: true, childList: true });
 
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr,
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr {
-                                        width: 45.125em;
-                                }
+                if (localStorage.getItem('pinResistances') === 'true') {
 
-                                .BattleTabStatisticComponentStyle-showResistances {
-                                        background-color: var(--general-color) !important;
-                                }
+                        let css = `
 
-                                .BattleTabStatisticComponentStyle-resistanceModuleCell,
-                                .BattleTabStatisticComponentStyle-gsCell,
-                                .BattleTabStatisticComponentStyle-deviceCell,
-                                .BattleTabStatisticComponentStyle-defenceCell {
-                                        visibility: visible !important;
-                                        opacity: 1 !important;
-                                        margin: unset !important;
-                                }
+                        .BattleTabStatisticComponentStyle-pinResistances {
+                                background-color: var(--general-color) !important;
+                        }
 
-                                .BattleTabStatisticComponentStyle-resistanceModuleCell {
-                                        position: relative !important;
-                                }
+                        .BattleTabStatisticComponentStyle-containerInsideTeams > .Common-flexCenterAlignCenter {
+                                opacity: 1;
+                                margin-top: 0.5em;
+                        }
 
-                                .BattleTabStatisticComponentStyle-defenceLabel {
-                                        margin-left: -10em;
-                                        margin-right: 10em
-                                }
+                        `
 
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:first-child,
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:first-child {
-                                        margin-right: 10em
-                                }
+                        const body = document.body || document.getElementsByTagName('body')[0];
 
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+6),
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+7),
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+6),
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+7) {
-                                        border: unset;
-                                }
+                        const style = document.createElement('style');
+                              style.className = 'pinResistances'
 
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(1) {
-                                        position: absolute;
-                                        left: 0em;
-                                }
+                        if (style.styleSheet) {
 
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(2) {
-                                        position: absolute;
-                                        left: 25.55em;
-                                }
+                              style.styleSheet.cssText = css
 
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(3) {
-                                        position: absolute;
-                                        left: 29.75em;
-                                }
+                        } else {
 
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(4) {
-                                        position: absolute;
-                                        left: 32.75em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(5) {
-                                        position: absolute;
-                                        left: 35.7em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(6) {
-                                        position: absolute;
-                                        left: 41em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(1) {
-                                        position: absolute;
-                                        left: 0em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(2) {
-                                        position: absolute;
-                                        left: 25.55em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(3) {
-                                        position: absolute;
-                                        left: 29.75em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(4) {
-                                        position: absolute;
-                                        left: 32.75em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(5) {
-                                        position: absolute;
-                                        left: 35.7em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(6) {
-                                        position: absolute;
-                                        left: 41em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr,
-                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr {
-                                        width: 46.5em;
-                                        justify-content: flex-end;
-                                }
-
-                                .BattleTabStatisticComponentStyle-containerInsideTeams {
-                                        width: 95em;
-                                }
-
-                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table {
-                                        padding-left: 1em;
-                                }
-
-                                `
-
-                                const body = document.body || document.getElementsByTagName('body')[0];
-
-                                const style = document.createElement('style');
-                                      style.className = 'showResistances'
-
-                                if (style.styleSheet) {
-
-                                      style.styleSheet.cssText = css
-
-                                } else {
-
-                                      style.appendChild(document.createTextNode(css));
-
-                                };
-
-                                body.appendChild(style);
-
-                                let pressCount
-
-                                pressCount = 1
+                              style.appendChild(document.createTextNode(css));
 
                         };
 
-                        if (localStorage.getItem('showResistances') === 'false') {
+                        body.appendChild(style);
 
-                                const styleElement = document.querySelector('.showResistances');
+                        let pressCount
 
-                                if (styleElement) {
-
-                                      styleElement.remove();
-
-                                };
-
-                                let pressCount
-
-                                pressCount = 0
-
-                        };
+                        pressCount = 1
 
                 };
 
-                display();
+                if (localStorage.getItem('pinResistances') === 'false') {
+
+                        const styleElement = document.querySelector('.pinResistances');
+
+                        if (styleElement) {
+
+                              styleElement.remove();
+
+                        };
+
+                        let pressCount
+
+                        pressCount = 0
+
+                };
+
+                if (localStorage.getItem('showResistances') === 'true') {
+
+                        let css = `
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr,
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr {
+                                width: 45.125em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-showResistances {
+                                background-color: var(--general-color) !important;
+                        }
+
+                        .BattleTabStatisticComponentStyle-resistanceModuleCell,
+                        .BattleTabStatisticComponentStyle-gsCell,
+                        .BattleTabStatisticComponentStyle-deviceCell,
+                        .BattleTabStatisticComponentStyle-defenceCell {
+                                visibility: visible !important;
+                                opacity: 1 !important;
+                                margin: unset !important;
+                        }
+
+                        .BattleTabStatisticComponentStyle-resistanceModuleCell {
+                                position: relative !important;
+                        }
+
+                        .BattleTabStatisticComponentStyle-defenceLabel {
+                                margin-left: -10em;
+                                margin-right: 10em
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:first-child,
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:first-child {
+                                margin-right: 10em
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+6),
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+7),
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+6),
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+7) {
+                                border: unset;
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(1) {
+                                position: absolute;
+                                left: 0em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(2) {
+                                position: absolute;
+                                left: 25.55em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(3) {
+                                position: absolute;
+                                left: 29.75em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(4) {
+                                position: absolute;
+                                left: 32.75em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(5) {
+                                position: absolute;
+                                left: 35.7em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(6) {
+                                position: absolute;
+                                left: 41em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(1) {
+                                position: absolute;
+                                left: 0em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(2) {
+                                position: absolute;
+                                left: 25.55em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(3) {
+                                position: absolute;
+                                left: 29.75em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(4) {
+                                position: absolute;
+                                left: 32.75em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(5) {
+                                position: absolute;
+                                left: 35.7em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(6) {
+                                position: absolute;
+                                left: 41em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr,
+                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr {
+                                width: 46.5em;
+                                justify-content: flex-end;
+                        }
+
+                        .BattleTabStatisticComponentStyle-containerInsideTeams {
+                                width: 95em;
+                        }
+
+                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table {
+                                padding-left: 1em;
+                        }
+
+                        `
+
+                        const body = document.body || document.getElementsByTagName('body')[0];
+
+                        const style = document.createElement('style');
+                              style.className = 'showResistances'
+
+                        if (style.styleSheet) {
+
+                              style.styleSheet.cssText = css
+
+                        } else {
+
+                              style.appendChild(document.createTextNode(css));
+
+                        };
+
+                        body.appendChild(style);
+
+                        let pressCount
+
+                        pressCount = 1
+
+                };
+
+                if (localStorage.getItem('showResistances') === 'false') {
+
+                        const styleElement = document.querySelector('.showResistances');
+
+                        if (styleElement) {
+
+                              styleElement.remove();
+
+                        };
+
+                        let pressCount
+
+                        pressCount = 0
+
+                };
 
         };
 
