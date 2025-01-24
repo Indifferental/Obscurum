@@ -2,12 +2,11 @@
 // @name         Obscurum
 // @namespace    http://tampermonkey.net/
 // @version      none
-// @description  none
+// @description  An open-source theme for Tanki Online
 // @author       Indifferental
 // @match        https://*.tankionline.com/*
 // @icon         https://github.com/Indifferental/Obscurum/blob/main/assets/icons/flame90.png?raw=true
 // @grant        GM_xmlhttpRequest
-// @grant        unsafeWindow
 // @run-at       document-start
 // ==/UserScript==
 
