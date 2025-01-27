@@ -1,15 +1,3 @@
-// ==UserScript==
-// @name         Obscurum [inDev]
-// @namespace    http://tampermonkey.net/
-// @version      none
-// @description  An open-source theme for Tanki Online
-// @author       Indifferental
-// @match        https://*.tankionline.com/*
-// @icon         https://github.com/Indifferental/Obscurum/blob/main/assets/icons/flame90.png?raw=true
-// @grant        GM_xmlhttpRequest
-// @grant        unsafeWindow
-// ==/UserScript==
-
 (function() {
 
         var version = 'v0.975'
