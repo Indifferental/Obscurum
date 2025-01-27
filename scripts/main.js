@@ -1,6 +1,18 @@
+// ==UserScript==
+// @name         Obscurum [inDev]
+// @namespace    http://tampermonkey.net/
+// @version      none
+// @description  An open-source theme for Tanki Online
+// @author       Indifferental
+// @match        https://*.tankionline.com/*
+// @icon         https://github.com/Indifferental/Obscurum/blob/main/assets/icons/flame90.png?raw=true
+// @grant        GM_xmlhttpRequest
+// @grant        unsafeWindow
+// ==/UserScript==
+
 (function() {
 
-        var version = 'v0.974'
+        var version = 'v0.975'
 
         // изменение иконки на вкладке браузера
 
@@ -24,74 +36,6 @@
             variableHeader.className = `Obscurum ${version}`
 
         body.appendChild(variableHeader);
-
-        // fetch API
-
-        var originFetch = unsafeWindow.fetch
-
-        var resources = [];
-
-        unsafeWindow.fetch = async (url, options) => {
-
-                return originFetch(url, options).then(async (response) => {
-
-                        console.log(url.toLocaleString());
-
-                        for (let resource of resources) {
-
-                                let createPreview = (url) => {
-
-                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-                                        return new RegExp(replacedURL);
-
-                                };
-
-                                let preview = createPreview(resource.orig);
-
-                                if (preview.test(url)) {
-
-                                        console.log(`\n${url}\nreplaced to: ${resource.new}\n `);
-
-                                        return new Promise((resolve, reject) => {
-
-                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
-
-                                                        onload: response => {
-
-                                                                if (response.status == 200) {
-
-                                                                        resolve(new Response(response.response, {
-
-                                                                                status: 200,
-                                                                                statusText: "OK",
-                                                                                headers: { "Content-Type": response.response.type }
-
-                                                                        }));
-
-                                                                } else {
-
-                                                                        reject(console.log('not catched'));
-
-                                                                };
-
-                                                        },
-
-                                                        onerror: reject
-
-                                                });
-
-                                        });
-
-                                };
-
-                        };
-
-                        return response
-
-                });
-
-        };
 
         // массив глобальных значений для функций
 
@@ -3466,11 +3410,11 @@
                     {
                             selector: '.BattleTabStatisticComponentStyle-containerInsideTeams',
                             style: `
-                                    background: rgb(0 0 0 / 35%);
+                                    background: rgb(0 0 0 / 50%);
                                     outline: var(--general-outline);
-                                    box-shadow: 0 0 10em 0 rgb(0 0 0 / 75%);
-                                    border-radius: 0.5em;
-                                    backdrop-filter: blur(6px);
+                                    box-shadow: 0 0 6em 0 rgb(0 0 0 / 50%);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: blur(4px);
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
@@ -4575,7 +4519,7 @@
                                     align-items: flex-start !important;
                                     justify-content: space-between !important;
                                     width: 100% !important;
-                                    height: 100% !important;
+                                    height: 94% !important;
                                     top: auto !important;
                                     left: auto !important;
                                     z-index: 1 !important;
@@ -5763,94 +5707,6 @@
 
         function garageStyles() {
 
-                const evening = [
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/bg1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bg1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/bl.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bl.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/flr1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/flr1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/gar1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/gar1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/pl1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/pl2.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl2.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/race1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/race1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/sky1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/sky1.webp"
-                        },
-
-                ];
-
-                const night = [
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/bg1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bg1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/bl.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bl.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/flr1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/flr1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/gar1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/gar1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/pl1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/pl2.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl2.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/race1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/race1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/sky1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/sky1.webp"
-                        },
-
-                ];
-
                 let mainHeader = document.getElementsByClassName('MainScreenComponentStyle-gradientBlock')[0];
 
                 if (mainHeader) {
@@ -6175,8 +6031,6 @@
 
                         };
 
-                        resources = evening
-
                 };
 
                 if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'night') {
@@ -6202,8 +6056,6 @@
                                 vignette.style = 'background: radial-gradient(transparent 25%, rgb(0 0 0 / 20%))'
 
                         };
-
-                        resources = night
 
                 };
 
@@ -6349,6 +6201,176 @@
         // проверка на соответствие массиву доменов + обсервер мутаций DOM
 
         function dynamicCheck() {
+
+                // fetch API
+        
+                var originFetch = unsafeWindow.fetch
+        
+                var resources = [];
+        
+                unsafeWindow.fetch = async (url, options) => {
+        
+                        return originFetch(url, options).then(async (response) => {
+        
+                                console.log(url.toLocaleString());
+        
+                                for (let resource of resources) {
+        
+                                        let createPreview = (url) => {
+        
+                                                let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        
+                                                return new RegExp(replacedURL);
+        
+                                        };
+        
+                                        let preview = createPreview(resource.orig);
+        
+                                        if (preview.test(url)) {
+        
+                                                console.log(`\n${url}\nreplaced to: ${resource.new}\n `);
+        
+                                                return new Promise((resolve, reject) => {
+        
+                                                        GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
+        
+                                                                onload: response => {
+        
+                                                                        if (response.status == 200) {
+        
+                                                                                resolve(new Response(response.response, {
+        
+                                                                                        status: 200,
+                                                                                        statusText: "OK",
+                                                                                        headers: { "Content-Type": response.response.type }
+        
+                                                                                }));
+        
+                                                                        } else {
+        
+                                                                                reject(console.log('not catched'));
+        
+                                                                        };
+        
+                                                                },
+        
+                                                                onerror: reject
+        
+                                                        });
+        
+                                                });
+        
+                                        };
+        
+                                };
+        
+                                return response
+        
+                        });
+        
+                };
+        
+                let evening = [
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/bg1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bg1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/bl.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bl.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/flr1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/flr1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/gar1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/gar1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/pl1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/pl2.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl2.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/race1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/race1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/sky1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/sky1.webp"
+                        },
+        
+                ];
+        
+                let night = [
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/bg1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bg1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/bl.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bl.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/flr1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/flr1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/gar1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/gar1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/pl1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/pl2.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl2.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/race1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/race1.webp"
+                        },
+        
+                        {
+                                orig: "/601/166176/165/206/31167700267244/sky1.webp",
+                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/sky1.webp"
+                        },
+        
+                ];
+        
+                if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'evening') {
+        
+                        resources = evening
+        
+                };
+        
+                if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'night') {
+        
+                        resources = night
+        
+                };
+        
+                console.log(resources);
 
                 const linksArray = [ 'tankionline.com/play/',
                                      'tankionline.com/play/?desktop=true',
