@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.972'
+        var version = 'v0.974'
 
         var originFetch = unsafeWindow.fetch
 
@@ -27,6 +27,72 @@
 
         body.appendChild(variableHeader);
 
+        // fetch API
+
+        let resources = [];
+
+        unsafeWindow.fetch = async (url, options) => {
+
+                return originFetch(url, options).then(async (response) => {
+
+                        console.log(url.toLocaleString());
+
+                        for (let resource of resources) {
+
+                                let createPreview = (url) => {
+
+                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+                                        return new RegExp(replacedURL);
+
+                                };
+
+                                let preview = createPreview(resource.orig);
+
+                                if (preview.test(url)) {
+
+                                        console.log(`\n${url}\nreplaced to: ${resource.new}\n `);
+
+                                        return new Promise((resolve, reject) => {
+
+                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
+
+                                                        onload: response => {
+
+                                                                if (response.status == 200) {
+
+                                                                        resolve(new Response(response.response, {
+
+                                                                                status: 200,
+                                                                                statusText: "OK",
+                                                                                headers: { "Content-Type": response.response.type }
+
+                                                                        }));
+
+                                                                } else {
+
+                                                                        reject(console.log('not catched'));
+
+                                                                };
+
+                                                        },
+
+                                                        onerror: reject
+
+                                                });
+
+                                        });
+
+                                };
+
+                        };
+
+                        return response
+
+                });
+
+        };
+
         // массив глобальных значений для функций
 
         var globalProperties = [
@@ -37,7 +103,7 @@
 
                         outline: '2px solid rgb(255 255 255 / 2.5%)',
                         border_radius: '1.25em',
-                        box_shadow: '0 0 2em 0 rgb(0 0 0 / 65%)',
+                        box_shadow: '0 0 2em 0 rgb(0 0 0 / 40%), inset 0 0 1em 0 rgb(0 0 0 / 10%)',
 
                         backdrop_filter: 'blur(12px)',
                         least_backdrop_filter: 'blur(4px)',
@@ -2212,11 +2278,13 @@
                             selector: '.AnimationOpenContainerComponentStyle-controlButton > .DeviceButtonComponentStyle-blockAlterations > h2',
                             style: `
                                     color: rgb(255 255 255 / 60%);
+                                    font-family: 'BaseFontRegular';
                             `
                     },
 
                     {
-                            selector: '.AnimationOpenContainerComponentStyle-rewardContainer',
+                            selector: `.AnimationOpenContainerComponentStyle-rewardContainer,
+                                       .RewardCardComponentStyle-fastAppearance`,
                             style: `
                                     background: var(--general-bg);
                                     outline: var(--general-outline);
@@ -6099,8 +6167,6 @@
 
                 };
 
-                let resources
-
                 if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'evening') {
 
                         if (eveningButton) {
@@ -6110,64 +6176,6 @@
                         };
 
                         resources = evening
-
-                        unsafeWindow.fetch = async (url, options) => {
-
-                                return originFetch(url, options).then(async (response) => {
-
-                                        for (let resource of resources) {
-
-                                                let createPreview = (url) => {
-
-                                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-                                                        return new RegExp(replacedURL);
-
-                                                };
-
-                                                let preview = createPreview(resource.orig);
-
-                                                if (preview.test(url)) {
-
-                                                        return new Promise((resolve, reject) => {
-
-                                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
-
-                                                                        onload: response => {
-
-                                                                                if (response.status == 200) {
-
-                                                                                        resolve(new Response(response.response, {
-
-                                                                                                status: 200,
-                                                                                                statusText: "OK",
-                                                                                                headers: { "Content-Type": response.response.type }
-
-                                                                                        }));
-
-                                                                                } else {
-
-                                                                                        reject();
-
-                                                                                };
-
-                                                                        },
-
-                                                                        onerror: reject
-
-                                                                });
-
-                                                        });
-
-                                                };
-
-                                        };
-
-                                        return response
-
-                                });
-
-                        };
 
                 };
 
@@ -6196,68 +6204,6 @@
                         };
 
                         resources = night
-
-                        unsafeWindow.fetch = async (url, options) => {
-
-                                return originFetch(url, options).then(async (response) => {
-
-                                        console.log(url.toLocaleString());
-
-                                        for (let resource of resources) {
-
-                                                let createPreview = (url) => {
-
-                                                        let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-                                                        return new RegExp(replacedURL);
-
-                                                };
-
-                                                let preview = createPreview(resource.orig);
-
-                                                if (preview.test(url)) {
-
-                                                        console.log(`\n${url}\nreplaced to: ${resource.new}\n`);
-
-                                                        return new Promise((resolve, reject) => {
-
-                                                                GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
-
-                                                                        onload: response => {
-
-                                                                                if (response.status == 200) {
-
-                                                                                        resolve(new Response(response.response, {
-
-                                                                                                status: 200,
-                                                                                                statusText: "OK",
-                                                                                                headers: { "Content-Type": response.response.type }
-
-                                                                                        }));
-
-                                                                                } else {
-
-                                                                                        reject();
-
-                                                                                };
-
-                                                                        },
-
-                                                                        onerror: reject
-
-                                                                });
-
-                                                        });
-
-                                                };
-
-                                        };
-
-                                        return response
-
-                                });
-
-                        };
 
                 };
 
