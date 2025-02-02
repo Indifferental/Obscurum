@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.975'
+        var version = 'v0.98'
 
         // изменение иконки на вкладке браузера
 
@@ -411,11 +411,13 @@
                     },
 
                     {
-                            selector: `.Common-buttonQE:hover,
-                                       .ContainerInfoComponentStyle-rewardsMenuHotkey h3:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.Common-buttonQE',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.ContainerInfoComponentStyle-rewardsMenuHotkey h3',
+                            tags: 'hover'
                     },
 
                     {
@@ -523,7 +525,6 @@
                             selector: '.ChatComponentStyle-chatWindow',
                             style: `
                                     background: var(--general-bg);
-                                    outline: var(--general-outline);
                                     box-shadow: var(--general-box-shadow);
                                     backdrop-filter: var(--general-backdrop-filter);
 
@@ -543,13 +544,29 @@
                                     margin-bottom: 0.35em;
 
                                     transition: var(--general-transition);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.NewsComponentStyle-newsWindow',
+                            style: `
+                                    background: var(--general-bg);
+                                    box-shadow: var(--general-box-shadow);
+
+                                    border-right: var(--general-outline);
+                                    backdrop-filter: var(--general-backdrop-filter);
+
+                                    animation: translateLeft .2s ease-in-out;
                             `
                     },
 
                     {
-                            selector: '.ChatComponentStyle-messageRow:hover',
+                            selector: '.NewsComponentStyle-header h1',
                             style: `
-                                    background: var(--general-bg-hover);
+                                    display: flex;
+                                    align-self: unset;
+                                    margin: 0em 0.5em;
                             `
                     },
 
@@ -623,14 +640,8 @@
                                     height: 5em;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.PrimaryMenuItemComponentStyle-menuItemContainer:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -659,14 +670,8 @@
                                     border-radius: 0.25em;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.BreadcrumbsComponentStyle-rootTitle > div:hover',
-                            style: `
-                                    background-color: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -716,17 +721,11 @@
                                     height: 5em;
 
                                     transition: var(--general-transition);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
-                            selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexCenterAlignCenterColumn:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
-                    },
-
-                            {
                             selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexCenterAlignCenter',
                             style: `
                                     background: var(--general-bg);
@@ -742,14 +741,8 @@
                                     height: 5em;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexCenterAlignCenter:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -785,14 +778,8 @@
                                     backdrop-filter: var(--least-backdrop-filter);
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > div:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -900,11 +887,13 @@
                     },
 
                     {
-                            selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable:hover,
-                                       .MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen',
+                            tags: 'hover'
                     },
 
                     {
@@ -1011,14 +1000,8 @@
                                     height: 5em;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.BreadcrumbsComponentStyle-rightButtonsContainer > div:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -1086,14 +1069,8 @@
                                     height: 5em;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.BreadcrumbsComponentStyle-backButton:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -1113,14 +1090,8 @@
                                     height: 5em;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexCenterAlignCenter:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -1192,14 +1163,8 @@
                                     height: inherit;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -1312,14 +1277,8 @@
                                     height: 4.5em;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer > ul > li:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -1401,14 +1360,8 @@
                                     height: 10em;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.BattlePassLobbyComponentStyle-menuBattlePass:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -1455,14 +1408,8 @@
                                     height: 10em;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.EventBattlePassLobbyComponentStyle-buttonEventBattlePass:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -1690,14 +1637,8 @@
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
-                            `
-                    },
-
-                    {
-                            selector: '.FriendListComponentStyle-blockList:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -1813,14 +1754,8 @@
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
-                            `
-                    },
-
-                    {
-                            selector: '.FriendListComponentStyle-buttonAddFriends:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -1863,10 +1798,8 @@
                     },
 
                     {
-                            selector: '.FriendRequestComponentStyle-buttonDeclineAll:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.FriendRequestComponentStyle-buttonDeclineAll',
+                            tags: 'hover'
                     },
 
                     {
@@ -1895,11 +1828,13 @@
                     },
 
                     {
-                            selector: `.FriendRequestComponentStyle-buttonAccept:hover,
-                                       .FriendRequestComponentStyle-buttonDecline:hover`,
-                            style: `
-                                    background: rgb(255 255 255 / 5%);
-                            `
+                            selector: '.FriendRequestComponentStyle-buttonAccept',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.FriendRequestComponentStyle-buttonDecline',
+                            tags: 'hover'
                     },
 
                     {
@@ -1972,14 +1907,8 @@
                                     border-radius: var(--general-border-radius);
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.ContainersComponentStyle-infoPanel > div > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ContainersComponentStyle-description:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -2011,14 +1940,8 @@
                                     height: max-content;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -2093,14 +2016,8 @@
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
-                            `
-                    },
-
-                    {
-                            selector: '.ContainerInfoComponentStyle-itemsContainer > .Common-flexStartAlignStretchColumn > .Common-flexCenterAlignCenterColumn:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -2161,11 +2078,13 @@
                     },
 
                     {
-                            selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter:hover,
-                                       .ContainersComponentStyle-moreButton:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-moreButton',
+                            tags: 'hover'
                     },
 
                     {
@@ -2280,14 +2199,8 @@
                                     border-radius: var(--general-border-radius);
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.ClanStatisticsComponentStyle-areCommon:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -2305,11 +2218,13 @@
                     },
 
                     {
-                            selector: `.ClanInfoComponentStyle-buttonEditProfile:hover,
-                                       .ClanCommonStyle-buttonInvite:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.ClanInfoComponentStyle-buttonEditProfile',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.ClanCommonStyle-buttonInvite',
+                            tags: 'hover'
                     },
 
                     {
@@ -2365,11 +2280,13 @@
                     },
 
                     {
-                            selector: `.TableComponentStyle-row:hover,
-                                       .ClanCommonStyle-row:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.TableComponentStyle-row:hover',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.ClanCommonStyle-row:hover',
+                            tags: 'hover'
                     },
 
                     {
@@ -2442,14 +2359,8 @@
                                     border-radius: var(--general-border-radius);
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.SearchInputComponentStyle-searchInput > input:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -2501,7 +2412,8 @@
                     },
 
                     {
-                            selector: '.DialogContainerComponentStyle-enterButton',
+                            selector: `.DialogContainerComponentStyle-enterButton,
+                                       .TutorialModalComponentStyle-navigationButton`,
                             style: `
                                     background: var(--least-general-color);
                                     box-shadow: var(--general-box-shadow);
@@ -2512,7 +2424,8 @@
                     },
 
                     {
-                            selector: '.DialogContainerComponentStyle-enterButton:hover',
+                            selector: `.DialogContainerComponentStyle-enterButton:hover,
+                                       .TutorialModalComponentStyle-navigationButton:hover`,
                             style: `
                                     background: var(--general-color);
                                     box-shadow: var(--general-box-shadow);
@@ -2520,7 +2433,8 @@
                     },
 
                     {
-                            selector: '.DialogContainerComponentStyle-enterButton > span',
+                            selector: `.DialogContainerComponentStyle-enterButton > span,
+                                       .TutorialModalComponentStyle-navigationButton > span`,
                             style: `
                                     color: white;
                             `
@@ -2588,11 +2502,14 @@
                     },
 
                     {
-                            selector: `.Common-flexCenterAlignCenter > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin:hover,
-                                       .Common-flexCenterAlignCenterColumn > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.Common-flexCenterAlignCenter > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
+                            tags: 'hover'
+                    },
+
+
+                    {
+                            selector: '.Common-flexCenterAlignCenterColumn > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
+                            tags: 'hover'
                     },
 
                     {
@@ -2645,20 +2562,16 @@
                     {
                             selector: '.BattleInfoComponentStyle-invite > .Common-flexStartAlignCenter',
                             style: `
+                                    background: transparent;
+
                                     justify-content: center;
                                     margin: unset;
                                     width: 50%;
                                     height: 100%;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.BattleInfoComponentStyle-invite > .Common-flexStartAlignCenter:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -2804,14 +2717,8 @@
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
-                            `
-                    },
-
-                    {
-                            selector: '.ProBattlesComponentStyle-battlesContainer > .ProBattlesComponentStyle-table > .TableComponentStyle-tBody > .Common-flexStartAlignCenter:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -2898,11 +2805,13 @@
                     },
 
                     {
-                            selector: `.ProBattlesComponentStyle-chatBlock:hover,
-                                       .ContainersComponentStyle-chatBlock:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.ProBattlesComponentStyle-chatBlock',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-chatBlock',
+                            tags: 'hover'
                     },
 
                     {
@@ -2945,14 +2854,8 @@
                                     z-index: 20;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.ProBattlesComponentStyle-commonBlockHotkeyV:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -3116,14 +3019,8 @@
                                     box-shadow: var(--general-box-shadow);
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.ProBattlesComponentStyle-createBattleButton:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -3149,14 +3046,8 @@
                                     box-shadow: var(--general-box-shadow);
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.BattleModesComponentStyle-button:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -3323,10 +3214,8 @@
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle',
+                            tags: 'hover'
                     },
 
                     {
@@ -3376,14 +3265,8 @@
                             selector: '.UsersTableStyle-fontCell span',
                             style: `
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.UsersTableStyle-fontCell span:hover',
-                            style: `
-                                    color: var(--general-color);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     // блок ингейм таба
@@ -3400,9 +3283,9 @@
                             style: `
                                     background: rgb(0 0 0 / 50%);
                                     outline: var(--general-outline);
-                                    box-shadow: 0 0 6em 0 rgb(0 0 0 / 50%);
+                                    box-shadow: 0 0 4em 0 rgb(0 0 0 / 50%);
                                     border-radius: var(--general-border-radius);
-                                    backdrop-filter: blur(4px);
+                                    backdrop-filter: blur(8px);
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
@@ -3532,8 +3415,8 @@
                     {
                             selector: '.BattleTabStatisticComponentStyle-selectedRowBackGround',
                             style: `
-                                    background: rgb(255 255 255 / 3.75%);
-                                    outline: 2px solid rgb(255 255 255 / 3.75%);
+                                    background: rgb(255 255 255 / 5%);
+                                    outline: 2px solid rgb(255 255 255 / 5%);
                                     box-shadow: unset !important;
                                     border-radius: 0.8em;
 
@@ -3836,6 +3719,31 @@
                             `
                     },
 
+                    {
+                            selector: `.BattleChatComponentStyle-inputContainerAllies,
+                                       .BattleChatComponentStyle-inputContainerAll`,
+                            style: `
+                                    background: rgb(0 0 0 / 50%);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: `.BattleChatComponentStyle-btnToggleTeamAllies,
+                                       .BattleChatComponentStyle-btnToggleTeamAll`,
+                            style: `
+                                    border-top-left-radius: var(--general-border-radius);
+                                    border-bottom-left-radius: var(--general-border-radius);
+                            `
+                    },
+
                     // блок стилизации карточек в лобби
 
                     {
@@ -4020,6 +3928,31 @@
                     // блок стилизации гаража
 
                     {
+                            selector: '.GearScoreStyle-bestGS',
+                            style: `
+                                    background-image: linear-gradient(to left, rgb(40, 255, 203) 0%, rgb(255, 235, 51) 50%, rgb(40, 255, 203) 100%);
+                                    background-size: 500%;
+
+                                    animation: gradient 30s ease-in-out infinite;
+                            `
+                    },
+
+                    {
+                            selector: '.GearScoreStyle-bestGS:before',
+                            style: `
+                                    content: '9999';
+                                    background-image: linear-gradient(to left, rgb(40, 255, 203) 0%, rgb(255, 235, 51) 50%, rgb(40, 255, 203) 100%);
+                                    background-size: 500%;
+                                    background-clip: text;
+                                    filter: blur(0.5em);
+
+                                    position: absolute;
+
+                                    animation: gradient 30s ease-in-out infinite;
+                            `
+                    },
+
+                    {
                             selector: `.GarageCommonStyle-animatedBlurredLeftBlock,
                                        .GarageCommonStyle-animatedBlurredRightBlock`,
                             style: `
@@ -4094,12 +4027,18 @@
                     },
 
                     {
-                            selector: `.MountedItemsStyle-commonBlockDrone:hover,
-                                       .MountedItemsStyle-commonBlockGrenades:hover,
-                                       .MountedItemsStyle-commonBlockForTurretsHulls:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.MountedItemsStyle-commonBlockDrone',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.MountedItemsStyle-commonBlockGrenades',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.MountedItemsStyle-commonBlockForTurretsHulls',
+                            tags: 'hover'
                     },
 
                     {
@@ -4229,11 +4168,13 @@
                     },
 
                     {
-                            selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ItemDescriptionComponentStyle-captionDevice:hover,
-                                       .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ItemDescriptionComponentStyle-captionDevice:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ItemDescriptionComponentStyle-captionDevice',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ItemDescriptionComponentStyle-captionDevice',
+                            tags: 'hover'
                     },
 
                     {
@@ -4245,7 +4186,7 @@
                     },
 
                     {
-                        selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter,
+                            selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter,
                                    .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > div > .SkinsIconComponentStyle-cellSkins > .Common-flexCenterAlignCenter`,
                             style: `
                                     background: var(--general-bg);
@@ -4259,19 +4200,22 @@
                     },
 
                     {
-                        selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > h2,
+                            selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter',
+                            tags: 'hover'
+                    },
+
+
+                    {
+                            selector: ' .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > div > .SkinsIconComponentStyle-cellSkins > .Common-flexCenterAlignCenter',
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > h2,
                                    .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > h3`,
                             style: `
                                     position: absolute;
                                     visibility: hidden;
-                            `
-                    },
-
-                    {
-                        selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter:hover,
-                                   .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > div > .SkinsIconComponentStyle-cellSkins > .Common-flexCenterAlignCenter:hover`,
-                            style: `
-                                    background: var(--general-bg-hover);
                             `
                     },
 
@@ -4372,14 +4316,8 @@
                                     border-radius: var(--general-border-radius) !important;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.GarageTurretsAlterationsComponentStyle-mountStandardButton > .SquarePriceButtonComponentStyle-commonBlockButton:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -4463,24 +4401,33 @@
                             selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer > .MountedItemsStyle-commonForCellResistenceName',
                             style: `
                                     background: transparent;
-                                    border-radius: 0.5em;
-                                    width: 5.5em;
+                                    width: inherit;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer > .MountedItemsStyle-commonForCellResistenceName:hover',
-                            style: `
-                                    background: var(--general-hover-bg);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
                             selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer > .MountedItemsStyle-commonForCellResistenceName > .CellResistanceComponentStyle-resistanceIconContainer',
                             style: `
                                     width: inherit;
+                            `
+                    },
+
+                    {
+                            selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer:first-child > .MountedItemsStyle-commonForCellResistenceName',
+                            style: `
+                                    border-top-left-radius: var(--general-border-radius);
+                                    border-bottom-left-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer:nth-child(4) > .MountedItemsStyle-commonForCellResistenceName',
+                            style: `
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
                             `
                     },
 
@@ -4588,14 +4535,8 @@
                                     border-radius: unset;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.Common-itemStyle:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -4665,14 +4606,8 @@
                                     margin-right: unset;
 
                                     transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.SuppliesComponentStyle-cellAdd:hover',
-                            style: `
-                                    background: var(--general-bg-hover);
-                            `
+                            `,
+                            tags: 'hover'
                     },
 
                     {
@@ -4768,6 +4703,56 @@
                             `
                     },
 
+                    {
+                            selector: '.GarageItemComponentStyle-amountItemsScroll',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: 0.35em;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    color: white !important;
+                                    margin-top: 1.5em !important;
+                                    padding: 0.15em 0.35em;
+                                    z-index: 20;
+                            `
+                    },
+
+                    {
+                            selector: `.GarageItemComponentStyle-descriptionDevice > div,
+                                       .GarageItemComponentStyle-descriptionDevice > div > span`,
+                            style: `
+                                    overflow: visible;
+                            `
+                    },
+
+                    {
+                            selector: '.GarageItemComponentStyle-descriptionDevice > div > span',
+                            style: `
+                                    color: var(--general-color);
+                                    text-shadow: 0 0 1em;
+                                    z-index: 20;
+                            `
+                    },
+
+                    {
+                            selector: '.GarageItemComponentStyle-descriptionDevice > h2',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: 0 0 1em 0 rgb(0 0 0 / 40%), inset 0 0 0.5em 0 rgb(0 0 0 / 10%);
+                                    border-radius: 0.35em;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    text-shadow: 0 0 1em !important;
+                                    position: absolute;
+                                    top: 2.25em;
+                                    margin: unset !important;
+                                    padding: 0.15em 0.35em;
+                                    z-index: 20;
+                            `
+                    },
 
                     {
                             selector: '.SkinCellStyle-widthHeight',
@@ -4793,30 +4778,42 @@
                     },
 
                     {
-                            selector: '',
+                            selector: '.SaleByKitStyle-commonBlockModal',
                             style: `
+                                    background: var(--general-bg);
+                                    box-shadow: var(--general-box-shadow);
+                                    backdrop-filter: var(--general-backdrop-filter);
+                                    border-right: var(--general-outline);
 
+                                    animation: translateLeft .2s ease-in-out;
                             `
                     },
 
                     {
-                            selector: '',
+                            selector: '.SaleByKitStyle-card',
                             style: `
-
+                                    box-shadow: unset !important;
+                                    animation : unset !important;
                             `
                     },
 
                     {
-                            selector: '',
+                            selector: '.SaleByKitStyle-commonCard',
                             style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: var(--general-border-radius);
 
-                            `
+                                    transition: var(--general-transition);
+                            `,
+                            tags: 'hover'
                     },
 
                     {
-                            selector: '',
+                            selector: '.SaleByKitStyle-commonBlockModal > .SaleByKitStyle-paddingHeaderModal > .Common-flexStartAlignCenter > .HotKey-commonBlockForHotKey',
                             style: `
-
+                                    visibility: hidden;
                             `
                     },
 
@@ -4918,10 +4915,29 @@
                             `
                     },
 
+                    {
+                            animations: `@keyframes gradient {
+
+                                                0% {
+                                                        background-position: 0%;
+                                                }
+
+                                                50% {
+                                                        background-position: 250%;
+                                                }
+
+                                                100% {
+                                                        background-position: 0%;
+                                                }
+
+                                        }
+                            `
+                    },
+
                 ];
 
                 var cssStyles = document.createElement(`style`);
-                    cssStyles.className = `obscGlobalVariable-stylesSheet`
+                    cssStyles.className = `obscStyleSheet-globalStyles`
 
                 elements.forEach((element) => {
 
@@ -4934,7 +4950,7 @@
                 variableHeader.appendChild(cssStyles);
 
                 var cssKeyframes = document.createElement(`style`);
-                    cssKeyframes.className = `obscGlobalVariable-keyframesArray`
+                    cssKeyframes.className = `obscStyleSheet-keyframesArray`
 
                 keyframes.forEach((keyframe) => {
 
@@ -4946,676 +4962,536 @@
 
                 variableHeader.appendChild(cssKeyframes);
 
+                // выборка тегов
+
+                var hoverStyles = elements.filter((element) => element.tags === 'hover');
+
+                hoverStyles.forEach((element) => {
+
+                        let css = `${element.selector}:hover {background-color: var(--general-bg-hover);}\n`
+
+                        cssStyles.textContent += css.split(`                `).join(``);
+
+                });
+
         };
 
         // функции для ингейм таба
 
         function resistancesArray() {
 
+                var tankResistances = [
+
+                        {
+                                oldPicture: "https://tankionline.com/play/static/images/crit_resistance.7fb68893.svg",
+                                picture: "https://tankionline.com/play/static/images/resistances/crit_resistance.3f4d1cc2.svg"
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/firebird_resistance.785a9d6b.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/firebird_resistance.00ac2221.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/freeze_resistance.33bdf642.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/freeze_resistance.d26eb338.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/isis_resistance.30a69ffc.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/isis_resistance.5b05887a.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/tesla_resistance.3e686c8e.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/tesla_resistance.663d3597.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/hammer_resistance.6c549d29.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/hammer_resistance.28e73097.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/twins_resistance.ad189f61.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/twins_resistance.fbbc4d72.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/ricochet_resistance.8247beaa.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/ricochet_resistance.69c6c7ee.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/smoky_resistance.845afc14.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/smoky_resistance.c4c202ca.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/rocket_launcher_resistance.b7dfd64f.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/rocket_launcher_resistance.5772cbaa.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/vulcan_resistance.824f6f0e.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/vulcan_resistance.9aebf267.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/thunder_resistance.6d7f4531.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/thunder_resistance.9dab2abf.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/scorpio_resistance.e8f1787f.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/scorpio_resistance.d40f8fbb.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/railgun_resistance.636a554f.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/railgun_resistance.7577c7a1.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/artillery_resistance.9b4cbc34.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/artillery_resistance.bd49fc96.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/gauss_resistance.bb8f409c.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/gauss_resistance.acf358ed.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/shaft_resistance.0778fd3e.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/shaft_resistance.7e58bc19.svg'
+                        },
+
+                        {
+                                oldPicture: 'https://tankionline.com/play/static/images/mine_resistance.dd581c90.svg',
+                                picture: 'https://tankionline.com/play/static/images/resistances/mine_resistance.0d0d3c98.svg'
+                        },
+
+                ];
+
                 function color() {
 
-                        var tankResistances = [
+                        new MutationObserver((mutations) => {
 
-                            {
+                                mutations.forEach(({ addedNodes, target }) => {
 
-                                  oldPicture: "https://tankionline.com/play/static/images/crit_resistance.7fb68893.svg",
-                                  picture: "https://tankionline.com/play/static/images/resistances/crit_resistance.3f4d1cc2.svg"
+                                        if (addedNodes.length && ('tbody' === target.localName || target.className.includes('BattleComponentStyle-canvasContainer'))) {
 
-                            },
+                                                let user = document.querySelector('.UserInfoContainerStyle-textDecoration')?.textContent?.split(' ').pop();
 
-                            {
+                                                target.querySelectorAll('.Common-maskImage').forEach((element) => {
 
-                                  oldPicture: 'https://tankionline.com/play/static/images/firebird_resistance.785a9d6b.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/firebird_resistance.00ac2221.svg'
+                                                        let maskImage = window.getComputedStyle(element).getPropertyValue('-webkit-mask-image')?.split('"')?.[1];
 
-                            },
+                                                        let resistance = tankResistances.find(({ oldPicture }) => maskImage === oldPicture);
 
-                            {
+                                                        if (resistance) {
 
-                                  oldPicture: 'https://tankionline.com/play/static/images/freeze_resistance.33bdf642.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/freeze_resistance.d26eb338.svg'
+                                                                element.style.cssText = `
 
-                            },
+                                                                        -webkit-mask-image: none;
+                                                                        background: url(${resistance.picture}) center center / 1em 1em no-repeat;
+                                                                        width: 1em;
+                                                                        height: 1em;
 
-                            {
+                                                                `
 
-                                  oldPicture: 'https://tankionline.com/play/static/images/isis_resistance.30a69ffc.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/isis_resistance.5b05887a.svg'
+                                                        };
 
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/tesla_resistance.3e686c8e.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/tesla_resistance.663d3597.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/hammer_resistance.6c549d29.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/hammer_resistance.28e73097.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/twins_resistance.ad189f61.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/twins_resistance.fbbc4d72.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/ricochet_resistance.8247beaa.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/ricochet_resistance.69c6c7ee.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/smoky_resistance.845afc14.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/smoky_resistance.c4c202ca.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/rocket_launcher_resistance.b7dfd64f.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/rocket_launcher_resistance.5772cbaa.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/vulcan_resistance.824f6f0e.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/vulcan_resistance.9aebf267.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/thunder_resistance.6d7f4531.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/thunder_resistance.9dab2abf.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/scorpio_resistance.e8f1787f.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/scorpio_resistance.d40f8fbb.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/railgun_resistance.636a554f.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/railgun_resistance.7577c7a1.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/artillery_resistance.9b4cbc34.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/artillery_resistance.bd49fc96.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/gauss_resistance.bb8f409c.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/gauss_resistance.acf358ed.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/shaft_resistance.0778fd3e.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/shaft_resistance.7e58bc19.svg'
-
-                            },
-
-                            {
-
-                                  oldPicture: 'https://tankionline.com/play/static/images/mine_resistance.dd581c90.svg',
-                                  picture: 'https://tankionline.com/play/static/images/resistances/mine_resistance.0d0d3c98.svg'
-
-                            },
-
-                        ];
-
-                        new MutationObserver((mutations) => { mutations.forEach(({ addedNodes, target }) => { if (addedNodes.length && ( 'tbody' === target.localName || target.className.includes('BattleComponentStyle-canvasContainer'))) {
-
-                                let user = document.querySelector('.UserInfoContainerStyle-textDecoration')?.textContent?.split(' ').pop();
-
-                                target.querySelectorAll('.Common-maskImage').forEach((element) => {
-
-                                        let maskImage = window.getComputedStyle(element).getPropertyValue('-webkit-mask-image')?.split('"')?.[1];
-
-                                        let resistance = tankResistances.find(({ oldPicture }) => maskImage === oldPicture);
-
-                                        if (resistance) {
-
-                                                element.style.cssText = `
-
-                                                        -webkit-mask-image: none;
-                                                        background: url(${resistance.picture}) center center / 1em 1em no-repeat;
-                                                        width: 1em;
-                                                        height: 1em;
-
-                                                `
+                                                });
 
                                         };
 
                                 });
 
-                        }})}).observe(document, { subtree: true, childList: true });
+                        }).observe(document, {
+
+                                subtree: true,
+
+                                childList: true
+
+                        });
 
                 };
 
                 color();
 
-                new MutationObserver((mutations) => { mutations.forEach(({ target }) => { if ( target.className.includes('BattleComponentStyle-canvasContainer')) {
+                // закреп нижней панели в табе
 
-                        function pin() {
+                var mainHeader = document.getElementsByClassName('BattleTabStatisticComponentStyle-containerInsideTeams')[0];
 
-                                let mainHeader = document.getElementsByClassName('BattleTabStatisticComponentStyle-containerInsideTeams')[0];
+                var cssStylesPin = document.createElement(`style`);
+                    cssStylesPin.className = `obscStylesSheet-pinResistances`
 
-                                if (mainHeader) {
+                var pinnedResistances = [
 
-                                        const pinResistances = document.createElement('div');
-                                              pinResistances.className = 'BattleTabStatisticComponentStyle-pinResistances'
+                        {
+                                selector: '.BattleTabStatisticComponentStyle-pinResistances',
+                                style: `
+                                        background-color: var(--general-color) !important;
+                                `
+                        },
 
-                                        mainHeader.appendChild(pinResistances);
+                        {
+                                selector: '.BattleTabStatisticComponentStyle-containerInsideTeams > .Common-flexCenterAlignCenter',
+                                style: `
+                                        opacity: 1;
+                                        margin-top: 0.5em;
+                                `
+                        },
 
-                                        const pinResistancesDiv = document.getElementsByClassName('BattleTabStatisticComponentStyle-pinResistances')[0];
+                ];
 
-                                        if (pinResistancesDiv) {
+                function pin() {
 
-                                                if (localStorage.getItem('pinResistances') === 'true') {
+                        if (mainHeader) {
 
-                                                        var pressCount = 1
+                                let pinResistances = document.createElement('div');
+                                    pinResistances.className = 'BattleTabStatisticComponentStyle-pinResistances'
 
-                                                } else {
+                                mainHeader.appendChild(pinResistances);
 
-                                                        pressCount = 0
+                                if (pinResistances) {
+
+                                        let pressCount
+
+                                        if (localStorage.getItem('pinResistances') === 'true') {
+
+                                                pressCount = 1
+
+                                        } else {
+
+                                                pressCount = 0
+
+                                        };
+
+                                        pinResistances.addEventListener('click', function() {
+
+                                                pressCount++
+
+                                                if (pressCount == 1) {
+
+                                                        let elements = pinnedResistances
+
+                                                        elements.forEach((element) => {
+
+                                                                let css = `${element.selector} {${element.style}}\n`
+
+                                                                cssStylesPin.textContent += css.split(`                `).join(``);
+
+                                                        });
+
+                                                        variableHeader.appendChild(cssStylesPin);
+
+                                                        localStorage.setItem('pinResistances', true);
 
                                                 };
 
-                                                pinResistancesDiv.addEventListener('click', function() {
+                                                if (pressCount == 2) {
 
-                                                        pressCount++
+                                                        if (cssStylesPin) {
 
-                                                        if (pressCount == 1) {
-
-                                                                localStorage.setItem('pinResistances', true);
-
-                                                                let css = `
-
-                                                                .BattleTabStatisticComponentStyle-pinResistances {
-                                                                        background-color: var(--general-color) !important;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-containerInsideTeams > .Common-flexCenterAlignCenter {
-                                                                        opacity: 1;
-                                                                        margin-top: 0.5em;
-                                                                }
-
-                                                                `
-
-                                                                const body = document.body || document.getElementsByTagName('body')[0];
-
-                                                                const style = document.createElement('style');
-                                                                      style.className = 'pinResistances'
-
-                                                                if (style.styleSheet) {
-
-                                                                      style.styleSheet.cssText = css
-
-                                                                } else {
-
-                                                                      style.appendChild(document.createTextNode(css));
-
-                                                                };
-
-                                                                body.appendChild(style);
+                                                              cssStylesPin.remove();
 
                                                         };
 
-                                                        if (pressCount == 2) {
+                                                        pressCount = 0
 
-                                                                localStorage.setItem('pinResistances', false);
+                                                        localStorage.setItem('pinResistances', false);
 
-                                                                const styleElement = document.querySelector('.pinResistances');
+                                                };
 
-                                                                if (styleElement) {
-
-                                                                      styleElement.remove();
-
-                                                                };
-
-                                                                pressCount = 0
-
-                                                        };
-
-                                                });
-
-                                        };
+                                        });
 
                                 };
 
                         };
-
-                        pin();
-
-                        function show() {
-
-                                let mainHeader = document.getElementsByClassName('BattleTabStatisticComponentStyle-containerInsideTeams')[0];
-
-                                if (mainHeader) {
-
-                                        const showResistances = document.createElement('div');
-                                              showResistances.className = 'BattleTabStatisticComponentStyle-showResistances'
-
-                                        mainHeader.appendChild(showResistances);
-
-                                        const showResistancesDiv = document.getElementsByClassName('BattleTabStatisticComponentStyle-showResistances')[0];
-
-                                        if (showResistancesDiv) {
-
-                                                if (localStorage.getItem('showResistances') === 'true') {
-
-                                                        var pressCount = 1
-
-                                                } else {
-
-                                                        pressCount = 0
-
-                                                };
-
-                                                showResistancesDiv.addEventListener('click', function() {
-
-                                                        pressCount++
-
-                                                        if (pressCount == 1) {
-
-                                                                localStorage.setItem('showResistances', true);
-
-                                                                let css = `
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr,
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr {
-                                                                        width: 45.125em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-showResistances {
-                                                                        background-color: var(--general-color) !important;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-resistanceModuleCell,
-                                                                .BattleTabStatisticComponentStyle-gsCell,
-                                                                .BattleTabStatisticComponentStyle-deviceCell,
-                                                                .BattleTabStatisticComponentStyle-defenceCell {
-                                                                        visibility: visible !important;
-                                                                        opacity: 1 !important;
-                                                                        margin: unset !important;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-resistanceModuleCell {
-                                                                        position: relative !important;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-defenceLabel {
-                                                                        margin-left: -10em;
-                                                                        margin-right: 10em
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:first-child,
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:first-child {
-                                                                        margin-right: 10em
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+6),
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+7),
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+6),
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+7) {
-                                                                        border: unset;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(1) {
-                                                                        position: absolute;
-                                                                        left: 0em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(2) {
-                                                                        position: absolute;
-                                                                        left: 25.55em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(3) {
-                                                                        position: absolute;
-                                                                        left: 29.75em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(4) {
-                                                                        position: absolute;
-                                                                        left: 32.75em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(5) {
-                                                                        position: absolute;
-                                                                        left: 35.7em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(6) {
-                                                                        position: absolute;
-                                                                        left: 41em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(1) {
-                                                                        position: absolute;
-                                                                        left: 0em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(2) {
-                                                                        position: absolute;
-                                                                        left: 25.55em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(3) {
-                                                                        position: absolute;
-                                                                        left: 29.75em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(4) {
-                                                                        position: absolute;
-                                                                        left: 32.75em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(5) {
-                                                                        position: absolute;
-                                                                        left: 35.7em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(6) {
-                                                                        position: absolute;
-                                                                        left: 41em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr,
-                                                                .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr {
-                                                                        width: 46.5em;
-                                                                        justify-content: flex-end;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-containerInsideTeams {
-                                                                        width: 95em;
-                                                                }
-
-                                                                .BattleTabStatisticComponentStyle-blueTeamTableContainer table {
-                                                                        padding-left: 1em;
-                                                                }
-
-                                                                `
-
-                                                                const body = document.body || document.getElementsByTagName('body')[0];
-
-                                                                const style = document.createElement('style');
-                                                                      style.className = 'showResistances'
-
-                                                                if (style.styleSheet) {
-
-                                                                      style.styleSheet.cssText = css
-
-                                                                } else {
-
-                                                                      style.appendChild(document.createTextNode(css));
-
-                                                                };
-
-                                                                body.appendChild(style);
-
-                                                        };
-
-                                                        if (pressCount == 2) {
-
-                                                                localStorage.setItem('showResistances', false);
-
-                                                                const styleElement = document.querySelector('.showResistances');
-
-                                                                if (styleElement) {
-
-                                                                      styleElement.remove();
-
-                                                                };
-
-                                                                pressCount = 0
-
-                                                        };
-
-                                                });
-
-                                        };
-
-                                };
-
-                        };
-
-                        show();
-
-                }})}).observe(document, { subtree: true, childList: true });
-
-                if (localStorage.getItem('pinResistances') === 'true') {
-
-                        let css = `
-
-                        .BattleTabStatisticComponentStyle-pinResistances {
-                                background-color: var(--general-color) !important;
-                        }
-
-                        .BattleTabStatisticComponentStyle-containerInsideTeams > .Common-flexCenterAlignCenter {
-                                opacity: 1;
-                                margin-top: 0.5em;
-                        }
-
-                        `
-
-                        const body = document.body || document.getElementsByTagName('body')[0];
-
-                        const style = document.createElement('style');
-                              style.className = 'pinResistances'
-
-                        if (style.styleSheet) {
-
-                              style.styleSheet.cssText = css
-
-                        } else {
-
-                              style.appendChild(document.createTextNode(css));
-
-                        };
-
-                        body.appendChild(style);
-
-                        let pressCount
-
-                        pressCount = 1
 
                 };
 
-                if (localStorage.getItem('pinResistances') === 'false') {
+                if (localStorage.getItem('pinResistances') === 'true') {
 
-                        const styleElement = document.querySelector('.pinResistances');
+                        let pressCount = 1
 
-                        if (styleElement) {
+                        let elements = pinnedResistances
 
-                              styleElement.remove();
+                        elements.forEach((element) => {
+
+                                let css = `${element.selector} {${element.style}}\n`
+
+                                cssStylesPin.textContent += css.split(`                `).join(``);
+
+                        });
+
+                        variableHeader.appendChild(cssStylesPin);
+
+                } else {
+
+                        let pressCount = 0
+
+                };
+
+                // закреп резистов в табе
+
+                var cssStylesShow = document.createElement(`style`);
+                    cssStylesShow.className = `obscStyleSheet-showResistances`
+
+                var showingResistances = [
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr,
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr`,
+                                style: `
+                                        width: 45.125em;
+                                `
+                        },
+
+                        {
+                                selector: '.BattleTabStatisticComponentStyle-showResistances',
+                                style: `
+                                        background-color: var(--general-color) !important;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-resistanceModuleCell,
+                                           .BattleTabStatisticComponentStyle-gsCell,
+                                           .BattleTabStatisticComponentStyle-deviceCell,
+                                           .BattleTabStatisticComponentStyle-defenceCell`,
+                                style: `
+                                        visibility: visible !important;
+                                        opacity: 1 !important;
+                                        margin: unset !important;
+                                `
+                        },
+
+                        {
+                                selector: '.BattleTabStatisticComponentStyle-resistanceModuleCell',
+                                style: `
+                                        position: relative !important;
+                                `
+                        },
+
+                        {
+                                selector: '.BattleTabStatisticComponentStyle-defenceLabel',
+                                style: `
+                                        margin-left: -10em;
+                                        margin-right: 10em;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:first-child,
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:first-child`,
+                                style: `
+                                        margin-right: 10em;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+6),
+                                           .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+7),
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+6),
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+7)`,
+                                style: `
+                                        border: unset;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(1),
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(1)`,
+                                style: `
+                                        position: absolute;
+                                        left: 0em;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(2),
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(2)`,
+                                style: `
+                                        position: absolute;
+                                        left: 25.55em;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(3),
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(3)`,
+                                style: `
+                                        position: absolute;
+                                        left: 29.75em;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(4),
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(4)`,
+                                style: `
+                                        position: absolute;
+                                        left: 32.75em;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(5),
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(5)`,
+                                style: `
+                                        position: absolute;
+                                        left: 35.7em;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(6),
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(6)`,
+                                style: `
+                                        position: absolute;
+                                        left: 41em;
+                                `
+                        },
+
+                        {
+                                selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr,
+                                           .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr`,
+                                style: `
+                                        width: 46.5em;
+                                        justify-content: flex-end;
+                                `
+                        },
+
+                        {
+                                selector: '.BattleTabStatisticComponentStyle-containerInsideTeams',
+                                style: `
+                                        width: 95em;
+                                `
+                        },
+
+                        {
+                                selector: '.BattleTabStatisticComponentStyle-blueTeamTableContainer table',
+                                style: `
+                                        padding-left: 1em;
+                                `
+                        },
+
+                ];
+
+                function show() {
+
+                        if (mainHeader) {
+
+                                let showResistances = document.createElement('div');
+                                    showResistances.className = 'BattleTabStatisticComponentStyle-showResistances'
+
+                                mainHeader.appendChild(showResistances);
+
+                                if (showResistances) {
+
+                                        let pressCount
+
+                                        if (localStorage.getItem('showResistances') === 'true') {
+
+                                                pressCount = 1
+
+                                        } else {
+
+                                                pressCount = 0
+
+                                        };
+
+                                        showResistances.addEventListener('click', function() {
+
+                                                pressCount++
+
+                                                if (pressCount == 1) {
+
+                                                        let elements = showingResistances
+
+                                                        elements.forEach((element) => {
+
+                                                                let css = `${element.selector} {${element.style}}\n`
+
+                                                                cssStylesShow.textContent += css.split(`                `).join(``);
+
+                                                        });
+
+                                                        variableHeader.appendChild(cssStylesShow);
+
+                                                        localStorage.setItem('showResistances', true);
+
+                                                };
+
+                                                if (pressCount == 2) {
+
+                                                        if (cssStylesShow) {
+
+                                                              cssStylesShow.remove();
+
+                                                        };
+
+                                                        pressCount = 0
+
+                                                        localStorage.setItem('showResistances', false);
+
+                                                };
+
+                                        });
+
+                                };
 
                         };
-
-                        let pressCount
-
-                        pressCount = 0
 
                 };
 
                 if (localStorage.getItem('showResistances') === 'true') {
 
-                        let css = `
+                        let pressCount = 1
 
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr,
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr {
-                                width: 45.125em;
-                        }
+                        let elements = showingResistances
 
-                        .BattleTabStatisticComponentStyle-showResistances {
-                                background-color: var(--general-color) !important;
-                        }
+                        elements.forEach((element) => {
 
-                        .BattleTabStatisticComponentStyle-resistanceModuleCell,
-                        .BattleTabStatisticComponentStyle-gsCell,
-                        .BattleTabStatisticComponentStyle-deviceCell,
-                        .BattleTabStatisticComponentStyle-defenceCell {
-                                visibility: visible !important;
-                                opacity: 1 !important;
-                                margin: unset !important;
-                        }
+                                let css = `${element.selector} {${element.style}}\n`
 
-                        .BattleTabStatisticComponentStyle-resistanceModuleCell {
-                                position: relative !important;
-                        }
+                                cssStylesShow.textContent += css.split(`                `).join(``);
 
-                        .BattleTabStatisticComponentStyle-defenceLabel {
-                                margin-left: -10em;
-                                margin-right: 10em
-                        }
+                        });
 
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:first-child,
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:first-child {
-                                margin-right: 10em
-                        }
+                        variableHeader.appendChild(cssStylesShow);
 
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+6),
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+7),
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+6),
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+7) {
-                                border: unset;
-                        }
+                } else {
 
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(1) {
-                                position: absolute;
-                                left: 0em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(2) {
-                                position: absolute;
-                                left: 25.55em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(3) {
-                                position: absolute;
-                                left: 29.75em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(4) {
-                                position: absolute;
-                                left: 32.75em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(5) {
-                                position: absolute;
-                                left: 35.7em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr th:nth-child(6) {
-                                position: absolute;
-                                left: 41em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(1) {
-                                position: absolute;
-                                left: 0em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(2) {
-                                position: absolute;
-                                left: 25.55em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(3) {
-                                position: absolute;
-                                left: 29.75em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(4) {
-                                position: absolute;
-                                left: 32.75em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(5) {
-                                position: absolute;
-                                left: 35.7em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr th:nth-child(6) {
-                                position: absolute;
-                                left: 41em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table thead tr,
-                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead tr {
-                                width: 46.5em;
-                                justify-content: flex-end;
-                        }
-
-                        .BattleTabStatisticComponentStyle-containerInsideTeams {
-                                width: 95em;
-                        }
-
-                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table {
-                                padding-left: 1em;
-                        }
-
-                        `
-
-                        const body = document.body || document.getElementsByTagName('body')[0];
-
-                        const style = document.createElement('style');
-                              style.className = 'showResistances'
-
-                        if (style.styleSheet) {
-
-                              style.styleSheet.cssText = css
-
-                        } else {
-
-                              style.appendChild(document.createTextNode(css));
-
-                        };
-
-                        body.appendChild(style);
-
-                        let pressCount
-
-                        pressCount = 1
+                        let pressCount = 0
 
                 };
 
-                if (localStorage.getItem('showResistances') === 'false') {
+                new MutationObserver((mutations) => {
 
-                        const styleElement = document.querySelector('.showResistances');
+                        mutations.forEach(({ target }) => {
 
-                        if (styleElement) {
+                                if (target.className.includes('BattleComponentStyle-canvasContainer')) {
 
-                              styleElement.remove();
+                                        pin();
 
-                        };
+                                        show();
 
-                        let pressCount
+                                };
 
-                        pressCount = 0
+                        });
 
-                };
+                }).observe(document, {
+
+                        subtree: true,
+
+                        childList: true
+
+                });
 
         };
 
@@ -6191,174 +6067,172 @@
         function dynamicCheck() {
 
                 // fetch API
-        
+
                 var originFetch = unsafeWindow.fetch
-        
+
                 var resources = [];
-        
+
                 unsafeWindow.fetch = async (url, options) => {
-        
+
                         return originFetch(url, options).then(async (response) => {
-        
-                                console.log(url.toLocaleString());
-        
+
+                                // console.log(url.toLocaleString());
+
                                 for (let resource of resources) {
-        
+
                                         let createPreview = (url) => {
-        
+
                                                 let replacedURL = url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        
+
                                                 return new RegExp(replacedURL);
-        
+
                                         };
-        
+
                                         let preview = createPreview(resource.orig);
-        
+
                                         if (preview.test(url)) {
-        
-                                                console.log(`\n${url}\nreplaced to: ${resource.new}\n `);
-        
+
+                                                // console.log(`\n${url}\nreplaced to: ${resource.new}\n `);
+
                                                 return new Promise((resolve, reject) => {
-        
+
                                                         GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
-        
+
                                                                 onload: response => {
-        
+
                                                                         if (response.status == 200) {
-        
+
                                                                                 resolve(new Response(response.response, {
-        
+
                                                                                         status: 200,
                                                                                         statusText: "OK",
                                                                                         headers: { "Content-Type": response.response.type }
-        
+
                                                                                 }));
-        
+
                                                                         } else {
-        
-                                                                                reject(console.log('not catched'));
-        
+
+                                                                                reject();
+
                                                                         };
-        
+
                                                                 },
-        
+
                                                                 onerror: reject
-        
+
                                                         });
-        
+
                                                 });
-        
+
                                         };
-        
+
                                 };
-        
+
                                 return response
-        
+
                         });
-        
+
                 };
-        
+
                 let evening = [
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/bg1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bg1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/bl.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bl.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/flr1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/flr1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/gar1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/gar1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/pl1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/pl2.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl2.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/race1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/race1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/sky1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/sky1.webp"
                         },
-        
+
                 ];
-        
+
                 let night = [
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/bg1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bg1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/bl.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bl.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/flr1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/flr1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/gar1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/gar1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/pl1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/pl2.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl2.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/race1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/race1.webp"
                         },
-        
+
                         {
                                 orig: "/601/166176/165/206/31167700267244/sky1.webp",
                                 new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/sky1.webp"
                         },
-        
+
                 ];
-        
+
                 if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'evening') {
-        
+
                         resources = evening
-        
+
                 };
-        
+
                 if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'night') {
-        
+
                         resources = night
-        
+
                 };
-        
-                console.log(resources);
 
                 const linksArray = [ 'tankionline.com/play/',
                                      'tankionline.com/play/?desktop=true',
