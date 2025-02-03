@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.98'
+        var version = 'v0.981'
 
         // изменение иконки на вкладке браузера
 
@@ -3930,10 +3930,7 @@
                     {
                             selector: '.GearScoreStyle-bestGS',
                             style: `
-                                    background-image: linear-gradient(to left, rgb(40, 255, 203) 0%, rgb(255, 235, 51) 50%, rgb(40, 255, 203) 100%);
-                                    background-size: 500%;
-
-                                    animation: gradient 30s ease-in-out infinite;
+                                    background-image: linear-gradient(135deg, rgb(40, 255, 203) 0%, rgb(40 255 126), rgb(40, 255, 203) 100%);
                             `
                     },
 
@@ -3941,14 +3938,11 @@
                             selector: '.GearScoreStyle-bestGS:before',
                             style: `
                                     content: '9999';
-                                    background-image: linear-gradient(to left, rgb(40, 255, 203) 0%, rgb(255, 235, 51) 50%, rgb(40, 255, 203) 100%);
-                                    background-size: 500%;
+                                    background-image: linear-gradient(135deg, rgb(40, 255, 203) 0%, rgb(40 255 126), rgb(40, 255, 203) 100%);
                                     background-clip: text;
                                     filter: blur(0.5em);
 
                                     position: absolute;
-
-                                    animation: gradient 30s ease-in-out infinite;
                             `
                     },
 
@@ -5123,8 +5117,6 @@
 
                 // закреп нижней панели в табе
 
-                var mainHeader = document.getElementsByClassName('BattleTabStatisticComponentStyle-containerInsideTeams')[0];
-
                 var cssStylesPin = document.createElement(`style`);
                     cssStylesPin.className = `obscStylesSheet-pinResistances`
 
@@ -5148,6 +5140,8 @@
                 ];
 
                 function pin() {
+
+                        let mainHeader = document.getElementsByClassName('BattleTabStatisticComponentStyle-containerInsideTeams')[0];
 
                         if (mainHeader) {
 
@@ -5383,6 +5377,8 @@
                 ];
 
                 function show() {
+
+                        let mainHeader = document.getElementsByClassName('BattleTabStatisticComponentStyle-containerInsideTeams')[0];
 
                         if (mainHeader) {
 
