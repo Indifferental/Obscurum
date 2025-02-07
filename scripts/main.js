@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.981'
+        var version = 'v0.99'
 
         // изменение иконки на вкладке браузера
 
@@ -539,7 +539,6 @@
                                     outline: var(--general-outline);
                                     box-shadow: var(--general-box-shadow);
                                     border-radius: var(--general-border-radius);
-                                    backdrop-filter: var(--general-backdrop-filter);
 
                                     margin-bottom: 0.35em;
 
@@ -562,6 +561,33 @@
                     },
 
                     {
+                            selector: '.NewsComponentStyle-newsItemContainer',
+                            style: `
+                                    background: rgba(255, 255, 255, 0.1);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.NewsComponentStyle-newsItemHeaderReadMark',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.NewsComponentStyle-newsItemDate',
+                            style: `
+                                    margin-top: 1em;
+                                    margin-right: 1em;
+                            `
+                    },
+
+                    {
                             selector: '.NewsComponentStyle-header h1',
                             style: `
                                     display: flex;
@@ -579,6 +605,13 @@
                                     backdrop-filter: var(--general-backdrop-filter);
 
                                     animation: translateRight .2s ease-in-out;
+                            `
+                    },
+
+                    {
+                            selector: '.ItemDescriptionComponentStyle-commonBlockModal > .ItemDescriptionComponentStyle-paddingHeaderModal > .Common-flexStartAlignCenter > .HotKey-commonBlockForHotKey',
+                            style: `
+                                    visibility: hidden;
                             `
                     },
 
@@ -1176,11 +1209,18 @@
                     },
 
                     {
+                            selector: '.MainScreenComponentStyle-disabledButtonPlay',
+                            style: `
+                                    background: var(--general-bg) !important;
+                            `
+                    },
+
+                    {
                             selector: '.MainScreenComponentStyle-containerForMenuGradient > .MainScreenComponentStyle-blockMainMenu',
                             style: `
                                     position: absolute;
                                     margin: unset;
-                                    top: 20em;
+                                    top: 23em;
                                     left: 2em;
                                     width: 28em;
                             `
@@ -1311,7 +1351,7 @@
                                     top: 7em;
                                     left: 0em;
                                     width: 31em;
-                                    height: 60%;
+                                    height: 65%;
                                     z-index: 1;
                                     pointer-events: none;
 
@@ -1621,6 +1661,131 @@
                                     background-position: center;
                                     background-size: 2em;
                                     background-repeat: no-repeat;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-buttonsHeader',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    position: absolute;
+                                    margin: unset;
+                                    top: 19em;
+                                    left: 2em;
+                                    width: 28em;
+                                    height: 3em;
+                                    z-index: 20;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-buttonsHeader > div',
+                            style: `
+                                    position: relative;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 4em;
+                                    height: 3em;
+                                    z-index: 21;
+                                    cursor: pointer;
+
+                                    transition: var(--general-transition);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-buttonsHeader > div:first-child',
+                            style: `
+                                    border-top-left-radius: var(--general-border-radius);
+                                    border-bottom-left-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-buttonsHeader > div:last-child',
+                            style: `
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-buttonsHeader > div > div',
+                            style: `
+                                    background-color: var(--general-color);
+                                    mask-position: center;
+                                    mask-repeat: no-repeat;
+                                    mask-size: contain;
+
+                                    width: 1.35em;
+                                    height: 1.35em;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-fastBattle > div',
+                            style: `
+                                    mask-image: url("/play/static/images/qb_mode.71a6ec19.svg");
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-tdm > div',
+                            style: `
+                                    mask-image: url("/play/static/images/tdm_mode.ef239dba.svg");
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-cp > div',
+                            style: `
+                                    mask-image: url("/play/static/images/cp_mode.9d327fbc.svg");
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-ctf > div',
+                            style: `
+                                    mask-image: url("/play/static/images/ctf_mode.fba37902.svg");
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-sge > div',
+                            style: `
+                                    mask-image: url("/play/static/images/sge_mode.4a6035e8.svg");
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-tjr > div',
+                            style: `
+                                    mask-image: url("/play/static/images/jg_mode.025a9047.svg");
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-rgb > div',
+                            style: `
+                                    mask-image: url("/play/static/images/rgb_mode.66312ba3.svg");
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-fastPick-asl > div',
+                            style: `
+                                    mask-image: url("/play/static/images/asl_mode.42f836ca.svg");
                             `
                     },
 
@@ -2143,6 +2308,8 @@
                                     border-radius: var(--general-border-radius);
                                     backdrop-filter: var(--least-backdrop-filter);
 
+                                    margin: 0.35em;
+
                                     transition: var(--general-transition);
                             `
                     },
@@ -2413,11 +2580,12 @@
 
                     {
                             selector: `.DialogContainerComponentStyle-enterButton,
-                                       .TutorialModalComponentStyle-navigationButton`,
+                                       .TutorialModalComponentStyle-navigationButton,
+                                       .MainQuestComponentStyle-buttonContainer`,
                             style: `
                                     background: var(--least-general-color);
                                     box-shadow: var(--general-box-shadow);
-                                    border-radius: 1em;
+                                    border-radius: var(--general-border-radius) !important;
 
                                     transition: var(--general-transition);
                             `
@@ -2425,7 +2593,8 @@
 
                     {
                             selector: `.DialogContainerComponentStyle-enterButton:hover,
-                                       .TutorialModalComponentStyle-navigationButton:hover`,
+                                       .TutorialModalComponentStyle-navigationButton:hover,
+                                       .MainQuestComponentStyle-buttonContainer:hover`,
                             style: `
                                     background: var(--general-color);
                                     box-shadow: var(--general-box-shadow);
@@ -2434,9 +2603,24 @@
 
                     {
                             selector: `.DialogContainerComponentStyle-enterButton > span,
-                                       .TutorialModalComponentStyle-navigationButton > span`,
+                                       .TutorialModalComponentStyle-navigationButton > span,
+                                       .MainQuestComponentStyle-buttonContainer > span`,
                             style: `
                                     color: white;
+                            `
+                    },
+
+                    {
+                            selector: '.MainQuestComponentStyle-buttonContainer > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.DialogContainerComponentStyle-imgClose',
+                            style: `
+                                    transition: var(--general-transition);
                             `
                     },
 
@@ -3744,6 +3928,239 @@
                             `
                     },
 
+                    // блок стилизации окна после завершения катки
+
+                    {
+                            selector: `.BattleResultNavigationComponentStyle-commonBlockBattleResultNavigation,
+                                       .BattleResultHeaderComponentStyle-accountTeams`,
+                            style: `
+                                    background: var(--general-bg);
+                                    border-bottom: var(--general-outline);
+                                    backdrop-filter: var(--least-backdrop-filter);
+                                    box-shadow: var(--general-box-shadow);
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultHeaderComponentStyle-accountTeams',
+                            style: `
+                                    z-index: 15;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultHeaderComponentStyle-resultBg',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: `.BattleResultHeaderComponentStyle-firstTeamAccount,
+                                       .BattleResultHeaderComponentStyle-twoTeamAccount`,
+                            style: `
+                                    margin-top: 1.75em;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultQuestProgressComponentStyle-container',
+                            style: `
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultUserInfoComponentStyle-userInfoNick',
+                            style: `
+                                    margin-top: 1em;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultUserInfoComponentStyle-progressVictoryContainer',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    backdrop-filter: var(--least-backdrop-filter);
+                                    border-bottom: unset;
+                                    box-shadow: var(--general-box-shadow);
+
+                                    margin-top: 1em;
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: `.BattleRewardsComponentStyle-normalRow,
+                                       .BattleRewardsComponentStyle-selectedRow`,
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    backdrop-filter: var(--least-backdrop-filter);
+                                    border-bottom: unset;
+                                    border-radius: 0.75em;
+                                    box-shadow: var(--general-box-shadow);
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: `.BattleRewardsComponentStyle-normalRowSpace,
+                                       .BattleRewardsComponentStyle-extendedRowSpace`,
+                            style: `
+                                    height: 0.75em;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleKillBoardComponentStyle-tableContainer',
+                            style: `
+                                    margin-left: 4em;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleKillBoardComponentStyle-tableContainer table thead, .BattleKillBoardComponentStyle-tableContainer table thead tr, .BattleKillBoardComponentStyle-tableContainer table thead tr th',
+                            style: `
+                                    height: 2em;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleKillBoardComponentStyle-tableContainer table thead tr th > :first-child',
+                            style: `
+                                    position: absolute;
+                                    left: 0em;
+                                    margin: 1em !important;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultStyle-crystalSize, .BattleResultStyle-starSize',
+                            style: `
+                                    position: absolute;
+                                    margin: unset !important;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleKillBoardComponentStyle-tableContainer table tbody tr td > .GearScoreStyle-bestGS',
+                            style: `
+                                    margin-left: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleKillBoardComponentStyle-rankIcon',
+                            style: `
+                                    margin: 0 0.75em;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleKillBoardComponentStyle-tableContainer table tbody #selfUserBg',
+                            style: `
+                                    background: rgb(0 212 255 / 15%);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: 0.75em;
+
+                                    margin-bottom: 0.25em;
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleKillBoardComponentStyle-tableContainer table tbody #blueCommand',
+                            style: `
+                                    background: linear-gradient(90deg, rgb(0 212 255 / 15%), rgb(0 0 0 / 5%));
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: 0.75em;
+
+                                    margin-bottom: 0.25em;
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleKillBoardComponentStyle-tableContainer table tbody #enemyCommand',
+                            style: `
+                                    background: linear-gradient(90deg, rgb(254 102 102 / 15%), rgb(0 0 0 / 5%));
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: 0.75em;
+
+                                    margin-bottom: 0.25em;
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleKillBoardComponentStyle-tableContainer table',
+                            style: `
+                                    margin-top: 2em;
+                                    height: 55.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button',
+                            style: `
+                                    background: rgb(118 255 51 / 50%);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button:hover',
+                            style: `
+                                    background: rgb(118 255 51 / 70%);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-disabledButton',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+
+                                    animation: var(--general-animation);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-disabledButton > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
                     // блок стилизации карточек в лобби
 
                     {
@@ -3820,11 +4237,19 @@
                     },
 
                     {
-                            selector: `.ScrollingCardsComponentStyle-selectCard,
-                                       .ScrollingCardsComponentStyle-cardCount`,
+                            selector: `.ScrollingCardsComponentStyle-cardCount,
+                                       .ScrollingCardsComponentStyle-selectCard`,
                             style: `
                                     visibility: hidden;
                                     position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: `.ScrollingCardsComponentStyle-scrollCard > .ScrollingCardsComponentStyle-cardName h2,
+                                       .ScrollingCardsComponentStyle-scrollCard > .ScrollingCardsComponentStyle-cardDescription p`,
+                            style: `
+                                    text-shadow: 0 0 5px rgb(0 0 0 / 50%);
                             `
                     },
 
@@ -3922,6 +4347,236 @@
                             style: `
                                     transform: scale(1.1, 1.1);
                                     filter: unset;
+                            `
+                    },
+
+                    // блок стилизации миссий
+
+                    {
+                            selector: `.TableMainQuestComponentStyle-commonTableMainQuest,
+                                       .TableMainQuestComponentStyle-cardRewardGivenTable`,
+                            style: `
+                                    margin-top: unset !important;
+                                    margin-bottom: 1em;
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-cardRewardGivenTable',
+                            style: `
+                                    box-shadow: unset;
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation) !important;
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-cardRewardCompletedTable',
+                            style: `
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: var(--general-border-radius) !important;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation) !important;
+                            `
+                    },
+
+                    {
+                            selector: '.MainQuestComponentStyle-cardPlayCommon',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: var(--general-border-radius) !important;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation) !important;
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.MainQuestComponentStyle-commonDescriptionProgress > .Common-flexSpaceBetweenAlignEnd > span',
+                            style: `
+                                    margin-bottom: 0.75em;
+                            `
+                    },
+
+                    {
+                            selector: '.MainQuestComponentStyle-commonDescriptionProgress > .Common-flexSpaceBetweenAlignEnd > h4',
+                            style: `
+                                    color: rgb(255 255 255 / 50%);
+                            `
+                    },
+
+                    {
+                            selector: '.MainQuestComponentStyle-nameMission',
+                            style: `
+                                    color: rgb(191, 213, 255);
+                            `
+                    },
+
+                    {
+                            selector: '.MainQuestComponentStyle-mediaContainer > div > h2',
+                            style: `
+                                    color: var(--general-color);
+                            `
+                    },
+
+                    {
+                            selector: `.MainQuestComponentStyle-descriptionRewards,
+                                       .SuperMissionComponentStyle-descriptionSuperMission > .Common-flexSpaceBetween > .Common-flexEndAlignCenterColumn > span`,
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: `.TableMainQuestComponentStyle-rewardsContainerTable > .Common-flexCenterAlignCenterColumn,
+                                       .SuperMissionComponentStyle-rewardsContainer > .Common-flexCenterAlignCenterColumn,
+                                       .MainQuestComponentStyle-rewardsInDescriptionModal > .Common-flexStartAlignCenter`,
+                            style: `
+                                    background: rgb(255 255 255 / 2.5%);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+
+                                    margin: 0.25em;
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-progressTableMission',
+                            style: `
+                                    background: transparent;
+                                    filter: contrast(10) saturate(0);
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-colorLockedGradientTable',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-timerTable',
+                            style: `
+                                    background-color: rgb(0 0 0 / 25%) !important;
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: 0.5em !important;
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-timerTable span',
+                            style: `
+                                    color: white !important;
+                                    text-shadow: 0 0 5px black;
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-cardLockedTable',
+                            style: `
+                                    background: rgba(255, 204, 0, 0.05);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: var(--general-border-radius) !important;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-cardLockedTable:hover',
+                            style: `
+                                    background: rgba(255, 204, 0, 0.1);
+                            `
+                    },
+
+                    {
+                            selector: '.SuperMissionComponentStyle-descriptionSuperMission',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    margin-top: 2em;
+                                    height: calc(100% - 4em);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.SuperMissionComponentStyle-gradientBackground',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.QuestsComponentStyle-emptyList0',
+                            style: `
+                                    animation: var(--general-animation) !important;
+                            `
+                    },
+
+                    {
+                            selector: '.QuestsComponentStyle-emptyList0 > h2',
+                            style: `
+                                    background-color: rgb(255 255 255 / 30%);
+                                    backdrop-filter: var(--general-backdrop-filter);
+
+                                    color: black;
+                            `
+                    },
+
+                    {
+                            selector: '.QuestsComponentStyle-emptyList0 > p',
+                            style: `
+                                    color: rgb(255 255 255 / 30%);
+                            `
+                    },
+
+                    {
+                            selector: '.SuperMissionComponentStyle-buttonCollect',
+                            style: `
+                                    background-image: url("/play/static/images/claimAllButton.b9e9611f.webp"), radial-gradient(50% 100% at 50% 0%, rgb(59 128 25) 0%, rgb(48 102 20) 100%) !important;
+                                    box-shadow: unset !important;
+                                    border-bottom-right-radius: var(--general-border-radius) !important;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.SuperMissionComponentStyle-buttonCollect > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.SuperMissionComponentStyle-buttonDisable',
+                            style: `
+                                    box-shadow: unset !important;
+                                    border-bottom-right-radius: var(--general-border-radius) !important;
+
+                                    transition: var(--general-transition);
                             `
                     },
 
@@ -4252,7 +4907,8 @@
                     },
 
                     {
-                            selector: '.TanksPartComponentStyle-commonBlockDescriptionDevices',
+                            selector: `.TanksPartComponentStyle-commonBlockDescriptionDevices,
+                                       .TanksPartComponentStyle-amountItems`,
                             style: `
                                     position: absolute;
                                     visibility: hidden;
@@ -4702,12 +5358,12 @@
                             style: `
                                     background: var(--general-bg);
                                     outline: var(--general-outline);
-                                    box-shadow: var(--general-box-shadow);
+                                    box-shadow: 0 0 1em 0 rgb(0 0 0 / 40%), inset 0 0 0.5em 0 rgb(0 0 0 / 10%);
                                     border-radius: 0.35em;
                                     backdrop-filter: var(--least-backdrop-filter);
 
                                     color: white !important;
-                                    margin-top: 1.5em !important;
+                                    margin-top: 3.5em !important;
                                     padding: 0.15em 0.35em;
                                     z-index: 20;
                             `
@@ -4808,6 +5464,141 @@
                             selector: '.SaleByKitStyle-commonBlockModal > .SaleByKitStyle-paddingHeaderModal > .Common-flexStartAlignCenter > .HotKey-commonBlockForHotKey',
                             style: `
                                     visibility: hidden;
+                            `
+                    },
+
+                    // блок настроек
+
+                    {
+                            selector: '.SettingsComponentStyle-scrollingMenu',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.SettingsMenuComponentStyle-menuItemOptions',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    margin-bottom: 1em;
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.SettingsMenuComponentStyle-activeItemOptions',
+                            style: `
+                                    background: var(--general-bg-hover);
+                            `
+                    },
+
+                    {
+                            selector: '.SettingsMenuComponentStyle-slideMenuOptions',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.CheckBoxComponentStyle-oneSetting > .CheckBoxStyle-checkbox > label > span',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    border: unset;
+                                    border-radius: 0.5em;
+
+                                    display: flex;
+                                    align-items: center;
+
+                                    transition: var(--general-transition);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.CheckBoxComponentStyle-oneSetting > .CheckBoxStyle-checkbox > label > span::before',
+                            style: `
+                                    background: unset;
+                                    background-color: var(--general-color);
+                                    border-radius: 0.35em;
+
+                                    width: 1em;
+                                    height: 1em;
+                            `
+                    },
+
+                    {
+                            selector: '.InputRangeComponentStyle-range',
+                            style: `
+                                    border-radius: 0.35em;
+                            `
+                    },
+
+                    {
+                            selector: `.InputRangeComponentStyle-blockSoundVolume p span,
+                                       .GameSettingsStyle-notificationTextBlock > .GameSettingsStyle-notificationText,
+                                       .AccountSettingsComponentStyle-blockTextOptions h1`,
+                            style: `
+                                    color: var(--general-color);
+                            `
+                    },
+
+                    {
+                            selector: '.DropDownStyle-dropdownControl',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.SettingsButtonsComponentStyle-buttonsWidthBackReset',
+                            style: `
+                                    background: var(--least-general-color);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius) !important;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.SettingsButtonsComponentStyle-buttonsWidthBackReset:hover',
+                            style: `
+                                    background: var(--general-color);
+                                    box-shadow: var(--general-box-shadow);
+                            `
+                    },
+
+                    {
+                            selector: '.SettingsButtonsComponentStyle-buttonsWidthBackReset > span',
+                            style: `
+                                    color: white;
                             `
                     },
 
@@ -5537,7 +6328,7 @@
 
                         mainHeader.appendChild(clockTime);
 
-                        if (localStorage.getItem('language_store_key') == 'RU') {
+                        if (localStorage.getItem('tips.data').includes('"lang":"ru"')) {
 
                                 days = [ 'Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота' ];
 
@@ -5558,6 +6349,427 @@
                                 clockTime.innerHTML = new Date().toLocaleString().slice(12, 20).split('-').join('.');
 
                         }, 1000);
+
+                };
+
+        };
+
+        // функция фастпика в лобби
+
+        function battleFastPick() {
+
+                let mainHeader = document.getElementsByClassName('MainScreenComponentStyle-containerForMenuGradient')[0];
+
+                if (mainHeader) {
+
+                        let buttonsHeader = document.createElement('div');
+                            buttonsHeader.className = 'obscDOMElement-fastPick-buttonsHeader'
+
+                        mainHeader.appendChild(buttonsHeader);
+
+                        if (buttonsHeader) {
+
+                                let button1 = document.createElement('div');
+                                    button1.className = 'obscDOMElement-fastPick-fastBattle'
+
+                                    buttonsHeader.appendChild(button1);
+
+                                if (button1) {
+
+                                        let button1img = document.createElement('div');
+                                            button1img.className = 'obscDOMElement-fastPick-fastBattle-img'
+
+                                        button1.appendChild(button1img);
+
+                                        button1.addEventListener('click', function() {
+
+                                                let playButton = document.getElementsByClassName('MainScreenComponentStyle-buttonPlay')[0];
+
+                                                if (playButton) {
+
+                                                        playButton.click();
+
+                                                        setTimeout(function() {
+
+                                                                let gameModes = document.querySelector('.BattlePickComponentStyle-cardContentLeft > .BattlePickComponentStyle-commonStyleBlock:nth-child(2)');
+
+                                                                if (gameModes) {
+
+                                                                        gameModes.click();
+
+                                                                        setTimeout(function() {
+
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
+
+                                                                                if (header) {
+
+                                                                                        header.click();
+
+                                                                                };
+
+                                                                        }, 15);
+
+                                                                };
+
+                                                        }, 15);
+
+                                                };
+
+                                        });
+
+                                };
+
+                                let button2 = document.createElement('div');
+                                    button2.className = 'obscDOMElement-fastPick-tdm'
+
+                                    buttonsHeader.appendChild(button2);
+
+                                if (button2) {
+
+                                        let button2img = document.createElement('div');
+                                            button2img.className = 'obscDOMElement-fastPick-tdm-img'
+
+                                        button2.appendChild(button2img);
+
+                                        button2.addEventListener('click', function() {
+
+                                                let playButton = document.getElementsByClassName('MainScreenComponentStyle-buttonPlay')[0];
+
+                                                if (playButton) {
+
+                                                        playButton.click();
+
+                                                        setTimeout(function() {
+
+                                                                let gameModes = document.querySelector('.BattlePickComponentStyle-cardContentLeft > .BattlePickComponentStyle-commonStyleBlock:nth-child(2)');
+
+                                                                if (gameModes) {
+
+                                                                        gameModes.click();
+
+                                                                        setTimeout(function() {
+
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
+
+                                                                                if (header) {
+
+                                                                                        header.click();
+
+                                                                                };
+
+                                                                        }, 15);
+
+                                                                };
+
+                                                        }, 15);
+
+                                                };
+
+                                        });
+
+                                };
+
+                                let button3 = document.createElement('div');
+                                    button3.className = 'obscDOMElement-fastPick-cp'
+
+                                    buttonsHeader.appendChild(button3);
+
+                                if (button3) {
+
+                                        let button3img = document.createElement('div');
+                                            button3img.className = 'obscDOMElement-fastPick-cp-img'
+
+                                        button3.appendChild(button3img);
+
+                                        button3.addEventListener('click', function() {
+
+                                                let playButton = document.getElementsByClassName('MainScreenComponentStyle-buttonPlay')[0];
+
+                                                if (playButton) {
+
+                                                        playButton.click();
+
+                                                        setTimeout(function() {
+
+                                                                let gameModes = document.querySelector('.BattlePickComponentStyle-cardContentLeft > .BattlePickComponentStyle-commonStyleBlock:nth-child(2)');
+
+                                                                if (gameModes) {
+
+                                                                        gameModes.click();
+
+                                                                        setTimeout(function() {
+
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
+
+                                                                                if (header) {
+
+                                                                                        header.click();
+
+                                                                                };
+
+                                                                        }, 15);
+
+                                                                };
+
+                                                        }, 15);
+
+                                                };
+
+                                        });
+
+                                };
+
+                                let button4 = document.createElement('div');
+                                    button4.className = 'obscDOMElement-fastPick-ctf'
+
+                                    buttonsHeader.appendChild(button4);
+
+                                if (button4) {
+
+                                        let button4img = document.createElement('div');
+                                            button4img.className = 'obscDOMElement-fastPick-ctf-img'
+
+                                        button4.appendChild(button4img);
+
+                                        button4.addEventListener('click', function() {
+
+                                                let playButton = document.getElementsByClassName('MainScreenComponentStyle-buttonPlay')[0];
+
+                                                if (playButton) {
+
+                                                        playButton.click();
+
+                                                        setTimeout(function() {
+
+                                                                let gameModes = document.querySelector('.BattlePickComponentStyle-cardContentLeft > .BattlePickComponentStyle-commonStyleBlock:nth-child(2)');
+
+                                                                if (gameModes) {
+
+                                                                        gameModes.click();
+
+                                                                        setTimeout(function() {
+
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
+
+                                                                                if (header) {
+
+                                                                                        header.click();
+
+                                                                                };
+
+                                                                        }, 15);
+
+                                                                };
+
+                                                        }, 15);
+
+                                                };
+
+                                        });
+
+                                };
+
+                                let button5 = document.createElement('div');
+                                    button5.className = 'obscDOMElement-fastPick-sge'
+
+                                    buttonsHeader.appendChild(button5);
+
+                                if (button5) {
+
+                                        let button5img = document.createElement('div');
+                                            button5img.className = 'obscDOMElement-fastPick-sge-img'
+
+                                        button5.appendChild(button5img);
+
+                                        button5.addEventListener('click', function() {
+
+                                                let playButton = document.getElementsByClassName('MainScreenComponentStyle-buttonPlay')[0];
+
+                                                if (playButton) {
+
+                                                        playButton.click();
+
+                                                        setTimeout(function() {
+
+                                                                let gameModes = document.querySelector('.BattlePickComponentStyle-cardContentLeft > .BattlePickComponentStyle-commonStyleBlock:nth-child(2)');
+
+                                                                if (gameModes) {
+
+                                                                        gameModes.click();
+
+                                                                        setTimeout(function() {
+
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
+
+                                                                                if (header) {
+
+                                                                                        header.click();
+
+                                                                                };
+
+                                                                        }, 15);
+
+                                                                };
+
+                                                        }, 15);
+
+                                                };
+
+                                        });
+
+                                };
+
+                                let button6 = document.createElement('div');
+                                    button6.className = 'obscDOMElement-fastPick-tjr'
+
+                                    buttonsHeader.appendChild(button6);
+
+                                if (button6) {
+
+                                        let button6img = document.createElement('div');
+                                            button6img.className = 'obscDOMElement-fastPick-tjr-img'
+
+                                        button6.appendChild(button6img);
+
+                                        button6.addEventListener('click', function() {
+
+                                                let playButton = document.getElementsByClassName('MainScreenComponentStyle-buttonPlay')[0];
+
+                                                if (playButton) {
+
+                                                        playButton.click();
+
+                                                        setTimeout(function() {
+
+                                                                let gameModes = document.querySelector('.BattlePickComponentStyle-cardContentLeft > .BattlePickComponentStyle-commonStyleBlock:nth-child(2)');
+
+                                                                if (gameModes) {
+
+                                                                        gameModes.click();
+
+                                                                        setTimeout(function() {
+
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
+
+                                                                                if (header) {
+
+                                                                                        header.click();
+
+                                                                                };
+
+                                                                        }, 15);
+
+                                                                };
+
+                                                        }, 15);
+
+                                                };
+
+                                        });
+
+                                };
+
+                                let button7 = document.createElement('div');
+                                    button7.className = 'obscDOMElement-fastPick-rgb'
+
+                                    buttonsHeader.appendChild(button7);
+
+                                if (button7) {
+
+                                        let button7img = document.createElement('div');
+                                            button7img.className = 'obscDOMElement-fastPick-rgb-img'
+
+                                        button7.appendChild(button7img);
+
+                                        button7.addEventListener('click', function() {
+
+                                                let playButton = document.getElementsByClassName('MainScreenComponentStyle-buttonPlay')[0];
+
+                                                if (playButton) {
+
+                                                        playButton.click();
+
+                                                        setTimeout(function() {
+
+                                                                let gameModes = document.querySelector('.BattlePickComponentStyle-cardContentLeft > .BattlePickComponentStyle-commonStyleBlock:nth-child(2)');
+
+                                                                if (gameModes) {
+
+                                                                        gameModes.click();
+
+                                                                        setTimeout(function() {
+
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
+
+                                                                                if (header) {
+
+                                                                                        header.click();
+
+                                                                                };
+
+                                                                        }, 15);
+
+                                                                };
+
+                                                        }, 15);
+
+                                                };
+
+                                        });
+
+                                };
+
+                                let button8 = document.createElement('div');
+                                    button8.className = 'obscDOMElement-fastPick-asl'
+
+                                    buttonsHeader.appendChild(button8);
+
+                                if (button8) {
+
+                                        let button8img = document.createElement('div');
+                                            button8img.className = 'obscDOMElement-fastPick-asl-img'
+
+                                        button8.appendChild(button8img);
+
+                                        button8.addEventListener('click', function() {
+
+                                                let playButton = document.getElementsByClassName('MainScreenComponentStyle-buttonPlay')[0];
+
+                                                if (playButton) {
+
+                                                        playButton.click();
+
+                                                        setTimeout(function() {
+
+                                                                let gameModes = document.querySelector('.BattlePickComponentStyle-cardContentLeft > .BattlePickComponentStyle-commonStyleBlock:nth-child(2)');
+
+                                                                if (gameModes) {
+
+                                                                        gameModes.click();
+
+                                                                        setTimeout(function() {
+
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
+
+                                                                                if (header) {
+
+                                                                                        header.click();
+
+                                                                                };
+
+                                                                        }, 15);
+
+                                                                };
+
+                                                        }, 15);
+
+                                                };
+
+                                        });
+
+                                };
+
+                        };
 
                 };
 
@@ -6263,6 +7475,8 @@
                                                 primaryNotification();
 
                                                 lobbyClocks();
+
+                                                battleFastPick();
 
                                                 garageStyles();
 
