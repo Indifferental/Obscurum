@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.99'
+        var version = 'v0.991'
 
         // изменение иконки на вкладке браузера
 
@@ -56,7 +56,7 @@
                 var elements = [
 
                     {
-                            selector: '.obscGlobalVariable-startText',
+                            selector: '.obscDOMElement-startText',
                             style: `
                                     color: white;
                                     font-style: oblique;
@@ -1393,6 +1393,7 @@
                                     box-shadow: var(--general-box-shadow) !important;
                                     border-radius: var(--general-border-radius);
 
+                                    align-items: center;
                                     top: 8em;
                                     right: 2em;
                                     margin: unset;
@@ -1412,6 +1413,8 @@
                                     box-shadow: var(--general-box-shadow) !important;
                                     border: unset;
                                     border-radius: 1em;
+
+                                    width: 95%;
                             `
                     },
 
@@ -1547,11 +1550,9 @@
                     {
                             selector: '.ChallengeTimerComponentStyle-textTime',
                             style: `
-                                    background: rgb(0 0 0 / 25%);
+                                    background: rgb(0 0 0 / 5%);
                                     outline: var(--general-outline);
-                                    box-shadow: var(--general-box-shadow) !important;
                                     border-radius: 0.75em;
-                                    backdrop-filter: var(--least-backdrop-filter);
 
                                     color: white;
                                     text-shadow: 0 0 5px black;
@@ -1564,10 +1565,9 @@
                     {
                             selector: '.AnnouncementHomeScreenComponentStyle-headerTimer',
                             style: `
-                                    background: rgb(0 0 0 / 25%);
+                                    background: rgb(0 0 0 / 5%);
                                     outline: var(--general-outline);
-                                    box-shadow: var(--general-box-shadow) !important;
-                                    border-radius: 0.75em 0.5em 0.5em 0.5em;
+                                    border-radius: 0.75em;
                                     backdrop-filter: var(--least-backdrop-filter);
 
                                     padding: 0.25em 0.5em;
@@ -1853,6 +1853,8 @@
                             style: `
                                     margin-right: 12.25em;
                                     width: auto;
+
+                                    animation: var(--general-animation);
                             `
                     },
 
@@ -1894,6 +1896,7 @@
                                     margin-top: unset;
                                     padding-top: 1.5em;
                                     width: 100%;
+                                    height: 100%;
                             `
                     },
 
@@ -1902,8 +1905,6 @@
                                        .FriendRequestComponentStyle-blockInformationCommunity`,
                             style: `
                                     margin-left: unset;
-
-                                    animation: var(--general-animation);
                             `
                     },
 
@@ -1959,6 +1960,7 @@
                                     backdrop-filter: var(--least-backdrop-filter);
 
                                     transition: var(--general-transition);
+                                    animation: var(--general-animation);
                             `
                     },
 
@@ -2215,7 +2217,6 @@
                             selector: '.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > h2',
                             style: `
                                     color: var(--general-color);
-                                    text-shadow: 0 0 2.5em;
                                     overflow: visible;
 
                                     animation: var(--general-animation);
@@ -2507,6 +2508,13 @@
                     // блок ввода с поиском в меню
 
                     {
+                            selector: '.SearchInputComponentStyle-search',
+                            style: `
+                                    height: auto;
+                            `
+                    },
+
+                    {
                             selector: '.SearchInputComponentStyle-searchInput',
                             style: `
                                     background: var(--general-bg);
@@ -2516,6 +2524,7 @@
                                     border-radius: var(--general-border-radius);
 
                                     transition: var(--general-transition);
+                                    animation: var(--general-animation);
                             `
                     },
 
@@ -4200,7 +4209,6 @@
                             selector: '.ScrollingCardsComponentStyle-scrollCard > .Common-backgroundImageCover',
                             style: `
                                     background-blend-mode: color-dodge;
-                                    filter: blur(4px);
 
                                     transition: var(--general-transition) !important;
                             `
@@ -4210,7 +4218,6 @@
                             selector: '.ScrollingCardsComponentStyle-scrollCard:hover > .Common-backgroundImageCover',
                             style: `
                                     transform: scale(1.1, 1.1);
-                                    filter: unset;
                             `
                     },
 
@@ -4336,7 +4343,6 @@
                             selector: '.BattlePickComponentStyle-commonStyleBlock > .Common-backgroundImage',
                             style: `
                                     background-blend-mode: hard-light;
-                                    filter: blur(3px);
 
                                     transition: var(--general-transition) !important;
                             `
@@ -4346,7 +4352,299 @@
                             selector: '.BattlePickComponentStyle-commonStyleBlock:hover > .Common-backgroundImage',
                             style: `
                                     transform: scale(1.1, 1.1);
-                                    filter: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div,
+                                       .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div`,
+                            style: `
+                                    background-color: var(--general-color);
+                            `
+                    },
+
+                    {
+                            selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn > .Common-flexCenterAlignCenterColumn > h2,
+                                       .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn > .Common-flexCenterAlignCenterColumn > h2`,
+                            style: `
+                                    color: var(--general-color) !important;
+                            `
+                    },
+
+                    {
+                            selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn > span,
+                                       .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn > span`,
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    // блок стилизации приглашений
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-header',
+                            style: `
+                                    align-items: flex-start;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-typeListContainer > h3',
+                            style: `
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-substrateRank',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-usersScroll',
+                            style: `
+                                    align-items: center;
+                                    margin-top: unset;
+                                    padding-top: 1.5em;
+                                    width: 100%;
+                                    height: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch',
+                            style: `
+                                    margin-top: unset;
+                                    padding-bottom: 1.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-rankContainer',
+                            style: `
+                                    margin-left: 1em;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > div:nth-child(2)',
+                            style: `
+                                    position: absolute;
+                                    left: 6.5em;
+                                    margin: unset;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-onlineContainer',
+                            style: `
+                                    position: absolute;
+                                    display: flex;
+                                    justify-content: center;
+                                    top: unset;
+                                    right: 1em;
+                                    margin: unset;
+                            `
+                    },
+
+                    {
+                            selector: `.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-onlineContainer > .InvitationWindowsComponentStyle-onlineLabel,
+                                       .InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-onlineContainer > .InvitationWindowsComponentStyle-battleLabel`,
+                            style: `
+                                    margin: 0.1em;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-centerBlock',
+                            style: `
+                                    align-items: center;
+                                    max-width: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-commonItem',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    top: 7em;
+                                    left: 0em;
+                                    width: 28em;
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: `.InvitationWindowsComponentStyle-commonBorder,
+                                       .InvitationWindowsComponentStyle-commonBlockButton`,
+                            style: `
+                                    border: unset !important;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-commonItem > div',
+                            style: `
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-commonItem > div:first-child:hover',
+                            style: `
+                                    background: var(--general-bg-hover);
+                                    border-top-right-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-commonItem > div:last-child:hover',
+                            style: `
+                                    background: var(--general-bg-hover);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-commonItem > div > div:nth-child(1)',
+                            style: `
+                                    margin: 0 0.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-commonItem > div > div:nth-child(1)',
+                            style: `
+                                    margin: 0 0.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.ModalStyle-root > .InvitationWindowsComponentStyle-commonItem:nth-child(2)',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    // блок стилизации поиска битвы
+
+                    {
+                            selector: '.MatchmakingWaitComponentStyle-container',
+                            style: `
+                                    background: var(--general-bg);
+                                    box-shadow: var(--general-box-shadow);
+                                    backdrop-filter: var(--least-backdrop-filter);
+                                    border-bottom-left-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+
+                                    align-self: center;
+                                    top: 0em;
+                                    right: unset;
+                                    width: 48em;
+                                    height: 7em;
+                                    z-index: 100;
+                            `
+                    },
+
+                    {
+                            selector: '.MatchmakingWaitComponentStyle-cancelButton',
+                            style: `
+                                    border: unset;
+
+                                    margin-top: unset;
+                                    height: 6em;
+                            `
+                    },
+
+                    {
+                            selector: '.MatchmakingWaitComponentStyle-cancelButton > span',
+                            style: `
+                                    margin: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.MatchmakingWaitComponentStyle-contentContainer',
+                            style: `
+                                    margin-top: unset;
+                                    margin-left: 2em;
+                                    height: 6em;
+                            `
+                    },
+
+                    {
+                            selector: `.MatchmakingWaitComponentStyle-averageTimeContainer,
+                                       .MatchmakingWaitComponentStyle-currentTimeContainer`,
+                            style: `
+                                    margin-bottom: unset;
+                                    margin-left: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.MatchmakingWaitComponentStyle-container > div',
+                            style: `
+                                    background-image: unset;
                             `
                     },
 
@@ -4379,6 +4677,8 @@
                                     border-radius: var(--general-border-radius) !important;
                                     backdrop-filter: var(--least-backdrop-filter);
 
+                                    height: 4.125em;
+
                                     transition: var(--general-transition);
                                     animation: var(--general-animation) !important;
                             `
@@ -4392,6 +4692,8 @@
                                     box-shadow: var(--general-box-shadow) !important;
                                     border-radius: var(--general-border-radius) !important;
                                     backdrop-filter: var(--least-backdrop-filter);
+
+                                    height: 4.125em;
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation) !important;
@@ -4432,6 +4734,13 @@
                                        .SuperMissionComponentStyle-descriptionSuperMission > .Common-flexSpaceBetween > .Common-flexEndAlignCenterColumn > span`,
                             style: `
                                     visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-rewardsContainerTable',
+                            style: `
+                                    top: 0.75em;
                             `
                     },
 
@@ -5602,6 +5911,195 @@
                             `
                     },
 
+                    // блок стилизации магазина
+
+                    {
+                            selector: '.ShopSelectedSectionComponentStyle-limitedOffersCommon',
+                            style: `
+                                    height: 100%;
+                            `
+                    },
+
+                    {
+                            selector: `.ShopSelectedSectionComponentStyle-limitedOffersCommon,
+                                       .ShopSelectedSectionComponentStyle-commonCard`,
+                            style: `
+                                    background: transparent !important;
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    justify-content: center;
+                                    padding: unset;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: `.ShopSelectedSectionComponentStyle-limitedOffersCommon > .Common-backgroundImageCover,
+                                       .ShopSelectedSectionComponentStyle-commonCard > .Common-backgroundImageCover`,
+                            style: `
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: `.ShopSelectedSectionComponentStyle-limitedOffersCommon:hover > .Common-backgroundImageCover,
+                                       .ShopSelectedSectionComponentStyle-commonCard:hover > .Common-backgroundImageCover`,
+                            style: `
+                                    transform: scale(1.1, 1.1);
+                            `
+                    },
+
+                    {
+                            selector: `.ShopSelectedSectionComponentStyle-limitedOffersCommon:before, .ShopSelectedSectionComponentStyle-limitedOffersCommon:after,
+                                       .ShopSelectedSectionComponentStyle-commonCard:before, .ShopSelectedSectionComponentStyle-commonCard:after`,
+                            style: `
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: '.ShopSelectedSectionComponentStyle-gradientCategory',
+                            style: `
+                                    background: transparent;
+
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: '.ShopSelectedSectionComponentStyle-limitedOffersCommon > span',
+                            style: `
+                                    text-shadow: 0 0 5px rgb(0 0 0 / 50%);
+                                    top: 1em;
+                                    bottom: unset;
+                                    left: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.NewShopCommonComponentStyle-commonBlockMenuShop',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-right: unset;
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    margin-left: unset;
+                                    padding: 2em 1.25em;
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div',
+                            style: `
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter',
+                            style: `
+                                    box-shadow: unset !important;
+                                    border-radius: unset;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter:first-child',
+                            style: `
+                                    border-top-left-radius: var(--general-border-radius);
+                                    border-top-right-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter:last-child',
+                            style: `
+                                    border-bottom-left-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                            `
+                    },
+
+
+                    {
+                            selector: `.NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter > h4,
+                                       .NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter > .ShopSelectedSectionComponentStyle-activeCategory`,
+                            style: `
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.ShopSelectedSectionComponentStyle-activeCategory',
+                            style: `
+                                    margin-left: 1.25em;
+                            `
+                    },
+
+                    {
+                            selector: '.ShopCategoryOfferSectionStyle-containerLimitOffers',
+                            style: `
+                                    padding-left: 2em;
+                            `
+                    },
+
+                    {
+                            selector: `.shop-item-component,
+                                       .ShopCategoryOfferSectionStyle-containerLimitOffers > .Common-flexCenterAlignCenter`,
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    opacity: 1;
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation) !important;
+                            `
+                    },
+
+                    {
+                            selector: `.shop-item-component:hover,
+                                       .ShopCategoryOfferSectionStyle-containerLimitOffers > .Common-flexCenterAlignCenter:hover`,
+                            style: `
+                                    background: var(--general-bg-hover);
+                            `
+                    },
+
+                    {
+                            selector: `.SpecialItemComponentStyle-smallSizePreviewItem,
+                                       .SpecialItemComponentStyle-bigSizePreviewItem`,
+                            style: `
+                                    background: var(--general-bg);
+                                    border-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.NewShopCommonComponentStyle-commonContainer',
+                            style: `
+                                    background: transparent;
+                            `
+                    },
+
                 ];
 
                 var keyframes = [
@@ -5763,7 +6261,7 @@
 
         // функции для ингейм таба
 
-        function resistancesArray() {
+        function tabFunctionsArray() {
 
                 var tankResistances = [
 
@@ -5909,7 +6407,7 @@
                 // закреп нижней панели в табе
 
                 var cssStylesPin = document.createElement(`style`);
-                    cssStylesPin.className = `obscStylesSheet-pinResistances`
+                    cssStylesPin.className = `obscStyleSheet-pinResistances`
 
                 var pinnedResistances = [
 
@@ -6775,7 +7273,7 @@
 
         };
 
-        // разные стили гаража в лобби
+        // стили гаража в лобби
 
         function garageStyles() {
 
@@ -6798,6 +7296,13 @@
                                                         selector: '.obscDOMElement-garageVisibility',
                                                         style: `
                                                                 background-color: rgb(255 255 255 / 10%) !important;
+                                                        `
+                                                },
+
+                                                {
+                                                        selector: '.obscDOMElement-fastPick-buttonsHeader',
+                                                        style: `
+                                                                opacity: 0;
                                                         `
                                                 },
 
@@ -7270,6 +7775,36 @@
 
         };
 
+        // функция скрытия панели при поиске в матчмейкинге
+
+        function matchmakingWaiting() {
+
+                const mainHeader = document.getElementsByClassName('MatchmakingWaitComponentStyle-container')[0];
+
+                const menuPanel = document.getElementsByClassName('UserInfoContainerStyle-blockForIconTankiOnline')[0] || document.getElementsByClassName('BreadcrumbsComponentStyle-breadcrumbs')[0];
+
+                if (mainHeader) {
+
+                        if (menuPanel) {
+
+                                menuPanel.style = 'visibility: hidden'
+
+                        };
+
+                };
+
+                if (!mainHeader) {
+
+                        if (menuPanel) {
+
+                                menuPanel.style = 'visibility: visible'
+
+                        };
+
+                };
+
+        };
+
         // проверка на соответствие массиву доменов + обсервер мутаций DOM
 
         function dynamicCheck() {
@@ -7452,7 +7987,7 @@
 
                                 styleSheet();
 
-                                resistancesArray();
+                                tabFunctionsArray();
 
                                 applyBackground();
 
@@ -7506,6 +8041,12 @@
 
                                         };
 
+                                        if (element.nodeType === 1 && element.classList.contains('MatchmakingWaitComponentStyle-container')) {
+
+                                                matchmakingWaiting();
+
+                                        };
+
                                         }); }}); });
 
                                         let Configuration = {
@@ -7525,7 +8066,7 @@
                                 function startText() {
 
                                         let textbox = document.createElement('pre');
-                                            textbox.className = 'obscGlobalVariable-startText'
+                                            textbox.className = 'obscDOMElement-startText'
 
                                         variableHeader.appendChild(textbox);
 
