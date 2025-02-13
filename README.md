@@ -5,8 +5,6 @@
 
 Со всеми нововведениями и исправлениями можно ознакомиться в разделе [релизы](https://github.com/Indifferental/Obscurum/releases) или непосредственно в игре с помощью чейнджлога в лобби
 
-_Текущая версия: 0.991_
-
 ## Установка на браузер
 1. Установите расширение [Tampermonkey](https://www.tampermonkey.net/) на ваш браузер
 2. Создайте новый скрипт и [вставьте этот код](https://github.com/Indifferental/Obscurum/blob/main/scripts/user.js)
@@ -17,8 +15,6 @@ _Текущая версия: 0.991_
 Theme for Tanki Online, designed in dark-gray tones. Many functions have been written that simplify interaction with the game, such as turning on/off resistances in the ingame tab by pressing a button, the "fastpick" function to the matchmaking in the lobby. Functions for replacing garage textures in the lobby with evening and night ones have been implemented. In the future, it is planned to create a menu with various UI settings, filters, etc.
 
 All the innovations and fixes can be found in the [releases](https://github.com/Indifferental/Obscurum/releases) section or directly in the game using the changelog in the lobby
-
-_Current version: 0.991_
 
 ## Installation in browser
 1. Install the [Tampermonkey](https://www.tampermonkey.net/) extension on your browser
