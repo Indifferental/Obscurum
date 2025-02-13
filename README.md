@@ -5,7 +5,7 @@
 
 Со всеми нововведениями и исправлениями можно ознакомиться в разделе [релизы](https://github.com/Indifferental/Obscurum/releases) или непосредственно в игре с помощью чейнджлога в лобби
 
-Текущая версия: 0.991
+_Текущая версия: 0.991_
 
 ## Установка на браузер
 1. Установите расширение [Tampermonkey](https://www.tampermonkey.net/) на ваш браузер
@@ -18,7 +18,7 @@ Theme for Tanki Online, designed in dark-gray tones. Many functions have been wr
 
 All the innovations and fixes can be found in the [releases](https://github.com/Indifferental/Obscurum/releases) section or directly in the game using the changelog in the lobby
 
-Current version: 0.991
+_Current version: 0.991_
 
 ## Installation in browser
 1. Install the [Tampermonkey](https://www.tampermonkey.net/) extension on your browser
