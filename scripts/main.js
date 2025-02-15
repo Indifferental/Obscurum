@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v0.991'
+        var version = 'v0.992'
 
         // изменение иконки на вкладке браузера
 
@@ -379,7 +379,7 @@
                     {
                             selector: '.Common-container, .Common-entranceBackground, .Common-entranceGradient, .Common-background, .Common-changingBackground',
                             style: `
-                                    background: transparent;
+                                    background: transparent !important;
                             `
                     },
 
@@ -1209,6 +1209,26 @@
                     },
 
                     {
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay > .Common-backgroundImageContain',
+                            style: `
+                                    mask-image: url("/play/static/images/lockButtonPlay.4bb62c08.svg");
+                                    mask-size: contain;
+                                    mask-position: center;
+                                    mask-repeat: no-repeat;
+                                    background-color: var(--general-color);
+                                    background-image: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay > h3',
+                            style: `
+                                    color: var(--general-color);
+                                    margin-bottom: 0.5em;
+                            `
+                    },
+
+                    {
                             selector: '.MainScreenComponentStyle-disabledButtonPlay',
                             style: `
                                     background: var(--general-bg) !important;
@@ -1254,13 +1274,6 @@
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
-                            `
-                    },
-
-                    {
-                            selector: '.Common-container > .ContainersComponentStyle-navigationContainer > .ContainersComponentStyle-navigationBlock > .Common-flexCenterAlignCenterColumn',
-                            style: `
-                                    padding: unset;
                             `
                     },
 
@@ -2156,6 +2169,20 @@
                     },
 
                     {
+                            selector: '.ContainersComponentStyle-navigationContainer > .ContainersComponentStyle-navigationBlock > .Common-flexCenterAlignCenterColumn',
+                            style: `
+                                    padding: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.ContainersComponentStyle-keyBlock',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
                             selector: '.ContainerInfoComponentStyle-lootBoxDescriptionContainer',
                             style: `
                                     background: var(--general-bg);
@@ -2465,7 +2492,36 @@
                     },
 
                     {
-                            selector: '.TableComponentStyle-table > thead > tr > th',
+                            selector: '.ClanInvitationsComponentStyle-invitationContent',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.ClanInvitationsComponentStyle-sendButton > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
+                            selector: '.ClanInvitationsComponentStyle-blockInformationClanInvitation',
+                            style: `
+                                    margin: 1em 0;
+                            `
+                    },
+
+                    {
+                            selector: `.TableComponentStyle-table > thead > tr > th,
+                                       .ClanCommonStyle-tableInvite > thead > tr > th`,
                             style: `
                                     background: var(--general-bg);
                                     outline: var(--general-outline);
@@ -2481,7 +2537,8 @@
                     },
 
                     {
-                            selector: '.TableComponentStyle-table > thead > tr > th:hover',
+                            selector: `.TableComponentStyle-table > thead > tr > th:hover,
+                                       .ClanCommonStyle-tableInvite > thead > tr > th:hover`,
                             style: `
                                     background: var(--general-bg-hover);
 
@@ -2490,7 +2547,8 @@
                     },
 
                     {
-                            selector: '.TableComponentStyle-table > thead > tr > th > h2',
+                            selector: `.TableComponentStyle-table > thead > tr > th > h2,
+                                       .ClanCommonStyle-tableInvite > thead > tr > th > h2`,
                             style: `
                                     color: var(--general-color) !important;
                                     text-shadow: 0 0 2em;
@@ -2573,6 +2631,7 @@
                             selector: '.DialogContainerComponentStyle-keyButton',
                             style: `
                                     background: rgb(255 255 255 / 7.5%) !important;
+                                    outline: var(--general-outline);
                                     box-shadow: var(--general-box-shadow) !important;
                                     border-radius: 1em;
 
@@ -2583,7 +2642,7 @@
                     {
                             selector: '.DialogContainerComponentStyle-keyButton:hover',
                             style: `
-                                    background: rgb(255 255 255 / 12.5%);
+                                    background: rgb(255 255 255 / 12.5%) !important;
                             `
                     },
 
@@ -2593,6 +2652,7 @@
                                        .MainQuestComponentStyle-buttonContainer`,
                             style: `
                                     background: var(--least-general-color);
+                                    outline: var(--general-outline);
                                     box-shadow: var(--general-box-shadow);
                                     border-radius: var(--general-border-radius) !important;
 
@@ -3467,12 +3527,13 @@
                     {
                             selector: '.BattleComponentStyle-canvasContainer > .Common-container',
                             style: `
-                                    background: radial-gradient(ellipse at top, rgb(25 25 25),  black);
+                                    background: radial-gradient(ellipse at top, rgb(25 25 25),  black) !important;
                             `
                     },
 
                     {
-                            selector: '.BattleTabStatisticComponentStyle-containerInsideTeams',
+                            selector: `.BattleTabStatisticComponentStyle-containerInsideTeams,
+                                       .BattleTabStatisticComponentStyle-containerInsideResults`,
                             style: `
                                     background: rgb(0 0 0 / 50%);
                                     outline: var(--general-outline);
@@ -3577,6 +3638,7 @@
                     {
                             selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table thead,
                                        .BattleTabStatisticComponentStyle-redTeamTableContainer table thead,
+                                       .BattleTabStatisticComponentStyle-dmTableContainer table thead,
                                        .BattleTabStatisticComponentStyle-commonContainerIconOptions`,
                             style: `
                                     position: absolute;
@@ -3652,7 +3714,9 @@
                             selector: `.BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+6),
                                        .BattleTabStatisticComponentStyle-blueTeamTableContainer table tbody tr td:nth-child(n+7),
                                        .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+6),
-                                       .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+7)`,
+                                       .BattleTabStatisticComponentStyle-redTeamTableContainer table tbody tr td:nth-child(n+7),
+                                       .BattleTabStatisticComponentStyle-dmTableContainer table tbody tr td:nth-child(n+6),
+                                       .BattleTabStatisticComponentStyle-dmTableContainer table tbody tr td:nth-child(n+7)`,
                             style: `
                                     border-left: unset;
                             `
@@ -4580,9 +4644,149 @@
                     },
 
                     {
+                            selector: '.InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-backButton',
+                            style: `
+                                    background: rgb(255 255 255 / 7.5%) !important;
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: 1em;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-backButton:hover',
+                            style: `
+                                    background: rgb(255 255 255 / 12.5%) !important;
+                            `
+                    },
+
+                    {
+                            selector: `.InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-backButton > div > .HotKey-commonBlockForHotKey,
+                                       .InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-buttons > div > div > .HotKey-commonBlockForHotKey`,
+                            style: `
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-buttons > .InvitationWindowsComponentStyle-inviteButton',
+                            style: `
+                                    background: var(--least-general-color);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-buttons > .InvitationWindowsComponentStyle-inviteButton:hover',
+                            style: `
+                                    background: var(--general-color);
+                            `
+                    },
+
+                    {
+                            selector: '.InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-buttons > .InvitationWindowsComponentStyle-inviteButton > span',
+                            style: `
+                                    color: white;
+                                    margin: unset;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
                             selector: '.ModalStyle-root > .InvitationWindowsComponentStyle-commonItem:nth-child(2)',
                             style: `
                                     visibility: hidden;
+                            `
+                    },
+
+                    // стилизация окна приглашения в битву
+
+                    {
+                            selector: '.NotificationViewStyle-commonBlockNotification',
+                            style: `
+                                    background: transparent;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    animation: translateRight .2s ease-in-out;
+                            `
+                    },
+
+                    {
+                            selector: '.NotificationViewStyle-positionBlock',
+                            style: `
+                                    border: unset;
+                                    box-shadow: var(--general-box-shadow);
+                            `
+                    },
+
+                    {
+                            selector: '.NotificationViewStyle-commonBlockButtonYesNo > div',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: var(--general-border-radius);
+
+                                    transition: var(--general-transition);
+                                    animation: unset !important;
+                            `
+                    },
+
+                    {
+                            selector: '.NotificationViewStyle-commonBlockButtonYesNo > div:hover',
+                            style: `
+                                    background: var(--general-bg-hover);
+                            `
+                    },
+
+                    {
+                            selector: '.NotificationViewStyle-commonBlockButtonYesNo > div > p',
+                            style: `
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: '.NotificationViewStyle-commonBlockButtonYesNo > div > span',
+                            style: `
+                                    color: var(--general-color);
+                                    margin: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.NotificationViewStyle-progressNotification',
+                            style: `
+                                    background: transparent;
+
+                                    opacity: 0.15;
+                                    filter: saturate(0) brightness(2);
+                                    clip-path: inset(0px 0px 0px round 15px);
+                            `
+                    },
+
+                    {
+                            selector: `.NotificationViewStyle-positionBlock,
+                                       .NotificationViewStyle-commonBlockNotification,
+                                       .NotificationViewStyle-descriptionNotification,
+                                       .NotificationViewStyle-blockButtonAndTimer,
+                                       .NotificationViewStyle-progressBarNotification`,
+                            style: `
+                                    border-top-left-radius: var(--general-border-radius);
+                                    border-bottom-left-radius: var(--general-border-radius);
                             `
                     },
 
@@ -4741,6 +4945,7 @@
                             selector: '.TableMainQuestComponentStyle-rewardsContainerTable',
                             style: `
                                     top: 0.75em;
+                                    height: 75%;
                             `
                     },
 
@@ -4774,7 +4979,8 @@
                     },
 
                     {
-                            selector: '.TableMainQuestComponentStyle-timerTable',
+                            selector: `.TableMainQuestComponentStyle-timerTable,
+                                       .TableMainQuestComponentStyle-commonBlockTimerButtonTable`,
                             style: `
                                     background-color: rgb(0 0 0 / 25%) !important;
                                     outline: var(--general-outline);
@@ -4784,7 +4990,8 @@
                     },
 
                     {
-                            selector: '.TableMainQuestComponentStyle-timerTable span',
+                            selector: `.TableMainQuestComponentStyle-timerTable span,
+                                       .TableMainQuestComponentStyle-commonBlockTimerButtonTable > div > span`,
                             style: `
                                     color: white !important;
                                     text-shadow: 0 0 5px black;
@@ -4794,20 +5001,50 @@
                     {
                             selector: '.TableMainQuestComponentStyle-cardLockedTable',
                             style: `
-                                    background: rgba(255, 204, 0, 0.05);
+                                    background: rgba(255 204 0 / 5%);
                                     outline: var(--general-outline);
                                     box-shadow: var(--general-box-shadow) !important;
                                     border-radius: var(--general-border-radius) !important;
                                     backdrop-filter: var(--least-backdrop-filter);
 
                                     transition: var(--general-transition);
+                                    animation: var(--general-animation) !important;
                             `
                     },
 
                     {
                             selector: '.TableMainQuestComponentStyle-cardLockedTable:hover',
                             style: `
-                                    background: rgba(255, 204, 0, 0.1);
+                                    background: rgba(255 204 0 / 10%);
+                            `
+                    },
+
+                    {
+                            selector: '.TableMainQuestComponentStyle-commonBlockTimerButtonTable > .MainQuestComponentStyle-imgLockTimer',
+                            style: `
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: '.MainQuestComponentStyle-cardCommonLocked',
+                            style: `
+                                    background: rgb(255 102 102 / 5%);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow) !important;
+                                    border-radius: var(--general-border-radius) !important;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation) !important;
+                            `
+                    },
+
+                    {
+                            selector: '.MainQuestComponentStyle-cardCommonLocked:hover',
+                            style: `
+                                    background: rgb(255 102 102 / 10%);
                             `
                     },
 
