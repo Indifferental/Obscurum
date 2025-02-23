@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v1.10'
+        var version = 'v1.11'
 
         // изменение иконки на вкладке браузера
 
@@ -22,19 +22,33 @@
 
             variableHeader.className = `Obscurum ${version}`
 
-        document.body.appendChild(variableHeader);
+            document.body.appendChild(variableHeader);
 
         // определение языка игры
 
         var language
 
-        if (localStorage.getItem('tips.data').includes('"lang":"ru"')) {
+        if (localStorage.getItem('language_store_key') == 'RU' || localStorage.getItem('TNK_ratings_preferred_language') == 'RU') {
 
-                language = 'ru'
+                language = 'RU'
 
         } else {
 
-                language = 'en'
+                language = 'EN'
+
+        };
+
+        // функция создания элемента
+
+        function element(tag, className, parentNode) {
+
+                let elem = document.createElement(tag);
+
+                    elem.className = className
+
+                    parentNode.appendChild(elem);
+
+                return document.getElementsByClassName(className)[0];
 
         };
 
@@ -62,31 +76,129 @@
 
         ];
 
-        // функция создания элемента
-
-        function element(tag, className, parentNode) {
-
-                function createElement() {
-
-                        let elem = document.createElement(tag);
-
-                            elem.className = className
-
-                            parentNode.appendChild(elem);
-
-                };
-
-                createElement();
-
-                return document.getElementsByClassName(className)[0];
-
-        };
-
         // применение стиля на все домены https://*.tankionline.com/*
+
+        var globalKeyframes = [
+
+                {
+                        animation: `@keyframes blend {
+
+                                            0% {
+                                                    opacity: 0;
+                                            }
+
+                                            100% {
+                                                    opacity: 1;
+                                            }
+
+                                    }
+                        `
+                },
+
+                {
+                        animation: `@keyframes translateRight {
+
+                                            0% {
+                                                    opacity: 0;
+                                                    transform: translateX(30px);
+                                            }
+
+                                            100% {
+                                                    opacity: 1;
+                                            }
+
+                                    }
+                        `
+                },
+
+                {
+                        animation: `@keyframes translateLeft {
+
+                                            0% {
+                                                    opacity: 0;
+                                                    transform: translateX(-30px);
+                                            }
+
+                                            100% {
+                                                    opacity: 1;
+                                            }
+
+                                    }
+                        `
+                },
+
+                {
+                        animation: `@keyframes translateUp {
+
+                                            0% {
+                                                    opacity: 0;
+                                                    transform: translateY(-10px);
+                                            }
+
+                                            100% {
+                                                    opacity: 1;
+                                            }
+
+                                    }
+                        `
+                },
+
+                {
+                        animation: `@keyframes translateDown {
+
+                                            0% {
+                                                    opacity: 0;
+                                                    transform: translateY(30px);
+                                            }
+
+                                            100% {
+                                                    opacity: 1;
+                                            }
+
+                                    }
+                        `
+                },
+
+                {
+                        animation: `@keyframes rotate {
+
+                                            0% {
+                                                    transform: rotate(0deg);
+                                            }
+
+                                            100% {
+                                                    transform: rotate(360deg);
+                                            }
+
+                                    }
+                        `
+                },
+
+                {
+                        animation: `
+                                @keyframes gradient {
+
+                                        0% {
+                                                background-position: 0%;
+                                        }
+
+                                        50% {
+                                                background-position: 250%;
+                                        }
+
+                                        100% {
+                                                background-position: 0%;
+                                        }
+
+                                }
+                        `
+                },
+
+        ];
 
         function styleSheet() {
 
-                var elements = [
+                const elements = [
 
                     {
                             selector: '.obscDOMElement-startText',
@@ -103,6 +215,37 @@
                     },
 
                     {
+                            selector: '.obscGlobalVariable-svgNode',
+                            style: `
+                                    position: fixed;
+                                    top: 0em;
+                                    left: 0em;
+                                    z-index: -1;
+                                    pointer-events: inherit;
+                                    opacity: 0;
+
+                                    animation: translateDown 2s cubic-bezier(0.25, .5, .75, 1.25) 2s forwards;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-svgGradient',
+                            style: `
+                                    background: linear-gradient(0deg, rgb(0 0 0 / 50%), transparent 40%);
+                                    position: fixed;
+                                    top: 0em;
+                                    left: 0em;
+                                    width: 100%;
+                                    height: 100%;
+                                    z-index: 1;
+                                    pointer-events: inherit;
+                                    opacity: 0;
+
+                                    animation: translateDown 6s cubic-bezier(0.25, .5, .75, 1.25) 3s forwards;
+                            `
+                    },
+
+                    {
                             selector: `.${variableHeader.className.slice(0, 8)}`,
                             style: `
                                     position: fixed;
@@ -110,18 +253,6 @@
                                     justify-content: center;
                                     z-index: -1;
                                     pointer-events: none;
-                            `
-                    },
-
-                    {
-                            selector: '.obscGlobalVariable-svgNode',
-                            style: `
-                                    position: inherit;
-                                    z-index: inherit;
-                                    pointer-events: inherit;
-                                    opacity: 0;
-
-                                    animation: translateDown 2s cubic-bezier(0.25, .5, .75, 1.25) 2s forwards;
                             `
                     },
 
@@ -173,21 +304,6 @@
                                     opacity: 0;
 
                                     animation: translateUp .75s cubic-bezier(.25, .1, .25, 1) forwards;
-                            `
-                    },
-
-                    {
-                            selector: '.obscDOMElement-svgGradient',
-                            style: `
-                                    background: linear-gradient(0deg, rgb(0 0 0 / 50%), transparent 40%);
-                                    position: inherit;
-                                    width: 100%;
-                                    height: 100%;
-                                    z-index: 1;
-                                    pointer-events: inherit;
-                                    opacity: 0;
-
-                                    animation: translateDown 6s cubic-bezier(0.25, .5, .75, 1.25) 3s forwards;
                             `
                     },
 
@@ -740,7 +856,7 @@
 
                                     position: absolute;
                                     top: 5.25em;
-                                    left: 87em;
+                                    right: 87em;
                                     justify-self: center;
                                     width: 25em;
                                     height: 9.5em;
@@ -1740,7 +1856,7 @@
                             selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay > h3',
                             style: `
                                     color: var(--general-color);
-                                    margin-bottom: 0.5em;
+                                    margin-bottom: 1em;
                             `
                     },
 
@@ -6752,6 +6868,13 @@
                     // блок стилизации магазина
 
                     {
+                            selector: '.TimeLeftComponentStyle-timeLeftContainer',
+                            style: `
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
                             selector: '.ShopSelectedSectionComponentStyle-limitedOffersCommon',
                             style: `
                                     height: 100%;
@@ -6940,124 +7063,9 @@
 
                 ];
 
-                var keyframes = [
+                const keyframes = globalKeyframes
 
-                    {
-                            animations: `@keyframes blend {
-
-                                                0% {
-                                                        opacity: 0;
-                                                }
-
-                                                100% {
-                                                        opacity: 1;
-                                                }
-
-                                        }
-                            `
-                    },
-
-                    {
-                            animations: `@keyframes translateRight {
-
-                                                0% {
-                                                        opacity: 0;
-                                                        transform: translateX(30px);
-                                                }
-
-                                                100% {
-                                                        opacity: 1;
-                                                }
-
-                                        }
-                            `
-                    },
-
-                    {
-                            animations: `@keyframes translateLeft {
-
-                                                0% {
-                                                        opacity: 0;
-                                                        transform: translateX(-30px);
-                                                }
-
-                                                100% {
-                                                        opacity: 1;
-                                                }
-
-                                        }
-                            `
-                    },
-
-                    {
-                            animations: `@keyframes translateUp {
-
-                                                0% {
-                                                        opacity: 0;
-                                                        transform: translateY(-10px);
-                                                }
-
-                                                100% {
-                                                        opacity: 1;
-                                                }
-
-                                        }
-                            `
-                    },
-
-                    {
-                            animations: `@keyframes translateDown {
-
-                                                0% {
-                                                        opacity: 0;
-                                                        transform: translateY(30px);
-                                                }
-
-                                                100% {
-                                                        opacity: 1;
-                                                }
-
-                                        }
-                            `
-                    },
-
-                    {
-                            animations: `@keyframes rotate {
-
-                                                0% {
-                                                        transform: rotate(0deg);
-                                                }
-
-                                                100% {
-                                                        transform: rotate(360deg);
-                                                }
-
-                                        }
-                            `
-                    },
-
-                    {
-                            animations: `@keyframes gradient {
-
-                                                0% {
-                                                        background-position: 0%;
-                                                }
-
-                                                50% {
-                                                        background-position: 250%;
-                                                }
-
-                                                100% {
-                                                        background-position: 0%;
-                                                }
-
-                                        }
-                            `
-                    },
-
-                ];
-
-                var cssStyles = document.createElement(`style`);
+                let cssStyles = document.createElement(`style`);
 
                     cssStyles.className = `obscStyleSheet-globalStyles`
 
@@ -7065,21 +7073,21 @@
 
                         let css = `${element.selector} {${element.style}}\n`
 
-                        cssStyles.textContent += css.split(`                `).join(``);
+                        cssStyles.textContent += css.split(`                            `).join(``);
 
                 });
 
                 variableHeader.appendChild(cssStyles);
 
-                var cssKeyframes = document.createElement(`style`);
+                let cssKeyframes = document.createElement(`style`);
 
                     cssKeyframes.className = `obscStyleSheet-keyframesArray`
 
                 keyframes.forEach((keyframe) => {
 
-                        let frames = `${keyframe.animations}\n`
+                        let frames = `${keyframe.animation}\n`
 
-                        cssKeyframes.textContent += frames.split(`                `).join(``);
+                        cssKeyframes.textContent += frames.split(`                                    `).join(``);
 
                 });
 
@@ -7087,13 +7095,380 @@
 
                 // выборка тегов
 
-                var hoverStyles = elements.filter((element) => element.tags === 'hover');
+                let hoverStyles = elements.filter((element) => element.tags === 'hover');
 
                 hoverStyles.forEach((element) => {
 
                         let css = `${element.selector}:hover {background-color: var(--general-bg-hover);}\n`
 
-                        cssStyles.textContent += css.split(`                `).join(``);
+                        cssStyles.textContent += css.split(`                            `).join(``);
+
+                });
+
+        };
+
+        // стиль для сайта с рейтингами
+
+        function ratingsPage() {
+
+                const elements = [
+
+                    {
+                            selector: 'body',
+                            style: `
+                                    background: transparent;
+
+                                    --general-bg: ${globalProperties[0].background};
+                                    --general-bg-hover: ${globalProperties[0].background_hover};
+
+                                    --general-outline: ${globalProperties[0].outline};
+                                    --general-border-radius: ${globalProperties[0].border_radius};
+                                    --general-box-shadow: ${globalProperties[0].box_shadow};
+
+                                    --general-backdrop-filter: ${globalProperties[0].backdrop_filter};
+                                    --least-backdrop-filter: ${globalProperties[0].least_backdrop_filter};
+
+                                    --general-color: ${globalProperties[0].color};
+                                    --least-general-color: ${globalProperties[0].least_color};
+
+                                    --general-transition: ${globalProperties[0].transition};
+                                    --general-animation: ${globalProperties[0].animation};
+                            `
+                    },
+
+                    {
+                            selector: '.generic-box',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.parallax',
+                            style: `
+                                    background: radial-gradient(ellipse at top, rgb(25, 25, 25),  black);
+
+                                    z-index: -2;
+                            `
+                    },
+
+                    {
+                            selector: `.${variableHeader.className.slice(0, 8)}`,
+                            style: `
+                                    position: fixed;
+                                    display: flex;
+                                    justify-content: center;
+                                    z-index: -1;
+                                    pointer-events: none;
+                            `
+                    },
+
+                    {
+                            selector: '.obscGlobalVariable-svgNode',
+                            style: `
+                                    position: fixed;
+                                    top: 0em;
+                                    left: 0em;
+                                    z-index: -1;
+                                    pointer-events: inherit;
+                                    opacity: 0;
+
+                                    animation: translateDown 2s cubic-bezier(0.25, .5, .75, 1.25) 2s forwards;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-svgGradient',
+                            style: `
+                                    background: linear-gradient(0deg, rgb(0 0 0 / 50%), transparent 40%);
+                                    position: fixed;
+                                    top: 0em;
+                                    left: 0em;
+                                    width: 100%;
+                                    height: 100%;
+                                    z-index: 1;
+                                    pointer-events: inherit;
+                                    opacity: 0;
+
+                                    animation: translateDown 6s cubic-bezier(0.25, .5, .75, 1.25) 3s forwards;
+                            `
+                    },
+
+                    {
+                            selector: `.current-ratings__table td,
+                                       .current-ratings__table th`,
+                            style: `
+                                    border: 1px solid rgb(255 255 255 / 5%);
+                            `
+                    },
+
+                    {
+                            selector: '.progress-bar',
+                            style: `
+                                    background: var(--general-bg);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: var(--general-outline) !important;
+                                    border-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.generic-input',
+                            style: `
+                                    background: var(--general-bg);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: var(--general-outline) !important;
+                                    border-radius: 0.5em;
+
+                                    padding: 0 0.75em;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.generic-selector__itself',
+                            style: `
+                                    background: var(--general-bg);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: var(--general-outline) !important;
+                                    border-radius: 0.5em;
+
+                                    transition: var(--general-transition);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.generic-button',
+                            style: `
+                                    background: var(--general-bg);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: var(--general-outline) !important;
+                                    border-radius: 0.5em;
+
+                                    transition: var(--general-transition);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: `.generic-input:focus,
+                                       .generic-input:hover`,
+                            style: `
+                                    background: var(--general-bg-hover);
+                            `
+                    },
+
+                    {
+                            selector: '.progress-bar__bar',
+                            style: `
+                                    background: var(--least-general-color);
+                                    border-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.generic-entry__spacer',
+                            style: `
+                                    border-bottom: 2px solid rgb(255 255 255 / 5%);
+                            `
+                    },
+
+                    {
+                            selector: '.stats-panel__gearscore-wrapper',
+                            style: `
+                                    flex: unset;
+                                    margin-top: 2em;
+                                    margin-right: 0.5rem;
+                                    padding: unset;
+                                    height: fit-content;
+                                    width: fit-content;
+                            `
+                    },
+
+                    {
+                            selector: '.stats-panel__gearscore-wrapper > span',
+                            style: `
+                                    font-size: 1.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.profile-entity-card',
+                            style: `
+                                    background: unset;
+                                    outline: unset;
+                                    box-shadow: unset;
+                                    border-radius: unset;
+                                    backdrop-filter: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.slider__inner',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.user-profile .slider__slide-button-holder',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin: 0 -1em;
+                                    height: 100%;
+
+                                    transition: var(--general-transition);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: '.user-profile .slider__slide-button-holder:before',
+                            style: `
+                                    content: '';
+
+                                    background-color: var(--least-general-color);
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAACXBIWXMAAAsTAAALEwEAmpwYAAABPklEQVR4nO2avWoCURBGz2LeSWLeQVJZmQgimJi4LNkuhY0siL0E7FPkWayzD2DKYGNKf1lQsInudHc+PDD9PXCZO3dm4Io+t0AOLIAXnHMHLIHdSbwjJLPzKlUF/v6ROUaKI2YXZI7xhhPykkJFJDigDqxLCm2BGAc0jFJ9HNACNmpSbaPUKw7oHA5bVspFRREbMl8h1cMBiaJUapR6xgEDo9QTDhgapbo4IFOUGhmkNofHOnjGRqlHAicCJgapokZ8wIHUh1GqiQOpqZpUBfg0SK2AewLnBvgySP0gJjQnYKSuXKSUFCKltB2pPaxjpdJnpFScZkrfh6GSzEDpC54qNUkSpTZWrCTTUWoFt5Wa9S2lcUpDaeBVVxtJ5mpD45naWL+qtnhRUFNajTkn5VbmdL3sG/gNvZy5QgDsAZ6fAHSa5TG4AAAAAElFTkSuQmCC);
+                                    mask-position: center;
+                                    mask-repeat: no-repeat;
+                                    mask-size: contain;
+
+                                    position: absolute;
+                                    width: 2.5em;
+                                    height: 2.5em;
+                                    pointer-events: none;
+                            `
+                    },
+
+                    {
+                            selector: '.user-profile .slider__slide-button-holder_backward:before',
+                            style: `
+                                    transform: rotate(180deg);
+                            `
+                    },
+
+                    {
+                            selector: '.arrow-button',
+                            style: `
+                                    background: unset;
+
+                                    height: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.navbar',
+                            style: `
+                                    background: unset;
+                            `
+                    },
+
+                    {
+                            selector: `.search-panel__label,
+                                       .current-stats__title`,
+                            style: `
+                                    visibility: hidden;
+                                    position: absolute;
+                            `
+                    },
+
+                    {
+                            selector: '.search-panel__row',
+                            style: `
+                                    margin-left: unset;
+                            `
+                    },
+
+                    {
+                            selector: '.my-favorites__list',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    position: fixed;
+                                    top: 0em;
+                                    left: 64em;
+                                    width: fit-content;
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.site-logo',
+                            style: `
+                                    margin: 2rem 0;
+                            `
+                    },
+
+                ];
+
+                const keyframes = globalKeyframes
+
+                let cssStyles = document.createElement(`style`);
+
+                    cssStyles.className = `obscStyleSheet-globalStyles`
+
+                elements.forEach((element) => {
+
+                        let css = `${element.selector} {${element.style}}\n`
+
+                        cssStyles.textContent += css.split(`                            `).join(``);
+
+                });
+
+                variableHeader.appendChild(cssStyles);
+
+                let cssKeyframes = document.createElement(`style`);
+
+                    cssKeyframes.className = `obscStyleSheet-keyframesArray`
+
+                keyframes.forEach((keyframe) => {
+
+                        let frames = `${keyframe.animation}\n`
+
+                        cssKeyframes.textContent += frames.split(`                                    `).join(``);
+
+                });
+
+                variableHeader.appendChild(cssKeyframes);
+
+                // выборка тегов
+
+                let hoverStyles = elements.filter((element) => element.tags === 'hover');
+
+                hoverStyles.forEach((element) => {
+
+                        let css = `${element.selector}:hover {background-color: var(--general-bg-hover);}\n`
+
+                        cssStyles.textContent += css.split(`                            `).join(``);
 
                 });
 
@@ -7618,77 +7993,13 @@
 
                 }).observe(document, {
 
+                        attributes: true,
+
                         subtree: true,
 
                         childList: true
 
                 });
-
-        };
-
-        // стилизация уведомлений в лобби
-
-        function primaryNotification() {
-
-                let notificationImage = 'data:image/webp;base64,UklGRngDAABXRUJQVlA4WAoAAAAQAAAAHwMAFAIAQUxQSCIAAAABBxARERAIJPurD1BE/zP+85///Oc///nPf/7zn//85/8PVlA4IDADAACwXgCdASogAxUCPpFIoU0lpCMiIAgAsBIJaW7hd2EbQAnsA99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPekAAP7/3gioPGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA='
-
-                let mainNotification = document.querySelectorAll('.PrimaryMenuItemComponentStyle-notificationIconNewNews');
-
-                for (let i = 0; i < mainNotification.length; i++) {
-
-                        mainNotification[i].src = notificationImage
-
-                };
-
-                let footerNotification = document.querySelectorAll('.MainScreenComponentStyle-new.FooterComponentStyle-marginEllips');
-
-                for (let i = 0; i < footerNotification.length; i++) {
-
-                        footerNotification[i].src = notificationImage
-
-                };
-
-        };
-
-        // часы в лобби
-
-        function lobbyClocks() {
-
-                let mainHeader = document.getElementsByClassName('UserInfoContainerStyle-blockForIconTankiOnline')[0];
-
-                if (mainHeader) {
-
-                        let days
-
-                        let date = new Date();
-
-                        let clockDays = element('div', 'obscDOMElement-clockDays', mainHeader);
-
-                        let clockTime = element('div', 'obscDOMElement-clockTime', mainHeader);
-
-                        if (language == 'ru') {
-
-                                days = [ 'Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота' ];
-
-                        } else {
-
-                                days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
-
-                        };
-
-                        clockDays.innerHTML = `${days[new Date().getDay().toLocaleString()]}, ${new Date().toISOString().slice(0,10).split('-').reverse().join('.')}`
-
-                        clockTime.innerHTML = new Date().toLocaleString().slice(12, 20).split('-').join('.');
-
-                        setInterval(function() {
-
-                                clockDays.innerHTML = `${days[new Date().getDay().toLocaleString()]}, ${new Date().toISOString().slice(0,10).split('-').reverse().join('.')}`
-
-                                clockTime.innerHTML = new Date().toLocaleString().slice(12, 20).split('-').join('.');
-
-                        }, 1000);
-
-                };
 
         };
 
@@ -8431,6 +8742,72 @@
 
         };
 
+        // стилизация уведомлений в лобби
+
+        function primaryNotification() {
+
+                let notificationImage = 'data:image/webp;base64,UklGRngDAABXRUJQVlA4WAoAAAAQAAAAHwMAFAIAQUxQSCIAAAABBxARERAIJPurD1BE/zP+85///Oc///nPf/7zn//85/8PVlA4IDADAACwXgCdASogAxUCPpFIoU0lpCMiIAgAsBIJaW7hd2EbQAnsA99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPfbJyHvtk5D32ych77ZOQ99snIe+2TkPekAAP7/3gioPGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA='
+
+                let mainNotification = document.querySelectorAll('.PrimaryMenuItemComponentStyle-notificationIconNewNews');
+
+                for (let i = 0; i < mainNotification.length; i++) {
+
+                        mainNotification[i].src = notificationImage
+
+                };
+
+                let footerNotification = document.querySelectorAll('.MainScreenComponentStyle-new.FooterComponentStyle-marginEllips');
+
+                for (let i = 0; i < footerNotification.length; i++) {
+
+                        footerNotification[i].src = notificationImage
+
+                };
+
+        };
+
+        // часы в лобби
+
+        function lobbyClocks() {
+
+                let mainHeader = document.getElementsByClassName('UserInfoContainerStyle-blockForIconTankiOnline')[0];
+
+                if (mainHeader) {
+
+                        let days
+
+                        let date = new Date();
+
+                        let clockDays = element('div', 'obscDOMElement-clockDays', mainHeader);
+
+                        let clockTime = element('div', 'obscDOMElement-clockTime', mainHeader);
+
+                        if (language == 'RU') {
+
+                                days = [ 'Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота' ];
+
+                        } else {
+
+                                days = [ 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' ];
+
+                        };
+
+                        clockDays.innerHTML = `${days[new Date().getDay().toLocaleString()]}, ${new Date().toISOString().slice(0,10).split('-').reverse().join('.')}`
+
+                        clockTime.innerHTML = new Date().toLocaleString().slice(12, 20).split('-').join('.');
+
+                        setInterval(function() {
+
+                                clockDays.innerHTML = `${days[new Date().getDay().toLocaleString()]}, ${new Date().toISOString().slice(0,10).split('-').reverse().join('.')}`
+
+                                clockTime.innerHTML = new Date().toLocaleString().slice(12, 20).split('-').join('.');
+
+                        }, 1000);
+
+                };
+
+        };
+
         // начальный экран
 
         function startScreen() {
@@ -8557,7 +8934,7 @@
 
                                 let text2 = element('h1', 'obscDOMElement-holdingCard-text2', holdingCard);
 
-                                if (language == 'ru') {
+                                if (language == 'RU') {
 
                                         text2.innerHTML = `// Список изменений`
 
@@ -8599,6 +8976,30 @@
 
                                                 if (logWindow_textHeader) {
 
+                                                        // v1.11
+
+                                                        let h1_111 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_20', logWindow_textHeader);
+
+                                                            h1_111.innerHTML = 'v1.11'
+
+                                                        if (h1_111) {
+
+                                                                let h1_111_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_111);
+
+                                                                let h1_111_span1 = element('span', 'h1-111-span1', h1_111);
+
+                                                                if (language == 'RU') {
+
+                                                                        h1_111_span1.innerHTML = '• Полная стилизация сайта рейтингов (ratings.tankionline.com)'
+
+                                                                } else {
+
+                                                                        h1_111_span1.innerHTML = '• Full stylization of the ratings site (ratings.tankionline.com)'
+
+                                                                };
+
+                                                        };
+
                                                         // v1.10
 
                                                         let h1_110 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_10', logWindow_textHeader);
@@ -8615,7 +9016,7 @@
 
                                                                 let h1_110_span3 = element('span', 'h1-110-span3', h1_110);
 
-                                                                if (language == 'ru') {
+                                                                if (language == 'RU') {
 
                                                                         h1_110_span1.innerHTML = '• Реструктуризация кода, связанного с созданием элементов DOM на странице'
 
@@ -8653,7 +9054,7 @@
 
                                                                 let h1_100_span4 = element('span', 'h1-100-span4', h1_100);
 
-                                                                if (language == 'ru') {
+                                                                if (language == 'RU') {
 
                                                                         h1_100_span1.innerHTML = '• Введение списка изменений (чейнджлога) в лобби'
 
@@ -8695,7 +9096,7 @@
 
                                                                 let h1_0992_span4 = element('span', 'h1-0992-span4', h1_0992);
 
-                                                                if (language == 'ru') {
+                                                                if (language == 'RU') {
 
                                                                         h1_0992_span1.innerHTML = '• Небольшой хотфикс таба в DM-матчах'
 
@@ -8740,7 +9141,7 @@
 
                                                                 let h1_0991_span5 = element('span', 'h1-0991-span4', h1_0991);
 
-                                                                if (language == 'ru') {
+                                                                if (language == 'RU') {
 
                                                                         h1_0991_span1.innerHTML = '• Исправлены некоторые ошибки в игровом табе'
 
@@ -8784,7 +9185,15 @@
 
                                                         let text1 = element('span', 'obscDOMElement-changelogDetails-textHeader-span1', detailsWindow_textHeader);
 
-                                                            text1.innerHTML = 'С предложениями и замечаниями по теме писать:'
+                                                        if (language == 'RU') {
+
+                                                                text1.innerHTML = 'С предложениями и замечаниями по теме писать:'
+
+                                                        } else {
+
+                                                                text1.innerHTML = 'With suggestions or comments about theme, write to:'
+
+                                                        };
 
                                                         let text2 = element('span', 'obscDOMElement-changelogDetails-textHeader-span2', detailsWindow_textHeader);
 
@@ -8815,7 +9224,7 @@
 
                 if (localStorage.getItem('obscLocalStorageVariable-nickname')) {
 
-                        if (language == 'ru') {
+                        if (language == 'RU') {
 
                                 text = [
 
@@ -8899,8 +9308,6 @@
 
                         return originFetch(url, options).then(async (response) => {
 
-                                // console.log(url.toLocaleString());
-
                                 for (let resource of resources) {
 
                                         let createPreview = (url) => {
@@ -8914,8 +9321,6 @@
                                         let preview = createPreview(resource.orig);
 
                                         if (preview.test(url)) {
-
-                                                // console.log(`\n${url}\nreplaced to: ${resource.new}\n `);
 
                                                 return new Promise((resolve, reject) => {
 
@@ -8957,109 +9362,110 @@
 
                 };
 
-                let evening = [
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/bg1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bg1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/bl.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bl.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/flr1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/flr1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/gar1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/gar1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/pl1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/pl2.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl2.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/race1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/race1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/sky1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/sky1.webp"
-                        },
-
-                ];
-
-                let night = [
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/bg1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bg1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/bl.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bl.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/flr1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/flr1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/gar1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/gar1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/pl1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/pl2.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl2.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/race1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/race1.webp"
-                        },
-
-                        {
-                                orig: "/601/166176/165/206/31167700267244/sky1.webp",
-                                new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/sky1.webp"
-                        },
-
-                ];
-
                 if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'evening') {
 
-                        resources = evening
+                        resources = [
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/bg1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bg1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/bl.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/bl.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/flr1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/flr1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/gar1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/gar1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/pl1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/pl2.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/pl2.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/race1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/race1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/sky1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/evening/sky1.webp"
+                                },
+
+                        ];
 
                 };
 
                 if (localStorage.getItem('obscLocalStorageVariable-garageStyle') == 'night') {
 
-                        resources = night
+                        resources = [
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/bg1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bg1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/bl.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/bl.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/flr1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/flr1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/gar1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/gar1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/pl1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/pl2.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/pl2.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/race1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/race1.webp"
+                                },
+
+                                {
+                                        orig: "/601/166176/165/206/31167700267244/sky1.webp",
+                                        new: "https://raw.githubusercontent.com/Indifferental/Obscurum/refs/heads/main/assets/garage/night/sky1.webp"
+                                },
+
+                        ];
 
                 };
 
-                const linksArray = [ 'tankionline.com/play/',
-                                     'tankionline.com/play/?desktop=true',
-                                     'test-eu.tankionline.com/browser-public/index.html?config-template=https://c{server}' ];
+                // проверка на соответствие ссылкам
+
+                let linksArray = [
+
+                        'tankionline.com/play/',
+                        'test-eu.tankionline.com/browser-public/index.html?config-template=https://c{server}'
+
+                ];
 
                 linksArray.forEach((link) => {
 
@@ -9075,67 +9481,97 @@
 
                                 function mutationsObserver() {
 
-                                        let Observer = new MutationObserver(function(inspect) { inspect.forEach(function(Mutation) { if (Mutation.addedNodes.length && Mutation.type === 'childList') { Mutation.addedNodes.forEach(function(element) {
+                                        let Observer = new MutationObserver(function(inspect) {
 
-                                        if (element.nodeType === 1 && element.classList.contains('Common-container')) {
+                                                inspect.forEach(function(Mutation) {
 
-                                                let nicknameHeader = document.querySelector('.UserInfoContainerStyle-userNameRank.UserInfoContainerStyle-textDecoration');
+                                                        if (Mutation.addedNodes.length && Mutation.type === 'childList') {
 
-                                                if (nicknameHeader) {
+                                                                Mutation.addedNodes.forEach(function(element) {
 
-                                                        var nickname = nicknameHeader.innerHTML
+                                                                        if (element.nodeType === 1 && element.classList.contains('Common-container')) {
 
-                                                        localStorage.setItem('obscLocalStorageVariable-nickname', nickname);
+                                                                                let nicknameHeader = document.querySelector('.UserInfoContainerStyle-userNameRank.UserInfoContainerStyle-textDecoration');
 
-                                                };
+                                                                                if (nicknameHeader) {
 
-                                                primaryNotification();
+                                                                                        var nickname = nicknameHeader.innerHTML
 
-                                                lobbyClocks();
+                                                                                        localStorage.setItem('obscLocalStorageVariable-nickname', nickname);
 
-                                                battleFastPick();
+                                                                                };
 
-                                                garageStyles();
+                                                                                battleFastPick();
 
-                                                startScreen();
+                                                                                garageStyles();
 
-                                                developerDetails();
+                                                                                primaryNotification();
 
-                                        };
+                                                                                lobbyClocks();
 
-                                        if (element.nodeType === 1 && element.classList.contains('ModalStyle-rootHover')) {
+                                                                                startScreen();
 
-                                                createWindow();
+                                                                                developerDetails();
 
-                                        };
+                                                                        };
 
-                                        if (element.nodeType === 1 && element.classList.contains('ApplicationLoaderComponentStyle-container') && element.classList.contains('Common-flexCenterAlignCenterColumn')) {
+                                                                        if (element.nodeType === 1 && element.classList.contains('ModalStyle-rootHover')) {
 
-                                                applicationLoader();
+                                                                                createWindow();
 
-                                        };
+                                                                        };
 
-                                        if (element.nodeType === 1 && element.classList.contains('LobbyLoaderComponentStyle-container')) {
+                                                                        if (element.nodeType === 1 && element.classList.contains('ApplicationLoaderComponentStyle-container') && element.classList.contains('Common-flexCenterAlignCenterColumn')) {
 
-                                                lobbyLoader();
+                                                                                applicationLoader();
 
-                                        };
+                                                                        };
 
-                                        }); }}); });
+                                                                        if (element.nodeType === 1 && element.classList.contains('LobbyLoaderComponentStyle-container')) {
 
-                                        let Configuration = {
+                                                                                lobbyLoader();
+
+                                                                        };
+
+                                                                });
+
+                                                        };
+
+                                                });
+
+                                        });
+
+                                        Observer.observe(document.body, {
+
+                                                attributes: true,
 
                                                 subtree: true,
 
                                                 childList: true
 
-                                        };
-
-                                        Observer.observe(document.body, Configuration);
+                                        });
 
                                 };
 
                                 mutationsObserver();
+
+                        };
+
+                });
+
+                let ratingsLinks = [
+
+                        'ratings.tankionline.com'
+
+                ];
+
+                ratingsLinks.forEach((link) => {
+
+                        if (window.location.href.includes(link) == true) {
+
+                                ratingsPage();
+
+                                applyBackground();
 
                         };
 
