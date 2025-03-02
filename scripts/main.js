@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v1.11'
+        var version = 'v1.1.2'
 
         // изменение иконки на вкладке браузера
 
@@ -18,11 +18,7 @@
 
         // создание глобального колонтитула для объектов темы в body
 
-        var variableHeader = document.createElement('data');
-
-            variableHeader.className = `Obscurum ${version}`
-
-            document.body.appendChild(variableHeader);
+        var variableHeader = element('data', `Obscurum ${version}`, document.body);
 
         // определение языка игры
 
@@ -373,6 +369,27 @@
                     },
 
                     {
+                            selector: '.Common-entranceBackground > .Common-entranceGradient > .Common-flexStartAlignStartColumn',
+                            style: `
+                                    background-color: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border: unset;
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.Common-entranceBackground > .Common-entranceGradient > .Common-flexStartAlignStartColumn > span',
+                            style: `
+                                    color: white;
+                            `
+                    },
+
+                    {
                             selector: '.StartScreenComponentStyle-mainContainer > img',
                             style: `
                                     visibility: hidden;
@@ -544,6 +561,8 @@
                                     width: 28em;
                                     height: 3em;
                                     z-index: 20;
+
+                                    transition: var(--general-transition);
                             `
                     },
 
@@ -1932,6 +1951,8 @@
                                     bottom: 1em;
                                     width: 31em;
                                     height: 6.5em;
+
+                                    transition: var(--general-transition);
                             `
                     },
 
@@ -4279,7 +4300,7 @@
                                        .BattleHudComponentStyle-pauseButton:hover,
                                        .BattleHudComponentStyle-tabButton:hover`,
                             style: `
-                                    background: rgb(255 255 255 / 1.5%) !important;
+                                    background: rgb(0 0 0 / 30%) !important;
                             `
                     },
 
@@ -4630,6 +4651,7 @@
                                     outline: var(--general-outline);
                                     backdrop-filter: var(--least-backdrop-filter);
                                     border-bottom: unset;
+                                    border-radius: 0.75em;
                                     box-shadow: var(--general-box-shadow);
 
                                     margin-top: 1em;
@@ -5380,6 +5402,8 @@
                                     width: 48em;
                                     height: 7em;
                                     z-index: 100;
+
+                                    animation: translateUp .2s ease-in-out !important;
                             `
                     },
 
@@ -5387,15 +5411,28 @@
                             selector: '.MatchmakingWaitComponentStyle-cancelButton',
                             style: `
                                     border: unset;
+                                    border-left: var(--general-outline);
+                                    border-top-right-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
 
                                     margin-top: unset;
-                                    height: 6em;
+                                    height: 7em;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.MatchmakingWaitComponentStyle-cancelButton:hover',
+                            style: `
+                                    background: var(--general-bg-hover);
                             `
                     },
 
                     {
                             selector: '.MatchmakingWaitComponentStyle-cancelButton > span',
                             style: `
+                                    color: var(--general-color) !important;
                                     margin: unset;
                             `
                     },
@@ -6730,6 +6767,54 @@
                             `
                     },
 
+                    {
+                            selector: '.PaintsCollectionComponentStyle-commonBlockFOrInfoAndCaptionCategory',
+                            style: `
+                                    margin-bottom: 1em;
+                            `
+                    },
+
+                    {
+                            selector: '.PaintsCollectionComponentStyle-commonBlockPaint',
+                            style: `
+                                    width: fit-content;
+                            `
+                    },
+
+                    {
+                            selector: '.PaintsCollectionComponentStyle-commonBlockPaint > .Common-flexCenterAlignCenter',
+                            style: `
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: 0.75em !important;
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    margin-left: 0.5em;
+                                    margin-right: unset;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.PaintsCollectionComponentStyle-commonBlockPaint > .Common-flexCenterAlignCenter:hover',
+                            style: `
+                                    background: rgb(255 255 255 / 15%);
+                            `
+                    },
+
+                    {
+                            selector: '.PaintsCollectionComponentStyle-captionPaint > .Common-backgroundImageContain',
+                            style: `
+                                    background-image: unset;
+                                    background-color: var(--general-color);
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqklEQVR4nO3VSwrCMBhF4TtqFtEt2i7T2pFuRdq5EvgFJyENRLjF80Gg2OQQ7EsCAAAAAABnkSTNkm6S9hj5eIpzp2iMkh6SXoVxjznWjVRZ/B1Jzo35wOLPuBQ2YdFYGwJLYRMWja0hkOfaNraGwLPDJn7WWB1uC3VoTB0eVItGildabXGeMxQ24dLQWIkc/Zg5NDTEJVviwcvjGr8V/wHTBgAAAADg77wBWTZQCh5Pk9sAAAAASUVORK5CYII=);
+                                    mask-position: center;
+                                    mask-repeat: no-repeat;
+                                    mask-size: 1.5em;
+                            `
+                    },
+
                     // блок настроек
 
                     {
@@ -6866,6 +6951,13 @@
                     },
 
                     // блок стилизации магазина
+
+                    {
+                            selector: '.NewShopCommonComponentStyle-commonContainer',
+                            style: `
+                                    background: radial-gradient(ellipse at top, rgb(25 25 25),  black) !important;
+                            `
+                    },
 
                     {
                             selector: '.TimeLeftComponentStyle-timeLeftContainer',
@@ -7346,7 +7438,30 @@
                     },
 
                     {
-                            selector: '.user-profile .slider__slide-button-holder:before',
+                            selector: '.leaderboards .slider__slide-button-holder',
+                            style: `
+                                    background: var(--general-bg);
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: var(--least-backdrop-filter);
+
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    position: absolute;
+                                    top: 6em;
+                                    margin: 0 -1em;
+                                    height: 12em;
+
+                                    transition: var(--general-transition);
+                            `,
+                            tags: 'hover'
+                    },
+
+                    {
+                            selector: `.user-profile .slider__slide-button-holder:before,
+                                       .leaderboards .slider__slide-button-holder:before`,
                             style: `
                                     content: '';
 
@@ -7364,7 +7479,8 @@
                     },
 
                     {
-                            selector: '.user-profile .slider__slide-button-holder_backward:before',
+                            selector: `.user-profile .slider__slide-button-holder_backward:before,
+                                       .leaderboards .slider__slide-button-holder_backward:before`,
                             style: `
                                     transform: rotate(180deg);
                             `
@@ -8441,7 +8557,7 @@
 
 
                                                 {
-                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex',
+                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay',
                                                         style: `
                                                                 opacity: 0;
                                                         `
@@ -8449,15 +8565,22 @@
 
 
                                                 {
-                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .MainScreenComponentStyle-blockMainMenu',
+                                                        selector: '.PrimaryMenuItemComponentStyle-menuItemContainer',
                                                         style: `
                                                                 opacity: 0;
                                                         `
                                                 },
-
 
                                                 {
                                                         selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer',
+                                                        style: `
+                                                                opacity: 0;
+                                                        `
+                                                },
+
+
+                                                {
+                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .FooterComponentStyle-footer > ul > li',
                                                         style: `
                                                                 opacity: 0;
                                                         `
@@ -8976,11 +9099,41 @@
 
                                                 if (logWindow_textHeader) {
 
-                                                        // v1.11
+                                                        // v1.1.2
 
-                                                        let h1_111 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_20', logWindow_textHeader);
+                                                        let h1_112 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_2', logWindow_textHeader);
 
-                                                            h1_111.innerHTML = 'v1.11'
+                                                            h1_112.innerHTML = 'v1.1.2'
+
+                                                        if (h1_112) {
+
+                                                                let h1_112_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_112);
+
+                                                                let h1_112_span1 = element('span', 'h1-112-span1', h1_112);
+
+                                                                let h1_112_span2 = element('span', 'h1-112-span2', h1_112);
+
+                                                                if (language == 'RU') {
+
+                                                                        h1_112_span1.innerHTML = '• Фикс кнопок переключения между разделами на сайте рейтингов'
+
+                                                                        h1_112_span2.innerHTML = '• Стилизация некоторых элементов'
+
+                                                                } else {
+
+                                                                        h1_112_span1.innerHTML = '• Fixed buttons for switching between sections on the site ratings'
+
+                                                                        h1_112_span2.innerHTML = '• Stylization of some elements'
+
+                                                                };
+
+                                                        };
+
+                                                        // v1.1.1
+
+                                                        let h1_111 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_1', logWindow_textHeader);
+
+                                                            h1_111.innerHTML = 'v1.1.1'
 
                                                         if (h1_111) {
 
@@ -9000,11 +9153,11 @@
 
                                                         };
 
-                                                        // v1.10
+                                                        // v1.1.0
 
-                                                        let h1_110 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_10', logWindow_textHeader);
+                                                        let h1_110 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_0', logWindow_textHeader);
 
-                                                            h1_110.innerHTML = 'v1.10'
+                                                            h1_110.innerHTML = 'v1.1.0'
 
                                                         if (h1_110) {
 
@@ -9036,11 +9189,11 @@
 
                                                         };
 
-                                                        // v1.00
+                                                        // v1.0.0
 
-                                                        let h1_100 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_00', logWindow_textHeader);
+                                                        let h1_100 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_0_0', logWindow_textHeader);
 
-                                                            h1_100.innerHTML = 'v1.00'
+                                                            h1_100.innerHTML = 'v1.0.0'
 
                                                         if (h1_100) {
 
@@ -9078,92 +9231,92 @@
 
                                                         };
 
-                                                        // v0.992
+                                                        // v0.9.2
 
-                                                        let h1_0992 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v0_992', logWindow_textHeader);
+                                                        let h1_092 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v0_9_2', logWindow_textHeader);
 
-                                                            h1_0992.innerHTML = 'v0.992'
+                                                            h1_092.innerHTML = 'v0.9.2'
 
-                                                        if (h1_0992) {
+                                                        if (h1_092) {
 
-                                                                let h1_0992_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_0992);
+                                                                let h1_092_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_092);
 
-                                                                let h1_0992_span1 = element('span', 'h1-0992-span1', h1_0992);
+                                                                let h1_092_span1 = element('span', 'h1-092-span1', h1_092);
 
-                                                                let h1_0992_span2 = element('span', 'h1-0992-span2', h1_0992);
+                                                                let h1_092_span2 = element('span', 'h1-092-span2', h1_092);
 
-                                                                let h1_0992_span3 = element('span', 'h1-0992-span3', h1_0992);
+                                                                let h1_092_span3 = element('span', 'h1-092-span3', h1_092);
 
-                                                                let h1_0992_span4 = element('span', 'h1-0992-span4', h1_0992);
+                                                                let h1_092_span4 = element('span', 'h1-092-span4', h1_092);
 
                                                                 if (language == 'RU') {
 
-                                                                        h1_0992_span1.innerHTML = '• Небольшой хотфикс таба в DM-матчах'
+                                                                        h1_092_span1.innerHTML = '• Небольшой хотфикс таба в DM-матчах'
 
-                                                                        h1_0992_span2.innerHTML = '• Стилизация окна приглашения в битву/группу'
+                                                                        h1_092_span2.innerHTML = '• Стилизация окна приглашения в битву/группу'
 
-                                                                        h1_0992_span3.innerHTML = '• Стилизация кнопок "Назад" и "Пригласить" в разделе приглашений'
+                                                                        h1_092_span3.innerHTML = '• Стилизация кнопок "Назад" и "Пригласить" в разделе приглашений'
 
-                                                                        h1_0992_span4.innerHTML = '• Фикс недоступных (красных) заданий в разделе миссий'
+                                                                        h1_092_span4.innerHTML = '• Фикс недоступных (красных) заданий в разделе миссий'
 
                                                                 } else {
 
-                                                                        h1_0992_span1.innerHTML = '• Small hotfix of tab in DM matches'
+                                                                        h1_092_span1.innerHTML = '• Small hotfix of tab in DM matches'
 
-                                                                        h1_0992_span2.innerHTML = '• Stylization of the battle/group invitation window'
+                                                                        h1_092_span2.innerHTML = '• Stylization of the battle/group invitation window'
 
-                                                                        h1_0992_span3.innerHTML = '• Stylization of the "Back" and "Invite" buttons in the invitation section'
+                                                                        h1_092_span3.innerHTML = '• Stylization of the "Back" and "Invite" buttons in the invitation section'
 
-                                                                        h1_0992_span4.innerHTML = '• Fix for unavailable (red) tasks in the missions section'
+                                                                        h1_092_span4.innerHTML = '• Fix for unavailable (red) tasks in the missions section'
 
                                                                 };
 
 
                                                         };
 
-                                                        // v0.991
+                                                        // v0.9.1
 
-                                                        let h1_0991 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v0_991', logWindow_textHeader);
+                                                        let h1_091 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v0_9_1', logWindow_textHeader);
 
-                                                            h1_0991.innerHTML = 'v0.991'
+                                                            h1_091.innerHTML = 'v0.9.1'
 
-                                                        if (h1_0991) {
+                                                        if (h1_091) {
 
-                                                                let h1_0991_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_0991);
+                                                                let h1_091_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_091);
 
-                                                                let h1_0991_span1 = element('span', 'h1-0991-span1', h1_0991);
+                                                                let h1_091_span1 = element('span', 'h1-091-span1', h1_091);
 
-                                                                let h1_0991_span2 = element('span', 'h1-0991-span2', h1_0991);
+                                                                let h1_091_span2 = element('span', 'h1-091-span2', h1_091);
 
-                                                                let h1_0991_span3 = element('span', 'h1-0991-span3', h1_0991);
+                                                                let h1_091_span3 = element('span', 'h1-091-span3', h1_091);
 
-                                                                let h1_0991_span4 = element('span', 'h1-0991-span4', h1_0991);
+                                                                let h1_091_span4 = element('span', 'h1-091-span4', h1_091);
 
-                                                                let h1_0991_span5 = element('span', 'h1-0991-span4', h1_0991);
+                                                                let h1_091_span5 = element('span', 'h1-091-span4', h1_091);
 
                                                                 if (language == 'RU') {
 
-                                                                        h1_0991_span1.innerHTML = '• Исправлены некоторые ошибки в игровом табе'
+                                                                        h1_091_span1.innerHTML = '• Исправлены некоторые ошибки в игровом табе'
 
-                                                                        h1_0991_span2.innerHTML = '• Стилизация окна поиска битвы в матчмейкинг, окна группы и раздела игровых настроек'
+                                                                        h1_091_span2.innerHTML = '• Стилизация окна поиска битвы в матчмейкинг, окна группы и раздела игровых настроек'
 
-                                                                        h1_0991_span3.innerHTML = '• Небольшая реструктуризация функции, связанной с заменой текстур в лобби'
+                                                                        h1_091_span3.innerHTML = '• Небольшая реструктуризация функции, связанной с заменой текстур в лобби'
 
-                                                                        h1_0991_span4.innerHTML = '• Исправление некоторых ошибок с анимациями в разделе "Друзья", "Клан" и др.'
+                                                                        h1_091_span4.innerHTML = '• Исправление некоторых ошибок с анимациями в разделе "Друзья", "Клан" и др.'
 
-                                                                        h1_0991_span5.innerHTML = '• Добавление функции "фастпика" в режимы матчмейкинга в лобби'
+                                                                        h1_091_span5.innerHTML = '• Добавление функции "фастпика" в режимы матчмейкинга в лобби'
 
                                                                 } else {
 
-                                                                        h1_0991_span1.innerHTML = '• Fixed some bugs in the game tab'
+                                                                        h1_091_span1.innerHTML = '• Fixed some bugs in the game tab'
 
-                                                                        h1_0991_span2.innerHTML = '• Stylized the battle search window in matchmaking, the group window and the game settings section'
+                                                                        h1_091_span2.innerHTML = '• Stylized the battle search window in matchmaking, the group window and the game settings section'
 
-                                                                        h1_0991_span3.innerHTML = '• Minor restructuring of the function related to replacing textures in the lobby'
+                                                                        h1_091_span3.innerHTML = '• Minor restructuring of the function related to replacing textures in the lobby'
 
-                                                                        h1_0991_span4.innerHTML = '• Fixed some bugs with animations in the "Friends", "Clan" section, etc.'
+                                                                        h1_091_span4.innerHTML = '• Fixed some bugs with animations in the "Friends", "Clan" section, etc.'
 
-                                                                        h1_0991_span5.innerHTML = '• Added the "fastpick" function to matchmaking modes in the lobby'
+                                                                        h1_091_span5.innerHTML = '• Added the "fastpick" function to matchmaking modes in the lobby'
 
                                                                 };
 
@@ -9324,7 +9477,13 @@
 
                                                 return new Promise((resolve, reject) => {
 
-                                                        GM_xmlhttpRequest({ url: resource.new, responseType: "blob", method: "GET",
+                                                        GM_xmlhttpRequest({
+
+                                                                url: resource.new,
+
+                                                                responseType: "blob",
+
+                                                                method: "GET",
 
                                                                 onload: response => {
 
@@ -9333,8 +9492,14 @@
                                                                                 resolve(new Response(response.response, {
 
                                                                                         status: 200,
+
                                                                                         statusText: "OK",
-                                                                                        headers: { "Content-Type": response.response.type }
+
+                                                                                        headers: {
+
+                                                                                                "Content-Type": response.response.type
+
+                                                                                        }
 
                                                                                 }));
 
