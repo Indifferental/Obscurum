@@ -77,7 +77,8 @@
         var globalKeyframes = [
 
                 {
-                        animation: `@keyframes blend {
+                        animation: `
+                                    @keyframes blend {
 
                                             0% {
                                                     opacity: 0;
@@ -92,7 +93,8 @@
                 },
 
                 {
-                        animation: `@keyframes translateRight {
+                        animation: `
+                                    @keyframes translateRight {
 
                                             0% {
                                                     opacity: 0;
@@ -108,7 +110,8 @@
                 },
 
                 {
-                        animation: `@keyframes translateLeft {
+                        animation: `
+                                    @keyframes translateLeft {
 
                                             0% {
                                                     opacity: 0;
@@ -124,7 +127,8 @@
                 },
 
                 {
-                        animation: `@keyframes translateUp {
+                        animation: `
+                                    @keyframes translateUp {
 
                                             0% {
                                                     opacity: 0;
@@ -140,7 +144,8 @@
                 },
 
                 {
-                        animation: `@keyframes translateDown {
+                        animation: `
+                                    @keyframes translateDown {
 
                                             0% {
                                                     opacity: 0;
@@ -156,7 +161,8 @@
                 },
 
                 {
-                        animation: `@keyframes rotate {
+                        animation: `
+                                    @keyframes rotate {
 
                                             0% {
                                                     transform: rotate(0deg);
@@ -167,26 +173,6 @@
                                             }
 
                                     }
-                        `
-                },
-
-                {
-                        animation: `
-                                @keyframes gradient {
-
-                                        0% {
-                                                background-position: 0%;
-                                        }
-
-                                        50% {
-                                                background-position: 250%;
-                                        }
-
-                                        100% {
-                                                background-position: 0%;
-                                        }
-
-                                }
                         `
                 },
 
@@ -2355,7 +2341,7 @@
                                     margin-top: unset;
                                     padding-top: 1.5em;
                                     width: 100%;
-                                    height: 100%;
+                                    height: 51.5em;
                             `
                     },
 
@@ -2455,16 +2441,6 @@
 
                     {
                             selector: '.FriendRequestComponentStyle-buttonAccept',
-                            tags: 'hover'
-                    },
-
-                    {
-                            selector: '.FriendRequestComponentStyle-buttonDecline',
-                            tags: 'hover'
-                    },
-
-                    {
-                            selector: '.FriendRequestComponentStyle-buttonAccept',
                             style: `
                                     border-top-right-radius: 1em;
                                     border-bottom-right-radius: 1em;
@@ -2478,6 +2454,14 @@
                             style: `
                                     border-top-left-radius: 1em;
                                     border-bottom-left-radius: 1em;
+                            `
+                    },
+
+                    {
+                            selector: `.FriendRequestComponentStyle-buttonAccept:hover,
+                                       .FriendRequestComponentStyle-buttonDecline:hover`,
+                            style: `
+                                    background: rgb(255 255 255 / 5%);
                             `
                     },
 
@@ -3842,6 +3826,22 @@
                     },
 
                     {
+                            selector: `.MainSectionComponentStyle-transformLinearGradientImgCard,
+                                       .MainSectionComponentStyle-linearGradientImgCard`,
+                            style: `
+                                    border-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.UsersTableStyle-emptyRows',
+                            style: `
+                                    position: absolute;
+                                    height: unset;
+                            `
+                    },
+
+                    {
                             selector: '.UsersTableStyle-containerBattleListCommands',
                             style: `
                                     width: 27.5em !important;
@@ -3858,17 +3858,16 @@
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable',
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable:hover',
                             style: `
-                                    width: inherit;
-                                    margin-left: unset;
-                                    padding-bottom: 0.625em;
+                                    scrollbar-width: thin;
                             `
                     },
 
                     {
                             selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row',
                             style: `
+                                    margin-bottom: unset;
                                     width: inherit;
                             `
                     },
@@ -3877,22 +3876,6 @@
                             selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-rowBattle',
                             style: `
                                     width: inherit;
-                            `
-                    },
-
-                    {
-                            selector: `.MainSectionComponentStyle-transformLinearGradientImgCard,
-                                       .MainSectionComponentStyle-linearGradientImgCard`,
-                            style: `
-                                    border-radius: var(--general-border-radius);
-                            `
-                    },
-
-                    {
-                            selector: '.UsersTableStyle-emptyRows',
-                            style: `
-                                    position: absolute;
-                                    height: unset;
                             `
                     },
 
@@ -3918,9 +3901,53 @@
                     },
 
                     {
+                            selector: '.UsersTableStyle-points',
+                            style: `
+                                    position: absolute;
+                                    visibility: hidden;
+                            `
+                    },
+
+                    {
                             selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer',
                             style: `
                                     width: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > .UsersTableStyle-rangContainer',
+                            style: `
+                                    position: absolute;
+                                    margin: 0 0.5em;
+                                    pointer-events: none;
+                            `
+                    },
+
+                    {
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2)',
+                            style: `
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2) > div',
+                            style: `
+                                    display: flex;
+                                    align-items: center;
+                                    padding-left: 2.5em;
+                                    width: inherit;
+                                    height: inherit;
+                            `
+                    },
+
+                    {
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2) > div > .Common-flexStartAlignCenter',
+                            style: `
+                                    max-width: 9.5em;
                             `
                     },
 
@@ -3964,8 +3991,14 @@
                             selector: '.UsersTableStyle-fontCell span',
                             style: `
                                     transition: var(--general-transition);
-                            `,
-                            tags: 'hover'
+                            `
+                    },
+
+                    {
+                            selector: '.UsersTableStyle-fontCell span:hover',
+                            style: `
+                                    color: var(--general-color) !important;
+                            `
                     },
 
                     // блок ингейм таба
@@ -3978,8 +4011,7 @@
                     },
 
                     {
-                            selector: `.BattleTabStatisticComponentStyle-containerInsideTeams,
-                                       .BattleTabStatisticComponentStyle-containerInsideResults`,
+                            selector: '.BattleTabStatisticComponentStyle-containerInsideTeams',
                             style: `
                                     background: rgb(0 0 0 / 50%);
                                     outline: var(--general-outline);
@@ -4272,6 +4304,37 @@
                             style: `
                                     background-color: var(--general-color);
                                     cursor: pointer;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleTabStatisticComponentStyle-containerInsideResults',
+                            style: `
+                                    background: rgb(0 0 0 / 50%);
+                                    outline: var(--general-outline);
+                                    box-shadow: 0 0 4em 0 rgb(0 0 0 / 50%);
+                                    border-radius: var(--general-border-radius);
+                                    backdrop-filter: blur(8px);
+
+                                    width: 63em;
+
+                                    transition: var(--general-transition);
+                                    animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleTabStatisticComponentStyle-dmTableContainer table tbody tr',
+                            style: `
+                                    width: 61em;
+                            `
+                    },
+
+                    {
+                            selector: '.BattleTabStatisticComponentStyle-dmTableContainer table tbody tr td:first-child',
+                            style: `
+                                    max-width: 24em;
+                                    width: 24em;
                             `
                     },
 
@@ -7552,29 +7615,29 @@
 
                     cssStyles.className = `obscStyleSheet-globalStyles`
 
+                    variableHeader.appendChild(cssStyles);
+
                 elements.forEach((element) => {
 
                         let css = `${element.selector} {${element.style}}\n`
 
-                        cssStyles.textContent += css.split(`                            `).join(``);
+                        cssStyles.textContent += css
 
                 });
-
-                variableHeader.appendChild(cssStyles);
 
                 let cssKeyframes = document.createElement(`style`);
 
                     cssKeyframes.className = `obscStyleSheet-keyframesArray`
 
+                    variableHeader.appendChild(cssKeyframes);
+
                 keyframes.forEach((keyframe) => {
 
                         let frames = `${keyframe.animation}\n`
 
-                        cssKeyframes.textContent += frames.split(`                                    `).join(``);
+                        cssKeyframes.textContent += frames
 
                 });
-
-                variableHeader.appendChild(cssKeyframes);
 
                 // выборка тегов
 
@@ -7584,7 +7647,7 @@
 
                         let css = `${element.selector}:hover {background-color: var(--general-bg-hover);}\n`
 
-                        cssStyles.textContent += css.split(`                            `).join(``);
+                        cssStyles.textContent += css
 
                 });
 
