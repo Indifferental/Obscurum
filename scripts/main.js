@@ -3909,42 +3909,6 @@
                     },
 
                     {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer',
-                            style: `
-                                    width: 100%;
-                            `
-                    },
-
-                    {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > .UsersTableStyle-rangContainer',
-                            style: `
-                                    position: absolute;
-                                    margin: 0 0.5em;
-                                    pointer-events: none;
-                            `
-                    },
-
-                    {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2)',
-                            style: `
-                                    position: absolute;
-                                    width: 100%;
-                                    height: 100%;
-                            `
-                    },
-
-                    {
-                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2) > div',
-                            style: `
-                                    display: flex;
-                                    align-items: center;
-                                    padding-left: 2.5em;
-                                    width: inherit;
-                                    height: inherit;
-                            `
-                    },
-
-                    {
                             selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2) > div > .Common-flexStartAlignCenter',
                             style: `
                                     max-width: 9.5em;
