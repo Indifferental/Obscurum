@@ -3909,6 +3909,37 @@
                     },
 
                     {
+                            selector: '.UsersTableStyle-rangContainer',
+                            style: `
+                                    margin-right: 0.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer',
+                            style: `
+                                    width: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2)',
+                            style: `
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2) > div',
+                            style: `
+                                    display: flex;
+                                    align-items: center;
+                            `
+                    },
+
+                    {
                             selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2) > div > .Common-flexStartAlignCenter',
                             style: `
                                     max-width: 9.5em;
