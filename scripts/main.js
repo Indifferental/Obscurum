@@ -60,7 +60,7 @@
                         border_radius: '1.25em',
                         box_shadow: '0 0 1.5em 0 rgb(0 0 0 / 40%)',
 
-                        backdrop_filter: 'blur(12px)',
+                        backdrop_filter: 'blur(16px)',
                         least_backdrop_filter: 'blur(3px)',
 
                         color: 'rgb(255 157 71)',
@@ -3345,7 +3345,6 @@
                     {
                             selector: '.BattleInfoComponentStyle-selectBattle',
                             style: `
-                                    background-blend-mode: unset !important;
                                     border-top-left-radius: var(--general-border-radius);
                                     border-bottom-left-radius: var(--general-border-radius);
                             `
@@ -3769,20 +3768,6 @@
                             selector: '.BattleCardComponentStyle-imgMode',
                             style: `
                                     top: 2.75em;
-                            `
-                    },
-
-                    {
-                            selector: '.BattleCardComponentStyle-enableIconSettings > div > .Common-maskImageContain',
-                            style: `
-                                    transition: var(--general-transition);
-                            `
-                    },
-
-                    {
-                            selector: '.BattleCardComponentStyle-enableIconSettings > div > .Common-maskImageContain:hover',
-                            style: `
-                                    background-color: var(--general-color);
                             `
                     },
 
@@ -4754,6 +4739,7 @@
                                     background: rgb(0 212 255 / 20%);
                                     box-shadow: unset !important;
                                     border-radius: 0.8em;
+                                    backdrop-filter: var(--general-backdrop-filter);
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
@@ -4766,7 +4752,7 @@
                                     background: rgb(0 212 255 / 5%);
                                     box-shadow: unset !important;
                                     border-radius: 0.8em;
-                                    backdrop-filter: var(--least-backdrop-filter);
+                                    backdrop-filter: var(--general-backdrop-filter);
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
@@ -4779,7 +4765,7 @@
                                     background: rgb(255 102 102 / 10%);
                                     box-shadow: unset !important;
                                     border-radius: 0.8em;
-                                    backdrop-filter: var(--least-backdrop-filter);
+                                    backdrop-filter: var(--general-backdrop-filter);
 
                                     transition: var(--general-transition);
                                     animation: var(--general-animation);
