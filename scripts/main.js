@@ -63,8 +63,7 @@
                         backdrop_filter: 'blur(16px)',
                         least_backdrop_filter: 'blur(3px)',
 
-                        color: 'rgb(255 157 71)',
-                        least_color: 'rgb(255 157 71 / 25%)',
+                        color: '255 157 71',
 
                         transition: '.225s cubic-bezier(.25, .1, .25, 1)',
                         animation: 'blend .15s ease-in-out',
@@ -408,8 +407,8 @@
                                     --general-backdrop-filter: ${globalProperties[0].backdrop_filter};
                                     --least-backdrop-filter: ${globalProperties[0].least_backdrop_filter};
 
-                                    --general-color: ${globalProperties[0].color};
-                                    --least-general-color: ${globalProperties[0].least_color};
+                                    --general-color: rgb(${globalProperties[0].color});
+                                    --least-general-color: rgb(${globalProperties[0].color} / 25%);
 
                                     --general-transition: ${globalProperties[0].transition};
                                     --general-animation: ${globalProperties[0].animation};
@@ -3370,6 +3369,22 @@
                     },
 
                     {
+                            selector: '.BattleOptionsComponentStyle-transformLinearGradientImgCard',
+                            style: `
+                                    border-top-left-radius: var(--general-border-radius);
+                                    border-top-right-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleOptionsComponentStyle-linearGradientImgCard',
+                            style: `
+                                    border-bottom-left-radius: var(--general-border-radius);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                            `
+                    },
+
+                    {
                             selector: '.ProBattlesComponentStyle-battlesContainer > .ProBattlesComponentStyle-table > .Common-flexStartAlignCenter',
                             style: `
                                     visibility: hidden;
@@ -4058,7 +4073,9 @@
                     {
                             selector: '.BattleTabStatisticComponentStyle-commonBlockScroll',
                             style: `
-                                    margin: unset;
+                                    margin-top: 0.5em;
+                                    margin-bottom: 0.5em;
+                                    scrollbar-color: transparent transparent;
                                     justify-content: center;
                             `
                     },
@@ -4455,6 +4472,13 @@
                             selector: '.BattlePauseMenuComponentStyle-blackGlobalWrapper',
                             style: `
                                     animation: var(--general-animation);
+                            `
+                    },
+
+                    {
+                            selector: '.BattlePauseMenuDialogComponentStyle-wrapper',
+                            style: `
+                                    transform: translateY(-50%) translateX(36.25%);
                             `
                     },
 
@@ -9497,7 +9521,7 @@
 
                 // fetch API
 
-                var originFetch = unsafeWindow.fetch
+                /* var originFetch = unsafeWindow.fetch
 
                 var resources = [];
 
@@ -9665,7 +9689,7 @@
 
                         ];
 
-                };
+                }; */
 
                 // проверка на соответствие ссылкам
 
