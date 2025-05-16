@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v1.1.2'
+        var version = 'v1.1.3'
 
         // изменение иконки на вкладке браузера
 
@@ -182,18 +182,84 @@
                 const elements = [
 
                     {
+                            selector: '.obscDOMElement-startTextNode',
+                            style: `
+                                    background: var(--general-bg);
+                                    backdrop-filter: blur(1em);
+                                    border-bottom: var(--general-outline);
+                                    border-right: var(--general-outline);
+                                    border-left: var(--general-outline);
+                                    border-bottom-right-radius: var(--general-border-radius);
+                                    border-bottom-left-radius: var(--general-border-radius);
+                                    box-shadow: var(--general-box-shadow);
+
+                                    position: absolute;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    top: 0em;
+                                    width: max-content;
+                                    height: 5em;
+                                    padding-right: 2em;
+                                    padding-left: 2em;
+                                    z-index: 9999 !important;
+                            `
+                    },
+
+                    {
                             selector: '.obscDOMElement-startText',
                             style: `
                                     color: white;
-                                    font-style: oblique;
+                                    font-family: 'BaseFontRegular';
+                                    text-shadow: 0 0 8px black;
 
-                                    position: fixed;
-                                    top: 0.5em;
-                                    left: 1em;
-                                    z-index: 9999 !important;
-                                    pointer-events: none;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin: 0.2em;
+
+                                    position: relative;
                             `
                     },
+
+                    {
+                            selector: '.obscDOMElement-startTextVersion',
+                            style: `
+                                    color: var(--general-color);
+                                    font-family: 'BaseFontBold';
+
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin: 0.2em;
+                                    margin-bottom: 0.65em;
+
+                                    position: relative;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-startTextVersion:before',
+                            style: `
+                                    content: '';
+
+                                    background-color: var(--general-color);
+
+                                    mask-image: url(data:image/png;base64,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);
+                                    mask-position: center;
+                                    mask-size: contain;
+                                    mask-repeat: no-repeat;
+
+                                    position: absolute;
+                                    margin: 0 0 0 -9.5em;
+                                    width: 1em;
+                                    height: 1em;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
 
                     {
                             selector: '.obscGlobalVariable-svgNode',
@@ -9167,6 +9233,42 @@
 
                                                 if (logWindow_textHeader) {
 
+                                                        // v1.1.3
+
+                                                        let h1_113 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_3', logWindow_textHeader);
+
+                                                            h1_113.innerHTML = 'v1.1.3'
+
+                                                        if (h1_113) {
+
+                                                                let h1_113_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_113);
+
+                                                                let h1_113_span1 = element('span', 'h1-113-span1', h1_113);
+
+                                                                let h1_113_span2 = element('span', 'h1-113-span2', h1_113);
+
+                                                                let h1_113_span3 = element('span', 'h1-113-span3', h1_113);
+
+                                                                if (language == 'RU') {
+
+                                                                        h1_113_span1.innerHTML = '• Окно паузы перемещено в центр'
+
+                                                                        h1_113_span2.innerHTML = '• Обновлена начальная плашка с текстом и ником'
+
+                                                                        h1_113_span3.innerHTML = '• Некоторые визуальные доработки'
+
+                                                                } else {
+
+                                                                        h1_113_span1.innerHTML = '• Pause window moved to center'
+
+                                                                        h1_113_span2.innerHTML = '• Updated start-window with text and nickname'
+
+                                                                        h1_113_span3.innerHTML = '• Some visual improvements'
+
+                                                                };
+
+                                                        };
+
                                                         // v1.1.2
 
                                                         let h1_112 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_2', logWindow_textHeader);
@@ -9435,83 +9537,29 @@
 
         function startText() {
 
-                let textbox = element('pre', 'obscDOMElement-startText', variableHeader);
+                let textNode = element('div', 'obscDOMElement-startTextNode', document.body);
 
-                let text = [
+                let textBox = element('span', 'obscDOMElement-startText', textNode);
 
-                        `Obscurum ${version}\nInitialization complete`
+                    textBox.innerHTML = 'Initialization complete'
 
-                ];
+                let versionBox = element('span', 'obscDOMElement-startTextVersion', textNode);
+
+                    versionBox.innerHTML = `Obscurum ${version}`
 
                 if (localStorage.getItem('obscLocalStorageVariable-nickname')) {
 
                         if (language == 'RU') {
 
-                                text = [
-
-                                        `Obscurum ${version}\nДобро пожаловать, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
-
-                                ];
+                                textBox.innerHTML = `Добро пожаловать, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
 
                         } else {
 
-                                text = [
-
-                                        `Obscurum ${version}\nWelcome, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
-
-                                ];
+                                textBox.innerHTML = `Welcome, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
 
                         };
 
                 };
-
-                let line = 0
-
-                let count = 0
-
-                let result = ''
-
-                function typeLine() {
-
-                        let interval = setTimeout(() => {
-
-                                result += text[line][count];
-
-                                textbox.innerHTML = result + '|'
-
-                                count++
-
-                                if (count >= text[line].length) {
-
-                                        count = 0
-
-                                        line++
-
-                                        if (line == text.length) {
-
-                                                clearTimeout(interval);
-
-                                                textbox.innerHTML = result
-
-                                                setTimeout(function() {
-
-                                                        variableHeader.removeChild(textbox);
-
-                                                }, 4000);
-
-                                                return true
-
-                                        };
-
-                                };
-
-                        typeLine();
-
-                        }, 50);
-
-                };
-
-                typeLine();
 
         };
 
@@ -9521,7 +9569,7 @@
 
                 // fetch API
 
-                /* var originFetch = unsafeWindow.fetch
+                var originFetch = unsafeWindow.fetch
 
                 var resources = [];
 
@@ -9689,7 +9737,7 @@
 
                         ];
 
-                }; */
+                };
 
                 // проверка на соответствие ссылкам
 
