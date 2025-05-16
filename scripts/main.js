@@ -1,3 +1,16 @@
+// ==UserScript==
+// @name         Obscurum [inDev]
+// @namespace    http://tampermonkey.net/
+// @version      none
+// @description  An open-source theme for Tanki Online
+// @author       Indifferental
+// @match        https://*.tankionline.com/*
+// @icon         https://github.com/Indifferental/Obscurum/blob/main/assets/icons/flame90.png?raw=true
+// @grant        GM_xmlhttpRequest
+// @grant        unsafeWindow
+// @run-at       document-body
+// ==/UserScript==
+
 (function() {
 
         var version = 'v1.1.3'
@@ -175,6 +188,40 @@
                         `
                 },
 
+                {
+                        animation: `
+                                    @keyframes windowDown {
+
+                                            0% {
+                                                    opacity: 0;
+                                                    transform: translateY(-5em);
+                                            }
+
+                                            100% {
+                                                    opacity: 1;
+                                            }
+
+                                    }
+                        `
+                },
+
+                {
+                        animation: `
+                                    @keyframes windowUp {
+
+                                            0% {
+                                                    opacity: 1;
+                                            }
+
+                                            100% {
+                                                    opacity: 0;
+                                                    transform: translateY(-5em);
+                                            }
+
+                                    }
+                        `
+                },
+
         ];
 
         function styleSheet() {
@@ -204,6 +251,9 @@
                                     padding-right: 2em;
                                     padding-left: 2em;
                                     z-index: 9999 !important;
+                                    opacity: 0;
+
+                                    animation: windowDown 1s ease-out 2s forwards;
                             `
                     },
 
@@ -9560,6 +9610,19 @@
                         };
 
                 };
+
+                setTimeout(function() {
+
+                        textNode.style = 'animation: windowUp 1s ease-in forwards;'
+
+                }, 8000);
+
+                setTimeout(function() {
+
+                        document.body.removeChild(textNode);
+
+                }, 16000);
+
 
         };
 
