@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v1.1.3'
+        var version = 'v2.0.0'
 
         // изменение иконки на вкладке браузера
 
@@ -181,7 +181,7 @@
 
                                             0% {
                                                     opacity: 0;
-                                                    transform: translateY(-5em);
+                                                    transform: translateY(-6.5em);
                                             }
 
                                             100% {
@@ -202,7 +202,41 @@
 
                                             100% {
                                                     opacity: 0;
-                                                    transform: translateY(-5em);
+                                                    transform: translateY(-6.5em);
+                                            }
+
+                                    }
+                        `
+                },
+
+                {
+                        animation: `
+                                    @keyframes menuRight {
+
+                                            0% {
+                                                    opacity: 0;
+                                                    transform: translateX(-6em);
+                                            }
+
+                                            100% {
+                                                    opacity: 1;
+                                            }
+
+                                    }
+                        `
+                },
+
+                {
+                        animation: `
+                                    @keyframes menuLeft {
+
+                                            0% {
+                                                    opacity: 1;
+                                            }
+
+                                            100% {
+                                                    opacity: 0;
+                                                    transform: translateX(-6em);
                                             }
 
                                     }
@@ -214,6 +248,495 @@
         function styleSheet() {
 
                 const elements = [
+
+                    // стиль меню темы
+
+                    {
+                            selector: '.obscDOMElement-menuHandler',
+                            style: `
+                                    background: linear-gradient(45deg, black, transparent);
+                                    outline: 3px solid rgb(255 255 255 / 2.5%);
+                                    box-shadow: 0 0 3em 0.5em black;
+                                    backdrop-filter: blur(1em);
+
+                                    position: fixed;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    top: 0em;
+                                    left: 0em;
+                                    width: 34em;
+                                    height: 100%;
+                                    z-index: 9999999;
+                                    opacity: 0;
+                                    pointer-events: none;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-header',
+                            style: `
+                                    background: rgb(255 255 255 / 10%);
+
+                                    position: relative;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    top: 0em;
+                                    left: 0em;
+                                    width: inherit;
+                                    height: 4em;
+
+                                    --menu-header-color: rgb(255 255 255 / 75%);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-headerText',
+                            style: `
+                                    color: var(--menu-header-color);
+                                    font-family: 'BaseFontBold';
+                                    font-size: 1.5em;
+                                    text-transform: uppercase;
+
+                                    position: absolute;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    left: 2.25em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-headerTextImage',
+                            style: `
+                                    background-color: var(--menu-header-color);
+
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACbklEQVR4nO2ZsWsUQRSHvwhGSBGwEAI2akC0EysFsbIQLlFBO8EuELRJZyWKMailARPxD7DRynTCJSltFCSkSJtAsFGSbCw0eiMDrxiXmZ3Zu7mdPdkfPDi4N7+Z73Zmdt4cNGrUqFtdB1aBfUAljn1gBZgsC/GsBoNXjpgr8yRUzWMiBGS1BgNVnlgOAclqMFDlib0QEDUg4VXMzm4Zvg8HGeSU4XtjUEG+A0OG74m6ghwAC8CPwJ1FQ+04cteBFylADoz5Py5v3XzOA4v3m1zOL2AWOCLf368a5LHl154GvgLPZRq5dBJ4CXwEzlm+/1AlyBYwaml7iN50CfhT9Rp5RVzp6bWeYrF3gCsRQcoeVKOB6PgcCeKoLHyVCuRRgY8+oballsjkc6sg/30qkN/AMYfHk4J2eru16WrVIHoKfAGeFjwJn4ftyRwGXgOfgJ/9BLkj+/6wp/1ywCD0NCvSMHAemOoHSKiyWPWEKBnIXgDIbkqQGeCy441uqh1hao1KXzP9XOz6CLEBLDrat7pc7FqL4h1yTOkZxIzTDo/ZLrbfMyX7jgqiT7EutWQKZYEvRP00koFs5qrAbjUkXioVyE3i6VoqkLfE17uqQb4BYz0WVrbcMfGuDERfOuR1G9iWDUDvQC6dlfbb0iavhSpBOnIO0joOLFly5i3e85a8JfHQmhLvStdIR8pd1xXPmsV7zZG7I16dFIs9pF4ZMXxH5Boplr9XKmJcMHwvRvb2KmZndw3fe4MMovoY/8UfPbt+DPs9bt2iHQIyWYOBKk8UnaL/0VwNBqtK1jNOTciNSB3WTBZQzzRq1Ai3/gK+6C+OngQFugAAAABJRU5ErkJggg==);
+                                    mask-position: center;
+                                    mask-size: contain;
+                                    mask-repeat: no-repeat;
+
+                                    position: absolute;
+                                    left: 1em;
+                                    width: 1.5em;
+                                    height: 1.5em;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-credits',
+                            style: `
+                                    color: rgb(255 255 255 / 5%);
+                                    font-family: 'BaseFontBold';
+                                    font-size: 1.5em;
+                                    text-transform: uppercase;
+
+                                    position: absolute;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    bottom: 1em;
+                                    left: 1.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-closeButton',
+                            style: `
+                                    background-color: var(--menu-header-color);
+
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB70lEQVR4nO2aSU7DQBBFX5awYToFWcKGK0CuwSiGHIt5xXAIhJ0TMK0JUrLzrlFLbcmyHI+VuOy4pL9zR/+lunqwC5JjHTgFXoBvIABMzQqcF+vpxHnMjB4wBP4UAGRpDFw5z4mxCjwoMFpU98BKUmZuFJgrq8d4poYKTFXVZXQBaELNmBw1tWaBzhSYkdKxBXpVYERKzxboR4ERKX2iZNOUUoACE9KibgMdEF2GKDQNpsAA2Ab8ElNoBPSBA2BSdw1Ngb3YteOtIMxWZPyuwKkFKZiiUHGYMHYqQlF2oJ1ms2IT8FLG+u6ZWbFfB1A/xVAaVBYM7rcXDpTHWBwqz5gN4L0OIJNSB0k1VeTZKp4wFeXlzNS8M2OkgPJmat6ZMZJAVaAkYYwkUBkoaRgjDVQEah4wpgNiiabcqE2LwqhNy7YntLFmHWjNIoBadfTxS/zrebPpN+n64Gm9PuyXgMkLVcsFb9K2K7hJgGr0SxITgRq4eV9m2fXcKzAVr7GMQlG3gQ6IZctQoMCE6AevLwVGpPSB650xLdETrhHItESH4e4+VmCmqn7DxgtcV5NpuC6iB0Lb+HOtwJRY8xKuRetOgbmiuk1qLwuj57qaxg2pmfO0BsBo2OKyjUB2GbTtJho2X+vBerGejqILQDT+AUX36XF9fjrbAAAAAElFTkSuQmCC);
+                                    mask-position: center;
+                                    mask-repeat: no-repeat;
+                                    mask-size: contain;
+
+                                    position: absolute;
+                                    right: 1em;
+                                    width: 1.25em;
+                                    height: 1.25em;
+                                    cursor: pointer;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-backButton',
+                            style: `
+                                    background-color: var(--menu-header-color);
+
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEwklEQVR4nO2dTahVVRTHf09Sy4LK1yALAqFoJC/6MM0IahYNCidlBlGDbBQUDUozHVrw1AQNE59SVNQkgjKIPl9KNUr6mEVJIJRoalaK6Vuxc7+4XM4+9z58757/PmsvWPP/Xb+7P87aa68NU7dZwAiwElgDbChOZwzWxNiMxFjNmC0DxoAjgBWnnxgcBnYCt00niCXA3gKA8/0TjgOLzwfEXGAzcLbAYLpmhBDLUWDOVGFcAXxVQDBTU/M+YP5UYPxQYDDT6+R3wHA/01QZGQx0pNROX2HNKDsoBhqDsKZU2i1lAaephf7WKiBla0tjs8Nn3TBuL1MVTU/VSzuBjAkIMuf+yiSMkG8p6RAaB3IIGCImwZoWU5z/YrAoAHnIcUA+At4C/hDQEvxBYrrYnPkZ4IGONfRa4HcBXauDmBcEhAzSJ4BHK7b9LwloC+cpbBQQMkh/OvFh/LKAto3egGxIwLge+FNAnysguye3lV12FfCzgD5XQN4BLqiAcSmwX0CfKyAfx2OFbrsI+EJAnysgXwOXVMCYDbwvoM8VkO8TJ3JhHdkloM8VkF+AaxI7qlEBfa6AHIrb2Cp7TkCfKyDHgRsTMFYJ6HMF5G/gjgSMe2P+qmmNboCcBu5JwLgTOCmg0Q2QCeCRBIybhVLrboA8mYARUuq/CuhzBWRdAsbVQvkpN0C2JmBcJpafcgHk9cRlmHmZ15dlCeTDRD1syE/tEdDnCsiXwMWJ/NRuAX2ugHwLXJ5YN3L5Da0B8iNwZQLG8wL6XAE5CCxMwHhcQJ8rIMdiZWWV3ZdJfqo1QP6KVflVdhdwSkCjGyCngbtrLhbllJ/KHshZ4P4EjOsyzE9lDWQCeKwmP3VAQKMrIM8kYAw7uaotBWRLAsa8eH24aX2ugLyaKPOcDXwgoM8VkHcTZZ6zgDcFguQKyCfAhYmpapNAgFwB2R8Pk6psvUBwCpAOWycQHHdAgn9apiykgNQt6kMtOXTKaoRM+ms12949AvrcAen1YbhXQJ87IAY8m4BSUicNQnmiZcVvWY8Q65F+z7E8NHsg1uOAKrcC6lYAsR5HuOGKQTnCbajI4YYElFLkIFgGtEpgJLuZsqyrUG5BAspaAX3ugFgpJc2v2HqXgD5XI8Q6riPMzahdRuuBGPBG4sKOYkMZF0AM2JZY5NVaLrkBYvGoF/GmZK6AGPBUi/JerW8cMAIcFdDoCojFeyLLE1BKaw3R5jP/CPxx3IwQ66M908Nxemtaoysg1qOBmXpb9VYCsdLiL78mmGMC+lyNEOujTex7AvrcAbHSSDm/VuPfCOhzNUKsj2b8PwnocwfEynMVeT3osk1lhJQnj87ZFpUHZ9S/Xm1Aj4IdVXkUbKWAkCZvcL0NnBDQEnxFAFIelkTrYclQLHBYQIw59986t+U7BQSZc9/esaaxTECQOfcldNm4gChzvLmovAjTth6GloGHG2OLSZinNIqJ+IvU2BxHvalMwMfj2UytDcfTtqbFWsu9rlN3JZQyUpjRkdE3jM7pazQuOk3/m6wlfiauGT2nqToLfXI/F/gx1oKt7U1Moy0FdsS6p6Z/nGWUDtle9dE3nTYUk2ArYm+SkMMvzv8xCK1uQ2xCjKqOjGvtX0I7jt8hSrYWAAAAAElFTkSuQmCC);
+                                    mask-position: center;
+                                    mask-repeat: no-repeat;
+                                    mask-size: contain;
+
+                                    position: absolute;
+                                    right: 3em;
+                                    width: 1.29em;
+                                    height: 1.29em;
+                                    cursor: pointer;
+                                    opacity: 0;
+                                    pointer-events: none;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-closeButton:hover, .obscDOMElement-backButton:hover',
+                            style: `
+                                    background-color: rgb(255 255 255 / 50%);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-buttonsHandler',
+                            style: `
+                                    position: relative;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    margin-top: 2em;
+                                    width: calc(100% - 3em);
+                                    height: max-content;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-mDefaultButtonsLine',
+                            style: `
+                                    background-color: rgb(255 255 255 / 5%);
+
+                                    position: relative;
+                                    margin-bottom: 2em;
+                                    width: calc(100% - 4em);
+                                    height: 1px;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-mDefaultButton',
+                            style: `
+                                    background-color: rgb(255 255 255 / 5%);
+                                    border-radius: 1em;
+
+                                    position: relative;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-bottom: 2em;
+                                    width: 100%;
+                                    height: 6em;
+                                    cursor: pointer;
+
+                                    transition: var(--general-transition);
+
+                                    --default-button-color: rgb(255 255 255 / 25%);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-mDefaultButton:hover',
+                            style: `
+                                    background-color: rgb(255 255 255 / 10%);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-mDefaultButtonImage',
+                            style: `
+                                    background-color: var(--default-button-color);
+
+                                    mask-position: center;
+                                    mask-repeat: no-repeat;
+                                    mask-size: contain;
+
+                                    position: absolute;
+                                    left: 1.5em;
+                                    width: 1.5em;
+                                    height: 1.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.mDefaultButton_2',
+                            style: `
+                                    pointer-events: none !important;
+                            `
+                    },
+
+                    {
+                            selector: '.mDefaultImage_1',
+                            style: `
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADE0lEQVR4nO2ZSWgUQRSGv0mMe0Rxw6BeRA8KYkCD5qAn0UPcLuJ6ExcETypxQcWQGAkePIiJgjdFMQpioojgQb3oSR1hBBfikhyMC4rLJEFHHlRA2qqe7uqungHnh8cE+n/13l/rqwqUUEIJcaAcWAgcANqBNPAJ6AP61d9PgSvAfmCR8ik4pgPHgG4gF9LeAc3AtEIkPgloUz2ci2h9QCswIankNwEfYkjca9LmepeJDwPO5EniC9AILAVWqDkfVkgbUBF38iOAm3kC/wBqNL6NFiJuACPjSl5641aAoKd9Rs5mynXGNRJnAwbc6tPGbQ3/K3AS2A60qOnn5cjijoQNIXpM9ncTHmu20BkeThXwWtPuuihb5ecQAp4DozTtLNFwNxpirtZwe4HxNgJaDYn2qJNV9+0OMEv5lwErDVzpbR0qgd8a/imbE3bA08g9YLb6LmVAHfBeE+wX8MrwbdBmGuJWGfhZYGoYAc2eBrqAcRperaHH8tlhQ9y9Pj5SsgRCmaa2afLhP7QQIAXeZk87a4FvPj5vVG55Uatx3unDv2YhYNCeKf9MQL7uoPwH+zSO5wzclFrUuYSsPoiAqxrHAVXve3EwweRzwOUgAp4YnH8CDcBiVahdtFzAUSwdRIBpjy8G6w0iII5LiivLBhGQTTCh++q0nkyM+JhQ8nJxcXKxTxsCyl69DBiujvWjEaabbBRDcYR2TUApf8douLssBWzDIeo1AXcbuOWWu9Y8lwLmawKu8uE/sBAw16WAFPDWE1Be3HSosLzvbsExjngCdhu2uj2WayDj4unkb0xRzyTeynGNEjIHOBGxlDCNamxosUzsOrBA3Y/lt8PAk9rfdLWMBWMtHm0leR1MIhpwjLqQ00R2MB1qDPy7JICmEALkVUGHSgO/KwkBcg8972gEMiSEIcCFCGug08C/RIJIqemUb010qB4frX5NyYuZXuicYrnlv5S8Ju+lMrIFgSzK48B3y+TlzbWaIsBE4BDwIkTyL4slee/6qFZltyzMR+pttF8l3aPWxg6XF5kSSvgf8QcmEm4hWaYBngAAAABJRU5ErkJggg==);
+                            `
+                    },
+
+                    {
+                            selector: '.mDefaultImage_2',
+                            style: `
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABFUlEQVR4nO2XzQkCMRBGn+th9a53a9Aq/FkQRDxYkBagHViBCrIViEfrUGxAYSUQYQkKIonZgXmwlxyGl4/JMgOKovikBeyAK7AGagiTPwNF6esjWL4AhgiWPwAJFaf9QT4HmghNPgcaP9YcACdgC3QQJj8D7qVa5hJi5QvgiGD5u22nyj/Y6Rv5BzD37K7yLpr8N2jPO2jbfMvuT/95cx6Eq2R5w8oZiUXJY9fAvl1GEmnyPvAtnwCZDTX4jt3zLN+wbfyqZdo7KAvP8rlT70JgsoDyRcglp8wIWAJdz/Jnu49UmhTYq3wEUk0+EqkmHwlNPhaafCxEJ584I7EoecNYsrxhIlneUAc2wM3O86LkFYWK8wQyZyjPVbLhxwAAAABJRU5ErkJggg==);
+                            `
+                    },
+
+                    {
+                            selector: '.mDefaultImage_3',
+                            style: `
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACB0lEQVR4nO2Zu0oDQRRAzycEi0QRK0X9A0HEQrAQxc4fEEHFR2vnb6iorXaC4KNS8AssfCR2Yu07WiVxZeAGwpLs3pE4O7vkwO2SYQ535s7sHejQoZE+YBU4B4rAF/ANPAGnwAYwjMf0ArtAFQhi4hbI4SGzwKdCIABugDwesgbU0i4xpVxKAVACevB0T2iX0x1QwFP2lBL3FhK5JEpsVSnRrRwzL9VsCIesKiSKlhI38j9zzjjjTCEyZ5mJQOIEhzwoRI4V4xRCEiYecUhZIVKRyqZZTo1hrjPO0JbdzQiJcCbq8eFSpKQUeRWZxsx0SzWLKhLOOFKK1KMqe2ZOJhr1W6ebfcFSJLCIJZci6/8kUYkpEG1l3uK2axtbWZB4t7gJeCtRA2ayILGSheU0nWaJCrDj6ovxLxI1Kc0LcmiaE7wscS+H3bLvJfbH9WEWR0fCF+Y7yykBJqU/W5Lmclmu1X+pTiaDzhkErtp4EiciMS5faqmWGMyChOGyTRKJb+wg7ZmwaTJ7mwnblk1UmDES57PJxExTbARYBA6kqxclYsZInLfQpIpN7v+HMSJOu36tuA5lotljy2KMiPmGSJx9xbPXSIzINh4wGiMR1UiuxwSe0GXxLhGOCzwn3+JdojFegAE8piDLLUriGRjDY7oUEmY59ZMCRqWaXcs5Uxa5bZ82NlnjF3W4z+hBCHmhAAAAAElFTkSuQmCC);
+                            `
+                    },
+
+                    {
+                            selector: '.mDefaultImage_4',
+                            style: `
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEQklEQVR4nO2dPYsdZRiGLwluJEai2RRpTGHhB4jgF/4LS02CQQmmsNAqatBGDDZqQBJQUlinU8FCkdUNSaetkA8rQTQiSTSx8CPsKxPGQszZc87sOXnu5zz3BXc5A+eae+d9Z96ZHTDGGGOMMcaYefIAcAhYAc4CvwNtQfMXcAk4D3wOvAc8BeysWLEngJMCB0Uha8Bp4AXgDhacJeB4/6OjxSvmMvAWcCcLyDJwSkByhvwMPMcCcSuwKiA2Wz4BtrMAHBeQmTXfAfeQfMLnMZ//HNQXgY+AixOW4EfgQZLi2T7/O6D/shnYB3w9QQl+AHaR8Do/+hSqmBuxB7gwZrtvgdtJxCEB2YoZxV3Ap2O2/ZBErAjIVsx6bAKOjtn+SZJwXkC2YiZhvRJ8D2whAVcEZCtmEjaNGQ4OkoBo0arZOqG/bf0l4I328RNwG+JEi1bNQ1M43LvOfp5BnGjRqnltSo/fjNjPZ4gTLVo1F6YYBjqeHbGfv9VXDqNFK+cEcMuEHjf3S8XpLgmjJWcowdYJXX48Yh9vI0y04CzDwevAw2PK8NKI7btLRVmi5VbIWYSJllMhvyBMtJwK+QNhouVUiSzRYqpElmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElmgxVSLLrH/or8D+/l/PZ+Nu4A3gmgswvABPk593XIDhb8F23x3IzqMuwLAC/Nl/ciY7j7kAw4eA3eTniAuwsUng88AO8rELOOxJYPwl0yJGlmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElln/UC8HU7sAXg6mbgG8HEztIcDLwdQuQBcvB1O7AF4OpnYBHFwAlwCfAVwCPAS4BHgO4BLgSaBLIIwPDjfFgSwuAC6AS4DPALMqwbX+DdvuTdtsLPcvtXR3Mz0EDJQg/an0CdnjAgz/C+g+sZ6dpX5p25PAARIeIT9LLsDw9r9LfvZ6CNjYJPDN/k3bbOwADgC/uQC+P9A8B3AJmu8EugTNt4Jdgua1AJegeTHIJWheDXQJmpeDXYLm5wFcguYHQlyC5ieCXILmR8JcguZnAl2C5odCXYLmp4JdgubHwl2C5vcCXIKW5cWQKz5YzPu9iO4JI1nOuQDMuwBnEGbFBWDeBfgCYV51AZh3AQ4izP0uAPMuwL2Is+oSMK+D3w2x8jwOrLkEzPrgr/UfoUzBBy4Asy7AMRLRffL1K5eAWR380xm/orodOOkSsNGDv9q7TEl3JnjfcwKGjvnHFuQD2tc/oPylzwZMM9tPM+GbhvuAV/q7Wd0tzasuBVd7F52TlzNc5xtjjDHGGGMy8w+K7t/qu/+chAAAAABJRU5ErkJggg==);
+                            `
+                    },
+
+                    {
+                            selector: '.mDefaultImage_5',
+                            style: `
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvUlEQVR4nO2b34sNYRyHHz9vpHaLoogiyu2itiiiiOLahhARooPaK7wnWw6KKK4poogiihs3u7WiiKKIv4DaqE1s0VtzatNpPvPOOe874915ai6/n/f9PKfmzJkzAxUVFQUyDVgOdDFBWQb8SY6vwDBwE6gD24EeImfrOAGtjkEi57gQcJ3IuSYEnCRyngkB24icL0LACiJmOjAmBHQTMUtFefu1GDWbhQB7TRA1R4UAe0EUNVeEAEPkPBECdvAfYICLOWc/CQG9GddvUBBm3GZdJUwFfgkBsxzWDy7BtNiwi4TFovxIjvWDSTApG88qYaMQ8DLn+t4lGLHxrBIOi4zbbazvTYLJsHjzOCiyLon5gRYzexzWN0WWHwRmirxHImNXi5kZwHOHfTTKWt7yQeSsojXBJRgP5ScDP0XWnJT5YBKMh/KWhSLrBzBJZHiXYDyVt6wXea8z5niTYDyWtxwQmXcdsjouwXgub7kgcs865nVMgglQ3vJAZO/Nkdm2BBOovOWdyF+TMze3BBOwvD27j4o15rWRn0tCv8PAUJsC5ov80eQ6IZSA083BUBLWiuy3RZQPKWGfyL1PQeVDSWiIzPMUWD6EhHsibz8Fl/ct4Y3IWkcJyvuU8F3kLKAk5X1ImCvm7U/kKZSofKclrBaz7ylh+U5K2C3mHlLS8nkume0NzH8ZEDP2RmkafQ7re/tfsb8N83fE3KEM69eK+ORdJKTdcHglNr6BbNSKLJ8m4RzpjAgBi8hOrcjyrSSo8rNF+d/JY7PklBC8fBN7sjmDplcI+Eg+ThRZ3oWdQsBjIqcuBFwmcm4JAUeInBdCwCYi55sQsISI6Rblx5LHZqNlpRDwmcjpEwKeEjmnhICrRM4NIeAYkTMkBGwhcnqSV+DqyRPgw8m7AE0B9tW5CUlX8tKk66/AiooKOsZfhXMQItxhYxAAAAAASUVORK5CYII=);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-mDefaultButtonSpan',
+                            style: `
+                                    color: var(--default-button-color);
+                                    font-family: 'BaseFontBold';
+                                    font-size: 1.5em;
+                                    text-transform: uppercase;
+
+                                    position: absolute;
+                                    left: 2.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuColorsPage, .obscDOMElement-menuBackgroundsPage, .obscDOMElement-gSettingsPage, .obscDOMElement-menuChangelogPage, .obscDOMElement-menuDetailsPage',
+                            style: `
+                                    position: absolute;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                    align-items: flex-start;
+                                    margin-top: 2em;
+                                    width: calc(100% - 3em);
+
+                                    opacity: 0;
+                                    pointer-events: none;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuDetailsPageHeader',
+                            style: `
+                                    background: rgb(255 255 255 / 5%);
+                                    border-radius: 1em;
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                    align-items: flex-start;
+                                    padding: 1.5em;
+                                    width: calc(100% - 3em);
+                                    height: max-content;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuDetailsPageHeaderSpan',
+                            style: `
+                                    margin-bottom: 1em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuDetailsPageHeaderSpan, .obscDOMElement-menuDetailsPageHeaderSpan2',
+                            style: `
+                                    color: rgb(255 255 255 / 75%);
+                                    font-size: 1.15em;
+                                    font-family: 'BaseFontRegular';
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuDetailsPageLine',
+                            style: `
+                                    background-color: rgb(255 255 255 / 5%);
+
+                                    position: relative;
+                                    margin-top: 2em;
+                                    margin-bottom: 2em;
+                                    width: calc(100% - 4em);
+                                    height: 1px;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuDetailsPageInfoHandler',
+                            style: `
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    width: 100%;
+                                    height: max-content;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuDetailsPageInfoHeader',
+                            style: `
+                                    color: rgb(255 255 255 / 50%);
+                                    font-size: 1.5em;
+                                    font-family: 'BaseFontMedium';
+
+                                    margin-bottom: 0.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuDetailsPageInfoSpan',
+                            style: `
+                                    color: rgb(255 255 255 / 75%);
+                                    font-size: 1.15em;
+                                    font-family: 'BaseFontRegular';
+                            `
+                    },
+
+                    {
+                            selector: '.menuInfoSpan_1',
+                            style: `
+                                    margin-bottom: 1em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuColorsHandler, .obscDOMElement-gSettingsHandler',
+                            style: `
+                                    background: rgb(255 255 255 / 5%);
+                                    border-radius: 1em;
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: flex-start;
+                                    align-items: flex-start;
+                                    padding: 1.5em;
+                                    margin-bottom: 1em;
+                                    width: calc(100% - 3em);
+                                    height: max-content;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-gSettingsOutlineSetting, .obscDOMElement-gSettingsTransparencySetting, .obscDOMElement-gSettingsRadiusSetting, .obscDOMElement-gSettingsBlurSetting',
+                            style: `
+                                    accent-color: var(--general-color);
+
+                                    margin: 1em 0 1em 0;
+                                    width: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-colorSettingsCanvas',
+                            style: `
+                                    position: absolute;
+                                    display: block;
+                                    margin: unset;
+                                    width: 100%;
+                                    opacity: 0;
+                                    pointer-events: none;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-colorSettingsRange',
+                            style: `
+                                    accent-color: var(--general-color);
+
+                                    display: flex;
+                                    margin: 1em 0 1em 0;
+                                    width: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-colorSettingsRange > input',
+                            style: `
+                                    margin: unset;
+                                    width: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-colorSettingsRange > input::-webkit-slider-runnable-track',
+                            style: `
+                                    background: linear-gradient(to left, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+                                    border: none;
+
+                                    width: 300px;
+                                    height: 3px;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-colorSettingsRange > input::-webkit-slider-thumb',
+                            style: `
+                                    background: #fff;
+                                    border-radius: 50%;
+
+                                    height: 2em;
+                                    width: 2em;
+                                    margin-top: -7px;
+                            `
+                    },
+
+                    // глобальные параметры
+
+                    {
+                            selector: 'body',
+                            style: `
+                                    --general-bg: ${globalProperties[0].background};
+                                    --general-bg-hover: ${globalProperties[0].background_hover};
+
+                                    --general-outline: ${globalProperties[0].outline};
+                                    --general-border-radius: ${globalProperties[0].border_radius};
+                                    --general-box-shadow: ${globalProperties[0].box_shadow};
+
+                                    --general-backdrop-filter: ${globalProperties[0].backdrop_filter};
+                                    --least-backdrop-filter: ${globalProperties[0].least_backdrop_filter};
+
+                                    --general-color: rgb(${globalProperties[0].color});
+                                    --least-general-color: rgb(${globalProperties[0].color} / 25%);
+
+                                    --general-transition: ${globalProperties[0].transition};
+                                    --general-animation: ${globalProperties[0].animation};
+
+                                    justify-content: center;
+                            `
+                    },
+
+                    {
+                            selector: 'html, body',
+                            style: `
+                                    background: radial-gradient(ellipse at top, rgb(25, 25, 25),  black);
+                            `
+                    },
+
+                    {
+                            selector: '#modal-root > .ModalStyle-rootHover',
+                            style: `
+                                    background: transparent;
+                            `
+                    },
 
                     {
                             selector: '.obscDOMElement-startTextNode',
@@ -234,11 +757,12 @@
                                     align-items: center;
                                     top: 0em;
                                     width: max-content;
-                                    height: 5em;
+                                    height: 6.5em;
                                     padding-right: 2em;
                                     padding-left: 2em;
                                     z-index: 9999 !important;
                                     opacity: 0;
+                                    pointer-events: none;
 
                                     animation: windowDown 1s ease-out 2s forwards;
                             `
@@ -261,18 +785,33 @@
                     },
 
                     {
-                            selector: '.obscDOMElement-startTextVersion',
+                            selector: '.obscDOMElement-startTextTip',
                             style: `
-                                    color: var(--general-color);
-                                    font-family: 'BaseFontBold';
+                                    color: white;
+                                    font-family: 'BaseFontRegular';
+                                    text-shadow: 0 0 8px black;
 
                                     display: flex;
                                     justify-content: center;
                                     align-items: center;
                                     margin: 0.2em;
-                                    margin-bottom: 0.65em;
 
                                     position: relative;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-startTextVersion',
+                            style: `
+                                    color: var(--general-color);
+                                    font-family: 'BaseFontBold';
+
+                                    position: relative;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin: 0.2em;
+                                    margin-bottom: 0.65em;
                             `
                     },
 
@@ -288,8 +827,7 @@
                                     mask-size: contain;
                                     mask-repeat: no-repeat;
 
-                                    position: absolute;
-                                    margin: 0 0 0 -9.5em;
+                                    margin-right: 0.25em;
                                     width: 1em;
                                     height: 1em;
 
@@ -494,43 +1032,6 @@
                                     opacity: 0;
 
                                     animation: blend .75s cubic-bezier(.25, .1, .25, 1) .75s forwards;
-                            `
-                    },
-
-                    {
-                            selector: 'body',
-                            style: `
-                                    --general-bg: ${globalProperties[0].background};
-                                    --general-bg-hover: ${globalProperties[0].background_hover};
-
-                                    --general-outline: ${globalProperties[0].outline};
-                                    --general-border-radius: ${globalProperties[0].border_radius};
-                                    --general-box-shadow: ${globalProperties[0].box_shadow};
-
-                                    --general-backdrop-filter: ${globalProperties[0].backdrop_filter};
-                                    --least-backdrop-filter: ${globalProperties[0].least_backdrop_filter};
-
-                                    --general-color: rgb(${globalProperties[0].color});
-                                    --least-general-color: rgb(${globalProperties[0].color} / 25%);
-
-                                    --general-transition: ${globalProperties[0].transition};
-                                    --general-animation: ${globalProperties[0].animation};
-
-                                    justify-content: center;
-                            `
-                    },
-
-                    {
-                            selector: 'html, body',
-                            style: `
-                                    background: radial-gradient(ellipse at top, rgb(25, 25, 25),  black);
-                            `
-                    },
-
-                    {
-                            selector: '#modal-root > .ModalStyle-rootHover',
-                            style: `
-                                    background: transparent;
                             `
                     },
 
@@ -910,9 +1411,10 @@
                             selector: '.obscDOMElement-changelogWindow-textHeader',
                             style: `
                                     justify-self: center;
-                                    width: 35em;
-                                    height: 27.5em;
+                                    width: 100%;
+                                    height: 60em;
                                     overflow-y: auto;
+                                    overflow-x: hidden;
                                     scrollbar-width: thin;
                                     scrollbar-color: rgb(114 114 114 / 10%) transparent;
                             `
@@ -926,6 +1428,7 @@
                                     display: flex;
                                     flex-direction: column;
                                     align-items: flex-start;
+                                    width: calc(100% - 1em);
                                     text-align: left;
                                     word-break: break-word;
                                     font-family: 'BaseFontMedium';
@@ -947,7 +1450,7 @@
                             style: `
                                     background: rgb(255 255 255 / 10%);
                                     margin: 0.5em 0;
-                                    width: 33em;
+                                    width: calc(100% - 1em);
                                     height: 1px;
                             `
                     },
@@ -4441,6 +4944,26 @@
                     // блок ингейм дисплея с кнопками
 
                     {
+                            selector: '.BattleMessagesComponentStyle-message',
+                            style: `
+                                    background: rgb(0 0 0 / 35%) !important;
+                                    outline: var(--general-outline);
+                                    box-shadow: var(--general-box-shadow);
+                                    border-radius: 0.75em !important;
+                                    backdrop-filter: blur(4px);
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.BattleMessagesComponentStyle-messageRow',
+                            style: `
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
                             selector: `.BattleHudComponentStyle-fullScreenButton,
                                        .BattleHudComponentStyle-pauseButton,
                                        .BattleHudComponentStyle-tabButton`,
@@ -5353,7 +5876,7 @@
                                     box-shadow: var(--general-box-shadow);
                                     border-top-right-radius: var(--general-border-radius);
                                     border-bottom-right-radius: var(--general-border-radius);
-                                    backdrop-filter: var(--least-backdrop-filter);
+                                    backdrop-filter: 2em;
 
                                     top: 7em;
                                     left: 0em;
@@ -9208,369 +9731,7 @@
 
         };
 
-        // чейнджлог в лобби
-
-        function developerDetails() {
-
-                let mainHeader = document.getElementsByClassName('MainScreenComponentStyle-containerForMenuGradient')[0];
-
-                if (mainHeader) {
-
-                        let holdingCard = element('div', 'obscDOMElement-holdingCard', mainHeader);
-
-                        if (holdingCard) {
-
-                                let img1 = element('div', 'obscDOMElement-holdingCard-img1', holdingCard);
-
-                                let text1 = element('h1', 'obscDOMElement-holdingCard-text1', holdingCard);
-
-                                    text1.innerHTML = `Obscurum ${version}`
-
-                                let text2 = element('h1', 'obscDOMElement-holdingCard-text2', holdingCard);
-
-                                if (language == 'RU') {
-
-                                        text2.innerHTML = `// Список изменений`
-
-                                } else {
-
-                                        text2.innerHTML = `// Changelog`
-
-                                };
-
-                                holdingCard.addEventListener('click', function() {
-
-                                        let windowBackground = element('div', 'obscDOMElement-changelogWindowBackground', document.body);
-
-                                        if (windowBackground) {
-
-                                                windowBackground.addEventListener('click', function() {
-
-                                                        document.body.removeChild(windowBackground);
-
-                                                        document.body.removeChild(logWindow);
-
-                                                        document.body.removeChild(detailsWindow);
-
-                                                });
-
-                                        };
-
-                                        let logWindow = element('div', 'obscDOMElement-changelogWindow', document.body);
-
-                                        if (logWindow) {
-
-                                                let logWindow_img1 = element('div', 'obscDOMElement-changelogWindow-img1', logWindow);
-
-                                                let logWindow_header = element('div', 'obscDOMElement-changelogWindow-header', logWindow);
-
-                                                    logWindow_header.innerHTML = `Obcsurum ${version}`
-
-                                                let logWindow_textHeader = element('div', 'obscDOMElement-changelogWindow-textHeader', logWindow);
-
-                                                if (logWindow_textHeader) {
-
-                                                        // v1.1.3
-
-                                                        let h1_113 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_3', logWindow_textHeader);
-
-                                                            h1_113.innerHTML = 'v1.1.3'
-
-                                                        if (h1_113) {
-
-                                                                let h1_113_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_113);
-
-                                                                let h1_113_span1 = element('span', 'h1-113-span1', h1_113);
-
-                                                                let h1_113_span2 = element('span', 'h1-113-span2', h1_113);
-
-                                                                let h1_113_span3 = element('span', 'h1-113-span3', h1_113);
-
-                                                                if (language == 'RU') {
-
-                                                                        h1_113_span1.innerHTML = '• Окно паузы перемещено в центр'
-
-                                                                        h1_113_span2.innerHTML = '• Обновлена начальная плашка с текстом и ником'
-
-                                                                        h1_113_span3.innerHTML = '• Некоторые визуальные доработки'
-
-                                                                } else {
-
-                                                                        h1_113_span1.innerHTML = '• Pause window moved to center'
-
-                                                                        h1_113_span2.innerHTML = '• Updated start-window with text and nickname'
-
-                                                                        h1_113_span3.innerHTML = '• Some visual improvements'
-
-                                                                };
-
-                                                        };
-
-                                                        // v1.1.2
-
-                                                        let h1_112 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_2', logWindow_textHeader);
-
-                                                            h1_112.innerHTML = 'v1.1.2'
-
-                                                        if (h1_112) {
-
-                                                                let h1_112_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_112);
-
-                                                                let h1_112_span1 = element('span', 'h1-112-span1', h1_112);
-
-                                                                let h1_112_span2 = element('span', 'h1-112-span2', h1_112);
-
-                                                                if (language == 'RU') {
-
-                                                                        h1_112_span1.innerHTML = '• Фикс кнопок переключения между разделами на сайте рейтингов'
-
-                                                                        h1_112_span2.innerHTML = '• Стилизация некоторых элементов'
-
-                                                                } else {
-
-                                                                        h1_112_span1.innerHTML = '• Fixed buttons for switching between sections on the site ratings'
-
-                                                                        h1_112_span2.innerHTML = '• Stylization of some elements'
-
-                                                                };
-
-                                                        };
-
-                                                        // v1.1.1
-
-                                                        let h1_111 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_1', logWindow_textHeader);
-
-                                                            h1_111.innerHTML = 'v1.1.1'
-
-                                                        if (h1_111) {
-
-                                                                let h1_111_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_111);
-
-                                                                let h1_111_span1 = element('span', 'h1-111-span1', h1_111);
-
-                                                                if (language == 'RU') {
-
-                                                                        h1_111_span1.innerHTML = '• Полная стилизация сайта рейтингов (ratings.tankionline.com)'
-
-                                                                } else {
-
-                                                                        h1_111_span1.innerHTML = '• Full stylization of the ratings site (ratings.tankionline.com)'
-
-                                                                };
-
-                                                        };
-
-                                                        // v1.1.0
-
-                                                        let h1_110 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_0', logWindow_textHeader);
-
-                                                            h1_110.innerHTML = 'v1.1.0'
-
-                                                        if (h1_110) {
-
-                                                                let h1_110_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_110);
-
-                                                                let h1_110_span1 = element('span', 'h1-110-span1', h1_110);
-
-                                                                let h1_110_span2 = element('span', 'h1-110-span2', h1_110);
-
-                                                                let h1_110_span3 = element('span', 'h1-110-span3', h1_110);
-
-                                                                if (language == 'RU') {
-
-                                                                        h1_110_span1.innerHTML = '• Реструктуризация кода, связанного с созданием элементов DOM на странице'
-
-                                                                        h1_110_span2.innerHTML = '• Небольшое ускорение анимаций и переходов'
-
-                                                                        h1_110_span3.innerHTML = '• Косметические улучшения и изменения'
-
-                                                                } else {
-
-                                                                        h1_110_span1.innerHTML = '• Restructuring the code associated with creating DOM elements on the page'
-
-                                                                        h1_110_span2.innerHTML = '• Minor speedup of animations and transitions'
-
-                                                                        h1_110_span3.innerHTML = '• Cosmetic improvements and changes'
-
-                                                                };
-
-                                                        };
-
-                                                        // v1.0.0
-
-                                                        let h1_100 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_0_0', logWindow_textHeader);
-
-                                                            h1_100.innerHTML = 'v1.0.0'
-
-                                                        if (h1_100) {
-
-                                                                let h1_100_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_100);
-
-                                                                let h1_100_span1 = element('span', 'h1-100-span1', h1_100);
-
-                                                                let h1_100_span2 = element('span', 'h1-100-span2', h1_100);
-
-                                                                let h1_100_span3 = element('span', 'h1-100-span3', h1_100);
-
-                                                                let h1_100_span4 = element('span', 'h1-100-span4', h1_100);
-
-                                                                if (language == 'RU') {
-
-                                                                        h1_100_span1.innerHTML = '• Введение списка изменений (чейнджлога) в лобби'
-
-                                                                        h1_100_span2.innerHTML = '• Полная переделка раздела с результатами битвы'
-
-                                                                        h1_100_span3.innerHTML = '• Добавление автоматического перевода текста в теме на английский'
-
-                                                                        h1_100_span4.innerHTML = '• Начало разработки отдельного меню для темы. Планируется возможность накладывать фильтры на игру (контраст, сепия, затемнение, виньетка), менять акцентовый цвет на другие доступные, менять фон лобби (canvas снег/дождь, мультимедиа) и др.'
-
-                                                                } else {
-
-                                                                        h1_100_span1.innerHTML = '• Adding a changelog into the lobby'
-
-                                                                        h1_100_span2.innerHTML = '• Complete rework of the battle results section'
-
-                                                                        h1_100_span3.innerHTML = '• Adding automatic translation of text in the topic into English'
-
-                                                                        h1_100_span4.innerHTML = '• Start of development of a menu for the theme. It is planned to be able to apply filters to the game (contrast, sepia, darkening, vignette), change the accent color to other available ones, change the lobby background (canvas snow/rain, multimedia), etc.'
-
-                                                                };
-
-                                                        };
-
-                                                        // v0.9.2
-
-                                                        let h1_092 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v0_9_2', logWindow_textHeader);
-
-                                                            h1_092.innerHTML = 'v0.9.2'
-
-                                                        if (h1_092) {
-
-                                                                let h1_092_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_092);
-
-                                                                let h1_092_span1 = element('span', 'h1-092-span1', h1_092);
-
-                                                                let h1_092_span2 = element('span', 'h1-092-span2', h1_092);
-
-                                                                let h1_092_span3 = element('span', 'h1-092-span3', h1_092);
-
-                                                                let h1_092_span4 = element('span', 'h1-092-span4', h1_092);
-
-                                                                if (language == 'RU') {
-
-                                                                        h1_092_span1.innerHTML = '• Небольшой хотфикс таба в DM-матчах'
-
-                                                                        h1_092_span2.innerHTML = '• Стилизация окна приглашения в битву/группу'
-
-                                                                        h1_092_span3.innerHTML = '• Стилизация кнопок "Назад" и "Пригласить" в разделе приглашений'
-
-                                                                        h1_092_span4.innerHTML = '• Фикс недоступных (красных) заданий в разделе миссий'
-
-                                                                } else {
-
-                                                                        h1_092_span1.innerHTML = '• Small hotfix of tab in DM matches'
-
-                                                                        h1_092_span2.innerHTML = '• Stylization of the battle/group invitation window'
-
-                                                                        h1_092_span3.innerHTML = '• Stylization of the "Back" and "Invite" buttons in the invitation section'
-
-                                                                        h1_092_span4.innerHTML = '• Fix for unavailable (red) tasks in the missions section'
-
-                                                                };
-
-
-                                                        };
-
-                                                        // v0.9.1
-
-                                                        let h1_091 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v0_9_1', logWindow_textHeader);
-
-                                                            h1_091.innerHTML = 'v0.9.1'
-
-                                                        if (h1_091) {
-
-                                                                let h1_091_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_091);
-
-                                                                let h1_091_span1 = element('span', 'h1-091-span1', h1_091);
-
-                                                                let h1_091_span2 = element('span', 'h1-091-span2', h1_091);
-
-                                                                let h1_091_span3 = element('span', 'h1-091-span3', h1_091);
-
-                                                                let h1_091_span4 = element('span', 'h1-091-span4', h1_091);
-
-                                                                let h1_091_span5 = element('span', 'h1-091-span4', h1_091);
-
-                                                                if (language == 'RU') {
-
-                                                                        h1_091_span1.innerHTML = '• Исправлены некоторые ошибки в игровом табе'
-
-                                                                        h1_091_span2.innerHTML = '• Стилизация окна поиска битвы в матчмейкинг, окна группы и раздела игровых настроек'
-
-                                                                        h1_091_span3.innerHTML = '• Небольшая реструктуризация функции, связанной с заменой текстур в лобби'
-
-                                                                        h1_091_span4.innerHTML = '• Исправление некоторых ошибок с анимациями в разделе "Друзья", "Клан" и др.'
-
-                                                                        h1_091_span5.innerHTML = '• Добавление функции "фастпика" в режимы матчмейкинга в лобби'
-
-                                                                } else {
-
-                                                                        h1_091_span1.innerHTML = '• Fixed some bugs in the game tab'
-
-                                                                        h1_091_span2.innerHTML = '• Stylized the battle search window in matchmaking, the group window and the game settings section'
-
-                                                                        h1_091_span3.innerHTML = '• Minor restructuring of the function related to replacing textures in the lobby'
-
-                                                                        h1_091_span4.innerHTML = '• Fixed some bugs with animations in the "Friends", "Clan" section, etc.'
-
-                                                                        h1_091_span5.innerHTML = '• Added the "fastpick" function to matchmaking modes in the lobby'
-
-                                                                };
-
-                                                        };
-
-                                                };
-
-                                        };
-
-                                        let detailsWindow = element('div', 'obscDOMElement-changelogDetails', document.body);
-
-                                        if (windowBackground) {
-
-                                                let detailsWindow_textHeader = element('div', 'obscDOMElement-changelogDetails-textHeader', detailsWindow);
-
-                                                if (detailsWindow_textHeader) {
-
-                                                        let headerimg = element('div', 'obscDOMElement-changelogDetails-textHeader-headerimg', detailsWindow_textHeader);
-
-                                                        let text1 = element('span', 'obscDOMElement-changelogDetails-textHeader-span1', detailsWindow_textHeader);
-
-                                                        if (language == 'RU') {
-
-                                                                text1.innerHTML = 'С предложениями и замечаниями по теме писать:'
-
-                                                        } else {
-
-                                                                text1.innerHTML = 'With suggestions or comments about theme, write to:'
-
-                                                        };
-
-                                                        let text2 = element('span', 'obscDOMElement-changelogDetails-textHeader-span2', detailsWindow_textHeader);
-
-                                                            text2.innerHTML = 'drawingwithblood'
-
-                                                };
-                                        };
-
-                                });
-
-                        };
-
-                };
-
-        };
-
-        // текст в левом верхнем углу экрана
+        // начальный текст вверху экрана
 
         function startText() {
 
@@ -9579,6 +9740,8 @@
                 let textBox = element('span', 'obscDOMElement-startText', textNode);
 
                     textBox.innerHTML = 'Initialization complete'
+
+                let textTip = element('span', 'obscDOMElement-startTextTip', textNode);
 
                 let versionBox = element('span', 'obscDOMElement-startTextVersion', textNode);
 
@@ -9590,9 +9753,13 @@
 
                                 textBox.innerHTML = `Добро пожаловать, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
 
+                                textTip.innerHTML = 'Меню темы - Insert'
+
                         } else {
 
                                 textBox.innerHTML = `Welcome, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
+
+                                textTip.innerHTML = 'Theme Menu - Insert'
 
                         };
 
@@ -9610,6 +9777,870 @@
 
                 }, 16000);
 
+        };
+
+        // создание меню темы
+
+        function createMenu() {
+
+                let menuHandler = element('div', 'obscDOMElement-menuHandler', document.body);
+
+                if (menuHandler) {
+
+                        let menuKeyPress = 0
+
+                        document.addEventListener('keydown', function (event) {
+
+                                if (event.code === 'Insert') {
+
+                                        menuKeyPress++
+
+                                        if (menuKeyPress % 2 == 1) {
+
+                                                menuHandler.style.pointerEvents = 'all'
+
+                                                menuHandler.style.animation = 'menuRight 500ms ease-in-out forwards'
+
+                                        } else {
+
+                                                menuHandler.style.pointerEvents = 'none'
+
+                                                menuHandler.style.animation = 'menuLeft 500ms ease-in-out forwards'
+
+                                        };
+
+                                };
+
+                        });
+
+                        let header = element('div', 'obscDOMElement-header', menuHandler);
+
+                        let headerText = element('div', 'obscDOMElement-headerText', header);
+
+                            headerText.innerHTML = 'Настройки'
+
+                        let headerTextImage = element('div', 'obscDOMElement-headerTextImage', header);
+
+                        let backButton = element('div', 'obscDOMElement-backButton', header);
+
+                        backButton.addEventListener('click', function() {
+
+                                headerText.innerHTML = 'Настройки'
+
+                                headerTextImage.style = ''
+
+                                backButton.style = ''
+
+                                buttonsHandler.style = ''
+
+                                colorsPage.style = ''
+
+                                backgroundsPage.style = ''
+
+                                gSettingsPage.style = ''
+
+                                changesPage.style = ''
+
+                                detailsPage.style = ''
+
+                                credits.style = ''
+
+                        });
+
+                        let closeButton = element('div', 'obscDOMElement-closeButton', header);
+
+                        closeButton.addEventListener('click', function() {
+
+                                menuKeyPress = 0
+
+                                menuHandler.style.pointerEvents = 'none'
+
+                                menuHandler.style.animation = 'menuLeft 500ms ease-in-out forwards'
+
+                        });
+
+                        let buttonsHandler = element('div', 'obscDOMElement-buttonsHandler', menuHandler);
+
+                        let menuButton_1 = element('div', 'obscDOMElement-mDefaultButton mDefaultButton_1', buttonsHandler);
+
+                        let colorsPage = element('div', 'obscDOMElement-menuColorsPage', menuHandler);
+
+                        if (menuButton_1) {
+
+                                if (colorsPage) {
+
+                                        let colorsHandler = element('div', 'obscDOMElement-menuColorsHandler mColorSetting', colorsPage);
+
+                                        let colorsText = element('span', 'obscDOMElement-menuColorsSpan', colorsHandler);
+
+                                            colorsText.innerHTML = 'Акцентовый цвет'
+
+                                        let canvasField = element('canvas', 'obscDOMElement-colorSettingsCanvas', colorsHandler);
+
+                                            canvasField.width = 169
+
+                                            canvasField.height = 1
+
+                                        let canvasFieldContext = canvasField.getContext('2d');
+
+                                        let gradientSight = canvasFieldContext.createLinearGradient(0, 0, canvasField.width, canvasField.height);
+
+                                            gradientSight.addColorStop(0, 'rgb(255 0 0)');
+
+                                            gradientSight.addColorStop(.17, 'rgb(255 0 255)');
+
+                                            gradientSight.addColorStop(.33, 'rgb(0 0 255)');
+
+                                            gradientSight.addColorStop(.50, 'rgb(0 255 255)');
+
+                                            gradientSight.addColorStop(.67, 'rgb(0 255 0)');
+
+                                            gradientSight.addColorStop(.83, 'rgb(255 255 0)');
+
+                                            gradientSight.addColorStop(1, 'rgb(255 0 0)');
+
+                                        canvasFieldContext.fillStyle = gradientSight
+
+                                        canvasFieldContext.fillRect(0, 0, canvasField.width, canvasField.height);
+
+                                        let range = element('div', 'obscDOMElement-colorSettingsRange', colorsHandler);
+
+                                        let thumb = element('input', 'slider', range);
+
+                                            thumb.setAttribute('type', 'range');
+
+                                            thumb.setAttribute('value', '120');
+
+                                            thumb.setAttribute('min', '0');
+
+                                            thumb.setAttribute('max', '168');
+
+                                        let colorsValue = element('span', 'obscDOMElement-menuColorsValue', colorsHandler);
+
+                                        if (localStorage.getItem('obscLocalStorageVariable-coordValue')) {
+
+                                                thumb.value = localStorage.getItem('obscLocalStorageVariable-coordValue');
+
+                                                colorsValue.innerHTML = `#${localStorage.getItem('obscLocalStorageVariable-coordValue')}`
+
+                                        };
+
+                                        thumb.addEventListener('input', function() {
+
+                                                changeColors();
+
+                                        });
+
+                                        let steps = 2
+
+                                        changeColors();
+
+                                        function changeColors() {
+
+                                                let xCoord = thumb.value
+
+                                                colorsValue.innerHTML = `#${xCoord}`
+
+                                                let rgbValues = canvasField.getContext('2d').getImageData(xCoord, 0, 1, 1).data
+
+                                                let bkgColor = `${rgbValues[0]} ${rgbValues[1]} ${rgbValues[2]}`
+
+                                                document.body.style.cssText += `--general-color: rgb(${bkgColor}); --least-general-color: rgb(${bkgColor} / 25%);`
+
+                                                localStorage.setItem('obscLocalStorageVariable-globalColor', bkgColor);
+
+                                                localStorage.setItem('obscLocalStorageVariable-coordValue', xCoord);
+
+                                        };
+
+                                };
+
+                                let buttonImage_1 = element('div', 'obscDOMElement-mDefaultButtonImage mDefaultImage_1', menuButton_1);
+
+                                let buttonSpan_1 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_1', menuButton_1);
+
+                                    buttonSpan_1.innerHTML = 'Кастомизация'
+
+                                menuButton_1.addEventListener('click', function() {
+
+                                        colorsPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
+
+                                        headerText.innerHTML = 'Кастомизация'
+
+                                        headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADE0lEQVR4nO2ZSWgUQRSGv0mMe0Rxw6BeRA8KYkCD5qAn0UPcLuJ6ExcETypxQcWQGAkePIiJgjdFMQpioojgQb3oSR1hBBfikhyMC4rLJEFHHlRA2qqe7uqungHnh8cE+n/13l/rqwqUUEIJcaAcWAgcANqBNPAJ6AP61d9PgSvAfmCR8ik4pgPHgG4gF9LeAc3AtEIkPgloUz2ci2h9QCswIankNwEfYkjca9LmepeJDwPO5EniC9AILAVWqDkfVkgbUBF38iOAm3kC/wBqNL6NFiJuACPjSl5641aAoKd9Rs5mynXGNRJnAwbc6tPGbQ3/K3AS2A60qOnn5cjijoQNIXpM9ncTHmu20BkeThXwWtPuuihb5ecQAp4DozTtLNFwNxpirtZwe4HxNgJaDYn2qJNV9+0OMEv5lwErDVzpbR0qgd8a/imbE3bA08g9YLb6LmVAHfBeE+wX8MrwbdBmGuJWGfhZYGoYAc2eBrqAcRperaHH8tlhQ9y9Pj5SsgRCmaa2afLhP7QQIAXeZk87a4FvPj5vVG55Uatx3unDv2YhYNCeKf9MQL7uoPwH+zSO5wzclFrUuYSsPoiAqxrHAVXve3EwweRzwOUgAp4YnH8CDcBiVahdtFzAUSwdRIBpjy8G6w0iII5LiivLBhGQTTCh++q0nkyM+JhQ8nJxcXKxTxsCyl69DBiujvWjEaabbBRDcYR2TUApf8douLssBWzDIeo1AXcbuOWWu9Y8lwLmawKu8uE/sBAw16WAFPDWE1Be3HSosLzvbsExjngCdhu2uj2WayDj4unkb0xRzyTeynGNEjIHOBGxlDCNamxosUzsOrBA3Y/lt8PAk9rfdLWMBWMtHm0leR1MIhpwjLqQ00R2MB1qDPy7JICmEALkVUGHSgO/KwkBcg8972gEMiSEIcCFCGug08C/RIJIqemUb010qB4frX5NyYuZXuicYrnlv5S8Ju+lMrIFgSzK48B3y+TlzbWaIsBE4BDwIkTyL4slee/6qFZltyzMR+pttF8l3aPWxg6XF5kSSvgf8QcmEm4hWaYBngAAAABJRU5ErkJggg==)'
+
+                                        backButton.style = 'opacity: 1; pointer-events: inherit'
+
+                                        buttonsHandler.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                        credits.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                });
+
+                        };
+
+                        let menuButton_2 = element('div', 'obscDOMElement-mDefaultButton mDefaultButton_2', buttonsHandler);
+
+                        let backgroundsPage = element('div', 'obscDOMElement-menuBackgroundsPage', menuHandler);
+
+                        if (menuButton_2) {
+
+                                let buttonImage_2 = element('div', 'obscDOMElement-mDefaultButtonImage mDefaultImage_2', menuButton_2);
+
+                                let buttonSpan_2 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_2', menuButton_2);
+
+                                    buttonSpan_2.innerHTML = 'Фоновые анимации (2.1.0)'
+
+                                menuButton_2.addEventListener('click', function() {
+
+                                        backgroundsPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
+
+                                        headerText.innerHTML = 'Фоновые анимации'
+
+                                        headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABFUlEQVR4nO2XzQkCMRBGn+th9a53a9Aq/FkQRDxYkBagHViBCrIViEfrUGxAYSUQYQkKIonZgXmwlxyGl4/JMgOKovikBeyAK7AGagiTPwNF6esjWL4AhgiWPwAJFaf9QT4HmghNPgcaP9YcACdgC3QQJj8D7qVa5hJi5QvgiGD5u22nyj/Y6Rv5BzD37K7yLpr8N2jPO2jbfMvuT/95cx6Eq2R5w8oZiUXJY9fAvl1GEmnyPvAtnwCZDTX4jt3zLN+wbfyqZdo7KAvP8rlT70JgsoDyRcglp8wIWAJdz/Jnu49UmhTYq3wEUk0+EqkmHwlNPhaafCxEJ584I7EoecNYsrxhIlneUAc2wM3O86LkFYWK8wQyZyjPVbLhxwAAAABJRU5ErkJggg==)'
+
+                                        backButton.style = 'opacity: 1; pointer-events: inherit'
+
+                                        buttonsHandler.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                        credits.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                });
+
+                        };
+
+                        let menuButton_3 = element('div', 'obscDOMElement-mDefaultButton mDefaultButton_3', buttonsHandler);
+
+                        let gSettingsPage = element('div', 'obscDOMElement-gSettingsPage', menuHandler);
+
+                        if (menuButton_3) {
+
+                                if (gSettingsPage) {
+
+                                        let radiusHandler = element('div', 'obscDOMElement-gSettingsHandler mRadiusSetting', gSettingsPage);
+
+                                        if (radiusHandler) {
+
+                                                let radiusSpan = element('span', 'obscDOMElement-gSettingsRadiusSpan', radiusHandler);
+
+                                                    radiusSpan.innerHTML = 'Величина закругления элементов'
+
+                                                let radiusSetting = element('input', 'obscDOMElement-gSettingsRadiusSetting', radiusHandler);
+
+                                                    radiusSetting.setAttribute('type', 'range');
+
+                                                    radiusSetting.setAttribute('value', globalProperties[0].border_radius.replace('em', ''));
+
+                                                    radiusSetting.setAttribute('step', '0.1');
+
+                                                    radiusSetting.setAttribute('min', '0');
+
+                                                    radiusSetting.setAttribute('max', '2');
+
+                                                let radiusSettingValue = element('span', 'obscDOMElement-gSettingsRadiusSettingValue', radiusHandler);
+
+                                                    radiusSettingValue.innerHTML = radiusSetting.value
+
+                                                radiusSetting.addEventListener('input', function() {
+
+                                                        radiusSettingValue.innerHTML = `${radiusSetting.value}em`
+
+                                                        document.body.style.cssText += `--general-border-radius: ${radiusSetting.value}em`
+
+                                                        localStorage.setItem('obscLocalStorageVariable-radiusSettingValue', radiusSetting.value);
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-radiusSettingValue')) {
+
+                                                        radiusSettingValue.innerHTML = `${localStorage.getItem('obscLocalStorageVariable-radiusSettingValue')}em`
+
+                                                        radiusSetting.value = localStorage.getItem('obscLocalStorageVariable-radiusSettingValue');
+
+                                                        document.body.style.cssText += `--general-border-radius: ${localStorage.getItem('obscLocalStorageVariable-radiusSettingValue')}em`
+
+                                                };
+
+                                        };
+
+                                        let blurHandler = element('div', 'obscDOMElement-gSettingsHandler mBlurSetting', gSettingsPage);
+
+                                        if (blurHandler) {
+
+                                                let blurSpan = element('span', 'obscDOMElement-gSettingsBlurSpan', blurHandler);
+
+                                                    blurSpan.innerHTML = 'Величина размытия фона элементов'
+
+                                                let blurSetting = element('input', 'obscDOMElement-gSettingsBlurSetting', blurHandler);
+
+                                                    blurSetting.setAttribute('type', 'range');
+
+                                                    blurSetting.setAttribute('value', globalProperties[0].least_backdrop_filter.replace('blur(', '').replace('px)', ''));
+
+                                                    blurSetting.setAttribute('step', '0.5');
+
+                                                    blurSetting.setAttribute('min', '0');
+
+                                                    blurSetting.setAttribute('max', '40');
+
+                                                let blurSettingValue = element('span', 'obscDOMElement-gSettingsBlurSettingValue', blurHandler);
+
+                                                    blurSettingValue.innerHTML = blurSetting.value
+
+                                                blurSetting.addEventListener('input', function() {
+
+                                                        blurSettingValue.innerHTML = `${blurSetting.value}px`
+
+                                                        document.body.style.cssText += `--least-backdrop-filter: blur(${blurSetting.value}px)`
+
+                                                        localStorage.setItem('obscLocalStorageVariable-blurSettingValue', blurSetting.value);
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-blurSettingValue')) {
+
+                                                        blurSettingValue.innerHTML = `${localStorage.getItem('obscLocalStorageVariable-blurSettingValue')}px`
+
+                                                        blurSetting.value = localStorage.getItem('obscLocalStorageVariable-blurSettingValue');
+
+                                                        document.body.style.cssText += `--least-backdrop-filter: blur(${localStorage.getItem('obscLocalStorageVariable-blurSettingValue')}px)`
+
+                                                };
+
+                                        };
+
+                                        let transparencyHandler = element('div', 'obscDOMElement-gSettingsHandler mTransparencySetting', gSettingsPage);
+
+                                        if (transparencyHandler) {
+
+                                                let transparencySpan = element('span', 'obscDOMElement-gSettingsTransparencySpan', transparencyHandler);
+
+                                                    transparencySpan.innerHTML = 'Прозрачность фона элементов'
+
+                                                let transparencySetting = element('input', 'obscDOMElement-gSettingsTransparencySetting', transparencyHandler);
+
+                                                    transparencySetting.setAttribute('type', 'range');
+
+                                                    transparencySetting.setAttribute('value', globalProperties[0].background.replace('rgb(0 0 0 / ', '').replace('%))', ''));
+
+                                                    transparencySetting.setAttribute('step', '1');
+
+                                                    transparencySetting.setAttribute('min', '0');
+
+                                                    transparencySetting.setAttribute('max', '100');
+
+                                                let transparencySettingValue = element('span', 'obscDOMElement-gSettingsTransparencySettingValue', transparencyHandler);
+
+                                                    transparencySettingValue.innerHTML = transparencySetting.value
+
+                                                transparencySetting.addEventListener('input', function() {
+
+                                                        transparencySettingValue.innerHTML = `${transparencySetting.value}%`
+
+                                                        document.body.style.cssText += `--general-bg: rgb(0 0 0 / ${localStorage.getItem('obscLocalStorageVariable-transparencySettingValue')}%)`
+
+                                                        localStorage.setItem('obscLocalStorageVariable-transparencySettingValue', transparencySetting.value);
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-transparencySettingValue')) {
+
+                                                        transparencySettingValue.innerHTML = `${localStorage.getItem('obscLocalStorageVariable-transparencySettingValue')}%`;
+
+                                                        transparencySetting.value = localStorage.getItem('obscLocalStorageVariable-transparencySettingValue');
+
+                                                        document.body.style.cssText += `--general-bg: rgb(0 0 0 / ${localStorage.getItem('obscLocalStorageVariable-transparencySettingValue')}%)`
+
+                                                };
+
+                                        };
+
+                                        let outlineHandler = element('div', 'obscDOMElement-gSettingsHandler mOutlineSetting', gSettingsPage);
+
+                                        if (outlineHandler) {
+
+                                                let outlineSpan = element('span', 'obscDOMElement-gSettingsOutlineSpan', outlineHandler);
+
+                                                    outlineSpan.innerHTML = 'Ширина обводки элементов'
+
+                                                let outlineSetting = element('input', 'obscDOMElement-gSettingsOutlineSetting', outlineHandler);
+
+                                                    outlineSetting.setAttribute('type', 'range');
+
+                                                    outlineSetting.setAttribute('value', globalProperties[0].outline.replace('px solid rgb(255 255 255 / 2.5%)', ''));
+
+                                                    outlineSetting.setAttribute('step', '0.25');
+
+                                                    outlineSetting.setAttribute('min', '0');
+
+                                                    outlineSetting.setAttribute('max', '8');
+
+                                                let outlineSettingValue = element('span', 'obscDOMElement-gSettingsOutlineSettingValue', outlineHandler);
+
+                                                    outlineSettingValue.innerHTML = outlineSetting.value
+
+                                                outlineSetting.addEventListener('input', function() {
+
+                                                        outlineSettingValue.innerHTML = `${outlineSetting.value}px`
+
+                                                        document.body.style.cssText += `--general-outline: ${localStorage.getItem('obscLocalStorageVariable-outlineSettingValue')}px solid rgb(255 255 255 / 2.5%)`
+
+                                                        localStorage.setItem('obscLocalStorageVariable-outlineSettingValue', outlineSetting.value);
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-outlineSettingValue')) {
+
+                                                        outlineSettingValue.innerHTML = `${localStorage.getItem('obscLocalStorageVariable-outlineSettingValue')}px`;
+
+                                                        outlineSetting.value = localStorage.getItem('obscLocalStorageVariable-outlineSettingValue');
+
+                                                        document.body.style.cssText += `--general-outline: ${localStorage.getItem('obscLocalStorageVariable-outlineSettingValue')}px solid rgb(255 255 255 / 2.5%)`
+
+                                                };
+
+                                        };
+
+                                };
+
+                                let buttonImage_3 = element('div', 'obscDOMElement-mDefaultButtonImage mDefaultImage_3', menuButton_3);
+
+                                let buttonSpan_3 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_3', menuButton_3);
+
+                                    buttonSpan_3.innerHTML = 'Глобальные настройки'
+
+                                menuButton_3.addEventListener('click', function() {
+
+                                        gSettingsPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
+
+                                        headerText.innerHTML = 'Глобальные настройки'
+
+                                        headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACB0lEQVR4nO2Zu0oDQRRAzycEi0QRK0X9A0HEQrAQxc4fEEHFR2vnb6iorXaC4KNS8AssfCR2Yu07WiVxZeAGwpLs3pE4O7vkwO2SYQ535s7sHejQoZE+YBU4B4rAF/ANPAGnwAYwjMf0ArtAFQhi4hbI4SGzwKdCIABugDwesgbU0i4xpVxKAVACevB0T2iX0x1QwFP2lBL3FhK5JEpsVSnRrRwzL9VsCIesKiSKlhI38j9zzjjjTCEyZ5mJQOIEhzwoRI4V4xRCEiYecUhZIVKRyqZZTo1hrjPO0JbdzQiJcCbq8eFSpKQUeRWZxsx0SzWLKhLOOFKK1KMqe2ZOJhr1W6ebfcFSJLCIJZci6/8kUYkpEG1l3uK2axtbWZB4t7gJeCtRA2ayILGSheU0nWaJCrDj6ovxLxI1Kc0LcmiaE7wscS+H3bLvJfbH9WEWR0fCF+Y7yykBJqU/W5Lmclmu1X+pTiaDzhkErtp4EiciMS5faqmWGMyChOGyTRKJb+wg7ZmwaTJ7mwnblk1UmDES57PJxExTbARYBA6kqxclYsZInLfQpIpN7v+HMSJOu36tuA5lotljy2KMiPmGSJx9xbPXSIzINh4wGiMR1UiuxwSe0GXxLhGOCzwn3+JdojFegAE8piDLLUriGRjDY7oUEmY59ZMCRqWaXcs5Uxa5bZ82NlnjF3W4z+hBCHmhAAAAAElFTkSuQmCC)'
+
+                                        backButton.style = 'opacity: 1; pointer-events: inherit'
+
+                                        buttonsHandler.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                        credits.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                });
+
+                        };
+
+                        let menuButtonsLine = element('div', 'obscDOMElement-mDefaultButtonsLine', buttonsHandler);
+
+                        let menuButton_4 = element('div', 'obscDOMElement-mDefaultButton mDefaultButton_4', buttonsHandler);
+
+                        let changesPage = element('div', 'obscDOMElement-menuChangelogPage', menuHandler);
+
+                        if (menuButton_4) {
+
+                                if (changesPage) {
+
+                                        let logWindow_textHeader = element('div', 'obscDOMElement-changelogWindow-textHeader', changesPage);
+
+                                        if (logWindow_textHeader) {
+
+                                                // v2.0.0
+
+                                                let h1_200 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v2_0_0', logWindow_textHeader);
+
+                                                    h1_200.innerHTML = 'v2.0.0'
+
+                                                if (h1_200) {
+
+                                                        let h1_200_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_200);
+
+                                                        let h1_200_span1 = element('span', 'h1-200-span1', h1_200);
+
+                                                        let h1_200_span2 = element('span', 'h1-200-span2', h1_200);
+
+                                                        let h1_200_span3 = element('span', 'h1-200-span3', h1_200);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_200_span1.innerHTML = '• Добавлено меню темы с различными настройками'
+
+                                                                h1_200_span2.innerHTML = '• Список изменений перемещен в раздел меню'
+
+                                                                h1_200_span3.innerHTML = '• В дальнейшем будет добавлена вкладка фоновых анимаций, настройка фильтров и перевод на английский язык'
+
+                                                        } else {
+
+                                                                h1_200_span1.innerHTML = '• Added theme menu with various settings'
+
+                                                                h1_200_span2.innerHTML = '• Changelog has been moved to the menu section'
+
+                                                                h1_200_span3.innerHTML = '• Soon will be added a background animations tab, filters settings and translation to English language'
+
+                                                        };
+
+                                                };
+
+                                                // v1.1.3
+
+                                                let h1_113 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_3', logWindow_textHeader);
+
+                                                    h1_113.innerHTML = 'v1.1.3'
+
+                                                if (h1_113) {
+
+                                                        let h1_113_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_113);
+
+                                                        let h1_113_span1 = element('span', 'h1-113-span1', h1_113);
+
+                                                        let h1_113_span2 = element('span', 'h1-113-span2', h1_113);
+
+                                                        let h1_113_span3 = element('span', 'h1-113-span3', h1_113);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_113_span1.innerHTML = '• Окно паузы перемещено в центр'
+
+                                                                h1_113_span2.innerHTML = '• Обновлена начальная плашка с текстом и ником'
+
+                                                                h1_113_span3.innerHTML = '• Некоторые визуальные доработки'
+
+                                                        } else {
+
+                                                                h1_113_span1.innerHTML = '• Pause window moved to center'
+
+                                                                h1_113_span2.innerHTML = '• Updated start-window with text and nickname'
+
+                                                                h1_113_span3.innerHTML = '• Some visual improvements'
+
+                                                        };
+
+                                                };
+
+                                                // v1.1.2
+
+                                                let h1_112 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_2', logWindow_textHeader);
+
+                                                    h1_112.innerHTML = 'v1.1.2'
+
+                                                if (h1_112) {
+
+                                                        let h1_112_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_112);
+
+                                                        let h1_112_span1 = element('span', 'h1-112-span1', h1_112);
+
+                                                        let h1_112_span2 = element('span', 'h1-112-span2', h1_112);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_112_span1.innerHTML = '• Фикс кнопок переключения между разделами на сайте рейтингов'
+
+                                                                h1_112_span2.innerHTML = '• Стилизация некоторых элементов'
+
+                                                        } else {
+
+                                                                h1_112_span1.innerHTML = '• Fixed buttons for switching between sections on the site ratings'
+
+                                                                h1_112_span2.innerHTML = '• Stylization of some elements'
+
+                                                        };
+
+                                                };
+
+                                                // v1.1.1
+
+                                                let h1_111 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_1', logWindow_textHeader);
+
+                                                    h1_111.innerHTML = 'v1.1.1'
+
+                                                if (h1_111) {
+
+                                                        let h1_111_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_111);
+
+                                                        let h1_111_span1 = element('span', 'h1-111-span1', h1_111);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_111_span1.innerHTML = '• Полная стилизация сайта рейтингов (ratings.tankionline.com)'
+
+                                                        } else {
+
+                                                                h1_111_span1.innerHTML = '• Full stylization of the ratings site (ratings.tankionline.com)'
+
+                                                        };
+
+                                                };
+
+                                                // v1.1.0
+
+                                                let h1_110 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_1_0', logWindow_textHeader);
+
+                                                    h1_110.innerHTML = 'v1.1.0'
+
+                                                if (h1_110) {
+
+                                                        let h1_110_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_110);
+
+                                                        let h1_110_span1 = element('span', 'h1-110-span1', h1_110);
+
+                                                        let h1_110_span2 = element('span', 'h1-110-span2', h1_110);
+
+                                                        let h1_110_span3 = element('span', 'h1-110-span3', h1_110);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_110_span1.innerHTML = '• Реструктуризация кода, связанного с созданием элементов DOM на странице'
+
+                                                                h1_110_span2.innerHTML = '• Небольшое ускорение анимаций и переходов'
+
+                                                                h1_110_span3.innerHTML = '• Косметические улучшения и изменения'
+
+                                                        } else {
+
+                                                                h1_110_span1.innerHTML = '• Restructuring the code associated with creating DOM elements on the page'
+
+                                                                h1_110_span2.innerHTML = '• Minor speedup of animations and transitions'
+
+                                                                h1_110_span3.innerHTML = '• Cosmetic improvements and changes'
+
+                                                        };
+
+                                                };
+
+                                                // v1.0.0
+
+                                                let h1_100 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v1_0_0', logWindow_textHeader);
+
+                                                    h1_100.innerHTML = 'v1.0.0'
+
+                                                if (h1_100) {
+
+                                                        let h1_100_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_100);
+
+                                                        let h1_100_span1 = element('span', 'h1-100-span1', h1_100);
+
+                                                        let h1_100_span2 = element('span', 'h1-100-span2', h1_100);
+
+                                                        let h1_100_span3 = element('span', 'h1-100-span3', h1_100);
+
+                                                        let h1_100_span4 = element('span', 'h1-100-span4', h1_100);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_100_span1.innerHTML = '• Введение списка изменений (чейнджлога) в лобби'
+
+                                                                h1_100_span2.innerHTML = '• Полная переделка раздела с результатами битвы'
+
+                                                                h1_100_span3.innerHTML = '• Добавление автоматического перевода текста в теме на английский'
+
+                                                                h1_100_span4.innerHTML = '• Начало разработки отдельного меню для темы. Планируется возможность накладывать фильтры на игру (контраст, сепия, затемнение, виньетка), менять акцентовый цвет на другие доступные, менять фон лобби (canvas снег/дождь, мультимедиа) и др.'
+
+                                                        } else {
+
+                                                                h1_100_span1.innerHTML = '• Adding a changelog into the lobby'
+
+                                                                h1_100_span2.innerHTML = '• Complete rework of the battle results section'
+
+                                                                h1_100_span3.innerHTML = '• Adding automatic translation of text in the topic into English'
+
+                                                                h1_100_span4.innerHTML = '• Start of development of a menu for the theme. It is planned to be able to apply filters to the game (contrast, sepia, darkening, vignette), change the accent color to other available ones, change the lobby background (canvas snow/rain, multimedia), etc.'
+
+                                                        };
+
+                                                };
+
+                                                // v0.9.2
+
+                                                let h1_092 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v0_9_2', logWindow_textHeader);
+
+                                                    h1_092.innerHTML = 'v0.9.2'
+
+                                                if (h1_092) {
+
+                                                        let h1_092_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_092);
+
+                                                        let h1_092_span1 = element('span', 'h1-092-span1', h1_092);
+
+                                                        let h1_092_span2 = element('span', 'h1-092-span2', h1_092);
+
+                                                        let h1_092_span3 = element('span', 'h1-092-span3', h1_092);
+
+                                                        let h1_092_span4 = element('span', 'h1-092-span4', h1_092);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_092_span1.innerHTML = '• Небольшой хотфикс таба в DM-матчах'
+
+                                                                h1_092_span2.innerHTML = '• Стилизация окна приглашения в битву/группу'
+
+                                                                h1_092_span3.innerHTML = '• Стилизация кнопок "Назад" и "Пригласить" в разделе приглашений'
+
+                                                                h1_092_span4.innerHTML = '• Фикс недоступных (красных) заданий в разделе миссий'
+
+                                                        } else {
+
+                                                                h1_092_span1.innerHTML = '• Small hotfix of tab in DM matches'
+
+                                                                h1_092_span2.innerHTML = '• Stylization of the battle/group invitation window'
+
+                                                                h1_092_span3.innerHTML = '• Stylization of the "Back" and "Invite" buttons in the invitation section'
+
+                                                                h1_092_span4.innerHTML = '• Fix for unavailable (red) tasks in the missions section'
+
+                                                        };
+
+
+                                                };
+
+                                                // v0.9.1
+
+                                                let h1_091 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v0_9_1', logWindow_textHeader);
+
+                                                    h1_091.innerHTML = 'v0.9.1'
+
+                                                if (h1_091) {
+
+                                                        let h1_091_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_091);
+
+                                                        let h1_091_span1 = element('span', 'h1-091-span1', h1_091);
+
+                                                        let h1_091_span2 = element('span', 'h1-091-span2', h1_091);
+
+                                                        let h1_091_span3 = element('span', 'h1-091-span3', h1_091);
+
+                                                        let h1_091_span4 = element('span', 'h1-091-span4', h1_091);
+
+                                                        let h1_091_span5 = element('span', 'h1-091-span4', h1_091);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_091_span1.innerHTML = '• Исправлены некоторые ошибки в игровом табе'
+
+                                                                h1_091_span2.innerHTML = '• Стилизация окна поиска битвы в матчмейкинг, окна группы и раздела игровых настроек'
+
+                                                                h1_091_span3.innerHTML = '• Небольшая реструктуризация функции, связанной с заменой текстур в лобби'
+
+                                                                h1_091_span4.innerHTML = '• Исправление некоторых ошибок с анимациями в разделе "Друзья", "Клан" и др.'
+
+                                                                h1_091_span5.innerHTML = '• Добавление функции "фастпика" в режимы матчмейкинга в лобби'
+
+                                                        } else {
+
+                                                                h1_091_span1.innerHTML = '• Fixed some bugs in the game tab'
+
+                                                                h1_091_span2.innerHTML = '• Stylized the battle search window in matchmaking, the group window and the game settings section'
+
+                                                                h1_091_span3.innerHTML = '• Minor restructuring of the function related to replacing textures in the lobby'
+
+                                                                h1_091_span4.innerHTML = '• Fixed some bugs with animations in the "Friends", "Clan" section, etc.'
+
+                                                                h1_091_span5.innerHTML = '• Added the "fastpick" function to matchmaking modes in the lobby'
+
+                                                        };
+
+                                                };
+
+                                        };
+
+                                };
+
+                                let buttonImage_4 = element('div', 'obscDOMElement-mDefaultButtonImage mDefaultImage_4', menuButton_4);
+
+                                let buttonSpan_4 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_4', menuButton_4);
+
+                                    buttonSpan_4.innerHTML = 'Список изменений'
+
+                                menuButton_4.addEventListener('click', function() {
+
+                                        changesPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
+
+                                        headerText.innerHTML = 'Список изменений'
+
+                                        headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEQklEQVR4nO2dPYsdZRiGLwluJEai2RRpTGHhB4jgF/4LS02CQQmmsNAqatBGDDZqQBJQUlinU8FCkdUNSaetkA8rQTQiSTSx8CPsKxPGQszZc87sOXnu5zz3BXc5A+eae+d9Z96ZHTDGGGOMMcaYefIAcAhYAc4CvwNtQfMXcAk4D3wOvAc8BeysWLEngJMCB0Uha8Bp4AXgDhacJeB4/6OjxSvmMvAWcCcLyDJwSkByhvwMPMcCcSuwKiA2Wz4BtrMAHBeQmTXfAfeQfMLnMZ//HNQXgY+AixOW4EfgQZLi2T7/O6D/shnYB3w9QQl+AHaR8Do/+hSqmBuxB7gwZrtvgdtJxCEB2YoZxV3Ap2O2/ZBErAjIVsx6bAKOjtn+SZJwXkC2YiZhvRJ8D2whAVcEZCtmEjaNGQ4OkoBo0arZOqG/bf0l4I328RNwG+JEi1bNQ1M43LvOfp5BnGjRqnltSo/fjNjPZ4gTLVo1F6YYBjqeHbGfv9VXDqNFK+cEcMuEHjf3S8XpLgmjJWcowdYJXX48Yh9vI0y04CzDwevAw2PK8NKI7btLRVmi5VbIWYSJllMhvyBMtJwK+QNhouVUiSzRYqpElmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElmgxVSLLrH/or8D+/l/PZ+Nu4A3gmgswvABPk593XIDhb8F23x3IzqMuwLAC/Nl/ciY7j7kAw4eA3eTniAuwsUng88AO8rELOOxJYPwl0yJGlmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElln/UC8HU7sAXg6mbgG8HEztIcDLwdQuQBcvB1O7AF4OpnYBHFwAlwCfAVwCPAS4BHgO4BLgSaBLIIwPDjfFgSwuAC6AS4DPALMqwbX+DdvuTdtsLPcvtXR3Mz0EDJQg/an0CdnjAgz/C+g+sZ6dpX5p25PAARIeIT9LLsDw9r9LfvZ6CNjYJPDN/k3bbOwADgC/uQC+P9A8B3AJmu8EugTNt4Jdgua1AJegeTHIJWheDXQJmpeDXYLm5wFcguYHQlyC5ieCXILmR8JcguZnAl2C5odCXYLmp4JdgubHwl2C5vcCXIKW5cWQKz5YzPu9iO4JI1nOuQDMuwBnEGbFBWDeBfgCYV51AZh3AQ4izP0uAPMuwL2Is+oSMK+D3w2x8jwOrLkEzPrgr/UfoUzBBy4Asy7AMRLRffL1K5eAWR380xm/orodOOkSsNGDv9q7TEl3JnjfcwKGjvnHFuQD2tc/oPylzwZMM9tPM+GbhvuAV/q7Wd0tzasuBVd7F52TlzNc5xtjjDHGGGMy8w+K7t/qu/+chAAAAABJRU5ErkJggg==);'
+
+                                        backButton.style = 'opacity: 1; pointer-events: inherit'
+
+                                        buttonsHandler.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                        credits.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                });
+
+                        };
+
+                        let menuButton_5 = element('div', 'obscDOMElement-mDefaultButton mDefaultButton_5', buttonsHandler);
+
+                        let detailsPage = element('div', 'obscDOMElement-menuDetailsPage', menuHandler);
+
+                        if (menuButton_5) {
+
+                                if (detailsPage) {
+
+                                        let detailsPageHeader = element('div', 'obscDOMElement-menuDetailsPageHeader', detailsPage);
+
+                                        let detailsPageHeaderSpan = element('span', 'obscDOMElement-menuDetailsPageHeaderSpan', detailsPageHeader);
+
+                                            detailsPageHeaderSpan.innerHTML = 'Obscurum — браузерная тема на Танки Онлайн, разрабатываемая на JavaScript и CSS более полугода, позволяющая игроку настроить практически каждый элемент дизайна сайта на своё усмотрение. Написано множество функций, упрощающих взаимодействие с игрой, например включение/выключение постоянного отображения резистов в окне игровой статистики по нажатию кнопки, функция "фастпика" в матчмейкинг в лобби и другие.'
+
+                                        let detailsPageHeaderSpan2 = element('span', 'obscDOMElement-menuDetailsPageHeaderSpan2', detailsPageHeader);
+
+                                            detailsPageHeaderSpan2.innerHTML = 'Если у вас имеются какие-либо вопросы, предложения или замечания, вы можете написать в Discord: @drawingwithblood'
+
+                                        let detailsPageLine = element('div', 'obscDOMElement-menuDetailsPageLine', detailsPage);
+
+                                        let detailsPageInfoHandler = element('div', 'obscDOMElement-menuDetailsPageInfoHandler', detailsPage);
+
+                                        let detailsPageInfoHeader1 = element('span', 'obscDOMElement-menuDetailsPageInfoHeader menuInfoHeader_1', detailsPageInfoHandler);
+
+                                            detailsPageInfoHeader1.innerHTML = 'Главный разработчик'
+
+                                        let detailsPageInfoSpan1 = element('span', 'obscDOMElement-menuDetailsPageInfoSpan menuInfoSpan_1', detailsPageInfoHandler);
+
+                                            detailsPageInfoSpan1.innerHTML = 'drawingwithblood'
+
+                                        let detailsPageInfoHeader2 = element('span', 'obscDOMElement-menuDetailsPageInfoHeader menuInfoHeader_2', detailsPageInfoHandler);
+
+                                            detailsPageInfoHeader2.innerHTML = 'Помощь в тестировании и идеях'
+
+                                        let detailsPageInfoSpan2 = element('span', 'obscDOMElement-menuDetailsPageInfoSpan menuInfoSpan_2', detailsPageInfoHandler);
+
+                                            detailsPageInfoSpan2.innerHTML = 'dxfference'
+
+                                        let detailsPageInfoSpan3 = element('span', 'obscDOMElement-menuDetailsPageInfoSpan menuInfoSpan_3', detailsPageInfoHandler);
+
+                                            detailsPageInfoSpan3.innerHTML = 'nlvngmmr'
+
+                                        let detailsPageInfoSpan4 = element('span', 'obscDOMElement-menuDetailsPageInfoSpan menuInfoSpan_4', detailsPageInfoHandler);
+
+                                            detailsPageInfoSpan4.innerHTML = 'c4rn4ge.'
+
+                                };
+
+                                let buttonImage_5 = element('div', 'obscDOMElement-mDefaultButtonImage mDefaultImage_5', menuButton_5);
+
+                                let buttonSpan_5 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_5', menuButton_5);
+
+                                    buttonSpan_5.innerHTML = 'Разработка и детали'
+
+                                menuButton_5.addEventListener('click', function() {
+
+                                        detailsPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
+
+                                        headerText.innerHTML = 'Разработка и детали'
+
+                                        headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvUlEQVR4nO2b34sNYRyHHz9vpHaLoogiyu2itiiiiOLahhARooPaK7wnWw6KKK4poogiihs3u7WiiKKIv4DaqE1s0VtzatNpPvPOOe874915ai6/n/f9PKfmzJkzAxUVFQUyDVgOdDFBWQb8SY6vwDBwE6gD24EeImfrOAGtjkEi57gQcJ3IuSYEnCRyngkB24icL0LACiJmOjAmBHQTMUtFefu1GDWbhQB7TRA1R4UAe0EUNVeEAEPkPBECdvAfYICLOWc/CQG9GddvUBBm3GZdJUwFfgkBsxzWDy7BtNiwi4TFovxIjvWDSTApG88qYaMQ8DLn+t4lGLHxrBIOi4zbbazvTYLJsHjzOCiyLon5gRYzexzWN0WWHwRmirxHImNXi5kZwHOHfTTKWt7yQeSsojXBJRgP5ScDP0XWnJT5YBKMh/KWhSLrBzBJZHiXYDyVt6wXea8z5niTYDyWtxwQmXcdsjouwXgub7kgcs865nVMgglQ3vJAZO/Nkdm2BBOovOWdyF+TMze3BBOwvD27j4o15rWRn0tCv8PAUJsC5ov80eQ6IZSA083BUBLWiuy3RZQPKWGfyL1PQeVDSWiIzPMUWD6EhHsibz8Fl/ct4Y3IWkcJyvuU8F3kLKAk5X1ImCvm7U/kKZSofKclrBaz7ylh+U5K2C3mHlLS8nkume0NzH8ZEDP2RmkafQ7re/tfsb8N83fE3KEM69eK+ORdJKTdcHglNr6BbNSKLJ8m4RzpjAgBi8hOrcjyrSSo8rNF+d/JY7PklBC8fBN7sjmDplcI+Eg+ThRZ3oWdQsBjIqcuBFwmcm4JAUeInBdCwCYi55sQsISI6Rblx5LHZqNlpRDwmcjpEwKeEjmnhICrRM4NIeAYkTMkBGwhcnqSV+DqyRPgw8m7AE0B9tW5CUlX8tKk66/AiooKOsZfhXMQItxhYxAAAAAASUVORK5CYII=)'
+
+                                        backButton.style = 'opacity: 1; pointer-events: inherit'
+
+                                        buttonsHandler.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                        credits.style = 'position: absolute; opacity: 0; pointer-events: none'
+
+                                });
+
+                        };
+
+                        let credits = element('span', 'obscDOMElement-credits', menuHandler);
+
+                            credits.innerHTML = `Obscurum ${version} // 18.05.2025`
+
+                };
 
         };
 
@@ -9810,6 +10841,8 @@
 
                                 startText();
 
+                                createMenu();
+
                                 function mutationsObserver() {
 
                                         let Observer = new MutationObserver(function(inspect) {
@@ -9841,8 +10874,6 @@
                                                                                 lobbyClocks();
 
                                                                                 startScreen();
-
-                                                                                developerDetails();
 
                                                                         };
 
