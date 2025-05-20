@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v2.1.0'
+        var version = 'v2.1.1'
 
         // изменение иконки на вкладке браузера
 
@@ -890,13 +890,28 @@
                     },
 
                     {
+                            selector: '.obscDOMElement-svgGradient',
+                            style: `
+                                    background: radial-gradient(transparent 50%, black);
+                                    position: fixed;
+                                    top: 0em;
+                                    left: 0em;
+                                    width: 100%;
+                                    height: 100%;
+                                    z-index: -1;
+                                    pointer-events: none;
+                                    opacity: 1;
+                            `
+                    },
+
+                    {
                             selector: '.obscDOMElement-wavesNode',
                             style: `
                                     position: fixed;
                                     top: 0em;
                                     left: 0em;
-                                    z-index: -1;
-                                    pointer-events: inherit;
+                                    z-index: -2;
+                                    pointer-events: none;
                                     opacity: 0;
 
                                     animation: translateDown 2s cubic-bezier(0.25, .5, .75, 1.25) 2s forwards;
@@ -919,28 +934,13 @@
                     },
 
                     {
-                            selector: '.obscDOMElement-svgGradient',
-                            style: `
-                                    background: radial-gradient(transparent 50%, black);
-                                    position: fixed;
-                                    top: 0em;
-                                    left: 0em;
-                                    width: 100%;
-                                    height: 100%;
-                                    z-index: 1;
-                                    pointer-events: inherit;
-                                    opacity: 1;
-                            `
-                    },
-
-                    {
                             selector: '.obscDOMElement-spaceCanvas',
                             style: `
                                     position: fixed;
                                     top: 0em;
                                     left: 0em;
-                                    z-index: -1;
-                                    pointer-events: inherit;
+                                    z-index: -2;
+                                    pointer-events: none;
                                     transform: rotate(180deg);
                             `
                     },
@@ -965,8 +965,8 @@
                                     position: fixed;
                                     top: 0em;
                                     left: 0em;
-                                    z-index: -1;
-                                    pointer-events: inherit;
+                                    z-index: -2;
+                                    pointer-events: none;
                             `
                     },
 
@@ -9817,7 +9817,7 @@
 
         function applyWaves() {
 
-                variableHeader.insertAdjacentHTML('beforeend',
+                document.body.insertAdjacentHTML('beforeend',
 
                     `<svg class="obscDOMElement-wavesNode" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="1200px" y="0px" width="100%" height="100%" viewBox="0 0 1600 1050" preserveAspectRatio="xMidYMax slice">
                              <defs>
@@ -9846,86 +9846,6 @@
         };
 
         applyWaves();
-
-        function applySpace() {
-
-                let canvasHandler = element('canvas', 'obscDOMElement-spaceCanvas', variableHeader);
-
-                let context = canvasHandler.getContext("2d");
-
-                let drops = [], maxSpeed = 50, spacing = 3, xPosition, n
-
-                function init() {
-
-                        canvasHandler.width = window.innerWidth
-
-                        canvasHandler.height = window.innerHeight
-
-                        xPosition = 0
-
-                        n = canvasHandler.width / spacing
-
-                        for (let i = 0; i < n; i++) {
-
-                                xPosition += spacing
-
-                                drops.push({
-
-                                        x: xPosition,
-
-                                        y: Math.round(Math.random() * canvasHandler.height),
-
-                                        width: Math.ceil(Math.random() * 50 + 10) / 50,
-
-                                        height: Math.ceil(Math.random() * 50 + 10) / 15,
-
-                                        speed: Math.ceil(Math.random() * 50 + 10) / 80
-
-                                });
-
-                        };
-
-                };
-
-                function space() {
-
-                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
-
-                        for (let i = 0; i < n; i++) {
-
-                                context.fillStyle = "rgb(255 255 255 / 80%)"
-
-                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
-
-                                drops[i].y += drops[i].speed
-
-                                if (drops[i].y > canvasHandler.height) {
-
-                                        drops[i].y = 0 - drops[i].height
-
-                                };
-
-                        };
-
-                        requestAnimationFrame(space);
-
-                };
-
-                function main() {
-
-                        init();
-
-                        space();
-
-                };
-
-                window.addEventListener('load', main, false);
-
-                window.addEventListener('resize', init, false);
-
-        };
-
-        applySpace();
 
         function applyHolo() {
 
@@ -10006,6 +9926,86 @@
         };
 
         applyHolo();
+
+        function applySpace() {
+
+                let canvasHandler = element('canvas', 'obscDOMElement-spaceCanvas', variableHeader);
+
+                let context = canvasHandler.getContext("2d");
+
+                let drops = [], maxSpeed = 50, spacing = 3, xPosition, n
+
+                function init() {
+
+                        canvasHandler.width = window.innerWidth
+
+                        canvasHandler.height = window.innerHeight
+
+                        xPosition = 0
+
+                        n = canvasHandler.width / spacing
+
+                        for (let i = 0; i < n; i++) {
+
+                                xPosition += spacing
+
+                                drops.push({
+
+                                        x: xPosition,
+
+                                        y: Math.round(Math.random() * canvasHandler.height),
+
+                                        width: Math.ceil(Math.random() * 50 + 10) / 50,
+
+                                        height: Math.ceil(Math.random() * 50 + 10) / 15,
+
+                                        speed: Math.ceil(Math.random() * 50 + 10) / 80
+
+                                });
+
+                        };
+
+                };
+
+                function space() {
+
+                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
+
+                        for (let i = 0; i < n; i++) {
+
+                                context.fillStyle = "rgb(255 255 255 / 80%)"
+
+                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+
+                                drops[i].y += drops[i].speed
+
+                                if (drops[i].y > canvasHandler.height) {
+
+                                        drops[i].y = 0 - drops[i].height
+
+                                };
+
+                        };
+
+                        requestAnimationFrame(space);
+
+                };
+
+                function main() {
+
+                        init();
+
+                        space();
+
+                };
+
+                window.addEventListener('load', main, false);
+
+                window.addEventListener('resize', init, false);
+
+        };
+
+        applySpace();
 
         // начальный текст вверху экрана
 
@@ -10662,6 +10662,14 @@
                                                 let backgroundSettingValue = element('span', 'obscDOMElement-bSettingsBackgroundValue', sliderHandler);
 
                                                     backgroundSettingValue.innerHTML = 'Волны'
+
+                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                    holoCanvas.style = 'visibility: collapse'
+
+                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                    spaceCanvas.style = 'visibility: collapse'
 
                                                 backgroundSetting.addEventListener('input', function() {
 
@@ -11966,7 +11974,7 @@
 
                         let credits = element('span', 'obscDOMElement-credits', menuHandler);
 
-                            credits.innerHTML = `Obscurum ${version} // 18.05.2025`
+                            credits.innerHTML = `Obscurum ${version} // 21.05.2025`
 
                 };
 
