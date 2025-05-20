@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v2.0.0'
+        var version = 'v2.1.0'
 
         // изменение иконки на вкладке браузера
 
@@ -340,7 +340,7 @@
                                     justify-content: center;
                                     align-items: center;
                                     bottom: 1em;
-                                    left: 1.5em;
+                                    left: 1em;
                             `
                     },
 
@@ -464,13 +464,6 @@
                     },
 
                     {
-                            selector: '.mDefaultButton_2',
-                            style: `
-                                    pointer-events: none !important;
-                            `
-                    },
-
-                    {
                             selector: '.mDefaultImage_1',
                             style: `
                                     mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADE0lEQVR4nO2ZSWgUQRSGv0mMe0Rxw6BeRA8KYkCD5qAn0UPcLuJ6ExcETypxQcWQGAkePIiJgjdFMQpioojgQb3oSR1hBBfikhyMC4rLJEFHHlRA2qqe7uqungHnh8cE+n/13l/rqwqUUEIJcaAcWAgcANqBNPAJ6AP61d9PgSvAfmCR8ik4pgPHgG4gF9LeAc3AtEIkPgloUz2ci2h9QCswIankNwEfYkjca9LmepeJDwPO5EniC9AILAVWqDkfVkgbUBF38iOAm3kC/wBqNL6NFiJuACPjSl5641aAoKd9Rs5mynXGNRJnAwbc6tPGbQ3/K3AS2A60qOnn5cjijoQNIXpM9ncTHmu20BkeThXwWtPuuihb5ecQAp4DozTtLNFwNxpirtZwe4HxNgJaDYn2qJNV9+0OMEv5lwErDVzpbR0qgd8a/imbE3bA08g9YLb6LmVAHfBeE+wX8MrwbdBmGuJWGfhZYGoYAc2eBrqAcRperaHH8tlhQ9y9Pj5SsgRCmaa2afLhP7QQIAXeZk87a4FvPj5vVG55Uatx3unDv2YhYNCeKf9MQL7uoPwH+zSO5wzclFrUuYSsPoiAqxrHAVXve3EwweRzwOUgAp4YnH8CDcBiVahdtFzAUSwdRIBpjy8G6w0iII5LiivLBhGQTTCh++q0nkyM+JhQ8nJxcXKxTxsCyl69DBiujvWjEaabbBRDcYR2TUApf8douLssBWzDIeo1AXcbuOWWu9Y8lwLmawKu8uE/sBAw16WAFPDWE1Be3HSosLzvbsExjngCdhu2uj2WayDj4unkb0xRzyTeynGNEjIHOBGxlDCNamxosUzsOrBA3Y/lt8PAk9rfdLWMBWMtHm0leR1MIhpwjLqQ00R2MB1qDPy7JICmEALkVUGHSgO/KwkBcg8972gEMiSEIcCFCGug08C/RIJIqemUb010qB4frX5NyYuZXuicYrnlv5S8Ju+lMrIFgSzK48B3y+TlzbWaIsBE4BDwIkTyL4slee/6qFZltyzMR+pttF8l3aPWxg6XF5kSSvgf8QcmEm4hWaYBngAAAABJRU5ErkJggg==);
@@ -519,7 +512,7 @@
                     },
 
                     {
-                            selector: '.obscDOMElement-menuColorsPage, .obscDOMElement-menuBackgroundsPage, .obscDOMElement-gSettingsPage, .obscDOMElement-menuChangelogPage, .obscDOMElement-menuDetailsPage',
+                            selector: '.obscDOMElement-menuCustomPage, .obscDOMElement-menuBackgroundsPage, .obscDOMElement-gSettingsPage, .obscDOMElement-menuChangelogPage, .obscDOMElement-menuDetailsPage',
                             style: `
                                     position: absolute;
                                     display: flex;
@@ -567,14 +560,14 @@
                     },
 
                     {
-                            selector: '.obscDOMElement-menuDetailsPageLine',
+                            selector: '.obscDOMElement-menuDetailsPageLine, .obscDOMElement-bSettingsPageLine',
                             style: `
                                     background-color: rgb(255 255 255 / 5%);
 
                                     position: relative;
                                     margin-top: 2em;
                                     margin-bottom: 2em;
-                                    width: calc(100% - 4em);
+                                    width: 100%;
                                     height: 1px;
                             `
                     },
@@ -619,19 +612,46 @@
                     },
 
                     {
-                            selector: '.obscDOMElement-menuColorsHandler, .obscDOMElement-gSettingsHandler',
+                            selector: '.obscDOMElement-bSettingsSpan',
+                            style: `
+                                    margin-top: 1em;
+                                    margin-bottom: 1em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-bPreview',
+                            style: `
+                                    background: radial-gradient(ellipse at top, rgb(25, 25, 25),  black);
+                                    border-radius: 1em;
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: flex-start;
+                                    margin-bottom: 1em;
+                                    width: 100%;
+                                    height: 10em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-cSettingsHandler, .obscDOMElement-bSettingsHandler, .obscDOMElement-gSettingsHandler',
                             style: `
                                     background: rgb(255 255 255 / 5%);
                                     border-radius: 1em;
 
                                     display: flex;
                                     flex-direction: column;
-                                    justify-content: flex-start;
+                                    justify-content: center;
                                     align-items: flex-start;
                                     padding: 1.5em;
                                     margin-bottom: 1em;
                                     width: calc(100% - 3em);
                                     height: max-content;
+
+                                    --menu-button-color: rgb(0 0 0 / 30%);
+                                    --menu-slider-color: rgb(255 255 255 / 20%);
                             `
                     },
 
@@ -642,6 +662,40 @@
 
                                     margin: 1em 0 1em 0;
                                     width: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-bSettingsBackground, .obscDOMElement-cSettingsBrightSetting, .obscDOMElement-cSettingsContrastSetting, .obscDOMElement-cSettingsGrayscaleSetting, .obscDOMElement-cSettingsSaturateSetting, .obscDOMElement-cSettingsSepiaSetting',
+                            style: `
+                                    accent-color: var(--general-color);
+
+                                    margin: 1em 0 1em 0;
+                                    width: 100%;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-gSettingsHandler > input, .obscDOMElement-cSettingsHandler > input, .obscDOMElement-bSettingsHandler > input',
+                            style: `
+                                    height: 0px;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-gSettingsHandler > input::-webkit-slider-runnable-track, .obscDOMElement-cSettingsHandler > input::-webkit-slider-runnable-track, .obscDOMElement-bSettingsHandler > input::-webkit-slider-runnable-track',
+                            style: `
+                                    background: rgb(255 255 255 / 10%);
+                                    border-radius: 10px;
+
+                                    height: 4px;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-gSettingsHandler > input::-webkit-slider-thumb, .obscDOMElement-cSettingsHandler > input::-webkit-slider-thumb, .obscDOMElement-bSettingsHandler > input::-webkit-slider-thumb',
+                            style: `
+                                    margin-top: -6px;
                             `
                     },
 
@@ -835,9 +889,8 @@
                             `
                     },
 
-
                     {
-                            selector: '.obscGlobalVariable-svgNode',
+                            selector: '.obscDOMElement-wavesNode',
                             style: `
                                     position: fixed;
                                     top: 0em;
@@ -851,9 +904,24 @@
                     },
 
                     {
+                            selector: '.obscDOMElement-preview-wavesNode',
+                            style: `
+                                    border-radius: inherit;
+
+                                    position: relative;
+                                    top: 0em;
+                                    left: 0em;
+                                    width: 100%;
+                                    height: 100%;
+                                    pointer-events: none;
+                                    opacity: 1;
+                            `
+                    },
+
+                    {
                             selector: '.obscDOMElement-svgGradient',
                             style: `
-                                    background: linear-gradient(0deg, rgb(0 0 0 / 50%), transparent 40%);
+                                    background: radial-gradient(transparent 50%, black);
                                     position: fixed;
                                     top: 0em;
                                     left: 0em;
@@ -861,9 +929,57 @@
                                     height: 100%;
                                     z-index: 1;
                                     pointer-events: inherit;
-                                    opacity: 0;
+                                    opacity: 1;
+                            `
+                    },
 
-                                    animation: translateDown 6s cubic-bezier(0.25, .5, .75, 1.25) 3s forwards;
+                    {
+                            selector: '.obscDOMElement-spaceCanvas',
+                            style: `
+                                    position: fixed;
+                                    top: 0em;
+                                    left: 0em;
+                                    z-index: -1;
+                                    pointer-events: inherit;
+                                    transform: rotate(180deg);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-preview-spaceCanvas',
+                            style: `
+                                    position: relative;
+                                    top: 0em;
+                                    left: 0em;
+                                    width: 100%;
+                                    height: 100%;
+                                    pointer-events: none;
+                                    opacity: 1;
+                                    transform: rotate(180deg);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-holoCanvas',
+                            style: `
+                                    position: fixed;
+                                    top: 0em;
+                                    left: 0em;
+                                    z-index: -1;
+                                    pointer-events: inherit;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-preview-holoCanvas',
+                            style: `
+                                    position: relative;
+                                    top: 0em;
+                                    left: 0em;
+                                    width: 100%;
+                                    height: 100%;
+                                    pointer-events: none;
+                                    opacity: 1;
                             `
                     },
 
@@ -7957,7 +8073,7 @@
                     },
 
                     {
-                            selector: '.obscGlobalVariable-svgNode',
+                            selector: '.obscDOMElement-wavesNode',
                             style: `
                                     position: fixed;
                                     top: 0em;
@@ -7973,7 +8089,7 @@
                     {
                             selector: '.obscDOMElement-svgGradient',
                             style: `
-                                    background: linear-gradient(0deg, rgb(0 0 0 / 50%), transparent 40%);
+                                    background: radial-gradient(transparent 50%, black);
                                     position: fixed;
                                     top: 0em;
                                     left: 0em;
@@ -7981,9 +8097,7 @@
                                     height: 100%;
                                     z-index: 1;
                                     pointer-events: inherit;
-                                    opacity: 0;
-
-                                    animation: translateDown 6s cubic-bezier(0.25, .5, .75, 1.25) 3s forwards;
+                                    opacity: 1;
                             `
                     },
 
@@ -9699,11 +9813,13 @@
 
         // наложение SVG анимации фона через HTML
 
-        function applyBackground() {
+        let gradient = element('div', 'obscDOMElement-svgGradient', variableHeader);
+
+        function applyWaves() {
 
                 variableHeader.insertAdjacentHTML('beforeend',
 
-                    `<svg class="obscGlobalVariable-svgNode" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="1200px" y="0px" width="100%" height="100%" viewBox="0 0 1600 1050" preserveAspectRatio="xMidYMax slice">
+                    `<svg class="obscDOMElement-wavesNode" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="1200px" y="0px" width="100%" height="100%" viewBox="0 0 1600 1050" preserveAspectRatio="xMidYMax slice">
                              <defs>
                                      <linearGradient id="bg">
                                              <stop offset="0%" style="stop-color:rgba(50, 50, 50, 0.25)"></stop>
@@ -9727,9 +9843,169 @@
 
                 `);
 
-                let gradient = element('div', 'obscDOMElement-svgGradient', variableHeader);
+        };
+
+        applyWaves();
+
+        function applySpace() {
+
+                let canvasHandler = element('canvas', 'obscDOMElement-spaceCanvas', variableHeader);
+
+                let context = canvasHandler.getContext("2d");
+
+                let drops = [], maxSpeed = 50, spacing = 3, xPosition, n
+
+                function init() {
+
+                        canvasHandler.width = window.innerWidth
+
+                        canvasHandler.height = window.innerHeight
+
+                        xPosition = 0
+
+                        n = canvasHandler.width / spacing
+
+                        for (let i = 0; i < n; i++) {
+
+                                xPosition += spacing
+
+                                drops.push({
+
+                                        x: xPosition,
+
+                                        y: Math.round(Math.random() * canvasHandler.height),
+
+                                        width: Math.ceil(Math.random() * 50 + 10) / 50,
+
+                                        height: Math.ceil(Math.random() * 50 + 10) / 15,
+
+                                        speed: Math.ceil(Math.random() * 50 + 10) / 80
+
+                                });
+
+                        };
+
+                };
+
+                function space() {
+
+                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
+
+                        for (let i = 0; i < n; i++) {
+
+                                context.fillStyle = "rgb(255 255 255 / 80%)"
+
+                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+
+                                drops[i].y += drops[i].speed
+
+                                if (drops[i].y > canvasHandler.height) {
+
+                                        drops[i].y = 0 - drops[i].height
+
+                                };
+
+                        };
+
+                        requestAnimationFrame(space);
+
+                };
+
+                function main() {
+
+                        init();
+
+                        space();
+
+                };
+
+                window.addEventListener('load', main, false);
+
+                window.addEventListener('resize', init, false);
 
         };
+
+        applySpace();
+
+        function applyHolo() {
+
+                let canvasHandler = element('canvas', 'obscDOMElement-holoCanvas', variableHeader);
+
+                let context = canvasHandler.getContext("2d");
+
+                let drops = [], maxSpeed = 50, spacing = 4, xPosition, n
+
+                function init() {
+
+                        canvasHandler.width = window.innerWidth
+
+                        canvasHandler.height = window.innerHeight
+
+                        xPosition = 0
+
+                        n = canvasHandler.width / spacing
+
+                        for (let i = 0; i < n; i++) {
+
+                                xPosition += spacing
+
+                                drops.push({
+
+                                        x: xPosition,
+
+                                        y: Math.round(Math.random() * canvasHandler.height),
+
+                                        width: Math.ceil(Math.random() * 50 - 20) / 100,
+
+                                        height: Math.ceil(Math.random() * 5000 + 100) / 15,
+
+                                        speed: Math.ceil(Math.random() * 50 + 5) / 50
+
+                                });
+
+                        };
+
+                };
+
+                function holo() {
+
+                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
+
+                        for (let i = 0; i < n; i++) {
+
+                                context.fillStyle = "rgb(255 255 255)"
+
+                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+
+                                drops[i].y += drops[i].speed
+
+                                if (drops[i].y > canvasHandler.height) {
+
+                                        drops[i].y = 0 - drops[i].height
+
+                                };
+
+                        };
+
+                        requestAnimationFrame(holo);
+
+                };
+
+                function main() {
+
+                        init();
+
+                        holo();
+
+                };
+
+                window.addEventListener('load', main, false);
+
+                window.addEventListener('resize', init, false);
+
+        };
+
+        applyHolo();
 
         // начальный текст вверху экрана
 
@@ -9817,7 +10093,15 @@
 
                         let headerText = element('div', 'obscDOMElement-headerText', header);
 
-                            headerText.innerHTML = 'Настройки'
+                        if (language == 'RU') {
+
+                                headerText.innerHTML = 'Настройки'
+
+                        } else {
+
+                                headerText.innerHTML = 'Settings'
+
+                        };
 
                         let headerTextImage = element('div', 'obscDOMElement-headerTextImage', header);
 
@@ -9825,7 +10109,15 @@
 
                         backButton.addEventListener('click', function() {
 
-                                headerText.innerHTML = 'Настройки'
+                                if (language == 'RU') {
+
+                                        headerText.innerHTML = 'Настройки'
+
+                                } else {
+
+                                        headerText.innerHTML = 'Settings'
+
+                                };
 
                                 headerTextImage.style = ''
 
@@ -9833,7 +10125,7 @@
 
                                 buttonsHandler.style = ''
 
-                                colorsPage.style = ''
+                                customPage.style = ''
 
                                 backgroundsPage.style = ''
 
@@ -9863,93 +10155,429 @@
 
                         let menuButton_1 = element('div', 'obscDOMElement-mDefaultButton mDefaultButton_1', buttonsHandler);
 
-                        let colorsPage = element('div', 'obscDOMElement-menuColorsPage', menuHandler);
+                        let customPage = element('div', 'obscDOMElement-menuCustomPage', menuHandler);
 
                         if (menuButton_1) {
 
-                                if (colorsPage) {
+                                if (customPage) {
 
-                                        let colorsHandler = element('div', 'obscDOMElement-menuColorsHandler mColorSetting', colorsPage);
+                                        let colorsHandler = element('div', 'obscDOMElement-cSettingsHandler mColorSettings', customPage);
 
-                                        let colorsText = element('span', 'obscDOMElement-menuColorsSpan', colorsHandler);
+                                        if (colorsHandler) {
 
-                                            colorsText.innerHTML = 'Акцентовый цвет'
+                                                let colorsText = element('span', 'obscDOMElement-menuCustomSpan', colorsHandler);
 
-                                        let canvasField = element('canvas', 'obscDOMElement-colorSettingsCanvas', colorsHandler);
+                                                if (language == 'RU') {
 
-                                            canvasField.width = 169
+                                                        colorsText.innerHTML = 'Акцентовый цвет'
 
-                                            canvasField.height = 1
+                                                } else {
 
-                                        let canvasFieldContext = canvasField.getContext('2d');
+                                                        colorsText.innerHTML = 'Accent color'
 
-                                        let gradientSight = canvasFieldContext.createLinearGradient(0, 0, canvasField.width, canvasField.height);
+                                                };
 
-                                            gradientSight.addColorStop(0, 'rgb(255 0 0)');
+                                                let canvasField = element('canvas', 'obscDOMElement-colorSettingsCanvas', colorsHandler);
 
-                                            gradientSight.addColorStop(.17, 'rgb(255 0 255)');
+                                                    canvasField.width = 169
 
-                                            gradientSight.addColorStop(.33, 'rgb(0 0 255)');
+                                                    canvasField.height = 1
 
-                                            gradientSight.addColorStop(.50, 'rgb(0 255 255)');
+                                                let canvasFieldContext = canvasField.getContext('2d');
 
-                                            gradientSight.addColorStop(.67, 'rgb(0 255 0)');
+                                                let gradientSight = canvasFieldContext.createLinearGradient(0, 0, canvasField.width, canvasField.height);
 
-                                            gradientSight.addColorStop(.83, 'rgb(255 255 0)');
+                                                    gradientSight.addColorStop(0, 'rgb(255 0 0)');
 
-                                            gradientSight.addColorStop(1, 'rgb(255 0 0)');
+                                                    gradientSight.addColorStop(.17, 'rgb(255 0 255)');
 
-                                        canvasFieldContext.fillStyle = gradientSight
+                                                    gradientSight.addColorStop(.33, 'rgb(0 0 255)');
 
-                                        canvasFieldContext.fillRect(0, 0, canvasField.width, canvasField.height);
+                                                    gradientSight.addColorStop(.50, 'rgb(0 255 255)');
 
-                                        let range = element('div', 'obscDOMElement-colorSettingsRange', colorsHandler);
+                                                    gradientSight.addColorStop(.67, 'rgb(0 255 0)');
 
-                                        let thumb = element('input', 'slider', range);
+                                                    gradientSight.addColorStop(.83, 'rgb(255 255 0)');
 
-                                            thumb.setAttribute('type', 'range');
+                                                    gradientSight.addColorStop(1, 'rgb(255 0 0)');
 
-                                            thumb.setAttribute('value', '120');
+                                                canvasFieldContext.fillStyle = gradientSight
 
-                                            thumb.setAttribute('min', '0');
+                                                canvasFieldContext.fillRect(0, 0, canvasField.width, canvasField.height);
 
-                                            thumb.setAttribute('max', '168');
+                                                let range = element('div', 'obscDOMElement-colorSettingsRange', colorsHandler);
 
-                                        let colorsValue = element('span', 'obscDOMElement-menuColorsValue', colorsHandler);
+                                                let thumb = element('input', 'slider', range);
 
-                                        if (localStorage.getItem('obscLocalStorageVariable-coordValue')) {
+                                                    thumb.setAttribute('type', 'range');
 
-                                                thumb.value = localStorage.getItem('obscLocalStorageVariable-coordValue');
+                                                    thumb.setAttribute('value', '152');
 
-                                                colorsValue.innerHTML = `#${localStorage.getItem('obscLocalStorageVariable-coordValue')}`
+                                                    thumb.setAttribute('min', '0');
 
-                                        };
+                                                    thumb.setAttribute('max', '168');
 
-                                        thumb.addEventListener('input', function() {
+                                                thumb.value = '152'
+
+                                                let colorsValue = element('span', 'obscDOMElement-menuColorsValue', colorsHandler);
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-coordValue')) {
+
+                                                        thumb.value = localStorage.getItem('obscLocalStorageVariable-coordValue');
+
+                                                        colorsValue.innerHTML = `#${localStorage.getItem('obscLocalStorageVariable-coordValue')}`
+
+                                                };
+
+                                                thumb.addEventListener('input', function() {
+
+                                                        changeColors();
+
+                                                });
+
+                                                let steps = 2
 
                                                 changeColors();
 
-                                        });
+                                                function changeColors() {
 
-                                        let steps = 2
+                                                        let xCoord = thumb.value
 
-                                        changeColors();
+                                                        colorsValue.innerHTML = `#${xCoord}`
 
-                                        function changeColors() {
+                                                        let rgbValues = canvasField.getContext('2d').getImageData(xCoord, 0, 1, 1).data
 
-                                                let xCoord = thumb.value
+                                                        let bkgColor = `${rgbValues[0]} ${rgbValues[1]} ${rgbValues[2]}`
 
-                                                colorsValue.innerHTML = `#${xCoord}`
+                                                        document.body.style.cssText += `--general-color: rgb(${bkgColor}); --least-general-color: rgb(${bkgColor} / 25%);`
 
-                                                let rgbValues = canvasField.getContext('2d').getImageData(xCoord, 0, 1, 1).data
+                                                        localStorage.setItem('obscLocalStorageVariable-globalColor', bkgColor);
 
-                                                let bkgColor = `${rgbValues[0]} ${rgbValues[1]} ${rgbValues[2]}`
+                                                        localStorage.setItem('obscLocalStorageVariable-coordValue', xCoord);
 
-                                                document.body.style.cssText += `--general-color: rgb(${bkgColor}); --least-general-color: rgb(${bkgColor} / 25%);`
+                                                };
 
-                                                localStorage.setItem('obscLocalStorageVariable-globalColor', bkgColor);
+                                        };
 
-                                                localStorage.setItem('obscLocalStorageVariable-coordValue', xCoord);
+                                        let filters = {
+
+                                                brightness: 1,
+                                                contrast: 1,
+                                                grayscale: 0,
+                                                saturate: 1,
+                                                sepia: 0
+
+                                        };
+
+                                        if (localStorage.getItem('obscLocalStorageVariable-brightSettingValue')) {
+
+                                                filters.brightness = localStorage.getItem('obscLocalStorageVariable-brightSettingValue');
+
+                                        };
+
+                                        if (localStorage.getItem('obscLocalStorageVariable-contrastSettingValue')) {
+
+                                                filters.contrast = localStorage.getItem('obscLocalStorageVariable-contrastSettingValue');
+
+                                        };
+
+                                        if (localStorage.getItem('obscLocalStorageVariable-grayscaleSettingValue')) {
+
+                                                filters.grayscale = localStorage.getItem('obscLocalStorageVariable-grayscaleSettingValue');
+
+                                        };
+
+                                        if (localStorage.getItem('obscLocalStorageVariable-saturateSettingValue')) {
+
+                                                filters.saturate = localStorage.getItem('obscLocalStorageVariable-saturateSettingValue');
+
+                                        };
+
+                                        if (localStorage.getItem('obscLocalStorageVariable-sepiaSettingValue')) {
+
+                                                filters.sepia = localStorage.getItem('obscLocalStorageVariable-sepiaSettingValue');
+
+                                        };
+
+                                        console.log(filters);
+
+                                        let brightHandler = element('div', 'obscDOMElement-cSettingsHandler mBrightSettings', customPage);
+
+                                        if (brightHandler) {
+
+                                                let brightText = element('span', 'obscDOMElement-menuCustomSpan mBrightSpan', brightHandler);
+
+                                                if (language == 'RU') {
+
+                                                        brightText.innerHTML = 'Фильтр: яркость'
+
+                                                } else {
+
+                                                        brightText.innerHTML = 'Filter: brightness'
+
+                                                };
+
+                                                let brightSetting = element('input', 'obscDOMElement-cSettingsBrightSetting', brightHandler);
+
+                                                    brightSetting.setAttribute('type', 'range');
+
+                                                    brightSetting.setAttribute('value', '1');
+
+                                                    brightSetting.setAttribute('step', '0.05');
+
+                                                    brightSetting.setAttribute('min', '0.1');
+
+                                                    brightSetting.setAttribute('max', '3');
+
+                                                let brightSettingValue = element('span', 'obscDOMElement-cSettingsBrightSettingValue', brightHandler);
+
+                                                    brightSettingValue.innerHTML = brightSetting.value
+
+                                                brightSetting.addEventListener('input', function() {
+
+                                                        brightSettingValue.innerHTML = brightSetting.value
+
+                                                        document.body.style.cssText += `filter: brightness(${brightSetting.value}) contrast(${filters.contrast}) grayscale(${filters.grayscale}) saturate(${filters.saturate}) sepia(${filters.sepia})`
+
+                                                        localStorage.setItem('obscLocalStorageVariable-brightSettingValue', brightSetting.value);
+
+                                                        filters.brightness = localStorage.getItem('obscLocalStorageVariable-brightSettingValue');
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-brightSettingValue')) {
+
+                                                        brightSettingValue.innerHTML = localStorage.getItem('obscLocalStorageVariable-brightSettingValue');
+
+                                                        brightSetting.value = localStorage.getItem('obscLocalStorageVariable-brightSettingValue');
+
+                                                        document.body.style.cssText += `filter: brightness(${filters.brightness}) contrast(${filters.contrast}) grayscale(${filters.grayscale}) saturate(${filters.saturate}) sepia(${filters.sepia})`
+
+                                                };
+
+                                        };
+
+                                        let contrastHandler = element('div', 'obscDOMElement-cSettingsHandler mContrastSetting', customPage);
+
+                                        if (contrastHandler) {
+
+                                                let contrastText = element('span', 'obscDOMElement-menuCustomSpan mContrastSpan', contrastHandler);
+
+                                                if (language == 'RU') {
+
+                                                        contrastText.innerHTML = 'Фильтр: контраст'
+
+                                                } else {
+
+                                                        contrastText.innerHTML = 'Filter: contrast'
+
+                                                };
+
+                                                let contrastSetting = element('input', 'obscDOMElement-cSettingsContrastSetting', contrastHandler);
+
+                                                    contrastSetting.setAttribute('type', 'range');
+
+                                                    contrastSetting.setAttribute('value', '1');
+
+                                                    contrastSetting.setAttribute('step', '0.05');
+
+                                                    contrastSetting.setAttribute('min', '0.1');
+
+                                                    contrastSetting.setAttribute('max', '3');
+
+                                                let contrastSettingValue = element('span', 'obscDOMElement-cSettingsContrastSettingValue', contrastHandler);
+
+                                                    contrastSettingValue.innerHTML = contrastSetting.value
+
+                                                contrastSetting.addEventListener('input', function() {
+
+                                                        contrastSettingValue.innerHTML = contrastSetting.value
+
+                                                        document.body.style.cssText += `filter: brightness(${filters.brightness}) contrast(${contrastSetting.value}) grayscale(${filters.grayscale}) saturate(${filters.saturate}) sepia(${filters.sepia})`
+
+                                                        localStorage.setItem('obscLocalStorageVariable-contrastSettingValue', contrastSetting.value);
+
+                                                        filters.contrast = localStorage.getItem('obscLocalStorageVariable-contrastSettingValue');
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-contrastSettingValue')) {
+
+                                                        contrastSettingValue.innerHTML = localStorage.getItem('obscLocalStorageVariable-contrastSettingValue');
+
+                                                        contrastSetting.value = localStorage.getItem('obscLocalStorageVariable-contrastSettingValue');
+
+                                                        document.body.style.cssText += `filter: brightness(${filters.brightness}) contrast(${filters.contrast}) grayscale(${filters.grayscale}) saturate(${filters.saturate}) sepia(${filters.sepia})`
+
+                                                };
+
+                                        };
+
+                                        let grayscaleHandler = element('div', 'obscDOMElement-cSettingsHandler mGraySetting', customPage);
+
+                                        if (grayscaleHandler) {
+
+                                                let grayscaleText = element('span', 'obscDOMElement-menuCustomSpan mGraySpan', grayscaleHandler);
+
+                                                if (language == 'RU') {
+
+                                                        grayscaleText.innerHTML = 'Фильтр: черно-белый'
+
+                                                } else {
+
+                                                        grayscaleText.innerHTML = 'Filter: grayscale'
+
+                                                };
+
+                                                let grayscaleSetting = element('input', 'obscDOMElement-cSettingsGrayscaleSetting', grayscaleHandler);
+
+                                                    grayscaleSetting.setAttribute('type', 'range');
+
+                                                    grayscaleSetting.setAttribute('value', '0');
+
+                                                    grayscaleSetting.setAttribute('step', '0.05');
+
+                                                    grayscaleSetting.setAttribute('min', '0');
+
+                                                    grayscaleSetting.setAttribute('max', '1');
+
+                                                let grayscaleSettingValue = element('span', 'obscDOMElement-cSettingsGrayscaleSettingValue', grayscaleHandler);
+
+                                                    grayscaleSettingValue.innerHTML = grayscaleSetting.value
+
+                                                grayscaleSetting.addEventListener('input', function() {
+
+                                                        grayscaleSettingValue.innerHTML = grayscaleSetting.value
+
+                                                        document.body.style.cssText += `filter: brightness(${filters.brightness}) contrast(${filters.contrast}) grayscale(${grayscaleSetting.value}) saturate(${filters.saturate}) sepia(${filters.sepia})`
+
+                                                        localStorage.setItem('obscLocalStorageVariable-grayscaleSettingValue', grayscaleSetting.value);
+
+                                                        filters.grayscale = localStorage.getItem('obscLocalStorageVariable-grayscaleSettingValue');
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-grayscaleSettingValue')) {
+
+                                                        grayscaleSettingValue.innerHTML = localStorage.getItem('obscLocalStorageVariable-grayscaleSettingValue');
+
+                                                        grayscaleSetting.value = localStorage.getItem('obscLocalStorageVariable-grayscaleSettingValue');
+
+                                                        document.body.style.cssText += `filter: brightness(${filters.brightness}) contrast(${filters.contrast}) grayscale(${filters.grayscale}) saturate(${filters.saturate}) sepia(${filters.sepia})`
+
+                                                };
+
+                                        };
+
+                                        let saturateHandler = element('div', 'obscDOMElement-cSettingsHandler mSaturageSetting', customPage);
+
+                                        if (saturateHandler) {
+
+                                                let saturateText = element('span', 'obscDOMElement-menuCustomSpan mSaturateSpan', saturateHandler);
+
+                                                if (language == 'RU') {
+
+                                                        saturateText.innerHTML = 'Фильтр: насыщенность'
+
+                                                } else {
+
+                                                        saturateText.innerHTML = 'Filter: saturate'
+
+                                                };
+
+                                                let saturateSetting = element('input', 'obscDOMElement-cSettingsSaturateSetting', saturateHandler);
+
+                                                    saturateSetting.setAttribute('type', 'range');
+
+                                                    saturateSetting.setAttribute('value', '1');
+
+                                                    saturateSetting.setAttribute('step', '0.05');
+
+                                                    saturateSetting.setAttribute('min', '0');
+
+                                                    saturateSetting.setAttribute('max', '3');
+
+                                                let saturateSettingValue = element('span', 'obscDOMElement-cSettingsSaturateSettingValue', saturateHandler);
+
+                                                    saturateSettingValue.innerHTML = saturateSetting.value
+
+                                                saturateSetting.addEventListener('input', function() {
+
+                                                        saturateSettingValue.innerHTML = saturateSetting.value
+
+                                                        document.body.style.cssText += `filter: brightness(${filters.brightness}) contrast(${filters.contrast}) grayscale(${filters.grayscale}) saturate(${saturateSetting.value}) sepia(${filters.sepia})`
+
+                                                        localStorage.setItem('obscLocalStorageVariable-saturateSettingValue', saturateSetting.value);
+
+                                                        filters.saturate = localStorage.getItem('obscLocalStorageVariable-saturateSettingValue');
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-saturateSettingValue')) {
+
+                                                        saturateSettingValue.innerHTML = localStorage.getItem('obscLocalStorageVariable-saturateSettingValue');
+
+                                                        saturateSetting.value = localStorage.getItem('obscLocalStorageVariable-saturateSettingValue');
+
+                                                        document.body.style.cssText += `filter: brightness(${filters.brightness}) contrast(${filters.contrast}) grayscale(${filters.grayscale}) saturate(${filters.saturate}) sepia(${filters.sepia})`
+
+                                                };
+
+                                        };
+
+                                        let sepiaHandler = element('div', 'obscDOMElement-cSettingsHandler mSepiaSetting', customPage);
+
+                                        if (sepiaHandler) {
+
+                                                let sepiaText = element('span', 'obscDOMElement-menuCustomSpan mSepiaSpan', sepiaHandler);
+
+                                                if (language == 'RU') {
+
+                                                        sepiaText.innerHTML = 'Фильтр: сепия'
+
+                                                } else {
+
+                                                        sepiaText.innerHTML = 'Filter: sepia'
+
+                                                };
+
+                                                let sepiaSetting = element('input', 'obscDOMElement-cSettingsSepiaSetting', sepiaHandler);
+
+                                                    sepiaSetting.setAttribute('type', 'range');
+
+                                                    sepiaSetting.setAttribute('value', '0');
+
+                                                    sepiaSetting.setAttribute('step', '0.05');
+
+                                                    sepiaSetting.setAttribute('min', '0');
+
+                                                    sepiaSetting.setAttribute('max', '1');
+
+                                                let sepiaSettingValue = element('span', 'obscDOMElement-cSettingsSepiaSettingValue', sepiaHandler);
+
+                                                    sepiaSettingValue.innerHTML = sepiaSetting.value
+
+                                                sepiaSetting.addEventListener('input', function() {
+
+                                                        sepiaSettingValue.innerHTML = sepiaSetting.value
+
+                                                        document.body.style.cssText += `filter: brightness(${filters.brightness}) contrast(${filters.contrast}) grayscale(${filters.grayscale}) saturate(${filters.saturate}) sepia(${sepiaSetting.value})`
+
+                                                        localStorage.setItem('obscLocalStorageVariable-sepiaSettingValue', sepiaSetting.value);
+
+                                                        filters.sepia = localStorage.getItem('obscLocalStorageVariable-sepiaSettingValue');
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-sepiaSettingValue')) {
+
+                                                        sepiaSettingValue.innerHTML = localStorage.getItem('obscLocalStorageVariable-sepiaSettingValue');
+
+                                                        sepiaSetting.value = localStorage.getItem('obscLocalStorageVariable-sepiaSettingValue');
+
+                                                        document.body.style.cssText += `filter: brightness(${filters.brightness}) contrast(${filters.contrast}) grayscale(${filters.grayscale}) saturate(${filters.saturate}) sepia(${filters.sepia})`
+
+                                                };
 
                                         };
 
@@ -9959,13 +10587,29 @@
 
                                 let buttonSpan_1 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_1', menuButton_1);
 
-                                    buttonSpan_1.innerHTML = 'Кастомизация'
+                                if (language == 'RU') {
+
+                                        buttonSpan_1.innerHTML = 'Кастомизация'
+
+                                } else {
+
+                                        buttonSpan_1.innerHTML = 'Customisation'
+
+                                };
 
                                 menuButton_1.addEventListener('click', function() {
 
-                                        colorsPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
+                                        customPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
 
-                                        headerText.innerHTML = 'Кастомизация'
+                                        if (language == 'RU') {
+
+                                                headerText.innerHTML = 'Кастомизация'
+
+                                        } else {
+
+                                                headerText.innerHTML = 'Customisation'
+
+                                        };
 
                                         headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADE0lEQVR4nO2ZSWgUQRSGv0mMe0Rxw6BeRA8KYkCD5qAn0UPcLuJ6ExcETypxQcWQGAkePIiJgjdFMQpioojgQb3oSR1hBBfikhyMC4rLJEFHHlRA2qqe7uqungHnh8cE+n/13l/rqwqUUEIJcaAcWAgcANqBNPAJ6AP61d9PgSvAfmCR8ik4pgPHgG4gF9LeAc3AtEIkPgloUz2ci2h9QCswIankNwEfYkjca9LmepeJDwPO5EniC9AILAVWqDkfVkgbUBF38iOAm3kC/wBqNL6NFiJuACPjSl5641aAoKd9Rs5mynXGNRJnAwbc6tPGbQ3/K3AS2A60qOnn5cjijoQNIXpM9ncTHmu20BkeThXwWtPuuihb5ecQAp4DozTtLNFwNxpirtZwe4HxNgJaDYn2qJNV9+0OMEv5lwErDVzpbR0qgd8a/imbE3bA08g9YLb6LmVAHfBeE+wX8MrwbdBmGuJWGfhZYGoYAc2eBrqAcRperaHH8tlhQ9y9Pj5SsgRCmaa2afLhP7QQIAXeZk87a4FvPj5vVG55Uatx3unDv2YhYNCeKf9MQL7uoPwH+zSO5wzclFrUuYSsPoiAqxrHAVXve3EwweRzwOUgAp4YnH8CDcBiVahdtFzAUSwdRIBpjy8G6w0iII5LiivLBhGQTTCh++q0nkyM+JhQ8nJxcXKxTxsCyl69DBiujvWjEaabbBRDcYR2TUApf8douLssBWzDIeo1AXcbuOWWu9Y8lwLmawKu8uE/sBAw16WAFPDWE1Be3HSosLzvbsExjngCdhu2uj2WayDj4unkb0xRzyTeynGNEjIHOBGxlDCNamxosUzsOrBA3Y/lt8PAk9rfdLWMBWMtHm0leR1MIhpwjLqQ00R2MB1qDPy7JICmEALkVUGHSgO/KwkBcg8972gEMiSEIcCFCGug08C/RIJIqemUb010qB4frX5NyYuZXuicYrnlv5S8Ju+lMrIFgSzK48B3y+TlzbWaIsBE4BDwIkTyL4slee/6qFZltyzMR+pttF8l3aPWxg6XF5kSSvgf8QcmEm4hWaYBngAAAABJRU5ErkJggg==)'
 
@@ -9985,17 +10629,583 @@
 
                         if (menuButton_2) {
 
+                                if (backgroundsPage) {
+
+                                        let sliderHandler = element('div', 'obscDOMElement-bSettingsHandler bSliderHandler', backgroundsPage);
+
+                                        if (sliderHandler) {
+
+                                                let backgroundSettingText = element('span', 'obscDOMElement-bSettingsBackgroundText', sliderHandler);
+
+                                                if (language == 'RU') {
+
+                                                        backgroundSettingText.innerHTML = 'Анимация фона'
+
+                                                } else {
+
+                                                        backgroundSettingText.innerHTML = 'Background animation'
+
+                                                };
+
+                                                let backgroundSetting = element('input', 'obscDOMElement-bSettingsBackground', sliderHandler);
+
+                                                    backgroundSetting.setAttribute('type', 'range');
+
+                                                    backgroundSetting.setAttribute('value', '1');
+
+                                                    backgroundSetting.setAttribute('step', '1');
+
+                                                    backgroundSetting.setAttribute('min', '0');
+
+                                                    backgroundSetting.setAttribute('max', '3');
+
+                                                let backgroundSettingValue = element('span', 'obscDOMElement-bSettingsBackgroundValue', sliderHandler);
+
+                                                    backgroundSettingValue.innerHTML = 'Волны'
+
+                                                backgroundSetting.addEventListener('input', function() {
+
+                                                        if (backgroundSetting.value == '0') {
+
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
+
+                                                                if (wavesCanvas) {
+
+                                                                        wavesCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                                if (holoCanvas) {
+
+                                                                        holoCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                                if (spaceCanvas) {
+
+                                                                        spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                if (language == 'RU') {
+
+                                                                        backgroundSettingValue.innerHTML = 'Обычный'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Обычный');
+
+                                                                } else {
+
+                                                                        backgroundSettingValue.innerHTML = 'Default'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Default');
+
+                                                                };
+
+                                                        };
+
+                                                        if (backgroundSetting.value == '1') {
+
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
+
+                                                                if (wavesCanvas) {
+
+                                                                        wavesCanvas.style = ''
+
+                                                                };
+
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                                if (holoCanvas) {
+
+                                                                        holoCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                                if (spaceCanvas) {
+
+                                                                        spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                if (language == 'RU') {
+
+                                                                        backgroundSettingValue.innerHTML = 'Волны'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Волны');
+
+                                                                } else {
+
+                                                                        backgroundSettingValue.innerHTML = 'Waves'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Waves');
+
+                                                                };
+
+                                                        };
+
+                                                        if (backgroundSetting.value == '2') {
+
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
+
+                                                                if (wavesCanvas) {
+
+                                                                        wavesCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                                if (holoCanvas) {
+
+                                                                        holoCanvas.style = ''
+
+                                                                };
+
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                                if (spaceCanvas) {
+
+                                                                        spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                if (language == 'RU') {
+
+                                                                        backgroundSettingValue.innerHTML = 'Голография'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Голография');
+
+                                                                } else {
+
+                                                                        backgroundSettingValue.innerHTML = 'Holography'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Holography');
+
+                                                                };
+
+                                                        };
+
+                                                        if (backgroundSetting.value == '3') {
+
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
+
+                                                                if (wavesCanvas) {
+
+                                                                        wavesCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                                if (holoCanvas) {
+
+                                                                        holoCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                                if (spaceCanvas) {
+
+                                                                        spaceCanvas.style = ''
+
+                                                                };
+
+                                                                if (language == 'RU') {
+
+                                                                        backgroundSettingValue.innerHTML = 'Космос'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Космос');
+
+                                                                } else {
+
+                                                                        backgroundSettingValue.innerHTML = 'Space'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Space');
+
+                                                                };
+
+                                                        };
+
+                                                        localStorage.setItem('obscLocalStorageVariable-backgroundSettingValue', backgroundSetting.value);
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-backgroundSettingValue')) {
+
+                                                        backgroundSettingValue.innerHTML = localStorage.getItem('obscLocalStorageVariable-background');
+
+                                                        backgroundSetting.value = localStorage.getItem('obscLocalStorageVariable-backgroundSettingValue');
+
+                                                        if (localStorage.getItem('obscLocalStorageVariable-background') == 'Обычный' || localStorage.getItem('obscLocalStorageVariable-background') == 'Default') {
+
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
+
+                                                                if (wavesCanvas) {
+
+                                                                        wavesCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                                if (holoCanvas) {
+
+                                                                        holoCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                                if (spaceCanvas) {
+
+                                                                        spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                        };
+
+                                                        if (localStorage.getItem('obscLocalStorageVariable-background') == 'Волны' || localStorage.getItem('obscLocalStorageVariable-background') == 'Waves') {
+
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
+
+                                                                if (wavesCanvas) {
+
+                                                                        wavesCanvas.style = ''
+
+                                                                };
+
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                                if (holoCanvas) {
+
+                                                                        holoCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                                if (spaceCanvas) {
+
+                                                                        spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                        };
+
+                                                        if (localStorage.getItem('obscLocalStorageVariable-background') == 'Голография' || localStorage.getItem('obscLocalStorageVariable-background') == 'Holography') {
+
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
+
+                                                                if (wavesCanvas) {
+
+                                                                        wavesCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                                if (holoCanvas) {
+
+                                                                        holoCanvas.style = ''
+
+                                                                };
+
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                                if (spaceCanvas) {
+
+                                                                        spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                        };
+
+                                                        if (localStorage.getItem('obscLocalStorageVariable-background') == 'Космос' || localStorage.getItem('obscLocalStorageVariable-background') == 'Space') {
+
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
+
+                                                                if (wavesCanvas) {
+
+                                                                        wavesCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                                if (holoCanvas) {
+
+                                                                        holoCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                                if (spaceCanvas) {
+
+                                                                        spaceCanvas.style = ''
+
+                                                                };
+
+                                                        };
+
+                                                };
+
+                                        };
+
+                                        let backgroundsPageLine = element('div', 'obscDOMElement-bSettingsPageLine', backgroundsPage);
+
+                                        let wavesSpan = element('span', 'obscDOMElement-bSettingsSpan bWavesSpan', backgroundsPage);
+
+                                        let wavesPreview = element('div', 'obscDOMElement-bPreview bWavesPreview', backgroundsPage);
+
+                                        if (wavesPreview) {
+
+                                                wavesPreview.insertAdjacentHTML('beforeend',
+
+                                                    `<svg class="obscDOMElement-preview-wavesNode" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="1200px" y="0px" width="100%" height="100%" viewBox="0 0 1600 1050" preserveAspectRatio="xMidYMax slice">
+                                                             <defs>
+                                                                     <linearGradient id="bg">
+                                                                             <stop offset="0%" style="stop-color:rgba(50, 50, 50, 0.25)"></stop>
+                                                                             <stop offset="50%" style="stop-color:rgba(200, 200, 200, 0.25)"></stop>
+                                                                             <stop offset="100%" style="stop-color:rgba(10, 10, 10, 0.25)"></stop>
+                                                                     </linearGradient>
+                                                                     <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+                                                             </defs>
+                                                             <g>
+                                                                     <use xlink:href='#wave' opacity=".3">
+                                                                             <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="20s" calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1" keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                                                                     </use>
+                                                                     <use xlink:href='#wave' opacity=".6">
+                                                                             <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="16s" calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                                                                     </use>
+                                                                     <use xlink:href='#wave' opacity=".9">
+                                                                             <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="12s" calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1" keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                                                                     </use>
+                                                             </g>
+                                                     </svg>
+
+                                                `);
+
+                                        };
+
+                                        let holoSpan = element('span', 'obscDOMElement-bSettingsSpan bHoloSpan', backgroundsPage);
+
+                                        let holoPreview = element('div', 'obscDOMElement-bPreview bHoloPreview', backgroundsPage);
+
+                                        if (holoPreview) {
+
+                                                let canvasHandler = element('canvas', 'obscDOMElement-preview-holoCanvas', holoPreview);
+
+                                                let context = canvasHandler.getContext("2d");
+
+                                                let drops = [], maxSpeed = 50, spacing = 20, xPosition, n
+
+                                                function init() {
+
+                                                        canvasHandler.width = window.innerWidth
+
+                                                        canvasHandler.height = window.innerHeight
+
+                                                        xPosition = 0
+
+                                                        n = canvasHandler.width / spacing
+
+                                                        for (let i = 0; i < n; i++) {
+
+                                                                xPosition += spacing
+
+                                                                drops.push({
+
+                                                                        x: xPosition,
+
+                                                                        y: Math.round(Math.random() * canvasHandler.height),
+
+                                                                        width: Math.ceil(Math.random() * 50) / 100,
+
+                                                                        height: Math.ceil(Math.random() * 5000 + 100) / 15,
+
+                                                                        speed: Math.ceil(Math.random() * 50 + 5) / 40
+
+                                                                });
+
+                                                        };
+
+                                                };
+
+                                                function holo() {
+
+                                                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
+
+                                                        for (let i = 0; i < n; i++) {
+
+                                                                context.fillStyle = "rgb(255 255 255 / 70%)"
+
+                                                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+
+                                                                drops[i].y += drops[i].speed
+
+                                                                if (drops[i].y > canvasHandler.height) {
+
+                                                                        drops[i].y = 0 - drops[i].height
+
+                                                                };
+
+                                                        };
+
+                                                        requestAnimationFrame(holo);
+
+                                                };
+
+                                                function main() {
+
+                                                        init();
+
+                                                        holo();
+
+                                                };
+
+                                                window.addEventListener('load', main, false);
+
+                                                window.addEventListener('resize', init, false);
+
+                                        };
+
+                                        let spaceSpan = element('span', 'obscDOMElement-bSettingsSpan bSpaceSpan', backgroundsPage);
+
+                                        let spacePreview = element('div', 'obscDOMElement-bPreview bSpacePreview', backgroundsPage);
+
+                                        if (spacePreview) {
+
+                                                let canvasHandler = element('canvas', 'obscDOMElement-preview-spaceCanvas', spacePreview);
+
+                                                let context = canvasHandler.getContext("2d");
+
+                                                let drops = [], maxSpeed = 50, spacing = 40, xPosition, n
+
+                                                function init() {
+
+                                                        canvasHandler.width = window.innerWidth
+
+                                                        canvasHandler.height = window.innerHeight
+
+                                                        xPosition = 0
+
+                                                        n = canvasHandler.width / spacing
+
+                                                        for (let i = 0; i < n; i++) {
+
+                                                                xPosition += spacing
+
+                                                                drops.push({
+
+                                                                        x: xPosition,
+
+                                                                        y: Math.round(Math.random() * canvasHandler.height),
+
+                                                                        width: Math.ceil(Math.random() * 50 + 10) / 10,
+
+                                                                        height: Math.ceil(Math.random() * 50 + 10) / 2,
+
+                                                                        speed: Math.ceil(Math.random() * 50 + 10) / 80
+
+                                                                });
+
+                                                        };
+
+                                                };
+
+                                                function space() {
+
+                                                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
+
+                                                        for (let i = 0; i < n; i++) {
+
+                                                                context.fillStyle = "rgb(255 255 255 / 80%)"
+
+                                                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+
+                                                                drops[i].y += drops[i].speed
+
+                                                                if (drops[i].y > canvasHandler.height) {
+
+                                                                        drops[i].y = 0 - drops[i].height
+
+                                                                };
+
+                                                        };
+
+                                                        requestAnimationFrame(space);
+
+                                                };
+
+                                                function main() {
+
+                                                        init();
+
+                                                        space();
+
+                                                };
+
+                                                window.addEventListener('load', main, false);
+
+                                                window.addEventListener('resize', init, false);
+
+                                        };
+
+                                        if (language == 'RU') {
+
+                                                wavesSpan.innerHTML = 'Превью: волны'
+
+                                                holoSpan.innerHTML = 'Превью: голография'
+
+                                                spaceSpan.innerHTML = 'Превью: космос'
+
+                                        } else {
+
+                                                wavesSpan.innerHTML = 'Preview: waves'
+
+                                                holoSpan.innerHTML = 'Preview: holography'
+
+                                                spaceSpan.innerHTML = 'Preview: space'
+
+                                        };
+
+                                };
+
                                 let buttonImage_2 = element('div', 'obscDOMElement-mDefaultButtonImage mDefaultImage_2', menuButton_2);
 
                                 let buttonSpan_2 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_2', menuButton_2);
 
-                                    buttonSpan_2.innerHTML = 'Фоновые анимации (2.1.0)'
+                                if (language == 'RU') {
+
+                                        buttonSpan_2.innerHTML = 'Фоновые анимации'
+
+                                } else {
+
+                                        buttonSpan_2.innerHTML = 'Background animations'
+
+                                };
 
                                 menuButton_2.addEventListener('click', function() {
 
                                         backgroundsPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
 
-                                        headerText.innerHTML = 'Фоновые анимации'
+                                        if (language == 'RU') {
+
+                                                headerText.innerHTML = 'Фоновые анимации'
+
+                                        } else {
+
+                                                headerText.innerHTML = 'Background animations'
+
+                                        };
 
                                         headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABFUlEQVR4nO2XzQkCMRBGn+th9a53a9Aq/FkQRDxYkBagHViBCrIViEfrUGxAYSUQYQkKIonZgXmwlxyGl4/JMgOKovikBeyAK7AGagiTPwNF6esjWL4AhgiWPwAJFaf9QT4HmghNPgcaP9YcACdgC3QQJj8D7qVa5hJi5QvgiGD5u22nyj/Y6Rv5BzD37K7yLpr8N2jPO2jbfMvuT/95cx6Eq2R5w8oZiUXJY9fAvl1GEmnyPvAtnwCZDTX4jt3zLN+wbfyqZdo7KAvP8rlT70JgsoDyRcglp8wIWAJdz/Jnu49UmhTYq3wEUk0+EqkmHwlNPhaafCxEJ584I7EoecNYsrxhIlneUAc2wM3O86LkFYWK8wQyZyjPVbLhxwAAAABJRU5ErkJggg==)'
 
@@ -10023,7 +11233,15 @@
 
                                                 let radiusSpan = element('span', 'obscDOMElement-gSettingsRadiusSpan', radiusHandler);
 
-                                                    radiusSpan.innerHTML = 'Величина закругления элементов'
+                                                if (language == 'RU') {
+
+                                                        radiusSpan.innerHTML = 'Величина закругления элементов'
+
+                                                } else {
+
+                                                        radiusSpan.innerHTML = 'Border radius value'
+
+                                                };
 
                                                 let radiusSetting = element('input', 'obscDOMElement-gSettingsRadiusSetting', radiusHandler);
 
@@ -10069,7 +11287,15 @@
 
                                                 let blurSpan = element('span', 'obscDOMElement-gSettingsBlurSpan', blurHandler);
 
-                                                    blurSpan.innerHTML = 'Величина размытия фона элементов'
+                                                if (language == 'RU') {
+
+                                                        blurSpan.innerHTML = 'Величина размытия фона элементов'
+
+                                                } else {
+
+                                                        blurSpan.innerHTML = 'Elements backdrop blur value'
+
+                                                };
 
                                                 let blurSetting = element('input', 'obscDOMElement-gSettingsBlurSetting', blurHandler);
 
@@ -10115,7 +11341,15 @@
 
                                                 let transparencySpan = element('span', 'obscDOMElement-gSettingsTransparencySpan', transparencyHandler);
 
-                                                    transparencySpan.innerHTML = 'Прозрачность фона элементов'
+                                                if (language == 'RU') {
+
+                                                        transparencySpan.innerHTML = 'Прозрачность фона элементов'
+
+                                                } else {
+
+                                                        transparencySpan.innerHTML = 'Elements background transparency'
+
+                                                };
 
                                                 let transparencySetting = element('input', 'obscDOMElement-gSettingsTransparencySetting', transparencyHandler);
 
@@ -10161,7 +11395,15 @@
 
                                                 let outlineSpan = element('span', 'obscDOMElement-gSettingsOutlineSpan', outlineHandler);
 
-                                                    outlineSpan.innerHTML = 'Ширина обводки элементов'
+                                                if (language == 'RU') {
+
+                                                        outlineSpan.innerHTML = 'Ширина обводки элементов'
+
+                                                } else {
+
+                                                        outlineSpan.innerHTML = 'Elements stroke width'
+
+                                                };
 
                                                 let outlineSetting = element('input', 'obscDOMElement-gSettingsOutlineSetting', outlineHandler);
 
@@ -10207,13 +11449,29 @@
 
                                 let buttonSpan_3 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_3', menuButton_3);
 
-                                    buttonSpan_3.innerHTML = 'Глобальные настройки'
+                                if (language == 'RU') {
+
+                                        buttonSpan_3.innerHTML = 'Глобальные настройки'
+
+                                } else {
+
+                                        buttonSpan_3.innerHTML = 'Global settings'
+
+                                };
 
                                 menuButton_3.addEventListener('click', function() {
 
                                         gSettingsPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
 
-                                        headerText.innerHTML = 'Глобальные настройки'
+                                        if (language == 'RU') {
+
+                                                headerText.innerHTML = 'Глобальные настройки'
+
+                                        } else {
+
+                                                headerText.innerHTML = 'Global settings'
+
+                                        };
 
                                         headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACB0lEQVR4nO2Zu0oDQRRAzycEi0QRK0X9A0HEQrAQxc4fEEHFR2vnb6iorXaC4KNS8AssfCR2Yu07WiVxZeAGwpLs3pE4O7vkwO2SYQ535s7sHejQoZE+YBU4B4rAF/ANPAGnwAYwjMf0ArtAFQhi4hbI4SGzwKdCIABugDwesgbU0i4xpVxKAVACevB0T2iX0x1QwFP2lBL3FhK5JEpsVSnRrRwzL9VsCIesKiSKlhI38j9zzjjjTCEyZ5mJQOIEhzwoRI4V4xRCEiYecUhZIVKRyqZZTo1hrjPO0JbdzQiJcCbq8eFSpKQUeRWZxsx0SzWLKhLOOFKK1KMqe2ZOJhr1W6ebfcFSJLCIJZci6/8kUYkpEG1l3uK2axtbWZB4t7gJeCtRA2ayILGSheU0nWaJCrDj6ovxLxI1Kc0LcmiaE7wscS+H3bLvJfbH9WEWR0fCF+Y7yykBJqU/W5Lmclmu1X+pTiaDzhkErtp4EiciMS5faqmWGMyChOGyTRKJb+wg7ZmwaTJ7mwnblk1UmDES57PJxExTbARYBA6kqxclYsZInLfQpIpN7v+HMSJOu36tuA5lotljy2KMiPmGSJx9xbPXSIzINh4wGiMR1UiuxwSe0GXxLhGOCzwn3+JdojFegAE8piDLLUriGRjDY7oUEmY59ZMCRqWaXcs5Uxa5bZ82NlnjF3W4z+hBCHmhAAAAAElFTkSuQmCC)'
 
@@ -10240,6 +11498,30 @@
                                         let logWindow_textHeader = element('div', 'obscDOMElement-changelogWindow-textHeader', changesPage);
 
                                         if (logWindow_textHeader) {
+
+                                                // v2.1.0
+
+                                                let h1_210 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v2_1_0', logWindow_textHeader);
+
+                                                    h1_210.innerHTML = 'v2.1.0'
+
+                                                if (h1_210) {
+
+                                                        let h1_210_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_210);
+
+                                                        let h1_210_span1 = element('span', 'h1-210-span1', h1_210);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_210_span1.innerHTML = '• Добавлена вкладка с фоновыми анимациями, настройка фильтров и перевод на английский язык'
+
+                                                        } else {
+
+                                                                h1_210_span1.innerHTML = '• Added tab with background animations, filters settings and translation into English'
+
+                                                        };
+
+                                                };
 
                                                 // v2.0.0
 
@@ -10429,7 +11711,7 @@
 
                                                                 h1_100_span3.innerHTML = '• Добавление автоматического перевода текста в теме на английский'
 
-                                                                h1_100_span4.innerHTML = '• Начало разработки отдельного меню для темы. Планируется возможность накладывать фильтры на игру (контраст, сепия, затемнение, виньетка), менять акцентовый цвет на другие доступные, менять фон лобби (canvas снег/дождь, мультимедиа) и др.'
+                                                                h1_100_span4.innerHTML = '• Начало разработки отдельного меню для темы. Планируется возможность накладывать фильтры на игру (контраст, сепия, затемнение, виньетка), менять акцентовый цвет на другие доступные, менять фон лобби (canvas снег/Голография, мультимедиа) и др.'
 
                                                         } else {
 
@@ -10439,7 +11721,7 @@
 
                                                                 h1_100_span3.innerHTML = '• Adding automatic translation of text in the topic into English'
 
-                                                                h1_100_span4.innerHTML = '• Start of development of a menu for the theme. It is planned to be able to apply filters to the game (contrast, sepia, darkening, vignette), change the accent color to other available ones, change the lobby background (canvas snow/rain, multimedia), etc.'
+                                                                h1_100_span4.innerHTML = '• Start of development of a menu for the theme. It is planned to be able to apply filters to the game (contrast, sepia, darkening, vignette), change the accent color to other available ones, change the lobby background (canvas snow/holo, multimedia), etc.'
 
                                                         };
 
@@ -10544,13 +11826,29 @@
 
                                 let buttonSpan_4 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_4', menuButton_4);
 
-                                    buttonSpan_4.innerHTML = 'Список изменений'
+                                if (language == 'RU') {
+
+                                        buttonSpan_4.innerHTML = 'Список изменений'
+
+                                } else {
+
+                                        buttonSpan_4.innerHTML = 'Changelog'
+
+                                };
 
                                 menuButton_4.addEventListener('click', function() {
 
                                         changesPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
 
-                                        headerText.innerHTML = 'Список изменений'
+                                        if (language == 'RU') {
+
+                                                headerText.innerHTML = 'Список изменений'
+
+                                        } else {
+
+                                                headerText.innerHTML = 'Changelog'
+
+                                        };
 
                                         headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEQklEQVR4nO2dPYsdZRiGLwluJEai2RRpTGHhB4jgF/4LS02CQQmmsNAqatBGDDZqQBJQUlinU8FCkdUNSaetkA8rQTQiSTSx8CPsKxPGQszZc87sOXnu5zz3BXc5A+eae+d9Z96ZHTDGGGOMMcaYefIAcAhYAc4CvwNtQfMXcAk4D3wOvAc8BeysWLEngJMCB0Uha8Bp4AXgDhacJeB4/6OjxSvmMvAWcCcLyDJwSkByhvwMPMcCcSuwKiA2Wz4BtrMAHBeQmTXfAfeQfMLnMZ//HNQXgY+AixOW4EfgQZLi2T7/O6D/shnYB3w9QQl+AHaR8Do/+hSqmBuxB7gwZrtvgdtJxCEB2YoZxV3Ap2O2/ZBErAjIVsx6bAKOjtn+SZJwXkC2YiZhvRJ8D2whAVcEZCtmEjaNGQ4OkoBo0arZOqG/bf0l4I328RNwG+JEi1bNQ1M43LvOfp5BnGjRqnltSo/fjNjPZ4gTLVo1F6YYBjqeHbGfv9VXDqNFK+cEcMuEHjf3S8XpLgmjJWcowdYJXX48Yh9vI0y04CzDwevAw2PK8NKI7btLRVmi5VbIWYSJllMhvyBMtJwK+QNhouVUiSzRYqpElmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElmgxVSLLrH/or8D+/l/PZ+Nu4A3gmgswvABPk593XIDhb8F23x3IzqMuwLAC/Nl/ciY7j7kAw4eA3eTniAuwsUng88AO8rELOOxJYPwl0yJGlmgxVSJLtJgqkSVaTJXIEi2mSmSJFlMlskSLqRJZosVUiSzRYqpElln/UC8HU7sAXg6mbgG8HEztIcDLwdQuQBcvB1O7AF4OpnYBHFwAlwCfAVwCPAS4BHgO4BLgSaBLIIwPDjfFgSwuAC6AS4DPALMqwbX+DdvuTdtsLPcvtXR3Mz0EDJQg/an0CdnjAgz/C+g+sZ6dpX5p25PAARIeIT9LLsDw9r9LfvZ6CNjYJPDN/k3bbOwADgC/uQC+P9A8B3AJmu8EugTNt4Jdgua1AJegeTHIJWheDXQJmpeDXYLm5wFcguYHQlyC5ieCXILmR8JcguZnAl2C5odCXYLmp4JdgubHwl2C5vcCXIKW5cWQKz5YzPu9iO4JI1nOuQDMuwBnEGbFBWDeBfgCYV51AZh3AQ4izP0uAPMuwL2Is+oSMK+D3w2x8jwOrLkEzPrgr/UfoUzBBy4Asy7AMRLRffL1K5eAWR380xm/orodOOkSsNGDv9q7TEl3JnjfcwKGjvnHFuQD2tc/oPylzwZMM9tPM+GbhvuAV/q7Wd0tzasuBVd7F52TlzNc5xtjjDHGGGMy8w+K7t/qu/+chAAAAABJRU5ErkJggg==);'
 
@@ -10576,11 +11874,7 @@
 
                                         let detailsPageHeaderSpan = element('span', 'obscDOMElement-menuDetailsPageHeaderSpan', detailsPageHeader);
 
-                                            detailsPageHeaderSpan.innerHTML = 'Obscurum — браузерная тема на Танки Онлайн, разрабатываемая на JavaScript и CSS более полугода, позволяющая игроку настроить практически каждый элемент дизайна сайта на своё усмотрение. Написано множество функций, упрощающих взаимодействие с игрой, например включение/выключение постоянного отображения резистов в окне игровой статистики по нажатию кнопки, функция "фастпика" в матчмейкинг в лобби и другие.'
-
                                         let detailsPageHeaderSpan2 = element('span', 'obscDOMElement-menuDetailsPageHeaderSpan2', detailsPageHeader);
-
-                                            detailsPageHeaderSpan2.innerHTML = 'Если у вас имеются какие-либо вопросы, предложения или замечания, вы можете написать в Discord: @drawingwithblood'
 
                                         let detailsPageLine = element('div', 'obscDOMElement-menuDetailsPageLine', detailsPage);
 
@@ -10588,15 +11882,33 @@
 
                                         let detailsPageInfoHeader1 = element('span', 'obscDOMElement-menuDetailsPageInfoHeader menuInfoHeader_1', detailsPageInfoHandler);
 
-                                            detailsPageInfoHeader1.innerHTML = 'Главный разработчик'
-
                                         let detailsPageInfoSpan1 = element('span', 'obscDOMElement-menuDetailsPageInfoSpan menuInfoSpan_1', detailsPageInfoHandler);
 
                                             detailsPageInfoSpan1.innerHTML = 'drawingwithblood'
 
                                         let detailsPageInfoHeader2 = element('span', 'obscDOMElement-menuDetailsPageInfoHeader menuInfoHeader_2', detailsPageInfoHandler);
 
-                                            detailsPageInfoHeader2.innerHTML = 'Помощь в тестировании и идеях'
+                                        if (language == 'RU') {
+
+                                                detailsPageHeaderSpan.innerHTML = 'Obscurum — браузерная тема на Танки Онлайн, разрабатываемая на JavaScript и CSS более полугода, позволяющая игроку настроить практически каждый элемент дизайна сайта на своё усмотрение. Написано множество функций, упрощающих взаимодействие с игрой, например включение/выключение постоянного отображения резистов в окне игровой статистики по нажатию кнопки, функция "фастпика" в матчмейкинг в лобби и другие.'
+
+                                                detailsPageHeaderSpan2.innerHTML = 'Если у вас имеются какие-либо вопросы, предложения или замечания, вы можете написать в Discord: @drawingwithblood'
+
+                                                detailsPageInfoHeader1.innerHTML = 'Главный разработчик'
+
+                                                detailsPageInfoHeader2.innerHTML = 'Помощь в тестировании и идеях'
+
+                                        } else {
+
+                                                detailsPageHeaderSpan.innerHTML = 'Obscurum is a browser theme for Tanki Online, developed on JavaScript and CSS for over six months, allowing the player to customize almost every element of the site design to their liking. Many functions have been written to simplify interaction with the game, such as enabling/disabling constant display of resistances in the game statistics window by pressing a button, the "fastpick" function in matchmaking in the lobby, and others.'
+
+                                                detailsPageHeaderSpan2.innerHTML = 'If you have any questions, suggestions or comments, you can write to Discord: @drawingwithblood'
+
+                                                detailsPageInfoHeader1.innerHTML = 'Developer'
+
+                                                detailsPageInfoHeader2.innerHTML = 'Help with testing and ideas'
+
+                                        };
 
                                         let detailsPageInfoSpan2 = element('span', 'obscDOMElement-menuDetailsPageInfoSpan menuInfoSpan_2', detailsPageInfoHandler);
 
@@ -10616,13 +11928,29 @@
 
                                 let buttonSpan_5 = element('div', 'obscDOMElement-mDefaultButtonSpan mDefaultSpan_5', menuButton_5);
 
-                                    buttonSpan_5.innerHTML = 'Разработка и детали'
+                                if (language == 'RU') {
+
+                                        buttonSpan_5.innerHTML = 'Разработка и детали'
+
+                                } else {
+
+                                        buttonSpan_5.innerHTML = 'Development and details'
+
+                                };
 
                                 menuButton_5.addEventListener('click', function() {
 
                                         detailsPage.style = 'position: relative; opacity: 1; pointer-events: inherit'
 
-                                        headerText.innerHTML = 'Разработка и детали'
+                                        if (language == 'RU') {
+
+                                                headerText.innerHTML = 'Разработка и детали'
+
+                                        } else {
+
+                                                headerText.innerHTML = 'Development and details'
+
+                                        };
 
                                         headerTextImage.style = 'mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvUlEQVR4nO2b34sNYRyHHz9vpHaLoogiyu2itiiiiOLahhARooPaK7wnWw6KKK4poogiihs3u7WiiKKIv4DaqE1s0VtzatNpPvPOOe874915ai6/n/f9PKfmzJkzAxUVFQUyDVgOdDFBWQb8SY6vwDBwE6gD24EeImfrOAGtjkEi57gQcJ3IuSYEnCRyngkB24icL0LACiJmOjAmBHQTMUtFefu1GDWbhQB7TRA1R4UAe0EUNVeEAEPkPBECdvAfYICLOWc/CQG9GddvUBBm3GZdJUwFfgkBsxzWDy7BtNiwi4TFovxIjvWDSTApG88qYaMQ8DLn+t4lGLHxrBIOi4zbbazvTYLJsHjzOCiyLon5gRYzexzWN0WWHwRmirxHImNXi5kZwHOHfTTKWt7yQeSsojXBJRgP5ScDP0XWnJT5YBKMh/KWhSLrBzBJZHiXYDyVt6wXea8z5niTYDyWtxwQmXcdsjouwXgub7kgcs865nVMgglQ3vJAZO/Nkdm2BBOovOWdyF+TMze3BBOwvD27j4o15rWRn0tCv8PAUJsC5ov80eQ6IZSA083BUBLWiuy3RZQPKWGfyL1PQeVDSWiIzPMUWD6EhHsibz8Fl/ct4Y3IWkcJyvuU8F3kLKAk5X1ImCvm7U/kKZSofKclrBaz7ylh+U5K2C3mHlLS8nkume0NzH8ZEDP2RmkafQ7re/tfsb8N83fE3KEM69eK+ORdJKTdcHglNr6BbNSKLJ8m4RzpjAgBi8hOrcjyrSSo8rNF+d/JY7PklBC8fBN7sjmDplcI+Eg+ThRZ3oWdQsBjIqcuBFwmcm4JAUeInBdCwCYi55sQsISI6Rblx5LHZqNlpRDwmcjpEwKeEjmnhICrRM4NIeAYkTMkBGwhcnqSV+DqyRPgw8m7AE0B9tW5CUlX8tKk66/AiooKOsZfhXMQItxhYxAAAAAASUVORK5CYII=)'
 
@@ -10837,8 +12165,6 @@
 
                                 tabFunctionsArray();
 
-                                applyBackground();
-
                                 startText();
 
                                 createMenu();
@@ -10933,7 +12259,7 @@
 
                                 ratingsPage();
 
-                                applyBackground();
+                                applyWaves();
 
                         };
 
