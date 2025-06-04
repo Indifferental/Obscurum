@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v2.1.1'
+        var version = 'v2.2.0'
 
         // изменение иконки на вкладке браузера
 
@@ -546,16 +546,40 @@
                     {
                             selector: '.obscDOMElement-menuDetailsPageHeaderSpan',
                             style: `
+                                    color: rgb(255 255 255 / 75%);
+                                    font-size: 1.15em;
+                                    font-family: 'BaseFontRegular';
+
                                     margin-bottom: 1em;
                             `
                     },
 
                     {
-                            selector: '.obscDOMElement-menuDetailsPageHeaderSpan, .obscDOMElement-menuDetailsPageHeaderSpan2',
+                            selector: '.menuSpan_3',
                             style: `
-                                    color: rgb(255 255 255 / 75%);
-                                    font-size: 1.15em;
-                                    font-family: 'BaseFontRegular';
+                                    margin-bottom: 0.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-menuDetailsPageHeaderLink',
+                            style: `
+                                    color: rgb(117 191 255);
+                                    font-size: 1.25em;
+                                    font-family: 'BaseFontMedium';
+
+                                    margin-bottom: 0.25em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-bSettingsOwnBackgroundHelp',
+                            style: `
+                                    color: rgb(117 191 255);
+                                    font-size: 1.25em;
+                                    font-family: 'BaseFontMedium';
+
+                                    align-self: center;
                             `
                     },
 
@@ -620,23 +644,7 @@
                     },
 
                     {
-                            selector: '.obscDOMElement-bPreview',
-                            style: `
-                                    background: radial-gradient(ellipse at top, rgb(25, 25, 25),  black);
-                                    border-radius: 1em;
-
-                                    display: flex;
-                                    flex-direction: column;
-                                    justify-content: center;
-                                    align-items: flex-start;
-                                    margin-bottom: 1em;
-                                    width: 100%;
-                                    height: 10em;
-                            `
-                    },
-
-                    {
-                            selector: '.obscDOMElement-cSettingsHandler, .obscDOMElement-bSettingsHandler, .obscDOMElement-gSettingsHandler',
+                            selector: '.obscDOMElement-cSettingsHandler, .obscDOMElement-gSettingsHandler',
                             style: `
                                     background: rgb(255 255 255 / 5%);
                                     border-radius: 1em;
@@ -647,6 +655,25 @@
                                     align-items: flex-start;
                                     padding: 1.5em;
                                     margin-bottom: 1em;
+                                    width: calc(100% - 3em);
+                                    height: max-content;
+
+                                    --menu-button-color: rgb(0 0 0 / 30%);
+                                    --menu-slider-color: rgb(255 255 255 / 20%);
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-bSettingsHandler',
+                            style: `
+                                    background: rgb(255 255 255 / 5%);
+                                    border-radius: 1em;
+
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    align-items: flex-start;
+                                    padding: 1.5em;
                                     width: calc(100% - 3em);
                                     height: max-content;
 
@@ -750,6 +777,52 @@
                                     height: 2em;
                                     width: 2em;
                                     margin-top: -7px;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-bSettingsOwnBackgroundHeader',
+                            style: `
+                                    color: var(--default-button-color);
+                                    font-family: 'BaseFontBold';
+                                    font-size: 1.5em;
+                                    text-transform: uppercase;
+
+                                    position: absolute;
+                                    left: 2.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.obscDOMElement-bSettingsOwnBackgroundImage',
+                            style: `
+                                    background-color: var(--default-button-color);
+
+                                    mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACtUlEQVR4nO2aPWtUQRSGH81KokbBDxARVDRiY+UnmtXCP6DduhELEUVttLFQbGwsRPIXbAxKkkWDKGKnP0BtoinU7KogaBq12fjByMARhsvunTOzu/feYl84bEjmnDkPd+bsmTuBvvrqq1OVgDGgBjSAJmB6bE2ZaxqoSg4d6Qgwl0HiPnsLlGMhTgKLBYAwYovydIKfRJEgjAMzqoUYAN4UIGnTxua0e2asAMkaj53QgNSUwb7nCDKlAakrAr0AlspnHiDzGhDf98Qf4LBTFP52kNDvSL+mBsQ38fnE+AuRCZ0CtgG/ImG8auf4GNjdxsf+/klAEnZ/DYrv06xBNnr8NgUkcdfxO5s1yBfgErAkMd5u+svyd20Sxx3/9ZFL0ytfgAkHxn7eC0zgK7A8MeejPEAMcFrGnolI4EqLOQ9KNTRZg7wH9gEfAiefkaXYShYwc5BQ+wnckD4uTRXgY9FA7AZ+BpwD1qDXMikGE542qOcgttW+CKyjcw0Cx+S0mDnIZ2CI7qqW19Ky63wcOJSyuX3aAVwFXua9R9wndBPYoJh7SHq310Xa7ElbAI6mzLtVCZA7yP8yvKvFnMPAbGCsnoC8E9OMtSU5qWsRc3oVGtC2FpvFtG3GTmc+Www+FQHkvuM7qfS57viUI1eBVyHBvgFbEht2QeH3yvEZzxukAexp4b9X2S+NyDGgkRdIXTrVVSkxVsuYtDcyz4E7kRCmGyDb0Wukg0RNr0EeAvsVcQ7I+aOwIEZspk17vjby6Np1kJCLHFt9Vji+KwPbDNPLF3T1wKC3HN/bGUAY7SvT6cCgP6RXGpafswCZ1IBUIwI/kCJgMrKKBmQgohPN+j6xhFLlgl69NeXUGaRqwWCa2iXVSqMFuU+cjXkSSZXkzm5Kyl5W/zAwL9Wponix11dffZGufyRBowCfOTHmAAAAAElFTkSuQmCC);
+                                    mask-position: center;
+                                    mask-repeat: no-repeat;
+                                    mask-size: contain;
+
+                                    position: absolute;
+                                    left: 1.5em;
+                                    width: 1.5em;
+                                    height: 1.5em;
+                            `
+                    },
+
+                    {
+                            selector: '.bOwnBackgroundHandler',
+                            style: `
+                                    cursor: pointer;
+
+                                    transition: var(--general-transition);
+                            `
+                    },
+
+                    {
+                            selector: '.bOwnBackgroundHandler:hover',
+                            style: `
+                                    background-color: rgb(255 255 255 / 10%);
                             `
                     },
 
@@ -919,21 +992,6 @@
                     },
 
                     {
-                            selector: '.obscDOMElement-preview-wavesNode',
-                            style: `
-                                    border-radius: inherit;
-
-                                    position: relative;
-                                    top: 0em;
-                                    left: 0em;
-                                    width: 100%;
-                                    height: 100%;
-                                    pointer-events: none;
-                                    opacity: 1;
-                            `
-                    },
-
-                    {
                             selector: '.obscDOMElement-spaceCanvas',
                             style: `
                                     position: fixed;
@@ -946,20 +1004,6 @@
                     },
 
                     {
-                            selector: '.obscDOMElement-preview-spaceCanvas',
-                            style: `
-                                    position: relative;
-                                    top: 0em;
-                                    left: 0em;
-                                    width: 100%;
-                                    height: 100%;
-                                    pointer-events: none;
-                                    opacity: 1;
-                                    transform: rotate(180deg);
-                            `
-                    },
-
-                    {
                             selector: '.obscDOMElement-holoCanvas',
                             style: `
                                     position: fixed;
@@ -967,19 +1011,6 @@
                                     left: 0em;
                                     z-index: -2;
                                     pointer-events: none;
-                            `
-                    },
-
-                    {
-                            selector: '.obscDOMElement-preview-holoCanvas',
-                            style: `
-                                    position: relative;
-                                    top: 0em;
-                                    left: 0em;
-                                    width: 100%;
-                                    height: 100%;
-                                    pointer-events: none;
-                                    opacity: 1;
                             `
                     },
 
@@ -8498,52 +8529,33 @@
 
                 ];
 
-                function color() {
 
-                        new MutationObserver((mutations) => {
+                function color(target) {
 
-                                mutations.forEach(({ addedNodes, target }) => {
+                        let user = document.querySelector('.UserInfoContainerStyle-textDecoration')?.textContent?.split(' ').pop();
 
-                                        if (addedNodes.length && ('tbody' === target.localName || target.className.includes('BattleComponentStyle-canvasContainer'))) {
+                        target.querySelectorAll('.Common-maskImage').forEach((element) => {
 
-                                                let user = document.querySelector('.UserInfoContainerStyle-textDecoration')?.textContent?.split(' ').pop();
+                                let maskImage = window.getComputedStyle(element).getPropertyValue('-webkit-mask-image')?.split('"')?.[1];
 
-                                                target.querySelectorAll('.Common-maskImage').forEach((element) => {
+                                let resistance = tankResistances.find(({ oldPicture }) => maskImage === oldPicture);
 
-                                                        let maskImage = window.getComputedStyle(element).getPropertyValue('-webkit-mask-image')?.split('"')?.[1];
+                                if (resistance) {
 
-                                                        let resistance = tankResistances.find(({ oldPicture }) => maskImage === oldPicture);
+                                        element.style.cssText = `
 
-                                                        if (resistance) {
+                                                -webkit-mask-image: none;
+                                                background: url(${resistance.picture}) center center / 1em 1em no-repeat;
+                                                width: 1em;
+                                                height: 1em;
 
-                                                                element.style.cssText = `
+                                        `
 
-                                                                        -webkit-mask-image: none;
-                                                                        background: url(${resistance.picture}) center center / 1em 1em no-repeat;
-                                                                        width: 1em;
-                                                                        height: 1em;
-
-                                                                `
-
-                                                        };
-
-                                                });
-
-                                        };
-
-                                });
-
-                        }).observe(document, {
-
-                                subtree: true,
-
-                                childList: true
+                                };
 
                         });
 
                 };
-
-                color();
 
                 // закреп нижней панели в табе
 
@@ -8903,7 +8915,13 @@
 
                 new MutationObserver((mutations) => {
 
-                        mutations.forEach(({ target }) => {
+                        mutations.forEach(({ addedNodes, target }) => {
+
+                                if (addedNodes.length && ('tbody' === target.localName || target.className.includes('BattleComponentStyle-canvasContainer'))) {
+
+                                        color(target);
+
+                                };
 
                                 if (target.className.includes('BattleComponentStyle-canvasContainer')) {
 
@@ -9813,199 +9831,203 @@
 
         // наложение SVG анимации фона через HTML
 
-        let gradient = element('div', 'obscDOMElement-svgGradient', variableHeader);
+        function applyBackgrounds() {
 
-        function applyWaves() {
+                function waves() {
 
-                document.body.insertAdjacentHTML('beforeend',
+                        let gradient = element('div', 'obscDOMElement-svgGradient', variableHeader);
 
-                    `<svg class="obscDOMElement-wavesNode" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="1200px" y="0px" width="100%" height="100%" viewBox="0 0 1600 1050" preserveAspectRatio="xMidYMax slice">
-                             <defs>
-                                     <linearGradient id="bg">
-                                             <stop offset="0%" style="stop-color:rgba(50, 50, 50, 0.25)"></stop>
-                                             <stop offset="50%" style="stop-color:rgba(200, 200, 200, 0.25)"></stop>
-                                             <stop offset="100%" style="stop-color:rgba(10, 10, 10, 0.25)"></stop>
-                                     </linearGradient>
-                                     <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
-                             </defs>
-                             <g>
-                                     <use xlink:href='#wave' opacity=".3">
-                                             <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="20s" calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1" keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-                                     </use>
-                                     <use xlink:href='#wave' opacity=".6">
-                                             <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="16s" calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-                                     </use>
-                                     <use xlink:href='#wave' opacity=".9">
-                                             <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="12s" calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1" keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-                                     </use>
-                             </g>
-                     </svg>
+                        variableHeader.insertAdjacentHTML('beforeend',
 
-                `);
+                            `<svg class="obscDOMElement-wavesNode" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="1200px" y="0px" width="100%" height="100%" viewBox="0 0 1600 1050" preserveAspectRatio="xMidYMax slice">
+                                     <defs>
+                                             <linearGradient id="bg">
+                                                     <stop offset="0%" style="stop-color:rgba(50, 50, 50, 0.25)"></stop>
+                                                     <stop offset="50%" style="stop-color:rgba(200, 200, 200, 0.25)"></stop>
+                                                     <stop offset="100%" style="stop-color:rgba(10, 10, 10, 0.25)"></stop>
+                                             </linearGradient>
+                                             <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
+                                     </defs>
+                                     <g>
+                                             <use xlink:href='#wave' opacity=".3">
+                                                     <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="20s" calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1" keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                                             </use>
+                                             <use xlink:href='#wave' opacity=".6">
+                                                     <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="16s" calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                                             </use>
+                                             <use xlink:href='#wave' opacity=".9">
+                                                     <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="12s" calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1" keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
+                                             </use>
+                                     </g>
+                             </svg>
 
-        };
-
-        applyWaves();
-
-        function applyHolo() {
-
-                let canvasHandler = element('canvas', 'obscDOMElement-holoCanvas', variableHeader);
-
-                let context = canvasHandler.getContext("2d");
-
-                let drops = [], maxSpeed = 50, spacing = 4, xPosition, n
-
-                function init() {
-
-                        canvasHandler.width = window.innerWidth
-
-                        canvasHandler.height = window.innerHeight
-
-                        xPosition = 0
-
-                        n = canvasHandler.width / spacing
-
-                        for (let i = 0; i < n; i++) {
-
-                                xPosition += spacing
-
-                                drops.push({
-
-                                        x: xPosition,
-
-                                        y: Math.round(Math.random() * canvasHandler.height),
-
-                                        width: Math.ceil(Math.random() * 50 - 20) / 100,
-
-                                        height: Math.ceil(Math.random() * 5000 + 100) / 15,
-
-                                        speed: Math.ceil(Math.random() * 50 + 5) / 50
-
-                                });
-
-                        };
+                        `);
 
                 };
 
-                function holo() {
+                function holography() {
 
-                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
+                        let canvasHandler = element('canvas', 'obscDOMElement-holoCanvas', variableHeader);
 
-                        for (let i = 0; i < n; i++) {
+                        let context = canvasHandler.getContext("2d");
 
-                                context.fillStyle = "rgb(255 255 255)"
+                        let drops = [], maxSpeed = 50, spacing = 4, xPosition, n
 
-                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+                        function init() {
 
-                                drops[i].y += drops[i].speed
+                                canvasHandler.width = window.innerWidth
 
-                                if (drops[i].y > canvasHandler.height) {
+                                canvasHandler.height = window.innerHeight
 
-                                        drops[i].y = 0 - drops[i].height
+                                xPosition = 0
+
+                                n = canvasHandler.width / spacing
+
+                                for (let i = 0; i < n; i++) {
+
+                                        xPosition += spacing
+
+                                        drops.push({
+
+                                                x: xPosition,
+
+                                                y: Math.round(Math.random() * canvasHandler.height),
+
+                                                width: Math.ceil(Math.random() * 50 - 20) / 100,
+
+                                                height: Math.ceil(Math.random() * 5000 + 100) / 15,
+
+                                                speed: Math.ceil(Math.random() * 50 + 5) / 50
+
+                                        });
 
                                 };
 
                         };
 
-                        requestAnimationFrame(holo);
+                        function createDrops() {
 
-                };
+                                context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
 
-                function main() {
+                                for (let i = 0; i < n; i++) {
 
-                        init();
+                                        context.fillStyle = "rgb(255 255 255)"
 
-                        holo();
+                                        context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
 
-                };
+                                        drops[i].y += drops[i].speed
 
-                window.addEventListener('load', main, false);
+                                        if (drops[i].y > canvasHandler.height) {
 
-                window.addEventListener('resize', init, false);
+                                                drops[i].y = 0 - drops[i].height
 
-        };
+                                        };
 
-        applyHolo();
+                                };
 
-        function applySpace() {
-
-                let canvasHandler = element('canvas', 'obscDOMElement-spaceCanvas', variableHeader);
-
-                let context = canvasHandler.getContext("2d");
-
-                let drops = [], maxSpeed = 50, spacing = 3, xPosition, n
-
-                function init() {
-
-                        canvasHandler.width = window.innerWidth
-
-                        canvasHandler.height = window.innerHeight
-
-                        xPosition = 0
-
-                        n = canvasHandler.width / spacing
-
-                        for (let i = 0; i < n; i++) {
-
-                                xPosition += spacing
-
-                                drops.push({
-
-                                        x: xPosition,
-
-                                        y: Math.round(Math.random() * canvasHandler.height),
-
-                                        width: Math.ceil(Math.random() * 50 + 10) / 50,
-
-                                        height: Math.ceil(Math.random() * 50 + 10) / 15,
-
-                                        speed: Math.ceil(Math.random() * 50 + 10) / 80
-
-                                });
+                                requestAnimationFrame(createDrops);
 
                         };
+
+                        function main() {
+
+                                init();
+
+                                createDrops();
+
+                        };
+
+                        window.addEventListener('load', main, false);
+
+                        window.addEventListener('resize', init, false);
 
                 };
 
                 function space() {
 
-                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
+                        let canvasHandler = element('canvas', 'obscDOMElement-spaceCanvas', variableHeader);
 
-                        for (let i = 0; i < n; i++) {
+                        let context = canvasHandler.getContext("2d");
 
-                                context.fillStyle = "rgb(255 255 255 / 80%)"
+                        let drops = [], maxSpeed = 50, spacing = 3, xPosition, n
 
-                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+                        function init() {
 
-                                drops[i].y += drops[i].speed
+                                canvasHandler.width = window.innerWidth
 
-                                if (drops[i].y > canvasHandler.height) {
+                                canvasHandler.height = window.innerHeight
 
-                                        drops[i].y = 0 - drops[i].height
+                                xPosition = 0
+
+                                n = canvasHandler.width / spacing
+
+                                for (let i = 0; i < n; i++) {
+
+                                        xPosition += spacing
+
+                                        drops.push({
+
+                                                x: xPosition,
+
+                                                y: Math.round(Math.random() * canvasHandler.height),
+
+                                                width: Math.ceil(Math.random() * 50 + 10) / 50,
+
+                                                height: Math.ceil(Math.random() * 50 + 10) / 15,
+
+                                                speed: Math.ceil(Math.random() * 50 + 10) / 80
+
+                                        });
 
                                 };
 
                         };
 
-                        requestAnimationFrame(space);
+                        function applyDrops() {
+
+                                context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
+
+                                for (let i = 0; i < n; i++) {
+
+                                        context.fillStyle = "rgb(255 255 255 / 80%)"
+
+                                        context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+
+                                        drops[i].y += drops[i].speed
+
+                                        if (drops[i].y > canvasHandler.height) {
+
+                                                drops[i].y = 0 - drops[i].height
+
+                                        };
+
+                                };
+
+                                requestAnimationFrame(applyDrops);
+
+                        };
+
+                        function main() {
+
+                                init();
+
+                                applyDrops();
+
+                        };
+
+                        window.addEventListener('load', main, false);
+
+                        window.addEventListener('resize', init, false);
 
                 };
 
-                function main() {
+                waves();
 
-                        init();
+                holography();
 
-                        space();
-
-                };
-
-                window.addEventListener('load', main, false);
-
-                window.addEventListener('resize', init, false);
+                space();
 
         };
-
-        applySpace();
 
         // начальный текст вверху экрана
 
@@ -10029,13 +10051,13 @@
 
                                 textBox.innerHTML = `Добро пожаловать, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
 
-                                textTip.innerHTML = 'Меню темы - Insert'
+                                textTip.innerHTML = 'Меню темы - F4'
 
                         } else {
 
                                 textBox.innerHTML = `Welcome, ${localStorage.getItem('obscLocalStorageVariable-nickname')}`
 
-                                textTip.innerHTML = 'Theme Menu - Insert'
+                                textTip.innerHTML = 'Theme Menu - F4'
 
                         };
 
@@ -10067,7 +10089,7 @@
 
                         document.addEventListener('keydown', function (event) {
 
-                                if (event.code === 'Insert') {
+                                if (event.code === 'F4') {
 
                                         menuKeyPress++
 
@@ -10657,7 +10679,7 @@
 
                                                     backgroundSetting.setAttribute('min', '0');
 
-                                                    backgroundSetting.setAttribute('max', '3');
+                                                    backgroundSetting.setAttribute('max', '4');
 
                                                 let backgroundSettingValue = element('span', 'obscDOMElement-bSettingsBackgroundValue', sliderHandler);
 
@@ -10670,6 +10692,74 @@
                                                 let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
 
                                                     spaceCanvas.style = 'visibility: collapse'
+
+                                                let backgroundsPageLine = element('div', 'obscDOMElement-bSettingsPageLine', backgroundsPage);
+
+                                                let ownBackgroundHandler = element('div', 'obscDOMElement-mDefaultButton bOwnBackgroundHandler', backgroundsPage);
+
+                                                let backgroundStyles = element('style', 'obscStyleSheet-ownBackground', variableHeader);
+
+                                                ownBackgroundHandler.addEventListener('click', function() {
+
+                                                        let linkListener
+
+                                                        if (language == 'RU') {
+
+                                                                linkListener = prompt('Вставьте ссылку в формате URI');
+
+                                                        } else {
+
+                                                                linkListener = prompt('Paste the link in URI format');
+
+                                                        };
+
+                                                        if (linkListener != null) {
+
+                                                                localStorage.setItem('obscLocalStorageVariable-ownBackground', linkListener);
+
+                                                                backgroundStyles.textContent = `.BattleComponentStyle-canvasContainer > .Common-container { background: url('${linkListener}') 0% 0% / cover, center bottom no-repeat !important } body { background: url('${linkListener}') 0% 0% / cover, center bottom no-repeat !important }`
+
+                                                                backgroundStyles.textContent += `.obscDOMElement-svgGradient { opacity: 0.25 !important } .obscDOMElement-holoCanvas { opacity: 0.5 !important } .obscDOMElement-spaceCanvas { opacity: 0.5 !important }`
+
+                                                        };
+
+                                                        if (linkListener == '') {
+
+                                                                backgroundStyles.textContent = ``
+
+                                                        };
+
+                                                });
+
+                                                if (localStorage.getItem('obscLocalStorageVariable-ownBackground')) {
+
+                                                        backgroundStyles.textContent = `.BattleComponentStyle-canvasContainer > .Common-container { background: url('${localStorage.getItem('obscLocalStorageVariable-ownBackground')}') 0% 0% / cover, center bottom no-repeat !important } body { background: url('${localStorage.getItem('obscLocalStorageVariable-ownBackground')}') 0% 0% / cover, center bottom no-repeat !important } .obscDOMElement-svgGradient { opacity: 0.25 !important } .obscDOMElement-holoCanvas { opacity: 0.5 !important } .obscDOMElement-spaceCanvas { opacity: 0.5 !important }`
+
+                                                };
+
+                                                let ownBackgroundImage = element('div', 'obscDOMElement-bSettingsOwnBackgroundImage', ownBackgroundHandler);
+
+                                                let ownBackgroundHeader = element('div', 'obscDOMElement-bSettingsOwnBackgroundHeader', ownBackgroundHandler);
+
+                                                let ownBackgroundHelp = element('a', 'obscDOMElement-bSettingsOwnBackgroundHelp', backgroundsPage);
+
+                                                    ownBackgroundHelp.href = 'https://github.com/Indifferental/Obscurum/blob/main/INSTRUCTION.md'
+
+                                                    ownBackgroundHelp.target = '_blank'
+
+                                                if (language == 'RU') {
+
+                                                        ownBackgroundHeader.innerHTML = 'Собственный фон'
+
+                                                        ownBackgroundHelp.innerHTML = 'Инструкция по установке'
+
+                                                } else {
+
+                                                        ownBackgroundHeader.innerHTML = 'Custom background'
+
+                                                        ownBackgroundHelp.innerHTML = 'Background installation instruction'
+
+                                                };
 
                                                 backgroundSetting.addEventListener('input', function() {
 
@@ -10696,6 +10786,14 @@
                                                                 if (spaceCanvas) {
 
                                                                         spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
+
+                                                                if (handler) {
+
+                                                                        handler.style.background = ''
 
                                                                 };
 
@@ -10741,6 +10839,14 @@
 
                                                                 };
 
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
+
+                                                                if (handler) {
+
+                                                                        handler.style.background = ''
+
+                                                                };
+
                                                                 if (language == 'RU') {
 
                                                                         backgroundSettingValue.innerHTML = 'Волны'
@@ -10780,6 +10886,14 @@
                                                                 if (spaceCanvas) {
 
                                                                         spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
+
+                                                                if (handler) {
+
+                                                                        handler.style.background = ''
 
                                                                 };
 
@@ -10825,6 +10939,14 @@
 
                                                                 };
 
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
+
+                                                                if (handler) {
+
+                                                                        handler.style.background = ''
+
+                                                                };
+
                                                                 if (language == 'RU') {
 
                                                                         backgroundSettingValue.innerHTML = 'Космос'
@@ -10836,6 +10958,56 @@
                                                                         backgroundSettingValue.innerHTML = 'Space'
 
                                                                         localStorage.setItem('obscLocalStorageVariable-background', 'Space');
+
+                                                                };
+
+                                                        };
+
+                                                        if (backgroundSetting.value == '4') {
+
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
+
+                                                                if (wavesCanvas) {
+
+                                                                        wavesCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
+
+                                                                if (holoCanvas) {
+
+                                                                        holoCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
+
+                                                                if (spaceCanvas) {
+
+                                                                        spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
+
+                                                                if (handler) {
+
+                                                                        handler.style.background = 'url("/play/static/images/sparks.990b5664.webp") 0% 0% / cover, center bottom no-repeat'
+
+                                                                };
+
+                                                                if (language == 'RU') {
+
+                                                                        backgroundSettingValue.innerHTML = 'Огонь'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Огонь');
+
+                                                                } else {
+
+                                                                        backgroundSettingValue.innerHTML = 'Flames'
+
+                                                                        localStorage.setItem('obscLocalStorageVariable-background', 'Flames');
 
                                                                 };
 
@@ -10877,6 +11049,14 @@
 
                                                                 };
 
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
+
+                                                                if (handler) {
+
+                                                                        handler.style.background = ''
+
+                                                                };
+
                                                         };
 
                                                         if (localStorage.getItem('obscLocalStorageVariable-background') == 'Волны' || localStorage.getItem('obscLocalStorageVariable-background') == 'Waves') {
@@ -10902,6 +11082,14 @@
                                                                 if (spaceCanvas) {
 
                                                                         spaceCanvas.style = 'visibility: collapse'
+
+                                                                };
+
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
+
+                                                                if (handler) {
+
+                                                                        handler.style.background = ''
 
                                                                 };
 
@@ -10933,6 +11121,14 @@
 
                                                                 };
 
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
+
+                                                                if (handler) {
+
+                                                                        handler.style.background = ''
+
+                                                                };
+
                                                         };
 
                                                         if (localStorage.getItem('obscLocalStorageVariable-background') == 'Космос' || localStorage.getItem('obscLocalStorageVariable-background') == 'Space') {
@@ -10961,227 +11157,54 @@
 
                                                                 };
 
-                                                        };
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
 
-                                                };
+                                                                if (handler) {
 
-                                        };
-
-                                        let backgroundsPageLine = element('div', 'obscDOMElement-bSettingsPageLine', backgroundsPage);
-
-                                        let wavesSpan = element('span', 'obscDOMElement-bSettingsSpan bWavesSpan', backgroundsPage);
-
-                                        let wavesPreview = element('div', 'obscDOMElement-bPreview bWavesPreview', backgroundsPage);
-
-                                        if (wavesPreview) {
-
-                                                wavesPreview.insertAdjacentHTML('beforeend',
-
-                                                    `<svg class="obscDOMElement-preview-wavesNode" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="1200px" y="0px" width="100%" height="100%" viewBox="0 0 1600 1050" preserveAspectRatio="xMidYMax slice">
-                                                             <defs>
-                                                                     <linearGradient id="bg">
-                                                                             <stop offset="0%" style="stop-color:rgba(50, 50, 50, 0.25)"></stop>
-                                                                             <stop offset="50%" style="stop-color:rgba(200, 200, 200, 0.25)"></stop>
-                                                                             <stop offset="100%" style="stop-color:rgba(10, 10, 10, 0.25)"></stop>
-                                                                     </linearGradient>
-                                                                     <path id="wave" fill="url(#bg)" d="M-363.852,502.589c0,0,236.988-41.997,505.475,0s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z" />
-                                                             </defs>
-                                                             <g>
-                                                                     <use xlink:href='#wave' opacity=".3">
-                                                                             <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="20s" calcMode="spline" values="270 230; -334 180; 270 230" keyTimes="0; .5; 1" keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-                                                                     </use>
-                                                                     <use xlink:href='#wave' opacity=".6">
-                                                                             <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="16s" calcMode="spline" values="-270 230;243 220;-270 230" keyTimes="0; .6; 1"keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-                                                                     </use>
-                                                                     <use xlink:href='#wave' opacity=".9">
-                                                                             <animateTransform attributeName="transform" attributeType="XML" type="translate" dur="12s" calcMode="spline" values="0 230;-140 200;0 230" keyTimes="0; .4; 1" keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0" repeatCount="indefinite" />
-                                                                     </use>
-                                                             </g>
-                                                     </svg>
-
-                                                `);
-
-                                        };
-
-                                        let holoSpan = element('span', 'obscDOMElement-bSettingsSpan bHoloSpan', backgroundsPage);
-
-                                        let holoPreview = element('div', 'obscDOMElement-bPreview bHoloPreview', backgroundsPage);
-
-                                        if (holoPreview) {
-
-                                                let canvasHandler = element('canvas', 'obscDOMElement-preview-holoCanvas', holoPreview);
-
-                                                let context = canvasHandler.getContext("2d");
-
-                                                let drops = [], maxSpeed = 50, spacing = 20, xPosition, n
-
-                                                function init() {
-
-                                                        canvasHandler.width = window.innerWidth
-
-                                                        canvasHandler.height = window.innerHeight
-
-                                                        xPosition = 0
-
-                                                        n = canvasHandler.width / spacing
-
-                                                        for (let i = 0; i < n; i++) {
-
-                                                                xPosition += spacing
-
-                                                                drops.push({
-
-                                                                        x: xPosition,
-
-                                                                        y: Math.round(Math.random() * canvasHandler.height),
-
-                                                                        width: Math.ceil(Math.random() * 50) / 100,
-
-                                                                        height: Math.ceil(Math.random() * 5000 + 100) / 15,
-
-                                                                        speed: Math.ceil(Math.random() * 50 + 5) / 40
-
-                                                                });
-
-                                                        };
-
-                                                };
-
-                                                function holo() {
-
-                                                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
-
-                                                        for (let i = 0; i < n; i++) {
-
-                                                                context.fillStyle = "rgb(255 255 255 / 70%)"
-
-                                                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
-
-                                                                drops[i].y += drops[i].speed
-
-                                                                if (drops[i].y > canvasHandler.height) {
-
-                                                                        drops[i].y = 0 - drops[i].height
+                                                                        handler.style.background = ''
 
                                                                 };
 
                                                         };
 
-                                                        requestAnimationFrame(holo);
+                                                        if (localStorage.getItem('obscLocalStorageVariable-background') == 'Огонь' || localStorage.getItem('obscLocalStorageVariable-background') == 'Flames') {
 
-                                                };
+                                                                let wavesCanvas = document.getElementsByClassName('obscDOMElement-wavesNode')[0];
 
-                                                function main() {
+                                                                if (wavesCanvas) {
 
-                                                        init();
+                                                                        wavesCanvas.style = 'visibility: collapse'
 
-                                                        holo();
+                                                                };
 
-                                                };
+                                                                let holoCanvas = document.getElementsByClassName('obscDOMElement-holoCanvas')[0];
 
-                                                window.addEventListener('load', main, false);
+                                                                if (holoCanvas) {
 
-                                                window.addEventListener('resize', init, false);
+                                                                        holoCanvas.style = 'visibility: collapse'
 
-                                        };
+                                                                };
 
-                                        let spaceSpan = element('span', 'obscDOMElement-bSettingsSpan bSpaceSpan', backgroundsPage);
+                                                                let spaceCanvas = document.getElementsByClassName('obscDOMElement-spaceCanvas')[0];
 
-                                        let spacePreview = element('div', 'obscDOMElement-bPreview bSpacePreview', backgroundsPage);
+                                                                if (spaceCanvas) {
 
-                                        if (spacePreview) {
+                                                                        spaceCanvas.style = 'visibility: collapse'
 
-                                                let canvasHandler = element('canvas', 'obscDOMElement-preview-spaceCanvas', spacePreview);
+                                                                };
 
-                                                let context = canvasHandler.getContext("2d");
+                                                                let handler = document.getElementsByClassName('obscDOMElement-svgGradient')[0];
 
-                                                let drops = [], maxSpeed = 50, spacing = 40, xPosition, n
+                                                                if (handler) {
 
-                                                function init() {
-
-                                                        canvasHandler.width = window.innerWidth
-
-                                                        canvasHandler.height = window.innerHeight
-
-                                                        xPosition = 0
-
-                                                        n = canvasHandler.width / spacing
-
-                                                        for (let i = 0; i < n; i++) {
-
-                                                                xPosition += spacing
-
-                                                                drops.push({
-
-                                                                        x: xPosition,
-
-                                                                        y: Math.round(Math.random() * canvasHandler.height),
-
-                                                                        width: Math.ceil(Math.random() * 50 + 10) / 10,
-
-                                                                        height: Math.ceil(Math.random() * 50 + 10) / 2,
-
-                                                                        speed: Math.ceil(Math.random() * 50 + 10) / 80
-
-                                                                });
-
-                                                        };
-
-                                                };
-
-                                                function space() {
-
-                                                        context.clearRect(0, 0, canvasHandler.width, canvasHandler.height);
-
-                                                        for (let i = 0; i < n; i++) {
-
-                                                                context.fillStyle = "rgb(255 255 255 / 80%)"
-
-                                                                context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
-
-                                                                drops[i].y += drops[i].speed
-
-                                                                if (drops[i].y > canvasHandler.height) {
-
-                                                                        drops[i].y = 0 - drops[i].height
+                                                                        handler.style.background = 'url("/play/static/images/sparks.990b5664.webp") 0% 0% / cover, center bottom no-repeat'
 
                                                                 };
 
                                                         };
 
-                                                        requestAnimationFrame(space);
 
                                                 };
-
-                                                function main() {
-
-                                                        init();
-
-                                                        space();
-
-                                                };
-
-                                                window.addEventListener('load', main, false);
-
-                                                window.addEventListener('resize', init, false);
-
-                                        };
-
-                                        if (language == 'RU') {
-
-                                                wavesSpan.innerHTML = 'Превью: волны'
-
-                                                holoSpan.innerHTML = 'Превью: голография'
-
-                                                spaceSpan.innerHTML = 'Превью: космос'
-
-                                        } else {
-
-                                                wavesSpan.innerHTML = 'Preview: waves'
-
-                                                holoSpan.innerHTML = 'Preview: holography'
-
-                                                spaceSpan.innerHTML = 'Preview: space'
 
                                         };
 
@@ -11507,6 +11530,38 @@
 
                                         if (logWindow_textHeader) {
 
+                                                // v2.2.0
+
+                                                let h1_220 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v2_2_0', logWindow_textHeader);
+
+                                                    h1_220.innerHTML = 'v2.2.0'
+
+                                                if (h1_220) {
+
+                                                        let h1_220_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_220);
+
+                                                        let h1_220_span1 = element('span', 'h1-220-span1', h1_220);
+
+                                                        let h1_220_span2 = element('span', 'h1-220-span2', h1_220);
+
+                                                        let h1_220_span3 = element('span', 'h1-220-span3', h1_220);
+
+                                                        if (language == 'RU') {
+
+                                                                h1_220_span1.innerHTML = '• На вкладке "Фоновые анимации" добавлена возможность установки собственного фона на странице с инструкцией на GitHub'
+
+                                                                h1_220_span2.innerHTML = '• Удалены превью фоновых анимаций на вкладке "Фоновые анимации"'
+
+                                                        } else {
+
+                                                                h1_220_span1.innerHTML = '• The "Background Animations" tab now allows you to set your own background on the GitHub tutorial page'
+
+                                                                h1_220_span2.innerHTML = '• Removed background animation previews from the "Background Animations" tab'
+
+                                                        };
+
+                                                };
+
                                                 // v2.1.0
 
                                                 let h1_210 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v2_1_0', logWindow_textHeader);
@@ -11719,7 +11774,7 @@
 
                                                                 h1_100_span3.innerHTML = '• Добавление автоматического перевода текста в теме на английский'
 
-                                                                h1_100_span4.innerHTML = '• Начало разработки отдельного меню для темы. Планируется возможность накладывать фильтры на игру (контраст, сепия, затемнение, виньетка), менять акцентовый цвет на другие доступные, менять фон лобби (canvas снег/Голография, мультимедиа) и др.'
+                                                                h1_100_span4.innerHTML = '• Начало разработки отдельного меню для темы. Планируется возможность накладывать фильтры на игру (контраст, сепия, затемнение, виньетка), менять акцентовый цвет на другие доступные, менять фон лобби (canvas снег/дождь, мультимедиа) и др.'
 
                                                         } else {
 
@@ -11880,9 +11935,27 @@
 
                                         let detailsPageHeader = element('div', 'obscDOMElement-menuDetailsPageHeader', detailsPage);
 
-                                        let detailsPageHeaderSpan = element('span', 'obscDOMElement-menuDetailsPageHeaderSpan', detailsPageHeader);
+                                        let detailsPageHeaderSpan1 = element('span', 'obscDOMElement-menuDetailsPageHeaderSpan menuSpan_1', detailsPageHeader);
 
-                                        let detailsPageHeaderSpan2 = element('span', 'obscDOMElement-menuDetailsPageHeaderSpan2', detailsPageHeader);
+                                        let detailsPageHeaderSpan2 = element('span', 'obscDOMElement-menuDetailsPageHeaderSpan menuSpan_2', detailsPageHeader);
+
+                                        let detailsPageHeaderSpan3 = element('span', 'obscDOMElement-menuDetailsPageHeaderSpan menuSpan_3', detailsPageHeader);
+
+                                        let detailsPageHeaderLink1 = element('a', 'obscDOMElement-menuDetailsPageHeaderLink menuLink_1', detailsPageHeader);
+
+                                            detailsPageHeaderLink1.innerHTML = 'Marseille Clicker'
+
+                                            detailsPageHeaderLink1.href = 'https://github.com/Indifferental/Marseille'
+
+                                            detailsPageHeaderLink1.target = '_blank'
+
+                                        let detailsPageHeaderLink2 = element('a', 'obscDOMElement-menuDetailsPageHeaderLink menuLink_2', detailsPageHeader);
+
+                                            detailsPageHeaderLink2.innerHTML = 'Enemy Radar'
+
+                                            detailsPageHeaderLink2.href = 'https://github.com/Indifferental/EnemyRadar'
+
+                                            detailsPageHeaderLink2.target = '_blank'
 
                                         let detailsPageLine = element('div', 'obscDOMElement-menuDetailsPageLine', detailsPage);
 
@@ -11898,9 +11971,11 @@
 
                                         if (language == 'RU') {
 
-                                                detailsPageHeaderSpan.innerHTML = 'Obscurum — браузерная тема на Танки Онлайн, разрабатываемая на JavaScript и CSS более полугода, позволяющая игроку настроить практически каждый элемент дизайна сайта на своё усмотрение. Написано множество функций, упрощающих взаимодействие с игрой, например включение/выключение постоянного отображения резистов в окне игровой статистики по нажатию кнопки, функция "фастпика" в матчмейкинг в лобби и другие.'
+                                                detailsPageHeaderSpan1.innerHTML = 'Obscurum — браузерная тема на Танки Онлайн, разрабатываемая на JavaScript и CSS более полугода, позволяющая игроку настроить практически каждый элемент дизайна сайта на своё усмотрение. Написано множество функций, упрощающих взаимодействие с игрой, например включение/выключение постоянного отображения резистов в окне игровой статистики по нажатию кнопки, функция "фастпика" в матчмейкинг в лобби и другие.'
 
                                                 detailsPageHeaderSpan2.innerHTML = 'Если у вас имеются какие-либо вопросы, предложения или замечания, вы можете написать в Discord: @drawingwithblood'
+
+                                                detailsPageHeaderSpan3.innerHTML = 'Другие проекты:'
 
                                                 detailsPageInfoHeader1.innerHTML = 'Главный разработчик'
 
@@ -11908,9 +11983,11 @@
 
                                         } else {
 
-                                                detailsPageHeaderSpan.innerHTML = 'Obscurum is a browser theme for Tanki Online, developed on JavaScript and CSS for over six months, allowing the player to customize almost every element of the site design to their liking. Many functions have been written to simplify interaction with the game, such as enabling/disabling constant display of resistances in the game statistics window by pressing a button, the "fastpick" function in matchmaking in the lobby, and others.'
+                                                detailsPageHeaderSpan1.innerHTML = 'Obscurum is a browser theme for Tanki Online, developed on JavaScript and CSS for over six months, allowing the player to customize almost every element of the site design to their liking. Many functions have been written to simplify interaction with the game, such as enabling/disabling constant display of resistances in the game statistics window by pressing a button, the "fastpick" function in matchmaking in the lobby, and others.'
 
                                                 detailsPageHeaderSpan2.innerHTML = 'If you have any questions, suggestions or comments, you can write to Discord: @drawingwithblood'
+
+                                                detailsPageHeaderSpan3.innerHTML = 'Other projects:'
 
                                                 detailsPageInfoHeader1.innerHTML = 'Developer'
 
@@ -11974,7 +12051,7 @@
 
                         let credits = element('span', 'obscDOMElement-credits', menuHandler);
 
-                            credits.innerHTML = `Obscurum ${version} // 21.05.2025`
+                            credits.innerHTML = `Obscurum ${version} // 04.06.2025`
 
                 };
 
@@ -12175,6 +12252,8 @@
 
                                 startText();
 
+                                applyBackgrounds();
+
                                 createMenu();
 
                                 function mutationsObserver() {
@@ -12266,8 +12345,6 @@
                         if (window.location.href.includes(link) == true) {
 
                                 ratingsPage();
-
-                                applyWaves();
 
                         };
 
