@@ -7,7 +7,7 @@
 2. Скопируйте выданную ссылку, она обязательно должна начинаться с data:image/ (выделить всю ссылку можно с помощью Ctrl + A)
 3. Нажмите на кнопку в меню с надписью "Собственный фон", в появившемся окне вставьте полученную ссылку в URI-формате и нажмите OK
 
-<p align="center"><img src="https://github.com/user-attachments/assets/65361b9e-47ef-404c-9eb1-ef2648f68a6d" alt="logo" style="width: 800px"/></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/65361b9e-47ef-404c-9eb1-ef2648f68a6d" alt="logo" style="width: 500px"/></p>
 
 4. Чтобы сбросить фон, нажмите на кнопку "Собственный фон" и далее OK ничего не вставляя, текущая картинка удалится
 
@@ -20,6 +20,6 @@ The image should be no more than 1 megabyte in size, otherwise you can also use 
 2. Copy the provided link, it must begin with data:image/ (you can select the entire link using Ctrl + A)
 3. Click on the button in the menu labeled "Custom background", in the window that appears, paste the resulting URI-format-link and click OK
 
-<p align="center"><img src="https://github.com/user-attachments/assets/2b4fc8fb-2c3a-4d75-bcca-c611339b8b23" alt="logo" style="width: 800px"/></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/2b4fc8fb-2c3a-4d75-bcca-c611339b8b23" alt="logo" style="width: 500px"/></p>
 
 4. To reset the background, click on the "Custom background" button and then OK without inserting anything, the current image will be deleted
