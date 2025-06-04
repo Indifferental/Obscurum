@@ -2,7 +2,7 @@
 1. Выберите желаемую картинку на своем компьютере и переведите её в URI-формат с помощью [любых доступных онлайн-сервисов](https://ru.inettools.net/image/konverter-izobrajeniya-v-data-uri)
 Картинка должна быть весом не более 1 мегабайта, в ином случае можете так же воспользоваться онлайн-сервисами и перевести картинку в менее требовательный формат, такой как, например, WEBP
 
-<p align="center"><img src="https://github.com/user-attachments/assets/aaab8d2b-3cf8-415f-aa83-f278708e9a39" alt="logo" style="width: 1200px; border-radius: 1em;"/></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/aaab8d2b-3cf8-415f-aa83-f278708e9a39" alt="logo" style="width: 1200px"/></p>
 
 2. Скопируйте выданную ссылку, она обязательно должна начинаться с data:image/ (выделить всю ссылку можно с помощью Ctrl + A)
 3. Нажмите на кнопку в меню с надписью "Собственный фон", в появившемся окне вставьте полученную ссылку в URI-формате и нажмите OK
