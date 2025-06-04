@@ -1,4 +1,4 @@
-## Инструкция по установке собственного фона
+## [RU] Инструкция по установке собственного фона
 1. Выберите желаемую картинку на своем компьютере (рекомендуется использовать изображения, подходящие по размеру и соотношению под ваш монитор) и переведите её в URI-формат с помощью [любых доступных онлайн-сервисов](https://ru.inettools.net/image/konverter-izobrajeniya-v-data-uri)
 
 <p align="center"><img src="https://github.com/user-attachments/assets/aaab8d2b-3cf8-415f-aa83-f278708e9a39" alt="logo" style="width: 800px"/></p>
@@ -12,7 +12,7 @@
 
 4. Чтобы сбросить фон, нажмите на кнопку "Собственный фон" и далее OK ничего не вставляя, текущая картинка удалится
 
-## Instructions for installing your own background
+## [EN] Instructions for installing your own background
 1. Select the desired image on your computer 
 (it is recommended to use images that are appropriate in size and aspect ratio for your monitor) and convert it to URI format using [any available online services]([https://ru.inettools.net/image/konverter-izobrajeniya-v-data-uri)
 
