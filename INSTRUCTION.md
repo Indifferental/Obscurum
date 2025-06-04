@@ -15,7 +15,7 @@
 1. Select the desired image on your computer and convert it to URI format using [any available online services]([https://ru.inettools.net/image/konverter-izobrajeniya-v-data-uri)
 The image should be no more than 1 megabyte in size, otherwise you can also use online services and convert the image to a less demanding format, such as, for example, WEBP
 
-![image](https://github.com/user-attachments/assets/aaab8d2b-3cf8-415f-aa83-f278708e9a39)
+<p align="center"><img src="https://github.com/user-attachments/assets/aaab8d2b-3cf8-415f-aa83-f278708e9a39" alt="logo" style="width: 800px"/></p>
 
 2. Copy the provided link, it must begin with data:image/ (you can select the entire link using Ctrl + A)
 3. Click on the button in the menu labeled "Custom background", in the window that appears, paste the resulting URI-format-link and click OK
