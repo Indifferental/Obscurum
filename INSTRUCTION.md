@@ -1,17 +1,25 @@
 ## Инструкция по установке собственного фона
 1. Выберите желаемую картинку на своем компьютере и переведите её в URI-формат с помощью [любых доступных онлайн-сервисов](https://ru.inettools.net/image/konverter-izobrajeniya-v-data-uri)
 Картинка должна быть весом не более 1 мегабайта, в ином случае можете так же воспользоваться онлайн-сервисами и перевести картинку в менее требовательный формат, такой как, например, WEBP
+
 ![image](https://github.com/user-attachments/assets/aaab8d2b-3cf8-415f-aa83-f278708e9a39)
+
 2. Скопируйте выданную ссылку, она обязательно должна начинаться с data:image/ (выделить всю ссылку можно с помощью Ctrl + A)
 3. Нажмите на кнопку в меню с надписью "Собственный фон", в появившемся окне вставьте полученную ссылку в URI-формате и нажмите OK
+
 ![image](https://github.com/user-attachments/assets/06336548-f2c8-42a8-a38c-fe01a6ebb902)
+
 4. Чтобы сбросить фон, нажмите на кнопку "Собственный фон" и далее OK ничего не вставляя, текущая картинка удалится
 
 ## Instructions for installing your own background
 1. Select the desired image on your computer and convert it to URI format using [any available online services]([https://ru.inettools.net/image/konverter-izobrajeniya-v-data-uri)
 The image should be no more than 1 megabyte in size, otherwise you can also use online services and convert the image to a less demanding format, such as, for example, WEBP
+
 ![image](https://github.com/user-attachments/assets/aaab8d2b-3cf8-415f-aa83-f278708e9a39)
+
 2. Copy the provided link, it must begin with data:image/ (you can select the entire link using Ctrl + A)
 3. Click on the button in the menu labeled "Custom background", in the window that appears, paste the resulting URI-format-link and click OK
+
 ![image](https://github.com/user-attachments/assets/06336548-f2c8-42a8-a38c-fe01a6ebb902)
+
 4. To reset the background, click on the "Custom background" button and then OK without inserting anything, the current image will be deleted
