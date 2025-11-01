@@ -247,6 +247,15 @@
 
                 const elements = [
 
+                        {
+                                selector: '.ClientInfoComponentStyle-main',
+                                style: `
+                                        position: fixed;
+                                        visibility: hidden;
+                                        pointer-events: none;
+                                `
+                        },
+
                         // стиль меню темы
 
                         {
