@@ -247,15 +247,6 @@
 
                 const elements = [
 
-                        {
-                                selector: '.ClientInfoComponentStyle-main',
-                                style: `
-                                        position: fixed;
-                                        visibility: hidden;
-                                        pointer-events: none;
-                                `
-                        },
-
                         // стиль меню темы
 
                         {
@@ -1156,7 +1147,7 @@
                         },
 
                         {
-                                selector: '.Common-entranceBackground > .Common-entranceGradient > .Common-flexStartAlignStartColumn',
+                                selector: '.-entranceBackground > .-entranceGradient > .-flexStartAlignStartColumn',
                                 style: `
                                         background-color: var(--general-bg);
                                         outline: var(--general-outline);
@@ -1170,7 +1161,7 @@
                         },
 
                         {
-                                selector: '.Common-entranceBackground > .Common-entranceGradient > .Common-flexStartAlignStartColumn > span',
+                                selector: '.-entranceBackground > .-entranceGradient > .-flexStartAlignStartColumn > span',
                                 style: `
                                         color: white;
                                 `
@@ -1702,14 +1693,14 @@
                         // блок загрузки игры
 
                         {
-                                selector: '.ApplicationLoaderComponentStyle-logo, .ApplicationLoaderComponentStyle-loader, .ApplicationLoaderComponentStyle-container.Common-flexCenterAlignCenterColumn > div:nth-child(1)',
+                                selector: '.ApplicationLoaderComponentStyle-logo, .ApplicationLoaderComponentStyle-loader, .ApplicationLoaderComponentStyle-container.-flexCenterAlignCenterColumn > div:nth-child(1)',
                                 style: `
                                         visibility: hidden;
                                 `
                         },
 
                         {
-                                selector: '.ApplicationLoaderComponentStyle-container > .Common-flexCenterAlignCenter',
+                                selector: '.ApplicationLoaderComponentStyle-container > .-flexCenterAlignCenter',
                                 style: `
                                         bottom: 24em;
                                 `
@@ -1780,7 +1771,7 @@
                         // основной блок меню
 
                         {
-                                selector: '.Common-container, .Common-entranceBackground, .Common-entranceGradient, .Common-background, .Common-changingBackground',
+                                selector: '.-container, .-entranceBackground, .-entranceGradient, .-background, .-changingBackground',
                                 style: `
                                         background: transparent !important;
                                 `
@@ -1795,7 +1786,7 @@
                         },
 
                         {
-                                selector: `.Common-buttonQE,
+                                selector: `.-buttonQE,
                                            .ContainerInfoComponentStyle-rewardsMenuHotkey h3`,
                                 style: `
                                         background: var(--general-bg);
@@ -1814,7 +1805,7 @@
                         },
 
                         {
-                                selector: '.Common-buttonQE',
+                                selector: '.-buttonQE',
                                 tags: 'hover'
                         },
 
@@ -1824,7 +1815,7 @@
                         },
 
                         {
-                                selector: `.Common-buttonQE span,
+                                selector: `.-buttonQE span,
                                            .ContainerInfoComponentStyle-rewardsMenuHotkey h3`,
                                 style: `
                                         color: var(--least-general-color);
@@ -1864,7 +1855,7 @@
                         },
 
                         {
-                                selector: '.ContextMenuStyle-menu > .Common-flexStartAlignCenter',
+                                selector: '.ContextMenuStyle-menu > .-flexStartAlignCenter',
                                 style: `
                                         transition: var(--general-transition);
                                 `
@@ -1895,7 +1886,7 @@
                         },
 
                         {
-                                selector: '.Common-activeMenu',
+                                selector: '.-activeMenu',
                                 style: `
                                         background: unset;
                                         color: var(--general-color) !important;
@@ -1907,7 +1898,7 @@
                         },
 
                         {
-                                selector: '.Common-activeMenu > .Common-menuItemActive',
+                                selector: '.-activeMenu > .-menuItemActive',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -2012,7 +2003,7 @@
                         },
 
                         {
-                                selector: '.ItemDescriptionComponentStyle-commonBlockModal > .ItemDescriptionComponentStyle-paddingHeaderModal > .Common-flexStartAlignCenter > .HotKey-commonBlockForHotKey',
+                                selector: '.ItemDescriptionComponentStyle-commonBlockModal > .ItemDescriptionComponentStyle-paddingHeaderModal > .-flexStartAlignCenter > .HotKey-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -2088,7 +2079,7 @@
                         },
 
                         {
-                                selector: '.PrimaryMenuItemComponentStyle-discountNotification, .Common-discount',
+                                selector: '.PrimaryMenuItemComponentStyle-discountNotification, .-discount',
                                 style: `
                                         background-color: var(--general-color);
                                         border-radius: 0.5em;
@@ -2129,12 +2120,12 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexCenterAlignCenter > .HotKey-commonBlockForHotKey,
-                                           .MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexCenterAlignCenterColumn > .HotKey-commonBlockForHotKey,
-                                           .MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > .Common-flexCenterAlignCenter > .HotKey-commonBlockForHotKey,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexCenterAlignCenter > .HotKey-commonBlockForHotKey,
+                                           .MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexCenterAlignCenterColumn > .HotKey-commonBlockForHotKey,
+                                           .MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > .-flexCenterAlignCenter > .HotKey-commonBlockForHotKey,
 
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexCenterAlignCenter > .HotKey-commonBlockForHotKey,
-                                           .BreadcrumbsComponentStyle-rightButtonsContainer > .Common-flexCenterAlignCenter > h3,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexCenterAlignCenter > .HotKey-commonBlockForHotKey,
+                                           .BreadcrumbsComponentStyle-rightButtonsContainer > .-flexCenterAlignCenter > h3,
                                            .BreadcrumbsComponentStyle-backButton > h3`,
                                 style: `
                                         visibility: hidden;
@@ -2142,7 +2133,7 @@
                         },
 
                         {
-                                selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexCenterAlignCenterColumn',
+                                selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexCenterAlignCenterColumn',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -2162,7 +2153,7 @@
                         },
 
                         {
-                                selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexCenterAlignCenter',
+                                selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexCenterAlignCenter',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -2182,7 +2173,7 @@
                         },
 
                         {
-                                selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter',
+                                selector: '.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter',
                                 style: `
                                         position: absolute;
                                         left: 12.5em;
@@ -2191,9 +2182,9 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > .Common-flexCenterAlignCenter > .Common-maskImageContain,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > .-flexCenterAlignCenter > .-maskImageContain,
                                            .MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > .BreadcrumbsComponentStyle-logout > .BreadcrumbsComponentStyle-iconLogout,
-                                           .BreadcrumbsComponentStyle-rightButtonsContainer > .Common-flexCenterAlignCenter > div,
+                                           .BreadcrumbsComponentStyle-rightButtonsContainer > .-flexCenterAlignCenter > div,
                                            .BreadcrumbsComponentStyle-rightButtonsContainer > .BreadcrumbsComponentStyle-exitGameButton > .IconStyle-iconLogOff,
                                            .BreadcrumbsComponentStyle-backButton > .IconStyle-iconBackArrow`,
                                 style: `
@@ -2239,8 +2230,8 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > div:nth-child(1) > .HeaderCommonStyle-icons > .Common-iconCoinSizeMedium,
-                                           .BreadcrumbsComponentStyle-rightButtonsContainer > div > .HeaderCommonStyle-icons > .Common-iconCoinSizeMedium`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > div:nth-child(1) > .HeaderCommonStyle-icons > .-iconCoinSizeMedium,
+                                           .BreadcrumbsComponentStyle-rightButtonsContainer > div > .HeaderCommonStyle-icons > .-iconCoinSizeMedium`,
                                 style: `
                                         margin-left: 1em;
                                 `
@@ -2255,7 +2246,7 @@
                         },
 
                         {
-                                selector: '.MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > .Common-flexCenterAlignCenter',
+                                selector: '.MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > .-flexCenterAlignCenter',
                                 style: `
                                         position: absolute;
                                         right: 6em;
@@ -2276,9 +2267,9 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable`,
                                 style: `
                                         width: 5em;
                                         height: 5em;
@@ -2286,9 +2277,9 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable > .UserInfoContainerStyle-titleRankIcon,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable > .UserInfoContainerStyle-titleRankIcon,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer > .UserInfoContainerStyle-titleRankIcon`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable > .UserInfoContainerStyle-titleRankIcon,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable > .UserInfoContainerStyle-titleRankIcon,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer > .UserInfoContainerStyle-titleRankIcon`,
                                 style: `
                                         width: 4em;
                                         height: auto;
@@ -2296,8 +2287,8 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen`,
                                 style: `
                                         margin-left: 0.5em;
                                         width: 13em;
@@ -2308,8 +2299,8 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable,
-                                           .MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable,
+                                           .MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen`,
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -2323,16 +2314,16 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div`,
                                 style: `
                                         position: absolute;
                                 `
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div > .UserInfoContainerStyle-userNameRank,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div > .UserInfoContainerStyle-userNameRank`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div > .UserInfoContainerStyle-userNameRank,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div > .UserInfoContainerStyle-userNameRank`,
                                 style: `
                                         text-shadow: 0 0 2em;
                                         font-size: 1.25em;
@@ -2342,10 +2333,10 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div > .UserInfoContainerStyle-userNameRank,
-                                           .MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div:nth-child(1),
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div > .UserInfoContainerStyle-userNameRank,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div:nth-child(1)`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div > .UserInfoContainerStyle-userNameRank,
+                                           .MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div:nth-child(1),
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div > .UserInfoContainerStyle-userNameRank,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div:nth-child(1)`,
                                 style: `
                                         display: flex;
                                         justify-content: center;
@@ -2354,8 +2345,8 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .Common-flexStartAlignStartColumn,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .Common-flexStartAlignStartColumn`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .-flexStartAlignStartColumn,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .-flexStartAlignStartColumn`,
                                 style: `
                                         background: var(--least-general-color);
                                         border-radius: var(--general-border-radius);
@@ -2370,8 +2361,8 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .Common-flexStartAlignStartColumn:after,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .Common-flexStartAlignStartColumn:after`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .-flexStartAlignStartColumn:after,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .-flexStartAlignStartColumn:after`,
                                 style: `
                                         background: var(--general-color);
                                         border-radius: var(--general-border-radius);
@@ -2381,8 +2372,8 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .UserInfoContainerStyle-containerParameterProgress,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .UserInfoContainerStyle-containerParameterProgress`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .UserInfoContainerStyle-containerParameterProgress,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .UserInfoContainerStyle-containerParameterProgress`,
                                 style: `
                                         opacity: 0;
                                         pointer-events: none;
@@ -2392,16 +2383,16 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > .Common-flexStartAlignStartColumn,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > .Common-flexStartAlignStartColumn`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > .-flexStartAlignStartColumn,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > .-flexStartAlignStartColumn`,
                                 style: `
                                         opacity: 0.175;
                                 `
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > .UserInfoContainerStyle-containerParameterProgress,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > .UserInfoContainerStyle-containerParameterProgress`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > .UserInfoContainerStyle-containerParameterProgress,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > .UserInfoContainerStyle-containerParameterProgress`,
                                 style: `
                                         margin-top: 1.5em;
                                         opacity: 1;
@@ -2409,8 +2400,8 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > div > .UserInfoContainerStyle-userNameRank,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > div > .UserInfoContainerStyle-userNameRank`,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > div > .UserInfoContainerStyle-userNameRank,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover > div > .UserInfoContainerStyle-userNameRank`,
                                 style: `
                                         color: var(--general-color);
                                         margin-bottom: 1em;
@@ -2465,7 +2456,7 @@
                         },
 
                         {
-                                selector: '.BreadcrumbsComponentStyle-rightButtonsContainer > .Common-flexCenterAlignCenter',
+                                selector: '.BreadcrumbsComponentStyle-rightButtonsContainer > .-flexCenterAlignCenter',
                                 style: `
                                         position: absolute;
                                         right: 6em;
@@ -2508,7 +2499,7 @@
                         },
 
                         {
-                                selector: '.BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexCenterAlignCenter',
+                                selector: '.BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexCenterAlignCenter',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -2529,7 +2520,7 @@
                         },
 
                         {
-                                selector: '.BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter',
+                                selector: '.BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter',
                                 style: `
                                         position: absolute;
                                         top: 0.5em;
@@ -2539,9 +2530,9 @@
                         },
 
                         {
-                                selector: `.BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen`,
+                                selector: `.BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen`,
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -2555,9 +2546,9 @@
                         },
 
                         {
-                                selector: `.BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer:hover,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable:hover,
-                                           .BreadcrumbsComponentStyle-headerContainer > .Common-flexCenterAlignStart > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover`,
+                                selector: `.BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer:hover,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainerClickable:hover,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen:hover`,
                                 style: `
                                         background: var(--general-bg-hover);
                                 `
@@ -2573,7 +2564,7 @@
                         // блок кнопки "Играть"
 
                         {
-                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex',
+                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .-displayFlex',
                                 style: `
                                         position: absolute;
                                         margin: unset;
@@ -2585,7 +2576,7 @@
                         },
 
                         {
-                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay',
+                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .-displayFlex > .MainScreenComponentStyle-buttonPlay',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -2602,7 +2593,7 @@
                         },
 
                         {
-                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay > span',
+                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .-displayFlex > .MainScreenComponentStyle-buttonPlay > span',
                                 style: `
                                         color: var(--general-color) !important;
                                         text-shadow: 0 0 1.5em;
@@ -2610,7 +2601,7 @@
                         },
 
                         {
-                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay > .Common-backgroundImageContain',
+                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .-displayFlex > .MainScreenComponentStyle-buttonPlay > .-backgroundImageContain',
                                 style: `
                                         mask-image: url("/play/static/images/lockButtonPlay.4bb62c08.svg");
                                         mask-size: contain;
@@ -2622,7 +2613,7 @@
                         },
 
                         {
-                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay > h3',
+                                selector: '.MainScreenComponentStyle-containerForMenuGradient > .-displayFlex > .MainScreenComponentStyle-buttonPlay > h3',
                                 style: `
                                         color: var(--general-color);
                                         margin-bottom: 1em;
@@ -2656,14 +2647,14 @@
                         },
 
                         {
-                                selector: `.Common-container > .ContainersComponentStyle-navigationBlockForCategories,
-                                           .Common-container > .ProBattlesComponentStyle-navigationBlock,
-                                           .Common-container > .GarageMenuComponentStyle-garageMenuContainer,
-                                           .Common-container > .Common-flexStartAlignStart > .GarageMenuComponentStyle-garageMenuContainer,
-                                           .Common-container > .Common-flexStartAlignCenterColumn > .GarageMenuComponentStyle-garageMenuContainer,
-                                           .Common-container > .GarageCommonStyle-garageContainer > .GarageMenuComponentStyle-garageMenuContainer,
-                                           .Common-container > .GarageCommonStyle-garageContainer > .GarageMenuComponentStyle-garageMenuContainer > .GarageMenuComponentStyle-garageMenuContainer,
-                                           .Common-container > .ContainersComponentStyle-navigationContainer > .ContainersComponentStyle-navigationBlock`,
+                                selector: `.-container > .ContainersComponentStyle-navigationBlockForCategories,
+                                           .-container > .ProBattlesComponentStyle-navigationBlock,
+                                           .-container > .GarageMenuComponentStyle-garageMenuContainer,
+                                           .-container > .-flexStartAlignStart > .GarageMenuComponentStyle-garageMenuContainer,
+                                           .-container > .-flexStartAlignCenterColumn > .GarageMenuComponentStyle-garageMenuContainer,
+                                           .-container > .GarageCommonStyle-garageContainer > .GarageMenuComponentStyle-garageMenuContainer,
+                                           .-container > .GarageCommonStyle-garageContainer > .GarageMenuComponentStyle-garageMenuContainer > .GarageMenuComponentStyle-garageMenuContainer,
+                                           .-container > .ContainersComponentStyle-navigationContainer > .ContainersComponentStyle-navigationBlock`,
                                 style: `
                                         background: var(--general-bg);
                                         border-bottom: var(--general-outline);
@@ -2937,7 +2928,7 @@
                         },
 
                         {
-                                selector: '.AnnouncementHomeScreenComponentStyle-mainContainer > .Common-flexCenterAlignCenterColumn',
+                                selector: '.AnnouncementHomeScreenComponentStyle-mainContainer > .-flexCenterAlignCenterColumn',
                                 style: `
                                         background: transparent;
                                 `
@@ -3293,7 +3284,7 @@
                         },
 
                         {
-                                selector: '.ContainersComponentStyle-infoPanel > div > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ContainersComponentStyle-description > .Common-flexStartAlignStart',
+                                selector: '.ContainersComponentStyle-infoPanel > div > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ContainersComponentStyle-description > .-flexStartAlignStart',
                                 style: `
                                         visibility: hidden;
                                         position: absolute;
@@ -3326,7 +3317,7 @@
                         },
 
                         {
-                                selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock > .ContainersComponentStyle-rewards > .Common-flexCenterAlignCenterColumn',
+                                selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock > .ContainersComponentStyle-rewards > .-flexCenterAlignCenterColumn',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -3339,7 +3330,7 @@
                         },
 
                         {
-                                selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock > .ContainersComponentStyle-rewards > .Common-flexCenterAlignCenterColumn > div:nth-child(1)',
+                                selector: '.ContainersComponentStyle-infoPanel > .ContainersComponentStyle-possibleRewardsBlock > .ContainersComponentStyle-rewards > .-flexCenterAlignCenterColumn > div:nth-child(1)',
                                 style: `
                                         width: 2em;
                                         height: 2em;
@@ -3363,7 +3354,7 @@
                         },
 
                         {
-                                selector: '.ContainersComponentStyle-navigationContainer > .ContainersComponentStyle-navigationBlock > .Common-flexCenterAlignCenterColumn',
+                                selector: '.ContainersComponentStyle-navigationContainer > .ContainersComponentStyle-navigationBlock > .-flexCenterAlignCenterColumn',
                                 style: `
                                         padding: unset;
                                 `
@@ -3395,7 +3386,7 @@
                         },
 
                         {
-                                selector: '.ContainerInfoComponentStyle-itemsContainer > .Common-flexStartAlignStretchColumn > .Common-flexCenterAlignCenterColumn',
+                                selector: '.ContainerInfoComponentStyle-itemsContainer > .-flexStartAlignStretchColumn > .-flexCenterAlignCenterColumn',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -3410,7 +3401,7 @@
                         },
 
                         {
-                                selector: '.ContainerInfoComponentStyle-itemsContainer > .Common-flexStartAlignStretchColumn > .Common-flexCenterAlignCenterColumn > div:nth-child(2)',
+                                selector: '.ContainerInfoComponentStyle-itemsContainer > .-flexStartAlignStretchColumn > .-flexCenterAlignCenterColumn > div:nth-child(2)',
                                 style: `
                                         width: 2em;
                                         height: 2em;
@@ -3446,7 +3437,7 @@
                         },
 
                         {
-                                selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter,
+                                selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .-flexCenterAlignCenter,
                                            .ContainersComponentStyle-moreButton`,
                                 style: `
                                         background: var(--general-bg);
@@ -3466,7 +3457,7 @@
                         },
 
                         {
-                                selector: '.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter',
+                                selector: '.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .-flexCenterAlignCenter',
                                 tags: 'hover'
                         },
 
@@ -3476,7 +3467,7 @@
                         },
 
                         {
-                                selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter > span,
+                                selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .-flexCenterAlignCenter > span,
                                            .ContainersComponentStyle-moreButton > span`,
                                 style: `
                                         color: var(--general-color);
@@ -3489,7 +3480,7 @@
                         },
 
                         {
-                                selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter > div,
+                                selector: `.ContainersComponentStyle-bottomBlock > .DeviceButtonComponentStyle-blockAlterations > .-flexCenterAlignCenter > div,
                                            .ContainersComponentStyle-moreButton > div`,
                                 style: `
                                         visibility: hidden;
@@ -3538,7 +3529,7 @@
                         },
 
                         {
-                                selector: '.AnimationOpenContainerComponentStyle-rewardContainer > .Common-flexCenterAlignCenterColumn',
+                                selector: '.AnimationOpenContainerComponentStyle-rewardContainer > .-flexCenterAlignCenterColumn',
                                 style: `
                                         background: transparent;
                                         box-shadow: unset;
@@ -3547,7 +3538,7 @@
                         },
 
                         {
-                                selector: '.AnimationOpenContainerComponentStyle-rewardContainer > .Common-flexCenterAlignCenterColumn > div:nth-child(1)',
+                                selector: '.AnimationOpenContainerComponentStyle-rewardContainer > .-flexCenterAlignCenterColumn > div:nth-child(1)',
                                 style: `
                                         width: 2em;
                                         height: 2em;
@@ -3618,8 +3609,8 @@
                         },
 
                         {
-                                selector: `.ClanInfoComponentStyle-buttonEditProfile > .Common-flexStartAlignStart > h3,
-                                           .ClanCommonStyle-buttonInvite > .Common-flexStartAlignStart > h3`,
+                                selector: `.ClanInfoComponentStyle-buttonEditProfile > .-flexStartAlignStart > h3,
+                                           .ClanCommonStyle-buttonInvite > .-flexStartAlignStart > h3`,
                                 style: `
                                         visibility: hidden;
                                 `
@@ -3701,7 +3692,7 @@
                         },
 
                         {
-                                selector: '.ClanInvitationsComponentStyle-sendButton > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.ClanInvitationsComponentStyle-sendButton > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -3800,7 +3791,7 @@
                         },
 
                         {
-                                selector: '.SearchInputComponentStyle-searchInput > .Common-backgroundImageContain',
+                                selector: '.SearchInputComponentStyle-searchInput > .-backgroundImageContain',
                                 style: `
                                         visibility: hidden;
                                         pointer-events: none;
@@ -3875,7 +3866,7 @@
                         },
 
                         {
-                                selector: '.MainQuestComponentStyle-buttonContainer > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.MainQuestComponentStyle-buttonContainer > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -3913,7 +3904,7 @@
                         },
 
                         {
-                                selector: '.Common-flexCenterAlignCenter > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
+                                selector: '.-flexCenterAlignCenter > .-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
                                 style: `
                                         background: var(--general-bg);
                                         border-top: var(--general-outline);
@@ -3932,7 +3923,7 @@
                         },
 
                         {
-                                selector: '.Common-flexCenterAlignCenterColumn > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
+                                selector: '.-flexCenterAlignCenterColumn > .-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
                                 style: `
                                         background: var(--general-bg);
                                         border-top: var(--general-outline);
@@ -3950,19 +3941,19 @@
                         },
 
                         {
-                                selector: '.Common-flexCenterAlignCenter > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
+                                selector: '.-flexCenterAlignCenter > .-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
                                 tags: 'hover'
                         },
 
 
                         {
-                                selector: '.Common-flexCenterAlignCenterColumn > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
+                                selector: '.-flexCenterAlignCenterColumn > .-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin',
                                 tags: 'hover'
                         },
 
                         {
-                                selector: `.Common-flexCenterAlignCenter > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin > span,
-                                           .Common-flexCenterAlignCenterColumn > .Common-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin > span`,
+                                selector: `.-flexCenterAlignCenter > .-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin > span,
+                                           .-flexCenterAlignCenterColumn > .-flexCenterAlignCenter.JoinToBattleComponentStyle-newButtonJoinA.JoinToBattleComponentStyle-buttonJoin > span`,
                                 style: `
                                         color: var(--general-color);
                                         text-shadow: 0 0 3em;
@@ -4008,7 +3999,7 @@
                         },
 
                         {
-                                selector: '.BattleInfoComponentStyle-invite > .Common-flexStartAlignCenter',
+                                selector: '.BattleInfoComponentStyle-invite > .-flexStartAlignCenter',
                                 style: `
                                         background: transparent;
 
@@ -4023,7 +4014,7 @@
                         },
 
                         {
-                                selector: '.BattleInfoComponentStyle-invite > .Common-flexStartAlignCenter:nth-child(1)',
+                                selector: '.BattleInfoComponentStyle-invite > .-flexStartAlignCenter:nth-child(1)',
                                 style: `
                                         border-top-left-radius: 1em;
                                         border-bottom-left-radius: 1em;
@@ -4031,7 +4022,7 @@
                         },
 
                         {
-                                selector: '.BattleInfoComponentStyle-invite > .Common-flexStartAlignCenter:nth-child(3)',
+                                selector: '.BattleInfoComponentStyle-invite > .-flexStartAlignCenter:nth-child(3)',
                                 style: `
                                         border-top-right-radius: 1em;
                                         border-bottom-right-radius: 1em;
@@ -4039,7 +4030,7 @@
                         },
 
                         {
-                                selector: '.BattleInfoComponentStyle-invite > .Common-flexStartAlignCenter > h3',
+                                selector: '.BattleInfoComponentStyle-invite > .-flexStartAlignCenter > h3',
                                 style: `
                                         visibility: hidden;
                                         position: absolute;
@@ -4047,8 +4038,8 @@
                         },
 
                         {
-                                selector: `.BattleInfoComponentStyle-invite > .Common-flexStartAlignCenter > a,
-                                           .BattleInfoComponentStyle-invite > .Common-flexStartAlignCenter > p`,
+                                selector: `.BattleInfoComponentStyle-invite > .-flexStartAlignCenter > a,
+                                           .BattleInfoComponentStyle-invite > .-flexStartAlignCenter > p`,
                                 style: `
                                         color: var(--general-color);
                                         text-shadow: 0 0 3em;
@@ -4072,7 +4063,7 @@
                         },
 
                         {
-                                selector: '.BattleInfoComponentStyle-blockCard > .Common-backgroundImageCover',
+                                selector: '.BattleInfoComponentStyle-blockCard > .-backgroundImageCover',
                                 style: `
                                         outline: var(--general-outline);
                                         box-shadow: var(--general-box-shadow) !important;
@@ -4086,14 +4077,14 @@
                         },
 
                         {
-                                selector: '.BattleInfoComponentStyle-blockCard > .Common-backgroundImageCover > .Common-flexSpaceBetweenAlignStretch',
+                                selector: '.BattleInfoComponentStyle-blockCard > .-backgroundImageCover > .-flexSpaceBetweenAlignStretch',
                                 style: `
                                         width: 100%;
                                 `
                         },
 
                         {
-                                selector: '.BattleInfoComponentStyle-blockCard > .Common-backgroundImageCover > .Common-flexSpaceBetweenAlignStretch > .Common-flexStartAlignStretch:nth-child(2)',
+                                selector: '.BattleInfoComponentStyle-blockCard > .-backgroundImageCover > .-flexSpaceBetweenAlignStretch > .-flexStartAlignStretch:nth-child(2)',
                                 style: `
                                         margin-top: 0.5em;
                                         margin-right: 0.5em;
@@ -4101,7 +4092,7 @@
                         },
 
                         {
-                                selector: '.BattleInfoComponentStyle-blockCard > .Common-backgroundImageCover > .Common-flexSpaceBetweenAlignStretch > .Common-flexStartAlignStretch > .Common-displayFlex > .BattleCardComponentStyle-containerTicker > span',
+                                selector: '.BattleInfoComponentStyle-blockCard > .-backgroundImageCover > .-flexSpaceBetweenAlignStretch > .-flexStartAlignStretch > .-displayFlex > .BattleCardComponentStyle-containerTicker > span',
                                 style: `
                                         color: var(--general-color);
                                 `
@@ -4117,7 +4108,7 @@
 
                         {
                                 selector: `.BattleInfoComponentStyle-commonBlockSelectBattle,
-                                           .Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3)`,
+                                           .-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3)`,
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -4151,7 +4142,7 @@
                         },
 
                         {
-                                selector: '.ProBattlesComponentStyle-battlesContainer > .ProBattlesComponentStyle-table > .Common-flexStartAlignCenter',
+                                selector: '.ProBattlesComponentStyle-battlesContainer > .ProBattlesComponentStyle-table > .-flexStartAlignCenter',
                                 style: `
                                         visibility: hidden;
                                         position: absolute;
@@ -4166,7 +4157,7 @@
                         },
 
                         {
-                                selector: '.ProBattlesComponentStyle-battlesContainer > .ProBattlesComponentStyle-table > .TableComponentStyle-tBody > .Common-flexStartAlignCenter',
+                                selector: '.ProBattlesComponentStyle-battlesContainer > .ProBattlesComponentStyle-table > .TableComponentStyle-tBody > .-flexStartAlignCenter',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -4201,28 +4192,28 @@
                         },
 
                         {
-                                selector: '.ProBattlesComponentStyle-cellName > .Common-flexStartAlignCenter',
+                                selector: '.ProBattlesComponentStyle-cellName > .-flexStartAlignCenter',
                                 style: `
                                         animation: var(--general-animation);
                                 `
                         },
 
                         {
-                                selector: '.ProBattlesComponentStyle-cellName > .Common-flexStartAlignCenter > .Common-backgroundImageCover',
+                                selector: '.ProBattlesComponentStyle-cellName > .-flexStartAlignCenter > .-backgroundImageCover',
                                 style: `
                                         margin-right: 1em;
                                 `
                         },
 
                         {
-                                selector: '.ProBattlesComponentStyle-cellName > .Common-flexEndAlignCenter',
+                                selector: '.ProBattlesComponentStyle-cellName > .-flexEndAlignCenter',
                                 style: `
                                         visibility: hidden;
                                 `
                         },
 
                         {
-                                selector: '.ProBattlesComponentStyle-blockTimesScore > .Common-maskImageContain',
+                                selector: '.ProBattlesComponentStyle-blockTimesScore > .-maskImageContain',
                                 style: `
                                         background-color: var(--general-color) !important;
                                         margin-left: 1em;
@@ -4237,7 +4228,7 @@
                         },
 
                         {
-                                selector: '.ProBattlesComponentStyle-mainContainer > .Common-alignSelfStart',
+                                selector: '.ProBattlesComponentStyle-mainContainer > .-alignSelfStart',
                                 style: `
                                         width: 75.5%;
                                 `
@@ -4322,7 +4313,7 @@
                         },
 
                         {
-                                selector: '.ProBattlesComponentStyle-commonBlockHotkeyV > .Common-flexCenterAlignCenterColumn',
+                                selector: '.ProBattlesComponentStyle-commonBlockHotkeyV > .-flexCenterAlignCenterColumn',
                                 style: `
                                         width: inherit;
                                         height: inherit;
@@ -4330,7 +4321,7 @@
                         },
 
                         {
-                                selector: '.ProBattlesComponentStyle-commonBlockHotkeyV > .Common-flexCenterAlignCenterColumn > .Common-maskImageContain',
+                                selector: '.ProBattlesComponentStyle-commonBlockHotkeyV > .-flexCenterAlignCenterColumn > .-maskImageContain',
                                 style: `
                                         background-color: var(--general-color) !important;
 
@@ -4347,7 +4338,7 @@
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1)',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1)',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -4367,49 +4358,49 @@
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1):hover',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1):hover',
                                 style: `
                                         transform: translateX(0em);
                                 `
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .Common-flexStartAlignStartColumn',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .-flexStartAlignStartColumn',
                                 style: `
                                         border: unset;
                                 `
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .Common-flexStartAlignStartColumn > .Common-flexCenterAlignCenterColumn',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .-flexStartAlignStartColumn > .-flexCenterAlignCenterColumn',
                                 style: `
                                         margin-top: 0.75em;
                                 `
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .Common-flexStartAlignStartColumn > .BattleModesComponentStyle-button > .Common-flexCenterAlignCenter > .Common-maskImageContain',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .-flexStartAlignStartColumn > .BattleModesComponentStyle-button > .-flexCenterAlignCenter > .-maskImageContain',
                                 style: `
                                         background-color: var(--general-color);
                                 `
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .Common-flexStartAlignStartColumn > .BattleModesComponentStyle-button > .Common-flexCenterAlignCenter > div > div',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .-flexStartAlignStartColumn > .BattleModesComponentStyle-button > .-flexCenterAlignCenter > div > div',
                                 style: `
                                         border-color: var(--least-general-color);
                                 `
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .Common-flexStartAlignStartColumn > .BattleModesComponentStyle-button > .Common-flexCenterAlignCenter > div > div > div',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .-flexStartAlignStartColumn > .BattleModesComponentStyle-button > .-flexCenterAlignCenter > div > div > div',
                                 style: `
                                         border-color: var(--general-color);
                                 `
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .Common-flexStartAlignStartColumn > .BattleModesComponentStyle-blockModesFilter > .Common-flexCenterAlignCenter',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(1) > .-flexStartAlignStartColumn > .BattleModesComponentStyle-blockModesFilter > .-flexCenterAlignCenter',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -4421,7 +4412,7 @@
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .Common-flexCenterAlignCenter',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .-flexCenterAlignCenter',
                                 style: `
                                         visibility: hidden;
                                         position: absolute;
@@ -4429,7 +4420,7 @@
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .SettingsComponentStyle-scrollCreateBattle',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .SettingsComponentStyle-scrollCreateBattle',
                                 style: `
                                         position: absolute;
                                         top: 18.625em;
@@ -4439,7 +4430,7 @@
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .Common-flexStartAlignStretchColumn',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .-flexStartAlignStretchColumn',
                                 style: `
                                         position: absolute;
                                         align-items: center;
@@ -4447,7 +4438,7 @@
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .Common-flexStartAlignStretchColumn > .Common-flexStartAlignCenter',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .-flexStartAlignStretchColumn > .-flexStartAlignCenter',
                                 style: `
                                         justify-content: space-between;
                                         margin-bottom: 1em;
@@ -4457,7 +4448,7 @@
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .Common-flexStartAlignStretchColumn > .Common-flexStartAlignCenter > .Common-flexCenterAlignCenter',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .-flexStartAlignStretchColumn > .-flexStartAlignCenter > .-flexCenterAlignCenter',
                                 style: `
                                         flex-direction: column;
                                         -webkit-box-orient: vertical;
@@ -4466,7 +4457,7 @@
                         },
 
                         {
-                                selector: '.Common-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .Common-flexStartAlignStretchColumn > .Common-flexStartAlignCenter > div > div > h3',
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .-flexStartAlignStretchColumn > .-flexStartAlignCenter > div > div > h3',
                                 style: `
                                         visibility: hidden;
                                         position: absolute;
@@ -4514,7 +4505,7 @@
                         },
 
                         {
-                                selector: `.BattleModesComponentStyle-button > .Common-flexCenterAlignCenter,
+                                selector: `.BattleModesComponentStyle-button > .-flexCenterAlignCenter,
                                            .BattleModesComponentStyle-fund`,
                                 style: `
                                         background: transparent !important;
@@ -4577,7 +4568,7 @@
                         },
 
                         {
-                                selector: '.BattleCardComponentStyle-mapName > .Common-flexEnd',
+                                selector: '.BattleCardComponentStyle-mapName > .-flexEnd',
                                 style: `
                                         margin-right: 0.75em;
                                 `
@@ -4706,7 +4697,7 @@
                         },
 
                         {
-                                selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2) > div > .Common-flexStartAlignCenter',
+                                selector: '.UsersTableStyle-containerBattleListCommands > .UsersTableStyle-scrollCommandTable > .UsersTableStyle-row > .UsersTableStyle-rowBattle > .UsersTableStyle-commonContainer > div:nth-child(2) > div > .-flexStartAlignCenter',
                                 style: `
                                         max-width: 9.5em;
                                 `
@@ -4765,7 +4756,7 @@
                         // блок ингейм таба
 
                         {
-                                selector: '.BattleComponentStyle-canvasContainer > .Common-container',
+                                selector: '.BattleComponentStyle-canvasContainer > .-container',
                                 style: `
                                         background: radial-gradient(ellipse at top, rgb(25 25 25),  black) !important;
                                 `
@@ -4786,7 +4777,7 @@
                         },
 
                         {
-                                selector: '.BattleTabStatisticComponentStyle-containerInsideTeams > .Common-flexCenterAlignCenter',
+                                selector: '.BattleTabStatisticComponentStyle-containerInsideTeams > .-flexCenterAlignCenter',
                                 style: `
                                         opacity: 0;
                                         margin-top: -1em;
@@ -4797,7 +4788,7 @@
                         },
 
                         {
-                                selector: '.BattleTabStatisticComponentStyle-containerInsideTeams:hover > .Common-flexCenterAlignCenter',
+                                selector: '.BattleTabStatisticComponentStyle-containerInsideTeams:hover > .-flexCenterAlignCenter',
                                 style: `
                                         opacity: 1;
                                         margin-top: 0.5em;
@@ -4923,7 +4914,7 @@
                         },
 
                         {
-                                selector: '.BattleTabStatisticComponentStyle-selectedRowBackGround > .BattleTabStatisticComponentStyle-nicknameCell > div > div > .Common-flexStartAlignCenter > span',
+                                selector: '.BattleTabStatisticComponentStyle-selectedRowBackGround > .BattleTabStatisticComponentStyle-nicknameCell > div > div > .-flexStartAlignCenter > span',
                                 style: `
                                         color: var(--general-color);
                                 `
@@ -5158,7 +5149,7 @@
                         },
 
                         {
-                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer',
+                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer',
                                 style: `
                                         background: rgb(0 0 0 / 35%) !important;
                                         outline: var(--general-outline);
@@ -5175,7 +5166,7 @@
                         },
 
                         {
-                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer > .UserInfoContainerStyle-titleRankIcon',
+                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-rankIconContainer > .UserInfoContainerStyle-titleRankIcon',
                                 style: `
                                         width: 4em;
                                         height: 4em;
@@ -5183,7 +5174,7 @@
                         },
 
                         {
-                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen',
+                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen',
                                 style: `
                                         background: rgb(0 0 0 / 35%) !important;
                                         outline: var(--general-outline);
@@ -5203,14 +5194,14 @@
                         },
 
                         {
-                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div',
+                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div',
                                 style: `
                                         position: absolute;
                                 `
                         },
 
                         {
-                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div:nth-child(1) > span',
+                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > div:nth-child(1) > span',
                                 style: `
                                         font-size: 1.25em;
                                         text-shadow: 0 0 2em;
@@ -5220,7 +5211,7 @@
                         },
 
                         {
-                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .Common-flexStartAlignStartColumn',
+                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .-flexStartAlignStartColumn',
                                 style: `
                                         background: var(--least-general-color);
                                         border-radius: var(--general-border-radius);
@@ -5235,7 +5226,7 @@
                         },
 
                         {
-                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .Common-flexStartAlignStartColumn:after',
+                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .-flexStartAlignStartColumn:after',
                                 style: `
                                         background: var(--general-color);
                                         border-radius: var(--general-border-radius);
@@ -5245,7 +5236,7 @@
                         },
 
                         {
-                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .Common-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .UserInfoContainerStyle-containerParameterProgress',
+                                selector: '.BattleHudComponentStyle-hudContainer > div > .UserInfoContainerStyle-userTitleContainer > .-flexStartAlignCenter > .UserInfoContainerStyle-containerProgressMainScreen > .UserInfoContainerStyle-containerParameterProgress',
                                 style: `
                                         opacity: 0;
                                         pointer-events: none;
@@ -5626,7 +5617,7 @@
                         },
 
                         {
-                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button > .Common-flexStartAlignStart',
+                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button > .-flexStartAlignStart',
                                 style: `
                                         background-color: white;
                                         mask-image: url(/play/static/images/iconButtonNext.ed3de493.svg);
@@ -5640,14 +5631,14 @@
                         },
 
                         {
-                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button > .Common-flexStartAlignStart > img',
+                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button > .-flexStartAlignStart > img',
                                 style: `
                                         visibility: hidden;
                                 `
                         },
 
                         {
-                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -5669,7 +5660,7 @@
                         },
 
                         {
-                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-disabledButton > .Common-flexStartAlignStart',
+                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-disabledButton > .-flexStartAlignStart',
                                 style: `
                                         mask-image: unset !important;
                                         background: unset;
@@ -5677,7 +5668,7 @@
                         },
 
                         {
-                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-disabledButton > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-disabledButton > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -5719,7 +5710,7 @@
                         },
 
                         {
-                                selector: '.ScrollingCardsComponentStyle-scrollCard > .Common-backgroundImageCover',
+                                selector: '.ScrollingCardsComponentStyle-scrollCard > .-backgroundImageCover',
                                 style: `
                                         background-blend-mode: color-dodge;
 
@@ -5728,7 +5719,7 @@
                         },
 
                         {
-                                selector: '.ScrollingCardsComponentStyle-scrollCard:hover > .Common-backgroundImageCover',
+                                selector: '.ScrollingCardsComponentStyle-scrollCard:hover > .-backgroundImageCover',
                                 style: `
                                         transform: scale(1.1, 1.1);
                                 `
@@ -5853,7 +5844,7 @@
                         },
 
                         {
-                                selector: '.BattlePickComponentStyle-commonStyleBlock > .Common-backgroundImage',
+                                selector: '.BattlePickComponentStyle-commonStyleBlock > .-backgroundImage',
                                 style: `
                                         background-blend-mode: hard-light;
 
@@ -5862,14 +5853,14 @@
                         },
 
                         {
-                                selector: '.BattlePickComponentStyle-commonStyleBlock:hover > .Common-backgroundImage',
+                                selector: '.BattlePickComponentStyle-commonStyleBlock:hover > .-backgroundImage',
                                 style: `
                                         transform: scale(1.1, 1.1);
                                 `
                         },
 
                         {
-                                selector: '.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn',
+                                selector: '.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -5885,7 +5876,7 @@
                         },
 
                         {
-                                selector: '.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn',
+                                selector: '.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -5901,24 +5892,24 @@
                         },
 
                         {
-                                selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div,
-                                           .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div`,
+                                selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div,
+                                           .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div`,
                                 style: `
                                         background-color: var(--general-color);
                                 `
                         },
 
                         {
-                                selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn > .Common-flexCenterAlignCenterColumn > h2,
-                                           .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn > .Common-flexCenterAlignCenterColumn > h2`,
+                                selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn > .-flexCenterAlignCenterColumn > h2,
+                                           .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn > .-flexCenterAlignCenterColumn > h2`,
                                 style: `
                                         color: var(--general-color) !important;
                                 `
                         },
 
                         {
-                                selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn > span,
-                                           .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn > span`,
+                                selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn > span,
+                                           .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn > span`,
                                 style: `
                                         visibility: hidden;
                                 `
@@ -5960,7 +5951,7 @@
                         },
 
                         {
-                                selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch',
+                                selector: '.InvitationWindowsComponentStyle-usersScroll > .-flexStartAlignStretch',
                                 style: `
                                         margin-top: unset;
                                         padding-bottom: 1.5em;
@@ -5968,7 +5959,7 @@
                         },
 
                         {
-                                selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass',
+                                selector: '.InvitationWindowsComponentStyle-usersScroll > .-flexStartAlignStretch > .nickNameClass',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -5983,14 +5974,14 @@
                         },
 
                         {
-                                selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-rankContainer',
+                                selector: '.InvitationWindowsComponentStyle-usersScroll > .-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-rankContainer',
                                 style: `
                                         margin-left: 1em;
                                 `
                         },
 
                         {
-                                selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > div:nth-child(2)',
+                                selector: '.InvitationWindowsComponentStyle-usersScroll > .-flexStartAlignStretch > .nickNameClass > div:nth-child(2)',
                                 style: `
                                         position: absolute;
                                         left: 6.5em;
@@ -6001,7 +5992,7 @@
                         },
 
                         {
-                                selector: '.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-onlineContainer',
+                                selector: '.InvitationWindowsComponentStyle-usersScroll > .-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-onlineContainer',
                                 style: `
                                         position: absolute;
                                         display: flex;
@@ -6013,8 +6004,8 @@
                         },
 
                         {
-                                selector: `.InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-onlineContainer > .InvitationWindowsComponentStyle-onlineLabel,
-                                           .InvitationWindowsComponentStyle-usersScroll > .Common-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-onlineContainer > .InvitationWindowsComponentStyle-battleLabel`,
+                                selector: `.InvitationWindowsComponentStyle-usersScroll > .-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-onlineContainer > .InvitationWindowsComponentStyle-onlineLabel,
+                                           .InvitationWindowsComponentStyle-usersScroll > .-flexStartAlignStretch > .nickNameClass > .InvitationWindowsComponentStyle-onlineContainer > .InvitationWindowsComponentStyle-battleLabel`,
                                 style: `
                                         margin: 0.1em;
                                 `
@@ -6385,14 +6376,14 @@
                         },
 
                         {
-                                selector: '.MainQuestComponentStyle-commonDescriptionProgress > .Common-flexSpaceBetweenAlignEnd > span',
+                                selector: '.MainQuestComponentStyle-commonDescriptionProgress > .-flexSpaceBetweenAlignEnd > span',
                                 style: `
                                         margin-bottom: 0.75em;
                                 `
                         },
 
                         {
-                                selector: '.MainQuestComponentStyle-commonDescriptionProgress > .Common-flexSpaceBetweenAlignEnd > h4',
+                                selector: '.MainQuestComponentStyle-commonDescriptionProgress > .-flexSpaceBetweenAlignEnd > h4',
                                 style: `
                                         color: rgb(255 255 255 / 50%);
                                 `
@@ -6414,7 +6405,7 @@
 
                         {
                                 selector: `.MainQuestComponentStyle-descriptionRewards,
-                                           .SuperMissionComponentStyle-descriptionSuperMission > .Common-flexSpaceBetween > .Common-flexEndAlignCenterColumn > span`,
+                                           .SuperMissionComponentStyle-descriptionSuperMission > .-flexSpaceBetween > .-flexEndAlignCenterColumn > span`,
                                 style: `
                                         visibility: hidden;
                                 `
@@ -6429,9 +6420,9 @@
                         },
 
                         {
-                                selector: `.TableMainQuestComponentStyle-rewardsContainerTable > .Common-flexCenterAlignCenterColumn,
-                                           .SuperMissionComponentStyle-rewardsContainer > .Common-flexCenterAlignCenterColumn,
-                                           .MainQuestComponentStyle-rewardsInDescriptionModal > .Common-flexStartAlignCenter`,
+                                selector: `.TableMainQuestComponentStyle-rewardsContainerTable > .-flexCenterAlignCenterColumn,
+                                           .SuperMissionComponentStyle-rewardsContainer > .-flexCenterAlignCenterColumn,
+                                           .MainQuestComponentStyle-rewardsInDescriptionModal > .-flexStartAlignCenter`,
                                 style: `
                                         background: rgb(255 255 255 / 2.5%);
                                         outline: var(--general-outline);
@@ -6589,7 +6580,7 @@
                         },
 
                         {
-                                selector: '.SuperMissionComponentStyle-buttonCollect > .Common-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.SuperMissionComponentStyle-buttonCollect > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -6724,7 +6715,7 @@
                         },
 
                         {
-                                selector: '.Common-container > .GarageCommonStyle-garageContainer > .GarageCommonStyle-positionContent > .GarageMainScreenStyle-blockParameters > div:nth-child(2)',
+                                selector: '.-container > .GarageCommonStyle-garageContainer > .GarageCommonStyle-positionContent > .GarageMainScreenStyle-blockParameters > div:nth-child(2)',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -6785,7 +6776,7 @@
                         },
 
                         {
-                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-tankPartUpgrades > .GarageCommonStyle-animatedBlurredRightBlock > .Common-displayFlexColumn > .Common-flexStart',
+                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-tankPartUpgrades > .GarageCommonStyle-animatedBlurredRightBlock > .-displayFlexColumn > .-flexStart',
                                 style: `
                                         justify-content: space-between;
                                 `
@@ -6860,8 +6851,8 @@
                         },
 
                         {
-                                selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter,
-                                       .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > div > .SkinsIconComponentStyle-cellSkins > .Common-flexCenterAlignCenter`,
+                                selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .-flexCenterAlignCenter,
+                                       .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > div > .SkinsIconComponentStyle-cellSkins > .-flexCenterAlignCenter`,
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -6874,13 +6865,13 @@
                         },
 
                         {
-                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .Common-flexCenterAlignCenter',
+                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > .-flexCenterAlignCenter',
                                 tags: 'hover'
                         },
 
 
                         {
-                                selector: ' .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > div > .SkinsIconComponentStyle-cellSkins > .Common-flexCenterAlignCenter',
+                                selector: ' .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > div:nth-child(2) > .DeviceButtonComponentStyle-blockAlterations > div > .SkinsIconComponentStyle-cellSkins > .-flexCenterAlignCenter',
                                 tags: 'hover'
                         },
 
@@ -6902,8 +6893,8 @@
                         },
 
                         {
-                                selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ItemDescriptionComponentStyle-captionDevice > .Common-flexStartAlignStart,
-                                           .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ItemDescriptionComponentStyle-captionDevice > .Common-flexStartAlignStart`,
+                                selector: `.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ItemDescriptionComponentStyle-captionDevice > .-flexStartAlignStart,
+                                           .TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .TanksPartComponentStyle-descriptionContainer > .GarageCommonStyle-animatedBlurredLeftBlock > .ItemDescriptionComponentStyle-descriptionBlockDevice > .ItemDescriptionComponentStyle-captionDevice > .-flexStartAlignStart`,
                                 style: `
                                         position: absolute;
                                         visibility: hidden;
@@ -6932,7 +6923,7 @@
                         },
 
                         {
-                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .GarageProtectionsComponentStyle-blockParametersProtection > .Common-flexStartAlignStart',
+                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .GarageProtectionsComponentStyle-blockParametersProtection > .-flexStartAlignStart',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -6956,7 +6947,7 @@
                         },
 
                         {
-                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .GarageProtectionsComponentStyle-blockParametersProtection > .Common-flexStartAlignStart > .Common-flexStartAlignStartColumn',
+                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .GarageProtectionsComponentStyle-blockParametersProtection > .-flexStartAlignStart > .-flexStartAlignStartColumn',
                                 style: `
                                         margin-top: 3.5em;
                                         width: max-content;
@@ -6964,14 +6955,14 @@
                         },
 
                         {
-                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .GarageProtectionsComponentStyle-blockParametersProtection > .Common-flexStartAlignStart > .Common-flexStartAlignCenter',
+                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .GarageProtectionsComponentStyle-blockParametersProtection > .-flexStartAlignStart > .-flexStartAlignCenter',
                                 style: `
                                         margin-left: 1.25em;
                                 `
                         },
 
                         {
-                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .GarageProtectionsComponentStyle-blockParametersProtection > .Common-flexStartAlignStart > .Common-flexStartAlignStartColumn:before',
+                                selector: '.TanksPartBaseComponentStyle-tankPartContainer > .TanksPartBaseComponentStyle-blockInsideContainerItem > .GarageProtectionsComponentStyle-blockParametersProtection > .-flexStartAlignStart > .-flexStartAlignStartColumn:before',
                                 style: `
                                         content: '';
 
@@ -7024,7 +7015,7 @@
                         },
 
                         {
-                                selector: '.GarageProtectionsComponentStyle-resistanceIcon > .Common-boxShadowForButton',
+                                selector: '.GarageProtectionsComponentStyle-resistanceIcon > .-boxShadowForButton',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -7039,7 +7030,7 @@
                         },
 
                         {
-                                selector: '.GarageProtectionsComponentStyle-unequip > .Common-boxShadowForButton',
+                                selector: '.GarageProtectionsComponentStyle-unequip > .-boxShadowForButton',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -7105,7 +7096,7 @@
                         },
 
                         {
-                                selector: '.SquarePriceButtonComponentStyle-commonBlockButton > .Common-flexStartAlignStart',
+                                selector: '.SquarePriceButtonComponentStyle-commonBlockButton > .-flexStartAlignStart',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -7125,7 +7116,7 @@
                         },
 
                         {
-                                selector: '.GarageTurretsAlterationsComponentStyle-mountStandardButton > .SquarePriceButtonComponentStyle-commonBlockButton > .Common-flexEndAlignEnd > .Font-bold',
+                                selector: '.GarageTurretsAlterationsComponentStyle-mountStandardButton > .SquarePriceButtonComponentStyle-commonBlockButton > .-flexEndAlignEnd > .Font-bold',
                                 style: `
                                         color: var(--general-color);
                                         text-shadow: 0 0 16px;
@@ -7134,7 +7125,7 @@
                         },
 
                         {
-                                selector: '.GarageTurretsAlterationsComponentStyle-styleDescriptionBlock > .Common-flexStartAlignStartColumn > .Common-flexStartAlignStart',
+                                selector: '.GarageTurretsAlterationsComponentStyle-styleDescriptionBlock > .-flexStartAlignStartColumn > .-flexStartAlignStart',
                                 style: `
                                         position: absolute;
                                         visibility: hidden;
@@ -7159,7 +7150,7 @@
                         },
 
                         {
-                                selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn',
+                                selector: '.GarageMainScreenStyle-blockParameters > div > .-flexStartAlignStartColumn',
                                 style: `
                                         position: relative;
                                         bottom: unset;
@@ -7169,7 +7160,7 @@
                         },
 
                         {
-                                selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn:before',
+                                selector: '.GarageMainScreenStyle-blockParameters > div > .-flexStartAlignStartColumn:before',
                                 style: `
                                         content: '';
                                         background: var(--general-bg);
@@ -7185,7 +7176,7 @@
                         },
 
                         {
-                                selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div',
+                                selector: '.GarageMainScreenStyle-blockParameters > div > .-flexStartAlignStartColumn > div',
                                 style: `
                                         justify-content: center;
                                         width: inherit;
@@ -7193,7 +7184,7 @@
                         },
 
                         {
-                                selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer',
+                                selector: '.GarageMainScreenStyle-blockParameters > div > .-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer',
                                 style: `
                                         position: unset;
                                         visibility: visible;
@@ -7202,7 +7193,7 @@
                         },
 
                         {
-                                selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer > .MountedItemsStyle-commonForCellResistenceName',
+                                selector: '.GarageMainScreenStyle-blockParameters > div > .-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer > .MountedItemsStyle-commonForCellResistenceName',
                                 style: `
                                         background: transparent;
                                         width: inherit;
@@ -7213,14 +7204,14 @@
                         },
 
                         {
-                                selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer > .MountedItemsStyle-commonForCellResistenceName > .CellResistanceComponentStyle-resistanceIconContainer',
+                                selector: '.GarageMainScreenStyle-blockParameters > div > .-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer > .MountedItemsStyle-commonForCellResistenceName > .CellResistanceComponentStyle-resistanceIconContainer',
                                 style: `
                                         width: inherit;
                                 `
                         },
 
                         {
-                                selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer:first-child > .MountedItemsStyle-commonForCellResistenceName',
+                                selector: '.GarageMainScreenStyle-blockParameters > div > .-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer:first-child > .MountedItemsStyle-commonForCellResistenceName',
                                 style: `
                                         border-top-left-radius: var(--general-border-radius);
                                         border-bottom-left-radius: var(--general-border-radius);
@@ -7228,7 +7219,7 @@
                         },
 
                         {
-                                selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer:nth-child(4) > .MountedItemsStyle-commonForCellResistenceName',
+                                selector: '.GarageMainScreenStyle-blockParameters > div > .-flexStartAlignStartColumn > div > .MountedItemsStyle-resistanceContainer:nth-child(4) > .MountedItemsStyle-commonForCellResistenceName',
                                 style: `
                                         border-top-right-radius: var(--general-border-radius);
                                         border-bottom-right-radius: var(--general-border-radius);
@@ -7236,7 +7227,7 @@
                         },
 
                         {
-                                selector: '.GarageMainScreenStyle-blockParameters > div > .Common-flexStartAlignStartColumn > div > div > .MountedItemsStyle-improvementArrow',
+                                selector: '.GarageMainScreenStyle-blockParameters > div > .-flexStartAlignStartColumn > div > div > .MountedItemsStyle-improvementArrow',
                                 style: `
                                         visibility: hidden;
                                         position: absolute;
@@ -7244,7 +7235,7 @@
                         },
 
                         {
-                                selector: '.Common-container > .GarageCommonStyle-garageContainer > .GarageCommonStyle-positionContent > .GarageMainScreenStyle-blockParameters > .TanksPartBaseComponentStyle-tankPartContainer',
+                                selector: '.-container > .GarageCommonStyle-garageContainer > .GarageCommonStyle-positionContent > .GarageMainScreenStyle-blockParameters > .TanksPartBaseComponentStyle-tankPartContainer',
                                 style: `
                                         background: unset !important;
                                         outline: unset !important;
@@ -7281,7 +7272,7 @@
                         },
 
                         {
-                                selector: '.ListItemsComponentStyle-itemsListContainer > .Common-flexCenterAlignCenter',
+                                selector: '.ListItemsComponentStyle-itemsListContainer > .-flexCenterAlignCenter',
                                 style: `
                                         background: transparent;
 
@@ -7305,14 +7296,14 @@
                         },
 
                         {
-                                selector: '.ListItemsComponentStyle-itemsContainer > .Common-flexSpaceBetweenAlignCenterColumn',
+                                selector: '.ListItemsComponentStyle-itemsContainer > .-flexSpaceBetweenAlignCenterColumn',
                                 style: `
                                         margin-right: unset;
                                 `
                         },
 
                         {
-                                selector: '.ListItemsComponentStyle-itemsContainer > .Common-flexSpaceBetweenAlignCenterColumn:first-child > .Common-itemStyle',
+                                selector: '.ListItemsComponentStyle-itemsContainer > .-flexSpaceBetweenAlignCenterColumn:first-child > .-itemStyle',
                                 style: `
                                         border-left: var(--general-outline);
                                         border-top-left-radius: var(--general-border-radius);
@@ -7321,7 +7312,7 @@
                         },
 
                         {
-                                selector: '.ListItemsComponentStyle-itemsContainer > .Common-flexSpaceBetweenAlignCenterColumn:last-child > .Common-itemStyle',
+                                selector: '.ListItemsComponentStyle-itemsContainer > .-flexSpaceBetweenAlignCenterColumn:last-child > .-itemStyle',
                                 style: `
                                         border-right: var(--general-outline);
                                         border-top-right-radius: var(--general-border-radius);
@@ -7330,7 +7321,7 @@
                         },
 
                         {
-                                selector: '.Common-itemStyle',
+                                selector: '.-itemStyle',
                                 style: `
                                         background: var(--general-bg);
                                         box-shadow: unset !important;
@@ -7344,8 +7335,8 @@
                         },
 
                         {
-                                selector: `.Common-itemStyle > .Common-flexSpaceBetweenAlignStretch,
-                                           .Common-itemStyle > .Common-flexSpaceBetweenAlignStretch > img,
+                                selector: `.-itemStyle > .-flexSpaceBetweenAlignStretch,
+                                           .-itemStyle > .-flexSpaceBetweenAlignStretch > img,
 
                                            .SkinCellStyle-widthHeight > .SkinCellComponentStyle-deviceCategoryIcons-RARE,
                                            .SkinCellStyle-widthHeight > .SkinCellComponentStyle-deviceCategoryIcons-EPIC,
@@ -7483,7 +7474,7 @@
                         },
 
                         {
-                                selector: '.GarageCommonStyle-subMenu > .Common-flexSpaceBetweenAlignStartColumn',
+                                selector: '.GarageCommonStyle-subMenu > .-flexSpaceBetweenAlignStartColumn',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -7615,7 +7606,7 @@
                         },
 
                         {
-                                selector: '.SaleByKitStyle-commonBlockModal > .SaleByKitStyle-paddingHeaderModal > .Common-flexStartAlignCenter > .HotKey-commonBlockForHotKey',
+                                selector: '.SaleByKitStyle-commonBlockModal > .SaleByKitStyle-paddingHeaderModal > .-flexStartAlignCenter > .HotKey-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -7636,7 +7627,7 @@
                         },
 
                         {
-                                selector: '.PaintsCollectionComponentStyle-commonBlockPaint > .Common-flexCenterAlignCenter',
+                                selector: '.PaintsCollectionComponentStyle-commonBlockPaint > .-flexCenterAlignCenter',
                                 style: `
                                         outline: var(--general-outline);
                                         box-shadow: var(--general-box-shadow);
@@ -7651,14 +7642,14 @@
                         },
 
                         {
-                                selector: '.PaintsCollectionComponentStyle-commonBlockPaint > .Common-flexCenterAlignCenter:hover',
+                                selector: '.PaintsCollectionComponentStyle-commonBlockPaint > .-flexCenterAlignCenter:hover',
                                 style: `
                                         background: rgb(255 255 255 / 15%);
                                 `
                         },
 
                         {
-                                selector: '.PaintsCollectionComponentStyle-captionPaint > .Common-backgroundImageContain',
+                                selector: '.PaintsCollectionComponentStyle-captionPaint > .-backgroundImageContain',
                                 style: `
                                         background-image: unset;
                                         background-color: var(--general-color);
@@ -7845,16 +7836,16 @@
                         },
 
                         {
-                                selector: `.ShopSelectedSectionComponentStyle-limitedOffersCommon > .Common-backgroundImageCover,
-                                           .ShopSelectedSectionComponentStyle-commonCard > .Common-backgroundImageCover`,
+                                selector: `.ShopSelectedSectionComponentStyle-limitedOffersCommon > .-backgroundImageCover,
+                                           .ShopSelectedSectionComponentStyle-commonCard > .-backgroundImageCover`,
                                 style: `
                                         transition: var(--general-transition);
                                 `
                         },
 
                         {
-                                selector: `.ShopSelectedSectionComponentStyle-limitedOffersCommon:hover > .Common-backgroundImageCover,
-                                           .ShopSelectedSectionComponentStyle-commonCard:hover > .Common-backgroundImageCover`,
+                                selector: `.ShopSelectedSectionComponentStyle-limitedOffersCommon:hover > .-backgroundImageCover,
+                                           .ShopSelectedSectionComponentStyle-commonCard:hover > .-backgroundImageCover`,
                                 style: `
                                         transform: scale(1.1, 1.1);
                                 `
@@ -7918,7 +7909,7 @@
                         },
 
                         {
-                                selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter',
+                                selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div > .-flexStartAlignCenter',
                                 style: `
                                         box-shadow: unset !important;
                                         border-radius: unset;
@@ -7928,7 +7919,7 @@
                         },
 
                         {
-                                selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter:first-child',
+                                selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div > .-flexStartAlignCenter:first-child',
                                 style: `
                                         border-top-left-radius: var(--general-border-radius);
                                         border-top-right-radius: var(--general-border-radius);
@@ -7936,7 +7927,7 @@
                         },
 
                         {
-                                selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter:last-child',
+                                selector: '.NewShopCommonComponentStyle-commonBlockMenuShop > div > .-flexStartAlignCenter:last-child',
                                 style: `
                                         border-bottom-left-radius: var(--general-border-radius);
                                         border-bottom-right-radius: var(--general-border-radius);
@@ -7945,8 +7936,8 @@
 
 
                         {
-                                selector: `.NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter > h4,
-                                           .NewShopCommonComponentStyle-commonBlockMenuShop > div > .Common-flexStartAlignCenter > .ShopSelectedSectionComponentStyle-activeCategory`,
+                                selector: `.NewShopCommonComponentStyle-commonBlockMenuShop > div > .-flexStartAlignCenter > h4,
+                                           .NewShopCommonComponentStyle-commonBlockMenuShop > div > .-flexStartAlignCenter > .ShopSelectedSectionComponentStyle-activeCategory`,
                                 style: `
                                         transition: var(--general-transition);
                                 `
@@ -7968,7 +7959,7 @@
 
                         {
                                 selector: `.shop-item-component,
-                                           .ShopCategoryOfferSectionStyle-containerLimitOffers > .Common-flexCenterAlignCenter`,
+                                           .ShopCategoryOfferSectionStyle-containerLimitOffers > .-flexCenterAlignCenter`,
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -7985,7 +7976,7 @@
 
                         {
                                 selector: `.shop-item-component:hover,
-                                           .ShopCategoryOfferSectionStyle-containerLimitOffers > .Common-flexCenterAlignCenter:hover`,
+                                           .ShopCategoryOfferSectionStyle-containerLimitOffers > .-flexCenterAlignCenter:hover`,
                                 style: `
                                         background: var(--general-bg-hover);
                                 `
@@ -8543,7 +8534,7 @@
 
                         let user = document.querySelector('.UserInfoContainerStyle-textDecoration')?.textContent?.split(' ').pop();
 
-                        target.querySelectorAll('.Common-maskImage').forEach((element) => {
+                        target.querySelectorAll('.-maskImage').forEach((element) => {
 
                                 let maskImage = window.getComputedStyle(element).getPropertyValue('-webkit-mask-image')?.split('"')?.[1];
 
@@ -8582,7 +8573,7 @@
                         },
 
                         {
-                                selector: '.BattleTabStatisticComponentStyle-containerInsideTeams > .Common-flexCenterAlignCenter',
+                                selector: '.BattleTabStatisticComponentStyle-containerInsideTeams > .-flexCenterAlignCenter',
                                 style: `
                                         opacity: 1;
                                         margin-top: 0.5em;
@@ -8990,7 +8981,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
 
                                                                                 if (header) {
 
@@ -9034,7 +9025,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
 
                                                                                 if (header) {
 
@@ -9078,7 +9069,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
 
                                                                                 if (header) {
 
@@ -9122,7 +9113,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
 
                                                                                 if (header) {
 
@@ -9166,7 +9157,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
 
                                                                                 if (header) {
 
@@ -9210,7 +9201,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
 
                                                                                 if (header) {
 
@@ -9254,7 +9245,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
 
                                                                                 if (header) {
 
@@ -9298,7 +9289,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .Common-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
+                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
 
                                                                                 if (header) {
 
@@ -9370,7 +9361,7 @@
                                                 },
 
                                                 {
-                                                        selector: '.Common-container, .NotificationViewStyle-commonBlockNotification',
+                                                        selector: '.-container, .NotificationViewStyle-commonBlockNotification',
                                                         style: `
                                                                 pointer-events: none;
                                                         `
@@ -9392,7 +9383,7 @@
 
 
                                                 {
-                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .Common-displayFlex > .MainScreenComponentStyle-buttonPlay',
+                                                        selector: '.MainScreenComponentStyle-containerForMenuGradient > .-displayFlex > .MainScreenComponentStyle-buttonPlay',
                                                         style: `
                                                                 opacity: 0;
                                                         `
@@ -10798,7 +10789,7 @@
 
                                                         localStorage.setItem('obscLocalStorageVariable-ownBackground', linkListener);
 
-                                                        backgroundStyles.textContent = `.BattleComponentStyle-canvasContainer > .Common-container { background: url('${linkListener}') 0% 0% / cover, center bottom no-repeat !important } body { background: url('${linkListener}') 0% 0% / cover, center bottom no-repeat !important }`
+                                                        backgroundStyles.textContent = `.BattleComponentStyle-canvasContainer > .-container { background: url('${linkListener}') 0% 0% / cover, center bottom no-repeat !important } body { background: url('${linkListener}') 0% 0% / cover, center bottom no-repeat !important }`
 
                                                         backgroundStyles.textContent += `.obscDOMElement-svgGradient { opacity: 0.25 !important } .obscDOMElement-holoCanvas { opacity: 0.5 !important } .obscDOMElement-spaceCanvas { opacity: 0.85 !important }`
 
@@ -10814,7 +10805,7 @@
 
                                         if (localStorage.getItem('obscLocalStorageVariable-ownBackground')) {
 
-                                                backgroundStyles.textContent = `.BattleComponentStyle-canvasContainer > .Common-container { background: url('${localStorage.getItem('obscLocalStorageVariable-ownBackground')}') 0% 0% / cover, center bottom no-repeat !important } body { background: url('${localStorage.getItem('obscLocalStorageVariable-ownBackground')}') 0% 0% / cover, center bottom no-repeat !important } .obscDOMElement-svgGradient { opacity: 0.25 !important } .obscDOMElement-holoCanvas { opacity: 0.5 !important } .obscDOMElement-spaceCanvas { opacity: 0.85 !important }`
+                                                backgroundStyles.textContent = `.BattleComponentStyle-canvasContainer > .-container { background: url('${localStorage.getItem('obscLocalStorageVariable-ownBackground')}') 0% 0% / cover, center bottom no-repeat !important } body { background: url('${localStorage.getItem('obscLocalStorageVariable-ownBackground')}') 0% 0% / cover, center bottom no-repeat !important } .obscDOMElement-svgGradient { opacity: 0.25 !important } .obscDOMElement-holoCanvas { opacity: 0.5 !important } .obscDOMElement-spaceCanvas { opacity: 0.85 !important }`
 
                                         };
 
