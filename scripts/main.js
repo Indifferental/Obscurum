@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v2.2.1'
+        var version = 'v2.3.0'
 
         // изменение иконки на вкладке браузера
 
@@ -853,6 +853,14 @@
                                 selector: 'html, body',
                                 style: `
                                         background: radial-gradient(ellipse at top, rgb(25, 25, 25),  black);
+                                `
+                        },
+
+                        {
+                                selector: '.ClientInfoComponentStyle-main',
+                                style: `
+                                        position: absolute;
+                                        visibility: hidden;
                                 `
                         },
 
@@ -11598,6 +11606,42 @@
                                 let logWindow_textHeader = element('div', 'obscDOMElement-changelogWindow-textHeader', changesPage);
 
                                 if (logWindow_textHeader) {
+
+                                        // v2.3.0
+
+                                        let h1_230 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v2_3_0', logWindow_textHeader);
+
+                                            h1_230.innerHTML = 'v2.3.0'
+
+                                        if (h1_230) {
+
+                                                let h1_230_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_230);
+
+                                                let h1_230_span1 = element('span', 'h1-230-span1', h1_230);
+
+                                                let h1_230_span2 = element('span', 'h1-230-span2', h1_230);
+
+                                                let h1_230_span3 = element('span', 'h1-230-span3', h1_230);
+
+                                                if (language == 'RU') {
+
+                                                        h1_230_span1.innerHTML = '• Фикс цветных резистов в окне статистики в битве'
+
+                                                        h1_230_span2.innerHTML = '• Фикс некоторых функций в лобби (часы, текстуры гаража, фастпик)'
+
+                                                        h1_230_span3.innerHTML = '• Удалена контрольная линия в правом нижнем углу экрана'
+
+                                                } else {
+
+                                                        h1_230_span1.innerHTML = '• Fixed color resistances in the battle statistics window'
+
+                                                        h1_230_span2.innerHTML = '• Fixed some functions in the lobby (clocks, garage textures, fastpick)'
+
+                                                        h1_230_span3.innerHTML = '• The control line in the lower right corner of the screen has been removed'
+
+                                                };
+
+                                        };
 
                                         // v2.2.1
 
