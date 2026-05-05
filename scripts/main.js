@@ -1,3 +1,16 @@
+// ==UserScript==
+// @name         Obscurum [inDev]
+// @namespace    http://tampermonkey.net/
+// @version      none
+// @description  An open-source theme for Tanki Online
+// @author       Indifferental
+// @match        https://*.tankionline.com/*
+// @icon         https://github.com/Indifferental/Obscurum/blob/main/assets/icons/flame90.png?raw=true
+// @grant        GM_xmlhttpRequest
+// @grant        unsafeWindow
+// @run-at       document-body
+// ==/UserScript==
+
 (function() {
 
         var version = 'v2.2.1'
@@ -2003,7 +2016,7 @@
                         },
 
                         {
-                                selector: '.ItemDescriptionComponentStyle-commonBlockModal > .ItemDescriptionComponentStyle-paddingHeaderModal > .-flexStartAlignCenter > .HotKey-commonBlockForHotKey',
+                                selector: '.ItemDescriptionComponentStyle-commonBlockModal > .ItemDescriptionComponentStyle-paddingHeaderModal > .-flexStartAlignCenter > .-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -2120,11 +2133,11 @@
                         },
 
                         {
-                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexCenterAlignCenter > .HotKey-commonBlockForHotKey,
-                                           .MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexCenterAlignCenterColumn > .HotKey-commonBlockForHotKey,
-                                           .MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > .-flexCenterAlignCenter > .HotKey-commonBlockForHotKey,
+                                selector: `.MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexCenterAlignCenter > .-commonBlockForHotKey,
+                                           .MainScreenComponentStyle-containerPanel > .UserInfoContainerStyle-blockLeftPanel > .UserInfoContainerStyle-userTitleContainer > .-flexCenterAlignCenterColumn > .-commonBlockForHotKey,
+                                           .MainScreenComponentStyle-containerPanel > .UserScoreComponentStyle-blockRightPanel > .-flexCenterAlignCenter > .-commonBlockForHotKey,
 
-                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexCenterAlignCenter > .HotKey-commonBlockForHotKey,
+                                           .BreadcrumbsComponentStyle-headerContainer > .-flexCenterAlignStart > .-flexCenterAlignCenter > .-commonBlockForHotKey,
                                            .BreadcrumbsComponentStyle-rightButtonsContainer > .-flexCenterAlignCenter > h3,
                                            .BreadcrumbsComponentStyle-backButton > h3`,
                                 style: `
@@ -3692,7 +3705,7 @@
                         },
 
                         {
-                                selector: '.ClanInvitationsComponentStyle-sendButton > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.ClanInvitationsComponentStyle-sendButton > .-flexStartAlignStart > .-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -3866,7 +3879,7 @@
                         },
 
                         {
-                                selector: '.MainQuestComponentStyle-buttonContainer > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.MainQuestComponentStyle-buttonContainer > .-flexStartAlignStart > .-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -5638,7 +5651,7 @@
                         },
 
                         {
-                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-button > .-flexStartAlignStart > .-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -5668,7 +5681,7 @@
                         },
 
                         {
-                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-disabledButton > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.BattleResultNavigationComponentStyle-commonBlockButtonNextLeave > .BattleResultNavigationComponentStyle-disabledButton > .-flexStartAlignStart > .-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -5860,7 +5873,7 @@
                         },
 
                         {
-                                selector: '.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn',
+                                selector: '.-blockCenter0 > .-cardContentRight > .-cardContentUp0 > .-flexSpaceBetweenAlignCenterColumn',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -5876,7 +5889,7 @@
                         },
 
                         {
-                                selector: '.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn',
+                                selector: '.-blockCenter0 > .-cardContentRight > .-cardDown > .-flexSpaceBetweenAlignCenterColumn',
                                 style: `
                                         background: var(--general-bg);
                                         outline: var(--general-outline);
@@ -5892,24 +5905,24 @@
                         },
 
                         {
-                                selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div,
-                                           .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div`,
+                                selector: `.-blockCenter0 > .-cardContentRight > .-cardContentUp0 > .-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div,
+                                           .-blockCenter0 > .-cardContentRight > .-cardDown > .-flexSpaceBetweenAlignCenterColumn > .BattleModesComponentStyle-imageBlock > div`,
                                 style: `
                                         background-color: var(--general-color);
                                 `
                         },
 
                         {
-                                selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn > .-flexCenterAlignCenterColumn > h2,
-                                           .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn > .-flexCenterAlignCenterColumn > h2`,
+                                selector: `.-blockCenter0 > .-cardContentRight > .-cardContentUp0 > .-flexSpaceBetweenAlignCenterColumn > .-flexCenterAlignCenterColumn > h2,
+                                           .-blockCenter0 > .-cardContentRight > .-cardDown > .-flexSpaceBetweenAlignCenterColumn > .-flexCenterAlignCenterColumn > h2`,
                                 style: `
                                         color: var(--general-color) !important;
                                 `
                         },
 
                         {
-                                selector: `.BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn > span,
-                                           .BattleModesComponentStyle-blockCenter > .BattleModesComponentStyle-cardContentRight > .BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn > span`,
+                                selector: `.-blockCenter0 > .-cardContentRight > .-cardContentUp0 > .-flexSpaceBetweenAlignCenterColumn > span,
+                                           .-blockCenter0 > .-cardContentRight > .-cardDown > .-flexSpaceBetweenAlignCenterColumn > span`,
                                 style: `
                                         visibility: hidden;
                                 `
@@ -6105,8 +6118,8 @@
                         },
 
                         {
-                                selector: `.InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-backButton > div > .HotKey-commonBlockForHotKey,
-                                           .InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-buttons > div > div > .HotKey-commonBlockForHotKey`,
+                                selector: `.InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-backButton > div > .-commonBlockForHotKey,
+                                           .InvitationWindowsComponentStyle-buttonsContainer > .InvitationWindowsComponentStyle-buttons > div > div > .-commonBlockForHotKey`,
                                 style: `
                                         visibility: hidden;
                                         position: absolute;
@@ -6580,7 +6593,7 @@
                         },
 
                         {
-                                selector: '.SuperMissionComponentStyle-buttonCollect > .-flexStartAlignStart > .HotKey-commonBlockForHotKey',
+                                selector: '.SuperMissionComponentStyle-buttonCollect > .-flexStartAlignStart > .-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -7606,7 +7619,7 @@
                         },
 
                         {
-                                selector: '.SaleByKitStyle-commonBlockModal > .SaleByKitStyle-paddingHeaderModal > .-flexStartAlignCenter > .HotKey-commonBlockForHotKey',
+                                selector: '.SaleByKitStyle-commonBlockModal > .SaleByKitStyle-paddingHeaderModal > .-flexStartAlignCenter > .-commonBlockForHotKey',
                                 style: `
                                         visibility: hidden;
                                 `
@@ -8438,101 +8451,98 @@
                 var tankResistances = [
 
                         {
-                                oldPicture: "https://tankionline.com/play/static/images/crit_resistance.7fb68893.svg",
+                                oldPicture: "https://s.eu.tankionline.com/static/images/crit_resistance.94e32312.svg",
                                 picture: "https://tankionline.com/play/static/images/resistances/crit_resistance.3f4d1cc2.svg"
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/firebird_resistance.785a9d6b.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/firebird_resistance.785a9d6b.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/firebird_resistance.00ac2221.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/freeze_resistance.33bdf642.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/freeze_resistance.33bdf642.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/freeze_resistance.d26eb338.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/isis_resistance.30a69ffc.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/isis_resistance.30a69ffc.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/isis_resistance.5b05887a.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/tesla_resistance.3e686c8e.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/tesla_resistance.3e686c8e.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/tesla_resistance.663d3597.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/hammer_resistance.6c549d29.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/hammer_resistance.6c549d29.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/hammer_resistance.28e73097.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/twins_resistance.ad189f61.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/twins_resistance.ad189f61.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/twins_resistance.fbbc4d72.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/ricochet_resistance.8247beaa.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/ricochet_resistance.8247beaa.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/ricochet_resistance.69c6c7ee.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/smoky_resistance.845afc14.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/smoky_resistance.845afc14.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/smoky_resistance.c4c202ca.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/rocket_launcher_resistance.b7dfd64f.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/rocket_launcher_resistance.b7dfd64f.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/rocket_launcher_resistance.5772cbaa.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/vulcan_resistance.824f6f0e.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/vulcan_resistance.824f6f0e.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/vulcan_resistance.9aebf267.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/thunder_resistance.6d7f4531.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/thunder_resistance.6d7f4531.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/thunder_resistance.9dab2abf.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/scorpio_resistance.e8f1787f.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/scorpio_resistance.e8f1787f.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/scorpio_resistance.d40f8fbb.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/railgun_resistance.636a554f.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/railgun_resistance.636a554f.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/railgun_resistance.7577c7a1.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/artillery_resistance.9b4cbc34.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/artillery_resistance.9b4cbc34.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/artillery_resistance.bd49fc96.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/gauss_resistance.bb8f409c.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/gauss_resistance.bb8f409c.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/gauss_resistance.acf358ed.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/shaft_resistance.0778fd3e.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/shaft_resistance.0778fd3e.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/shaft_resistance.7e58bc19.svg'
                         },
 
                         {
-                                oldPicture: 'https://tankionline.com/play/static/images/mine_resistance.dd581c90.svg',
+                                oldPicture: 'https://s.eu.tankionline.com/static/images/mine_resistance.dd581c90.svg',
                                 picture: 'https://tankionline.com/play/static/images/resistances/mine_resistance.0d0d3c98.svg'
                         },
 
                 ];
 
-
                 function color(target) {
-
-                        let user = document.querySelector('.UserInfoContainerStyle-textDecoration')?.textContent?.split(' ').pop();
 
                         target.querySelectorAll('.-maskImage').forEach((element) => {
 
@@ -8981,7 +8991,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
+                                                                                let header = document.querySelector('.-cardContentUp0 > .-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
 
                                                                                 if (header) {
 
@@ -9025,7 +9035,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
+                                                                                let header = document.querySelector('.-cardContentUp0 > .-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
 
                                                                                 if (header) {
 
@@ -9069,7 +9079,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
+                                                                                let header = document.querySelector('.-cardContentUp0 > .-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
 
                                                                                 if (header) {
 
@@ -9113,7 +9123,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardContentUp > .-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
+                                                                                let header = document.querySelector('.-cardContentUp0 > .-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
 
                                                                                 if (header) {
 
@@ -9157,7 +9167,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
+                                                                                let header = document.querySelector('.-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(1)');
 
                                                                                 if (header) {
 
@@ -9201,7 +9211,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
+                                                                                let header = document.querySelector('.-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(2)');
 
                                                                                 if (header) {
 
@@ -9245,7 +9255,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
+                                                                                let header = document.querySelector('.-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(3)');
 
                                                                                 if (header) {
 
@@ -9289,7 +9299,7 @@
 
                                                                         setTimeout(function() {
 
-                                                                                let header = document.querySelector('.BattleModesComponentStyle-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
+                                                                                let header = document.querySelector('.-cardDown > .-flexSpaceBetweenAlignCenterColumn:nth-child(4)');
 
                                                                                 if (header) {
 
@@ -12382,7 +12392,7 @@
 
                                                         Mutation.addedNodes.forEach(function(element) {
 
-                                                                if (element.nodeType === 1 && element.classList.contains('Common-container')) {
+                                                                if (element.nodeType === 1 && element.classList.contains('-container')) {
 
                                                                         let nicknameHeader = document.querySelector('.UserInfoContainerStyle-userNameRank.UserInfoContainerStyle-textDecoration');
 
