@@ -1,6 +1,6 @@
 (function() {
 
-        var version = 'v2.3.0'
+        var version = 'v2.3.1'
 
         // изменение иконки на вкладке браузера
 
@@ -53,7 +53,7 @@
         const globalProperties = {
 
                 background: 'rgb(0 0 0 / 5%)',
-                background_hover: 'rgb(255 255 255 / 2.5%)',
+                background_hover: 'rgb(255 255 255 / 5%)',
 
                 outline: '2px solid rgb(255 255 255 / 2.5%)',
                 border_radius: '1.25em',
@@ -64,7 +64,7 @@
 
                 color: '255 157 71',
 
-                transition: '.225s cubic-bezier(.25, .1, .25, 1)',
+                transition: '.15s cubic-bezier(.25, .1, .25, 1)',
                 animation: 'blend .15s ease-in-out',
 
         };
@@ -411,8 +411,8 @@
                                         background-color: rgb(255 255 255 / 5%);
 
                                         position: relative;
-                                        margin-bottom: 2em;
-                                        width: calc(100% - 4em);
+                                        margin-bottom: 1em;
+                                        width: calc(100% - 2em);
                                         height: 1px;
                                 `
                         },
@@ -427,14 +427,14 @@
                                         display: flex;
                                         justify-content: center;
                                         align-items: center;
-                                        margin-bottom: 2em;
+                                        margin-bottom: 1em;
                                         width: 100%;
-                                        height: 6em;
+                                        height: 5em;
                                         cursor: pointer;
 
                                         transition: var(--general-transition);
 
-                                        --default-button-color: rgb(255 255 255 / 25%);
+                                        --default-button-color: rgb(255 255 255 / 50%);
                                 `
                         },
 
@@ -571,18 +571,19 @@
                         },
 
                         {
-                                selector: '.obscDOMElement-bSettingsOwnBackgroundHelp',
+                                selector: '.obscDOMElement-bSettingsOwnBackgroundHelp, .obscDOMElement-cSettingsOwnColorHelp',
                                 style: `
                                         color: rgb(117 191 255);
                                         font-size: 1.25em;
                                         font-family: 'BaseFontMedium';
 
                                         align-self: center;
+                                        margin-bottom: 1em;
                                 `
                         },
 
                         {
-                                selector: '.obscDOMElement-menuDetailsPageLine, .obscDOMElement-bSettingsPageLine',
+                                selector: '.obscDOMElement-menuDetailsPageLine',
                                 style: `
                                         background-color: rgb(255 255 255 / 5%);
 
@@ -642,7 +643,7 @@
                         },
 
                         {
-                                selector: '.obscDOMElement-cSettingsHandler, .obscDOMElement-gSettingsHandler',
+                                selector: '.obscDOMElement-cSettingsHandler, .obscDOMElement-gSettingsHandler, .obscDOMElement-bSettingsHandler',
                                 style: `
                                         background: rgb(255 255 255 / 5%);
                                         border-radius: 1em;
@@ -653,25 +654,6 @@
                                         align-items: flex-start;
                                         padding: 1.5em;
                                         margin-bottom: 1em;
-                                        width: calc(100% - 3em);
-                                        height: max-content;
-
-                                        --menu-button-color: rgb(0 0 0 / 30%);
-                                        --menu-slider-color: rgb(255 255 255 / 20%);
-                                `
-                        },
-
-                        {
-                                selector: '.obscDOMElement-bSettingsHandler',
-                                style: `
-                                        background: rgb(255 255 255 / 5%);
-                                        border-radius: 1em;
-
-                                        display: flex;
-                                        flex-direction: column;
-                                        justify-content: center;
-                                        align-items: flex-start;
-                                        padding: 1.5em;
                                         width: calc(100% - 3em);
                                         height: max-content;
 
@@ -779,7 +761,7 @@
                         },
 
                         {
-                                selector: '.obscDOMElement-cSettingsOwnColorHeader, .obscDOMElement-bSettingsOwnBackgroundHeader',
+                                selector: '.obscDOMElement-cSettingsOwnColorSpan, .obscDOMElement-bSettingsOwnBackgroundHeader',
                                 style: `
                                         color: var(--default-button-color);
                                         font-family: 'BaseFontBold';
@@ -792,7 +774,7 @@
                         },
 
                         {
-                                selector: '.obscDOMElement-cSettingsOwnColorImage, .obscDOMElement-bSettingsOwnBackgroundImage',
+                                selector: '.obscDOMElement-bSettingsOwnBackgroundImage',
                                 style: `
                                         background-color: var(--default-button-color);
 
@@ -821,6 +803,23 @@
                                 selector: '.mOwnColor .bOwnBackgroundHandler:hover',
                                 style: `
                                         background-color: rgb(255 255 255 / 10%);
+                                `
+                        },
+
+                        {
+                                selector: '.obscDOMElement-cSettingsOwnColorImage',
+                                style: `
+                                        background-color: var(--default-button-color);
+
+                                        mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAABjElEQVR4nO3aTWoCQRCG4XcZ0JwguvZEnseNJLlKguAmmGVAzQ2SWyQh4wUqCC0EQZ2frupupz6o3UxXP8L09NCCx+PxeDye3DMGFsAOkAu1v2YJTCgY+10Delw/4d7ismiBPdQzBWbXAVxRYKRjFRdxMGrgG+Ae+AyPwzsw5UrBQ2B9YowZVwYeAG8XxnnkSsCDGlhTtCiCm2DN0KIEboM1QYsCeL9AbTqOOysFPIyAPdS0BPAmElbCezp7sESsqm/gj76B530Cr8PeuxfgLXCrgc0RrIrNDayOzQlsgs0FbIbNAWyKTQ02x6YEJ8GmAifDpgBvwifkcR6szrLEENwUq3KWJUbgLtioZ1liAI6BjfZ9LMrgUwvUPFK/rMCxsVmDtwrYbMFbJawq+AW4A0bAqsEEYi1Q5uDRv2vGDSagic0SrIlVBa8Ceo99bTmB2FhJ/aeWX2PsuX61s+wwgSdD7Ll+jTIJG/Omzb+OnnNt7Kl+rTIOG/OqRuMq/NJW2HP9PB6Px+PxkE/+ADPhDL3LRCI9AAAAAElFTkSuQmCC);
+                                        mask-position: center;
+                                        mask-repeat: no-repeat;
+                                        mask-size: contain;
+
+                                        position: absolute;
+                                        left: 1.5em;
+                                        width: 1.5em;
+                                        height: 1.5em;
                                 `
                         },
 
@@ -1581,6 +1580,13 @@
                         },
 
                         {
+                                selector: '.obscDOMElement-changelogWindow-textHeader > h1:first-child',
+                                style: `
+                                        color: white;
+                                `
+                        },
+
+                        {
                                 selector: `.obscDOMElement-changelogWindow-textHeader-h1`,
                                 style: `
                                         color: rgb(255 255 255 / 35%);
@@ -1610,7 +1616,7 @@
                                 style: `
                                         background: rgb(255 255 255 / 10%);
                                         margin: 0.5em 0;
-                                        width: calc(100% - 1em);
+                                        width: 100%;
                                         height: 1px;
                                 `
                         },
@@ -2624,6 +2630,8 @@
                                 selector: '.MainScreenComponentStyle-containerForMenuGradient > .-displayFlex > .MainScreenComponentStyle-buttonPlay > h3',
                                 style: `
                                         color: var(--general-color);
+                                        top: unset;
+                                        bottom: 1em;
                                         margin-bottom: 1em;
                                 `
                         },
@@ -2774,30 +2782,6 @@
                                 `
                         },
 
-                        {
-                                selector: '.MainScreenComponentStyle-containerForMenuGradient:after',
-                                style: `
-                                        content: '';
-
-                                        background: var(--general-bg);
-                                        outline: var(--general-outline);
-                                        box-shadow: var(--general-box-shadow);
-                                        border-top-left-radius: var(--general-border-radius);
-                                        border-bottom-left-radius: var(--general-border-radius);
-                                        backdrop-filter: var(--least-backdrop-filter);
-
-                                        position: absolute;
-                                        bottom: 1em;
-                                        right: 0em;
-                                        width: 31em;
-                                        height: 88%;
-                                        z-index: 1;
-                                        pointer-events: none;
-
-                                        transition: var(--general-transition);
-                                `
-                        },
-
                         // блок обычного БП
 
                         {
@@ -2807,6 +2791,7 @@
                                         outline: var(--general-outline);
                                         box-shadow: var(--general-box-shadow) !important;
                                         border-radius: var(--general-border-radius);
+                                        backdrop-filter: var(--least-backdrop-filter);
 
                                         align-items: center;
                                         top: 8em;
@@ -2856,7 +2841,7 @@
                                         outline: var(--general-outline);
                                         box-shadow: var(--general-box-shadow) !important;
                                         border-radius: var(--general-border-radius);
-                                        backdrop-filter: unset;
+                                        backdrop-filter: var(--least-backdrop-filter) !important;
 
                                         top: 19em;
                                         right: 2em;
@@ -2919,7 +2904,7 @@
                                         box-shadow: var(--general-box-shadow) !important;
                                         border: unset !important;
                                         border-radius: var(--general-border-radius);
-                                        backdrop-filter: unset;
+                                        backdrop-filter: var(--least-backdrop-filter) !important;
 
                                         bottom: 2em;
                                         right: 2em;
@@ -3022,7 +3007,7 @@
                         },
 
                         {
-                                selector: '.FriendListComponentStyle-nickName > .Font-normal',
+                                selector: '.FriendListComponentStyle-nickName > .-normal',
                                 style: `
                                         transition: var(--general-transition);
                                 `
@@ -3146,7 +3131,7 @@
 
                                         background: var(--general-color);
 
-                                        mask-image: url(/play/static/images/Add-friend.137d3601.svg);
+                                        mask-image: url(https://s.eu.tankionline.com/static/images/Add-friend.137d3601.svg);
                                         mask-position: center;
                                         mask-repeat: no-repeat;
                                         mask-size: 3em;
@@ -4111,6 +4096,8 @@
                                 style: `
                                         border-top-left-radius: var(--general-border-radius);
                                         border-bottom-left-radius: var(--general-border-radius);
+
+                                        width: 100%;
                                 `
                         },
 
@@ -4422,17 +4409,23 @@
                         {
                                 selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .-flexCenterAlignCenter',
                                 style: `
-                                        visibility: hidden;
-                                        position: absolute;
+                                        margin-bottom: 0.25em;
+                                `
+                        },
+
+                        {
+                                selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .-flexCenterAlignCenter > span',
+                                style: `
+                                        color: var(--general-color);
+                                        text-shadow: 0 0 0.5em var(--general-color);
                                 `
                         },
 
                         {
                                 selector: '.-container > .ProBattlesComponentStyle-mainContainer > div:nth-child(3) > .SettingsComponentStyle-scrollCreateBattle',
                                 style: `
-                                        position: absolute;
-                                        top: 18.625em;
-                                        height: 27.125em;
+                                        width: 29em;
+                                        height: 25.6em;
                                         overflow: unset;
                                 `
                         },
@@ -4788,7 +4781,7 @@
                                 selector: '.BattleTabStatisticComponentStyle-containerInsideTeams > .-flexCenterAlignCenter',
                                 style: `
                                         opacity: 0;
-                                        margin-top: -1em;
+                                        margin-top: 0em;
                                         margin-bottom: 0.75em;
 
                                         transition: var(--general-transition);
@@ -4799,7 +4792,6 @@
                                 selector: '.BattleTabStatisticComponentStyle-containerInsideTeams:hover > .-flexCenterAlignCenter',
                                 style: `
                                         opacity: 1;
-                                        margin-top: 0.5em;
                                 `
                         },
 
@@ -4823,6 +4815,8 @@
                                 selector: '.BattleTabStatisticComponentStyle-header',
                                 style: `
                                         border-bottom: unset;
+
+                                        margin-top: 0.5em;
                                         height: 2em;
                                         pointer-events: none;
                                 `
@@ -4838,7 +4832,7 @@
                         {
                                 selector: '.BattleTabStatisticComponentStyle-commonBlockScroll',
                                 style: `
-                                        margin-top: 0.5em;
+                                        margin-top: unset !important;
                                         margin-bottom: 0.5em;
                                         scrollbar-color: transparent transparent;
                                         justify-content: center;
@@ -4851,6 +4845,9 @@
                                         position: absolute;
                                         display: flex;
                                         justify-content: center;
+                                        align-items: center;
+                                        margin: unset;
+                                        height: 100%;
                                 `
                         },
 
@@ -4860,7 +4857,7 @@
                                         color: var(--general-color);
                                         font-family: 'BaseFontRegular';
 
-                                        margin-top: 0.5em;
+                                        margin-top: unset;
                                         margin-left: unset;
                                         width: auto !important;
                                         opacity: 1 !important;
@@ -4902,7 +4899,7 @@
                         {
                                 selector: '.BattleTabStatisticComponentStyle-rowBackGround:hover',
                                 style: `
-                                        background: rgb(255 255 255 / 1.5%);
+                                        background: rgb(255 255 255 / 5%);
                                         box-shadow: unset !important;
                                 `
                         },
@@ -6251,7 +6248,7 @@
 
                                         align-self: center;
                                         top: 0em;
-                                        right: unset;
+                                        right: calc(50% - 24em);
                                         width: 48em;
                                         height: 7em;
                                         z-index: 100;
@@ -8581,7 +8578,6 @@
                                 selector: '.BattleTabStatisticComponentStyle-containerInsideTeams > .-flexCenterAlignCenter',
                                 style: `
                                         opacity: 1;
-                                        margin-top: 0.5em;
                                 `
                         },
 
@@ -10260,11 +10256,15 @@
 
                                 };
 
-                                let ownColor = element('div', 'obscDOMElement-mDefaultButton mOwnColor', customPage);
+                                let colorStyles = element('style', 'obscStyleSheet-ownColor', variableHeader);
 
-                                if (ownColor) {
+                                let ownColorHeader = element('div', 'obscDOMElement-mDefaultButton mOwnColor', customPage);
 
-                                        let ownColorSpan = element('span', 'obscDOMElement-cSettingsOwnColorHeader', ownColor);
+                                if (ownColorHeader) {
+
+                                        let ownColorImage = element('div', 'obscDOMElement-cSettingsOwnColorImage', ownColorHeader);
+
+                                        let ownColorSpan = element('span', 'obscDOMElement-cSettingsOwnColorSpan', ownColorHeader);
 
                                         if (language == 'RU') {
 
@@ -10277,6 +10277,60 @@
                                         };
 
                                 };
+
+                                ownColorHeader.addEventListener('click', function() {
+
+                                        let linkListener
+
+                                        if (language == 'RU') {
+
+                                                linkListener = prompt('Вставьте код в формате HEX');
+
+                                        } else {
+
+                                                linkListener = prompt('Paste the code in HEX format');
+
+                                        };
+
+                                        if (linkListener != null) {
+
+                                                localStorage.setItem('obscLocalStorageVariable-ownColor', linkListener);
+
+                                                colorStyles.textContent = `body { --general-color: ${linkListener} !important; --least-general-color: ${linkListener} !important }`
+
+                                        };
+
+                                        if (linkListener == '') {
+
+                                                colorStyles.textContent = ``
+
+                                        };
+
+                                });
+
+                                if (localStorage.getItem('obscLocalStorageVariable-ownColor')) {
+
+                                        colorStyles.textContent = `body { --general-color: ${localStorage.getItem('obscLocalStorageVariable-ownColor')} !important; --least-general-color: ${localStorage.getItem('obscLocalStorageVariable-ownColor')} !important }`
+
+                                };
+
+                                let ownColorHelp = element('a', 'obscDOMElement-cSettingsOwnColorHelp', customPage);
+
+                                    ownColorHelp.href = 'https://github.com/Indifferental/Obscurum/blob/main/assets/instructions/colors.md'
+
+                                    ownColorHelp.target = '_blank'
+
+                                if (language == 'RU') {
+
+                                        ownColorHelp.innerHTML = 'Инструкция по установке'
+
+                                } else {
+
+                                        ownColorHelp.innerHTML = 'Color installation instruction'
+
+                                };
+
+                                let customPageLine = element('div', 'obscDOMElement-cSettingsPageLine', customPage);
 
                                 let filters = {
 
@@ -10770,8 +10824,6 @@
 
                                             spaceCanvas.style = 'visibility: collapse'
 
-                                        let backgroundsPageLine = element('div', 'obscDOMElement-bSettingsPageLine', backgroundsPage);
-
                                         let ownBackgroundHandler = element('div', 'obscDOMElement-mDefaultButton bOwnBackgroundHandler', backgroundsPage);
 
                                         let backgroundStyles = element('style', 'obscStyleSheet-ownBackground', variableHeader);
@@ -10820,7 +10872,7 @@
 
                                         let ownBackgroundHelp = element('a', 'obscDOMElement-bSettingsOwnBackgroundHelp', backgroundsPage);
 
-                                            ownBackgroundHelp.href = 'https://github.com/Indifferental/Obscurum/blob/main/INSTRUCTION.md'
+                                            ownBackgroundHelp.href = 'https://github.com/Indifferental/Obscurum/blob/main/assets/instructions/backgrounds.md'
 
                                             ownBackgroundHelp.target = '_blank'
 
@@ -11607,6 +11659,42 @@
 
                                 if (logWindow_textHeader) {
 
+                                        // v2.3.1
+
+                                        let h1_231 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v2_3_1', logWindow_textHeader);
+
+                                            h1_231.innerHTML = 'v2.3.1'
+
+                                        if (h1_231) {
+
+                                                let h1_231_line = element('div', 'obscDOMElement-changelogWindow-textHeader-h1-line', h1_231);
+
+                                                let h1_231_span1 = element('span', 'h1-231-span1', h1_231);
+
+                                                let h1_231_span2 = element('span', 'h1-231-span2', h1_231);
+
+                                                let h1_231_span3 = element('span', 'h1-231-span3', h1_231);
+
+                                                if (language == 'RU') {
+
+                                                        h1_231_span1.innerHTML = '- Добавлена кнопка установки собственного цвета по принципу HEX-кодов с инструкцией'
+
+                                                        h1_231_span2.innerHTML = '- Возвращена панель со счетом очков команд в окне списка битв'
+
+                                                        h1_231_span3.innerHTML = '- Небольшие косметические исправления'
+
+                                                } else {
+
+                                                        h1_231_span1.innerHTML = '- Added a button for setting your own color using HEX-codes with instructions'
+
+                                                        h1_231_span2.innerHTML = '- The team score-panel has been returned to the battle list window'
+
+                                                        h1_231_span3.innerHTML = '- Minor cosmetic fixes'
+
+                                                };
+
+                                        };
+
                                         // v2.3.0
 
                                         let h1_230 = element('h1', 'obscDOMElement-changelogWindow-textHeader-h1 obsc_v2_3_0', logWindow_textHeader);
@@ -11625,19 +11713,19 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_230_span1.innerHTML = '• Фикс цветных резистов в окне статистики в битве'
+                                                        h1_230_span1.innerHTML = '- Фикс цветных резистов в окне статистики в битве'
 
-                                                        h1_230_span2.innerHTML = '• Фикс некоторых функций в лобби (часы, текстуры гаража, фастпик)'
+                                                        h1_230_span2.innerHTML = '- Фикс некоторых функций в лобби (часы, текстуры гаража, фастпик)'
 
-                                                        h1_230_span3.innerHTML = '• Удалена контрольная линия в правом нижнем углу экрана'
+                                                        h1_230_span3.innerHTML = '- Удалена контрольная линия в правом нижнем углу экрана'
 
                                                 } else {
 
-                                                        h1_230_span1.innerHTML = '• Fixed color resistances in the battle statistics window'
+                                                        h1_230_span1.innerHTML = '- Fixed color resistances in the battle statistics window'
 
-                                                        h1_230_span2.innerHTML = '• Fixed some functions in the lobby (clocks, garage textures, fastpick)'
+                                                        h1_230_span2.innerHTML = '- Fixed some functions in the lobby (clocks, garage textures, fastpick)'
 
-                                                        h1_230_span3.innerHTML = '• The control line in the lower right corner of the screen has been removed'
+                                                        h1_230_span3.innerHTML = '- The control line in the lower right corner of the screen has been removed'
 
                                                 };
 
@@ -11657,11 +11745,11 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_221_span1.innerHTML = '• Пофикшен баг с дефолтным танковым бэкграундом в меню'
+                                                        h1_221_span1.innerHTML = '- Пофикшен баг с дефолтным танковым бэкграундом в меню'
 
                                                 } else {
 
-                                                        h1_221_span1.innerHTML = '• Fixed bug with default TO background in menu'
+                                                        h1_221_span1.innerHTML = '- Fixed bug with default TO background in menu'
 
                                                 };
 
@@ -11685,15 +11773,15 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_220_span1.innerHTML = '• На вкладке "Фоновые анимации" добавлена возможность установки собственного фона на странице с инструкцией на GitHub'
+                                                        h1_220_span1.innerHTML = '- На вкладке "Фоновые анимации" добавлена возможность установки собственного фона на странице с инструкцией на GitHub'
 
-                                                        h1_220_span2.innerHTML = '• Удалены превью фоновых анимаций на вкладке "Фоновые анимации"'
+                                                        h1_220_span2.innerHTML = '- Удалены превью фоновых анимаций на вкладке "Фоновые анимации"'
 
                                                 } else {
 
-                                                        h1_220_span1.innerHTML = '• The "Background Animations" tab now allows you to set your own background on the GitHub tutorial page'
+                                                        h1_220_span1.innerHTML = '- The "Background Animations" tab now allows you to set your own background on the GitHub tutorial page'
 
-                                                        h1_220_span2.innerHTML = '• Removed background animation previews from the "Background Animations" tab'
+                                                        h1_220_span2.innerHTML = '- Removed background animation previews from the "Background Animations" tab'
 
                                                 };
 
@@ -11713,11 +11801,11 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_210_span1.innerHTML = '• Добавлена вкладка с фоновыми анимациями, настройка фильтров и перевод на английский язык'
+                                                        h1_210_span1.innerHTML = '- Добавлена вкладка с фоновыми анимациями, настройка фильтров и перевод на английский язык'
 
                                                 } else {
 
-                                                        h1_210_span1.innerHTML = '• Added tab with background animations, filters settings and translation into English'
+                                                        h1_210_span1.innerHTML = '- Added tab with background animations, filters settings and translation into English'
 
                                                 };
 
@@ -11741,19 +11829,19 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_200_span1.innerHTML = '• Добавлено меню темы с различными настройками'
+                                                        h1_200_span1.innerHTML = '- Добавлено меню темы с различными настройками'
 
-                                                        h1_200_span2.innerHTML = '• Список изменений перемещен в раздел меню'
+                                                        h1_200_span2.innerHTML = '- Список изменений перемещен в раздел меню'
 
-                                                        h1_200_span3.innerHTML = '• В дальнейшем будет добавлена вкладка фоновых анимаций, настройка фильтров и перевод на английский язык'
+                                                        h1_200_span3.innerHTML = '- В дальнейшем будет добавлена вкладка фоновых анимаций, настройка фильтров и перевод на английский язык'
 
                                                 } else {
 
-                                                        h1_200_span1.innerHTML = '• Added theme menu with various settings'
+                                                        h1_200_span1.innerHTML = '- Added theme menu with various settings'
 
-                                                        h1_200_span2.innerHTML = '• Changelog has been moved to the menu section'
+                                                        h1_200_span2.innerHTML = '- Changelog has been moved to the menu section'
 
-                                                        h1_200_span3.innerHTML = '• Soon will be added a background animations tab, filters settings and translation to English language'
+                                                        h1_200_span3.innerHTML = '- Soon will be added a background animations tab, filters settings and translation to English language'
 
                                                 };
 
@@ -11777,19 +11865,19 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_113_span1.innerHTML = '• Окно паузы перемещено в центр'
+                                                        h1_113_span1.innerHTML = '- Окно паузы перемещено в центр'
 
-                                                        h1_113_span2.innerHTML = '• Обновлена начальная плашка с текстом и ником'
+                                                        h1_113_span2.innerHTML = '- Обновлена начальная плашка с текстом и ником'
 
-                                                        h1_113_span3.innerHTML = '• Некоторые визуальные доработки'
+                                                        h1_113_span3.innerHTML = '- Некоторые визуальные доработки'
 
                                                 } else {
 
-                                                        h1_113_span1.innerHTML = '• Pause window moved to center'
+                                                        h1_113_span1.innerHTML = '- Pause window moved to center'
 
-                                                        h1_113_span2.innerHTML = '• Updated start-window with text and nickname'
+                                                        h1_113_span2.innerHTML = '- Updated start-window with text and nickname'
 
-                                                        h1_113_span3.innerHTML = '• Some visual improvements'
+                                                        h1_113_span3.innerHTML = '- Some visual improvements'
 
                                                 };
 
@@ -11811,15 +11899,15 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_112_span1.innerHTML = '• Фикс кнопок переключения между разделами на сайте рейтингов'
+                                                        h1_112_span1.innerHTML = '- Фикс кнопок переключения между разделами на сайте рейтингов'
 
-                                                        h1_112_span2.innerHTML = '• Стилизация некоторых элементов'
+                                                        h1_112_span2.innerHTML = '- Стилизация некоторых элементов'
 
                                                 } else {
 
-                                                        h1_112_span1.innerHTML = '• Fixed buttons for switching between sections on the site ratings'
+                                                        h1_112_span1.innerHTML = '- Fixed buttons for switching between sections on the site ratings'
 
-                                                        h1_112_span2.innerHTML = '• Stylization of some elements'
+                                                        h1_112_span2.innerHTML = '- Stylization of some elements'
 
                                                 };
 
@@ -11839,11 +11927,11 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_111_span1.innerHTML = '• Полная стилизация сайта рейтингов (ratings.tankionline.com)'
+                                                        h1_111_span1.innerHTML = '- Полная стилизация сайта рейтингов (ratings.tankionline.com)'
 
                                                 } else {
 
-                                                        h1_111_span1.innerHTML = '• Full stylization of the ratings site (ratings.tankionline.com)'
+                                                        h1_111_span1.innerHTML = '- Full stylization of the ratings site (ratings.tankionline.com)'
 
                                                 };
 
@@ -11867,19 +11955,19 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_110_span1.innerHTML = '• Реструктуризация кода, связанного с созданием элементов DOM на странице'
+                                                        h1_110_span1.innerHTML = '- Реструктуризация кода, связанного с созданием элементов DOM на странице'
 
-                                                        h1_110_span2.innerHTML = '• Небольшое ускорение анимаций и переходов'
+                                                        h1_110_span2.innerHTML = '- Небольшое ускорение анимаций и переходов'
 
-                                                        h1_110_span3.innerHTML = '• Косметические улучшения и изменения'
+                                                        h1_110_span3.innerHTML = '- Косметические улучшения и изменения'
 
                                                 } else {
 
-                                                        h1_110_span1.innerHTML = '• Restructuring the code associated with creating DOM elements on the page'
+                                                        h1_110_span1.innerHTML = '- Restructuring the code associated with creating DOM elements on the page'
 
-                                                        h1_110_span2.innerHTML = '• Minor speedup of animations and transitions'
+                                                        h1_110_span2.innerHTML = '- Minor speedup of animations and transitions'
 
-                                                        h1_110_span3.innerHTML = '• Cosmetic improvements and changes'
+                                                        h1_110_span3.innerHTML = '- Cosmetic improvements and changes'
 
                                                 };
 
@@ -11905,23 +11993,23 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_100_span1.innerHTML = '• Введение списка изменений (чейнджлога) в лобби'
+                                                        h1_100_span1.innerHTML = '- Введение списка изменений (чейнджлога) в лобби'
 
-                                                        h1_100_span2.innerHTML = '• Полная переделка раздела с результатами битвы'
+                                                        h1_100_span2.innerHTML = '- Полная переделка раздела с результатами битвы'
 
-                                                        h1_100_span3.innerHTML = '• Добавление автоматического перевода текста в теме на английский'
+                                                        h1_100_span3.innerHTML = '- Добавление автоматического перевода текста в теме на английский'
 
-                                                        h1_100_span4.innerHTML = '• Начало разработки отдельного меню для темы. Планируется возможность накладывать фильтры на игру (контраст, сепия, затемнение, виньетка), менять акцентовый цвет на другие доступные, менять фон лобби (canvas снег/дождь, мультимедиа) и др.'
+                                                        h1_100_span4.innerHTML = '- Начало разработки отдельного меню для темы. Планируется возможность накладывать фильтры на игру (контраст, сепия, затемнение, виньетка), менять акцентовый цвет на другие доступные, менять фон лобби (canvas снег/дождь, мультимедиа) и др.'
 
                                                 } else {
 
-                                                        h1_100_span1.innerHTML = '• Adding a changelog into the lobby'
+                                                        h1_100_span1.innerHTML = '- Adding a changelog into the lobby'
 
-                                                        h1_100_span2.innerHTML = '• Complete rework of the battle results section'
+                                                        h1_100_span2.innerHTML = '- Complete rework of the battle results section'
 
-                                                        h1_100_span3.innerHTML = '• Adding automatic translation of text in the topic into English'
+                                                        h1_100_span3.innerHTML = '- Adding automatic translation of text in the topic into English'
 
-                                                        h1_100_span4.innerHTML = '• Start of development of a menu for the theme. It is planned to be able to apply filters to the game (contrast, sepia, darkening, vignette), change the accent color to other available ones, change the lobby background (canvas snow/holo, multimedia), etc.'
+                                                        h1_100_span4.innerHTML = '- Start of development of a menu for the theme. It is planned to be able to apply filters to the game (contrast, sepia, darkening, vignette), change the accent color to other available ones, change the lobby background (canvas snow/holo, multimedia), etc.'
 
                                                 };
 
@@ -11947,23 +12035,23 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_092_span1.innerHTML = '• Небольшой хотфикс таба в DM-матчах'
+                                                        h1_092_span1.innerHTML = '- Небольшой хотфикс таба в DM-матчах'
 
-                                                        h1_092_span2.innerHTML = '• Стилизация окна приглашения в битву/группу'
+                                                        h1_092_span2.innerHTML = '- Стилизация окна приглашения в битву/группу'
 
-                                                        h1_092_span3.innerHTML = '• Стилизация кнопок "Назад" и "Пригласить" в разделе приглашений'
+                                                        h1_092_span3.innerHTML = '- Стилизация кнопок "Назад" и "Пригласить" в разделе приглашений'
 
-                                                        h1_092_span4.innerHTML = '• Фикс недоступных (красных) заданий в разделе миссий'
+                                                        h1_092_span4.innerHTML = '- Фикс недоступных (красных) заданий в разделе миссий'
 
                                                 } else {
 
-                                                        h1_092_span1.innerHTML = '• Small hotfix of tab in DM matches'
+                                                        h1_092_span1.innerHTML = '- Small hotfix of tab in DM matches'
 
-                                                        h1_092_span2.innerHTML = '• Stylization of the battle/group invitation window'
+                                                        h1_092_span2.innerHTML = '- Stylization of the battle/group invitation window'
 
-                                                        h1_092_span3.innerHTML = '• Stylization of the "Back" and "Invite" buttons in the invitation section'
+                                                        h1_092_span3.innerHTML = '- Stylization of the "Back" and "Invite" buttons in the invitation section'
 
-                                                        h1_092_span4.innerHTML = '• Fix for unavailable (red) tasks in the missions section'
+                                                        h1_092_span4.innerHTML = '- Fix for unavailable (red) tasks in the missions section'
 
                                                 };
 
@@ -11992,27 +12080,27 @@
 
                                                 if (language == 'RU') {
 
-                                                        h1_091_span1.innerHTML = '• Исправлены некоторые ошибки в игровом табе'
+                                                        h1_091_span1.innerHTML = '- Исправлены некоторые ошибки в игровом табе'
 
-                                                        h1_091_span2.innerHTML = '• Стилизация окна поиска битвы в матчмейкинг, окна группы и раздела игровых настроек'
+                                                        h1_091_span2.innerHTML = '- Стилизация окна поиска битвы в матчмейкинг, окна группы и раздела игровых настроек'
 
-                                                        h1_091_span3.innerHTML = '• Небольшая реструктуризация функции, связанной с заменой текстур в лобби'
+                                                        h1_091_span3.innerHTML = '- Небольшая реструктуризация функции, связанной с заменой текстур в лобби'
 
-                                                        h1_091_span4.innerHTML = '• Исправление некоторых ошибок с анимациями в разделе "Друзья", "Клан" и др.'
+                                                        h1_091_span4.innerHTML = '- Исправление некоторых ошибок с анимациями в разделе "Друзья", "Клан" и др.'
 
-                                                        h1_091_span5.innerHTML = '• Добавление функции "фастпика" в режимы матчмейкинга в лобби'
+                                                        h1_091_span5.innerHTML = '- Добавление функции "фастпика" в режимы матчмейкинга в лобби'
 
                                                 } else {
 
-                                                        h1_091_span1.innerHTML = '• Fixed some bugs in the game tab'
+                                                        h1_091_span1.innerHTML = '- Fixed some bugs in the game tab'
 
-                                                        h1_091_span2.innerHTML = '• Stylized the battle search window in matchmaking, the group window and the game settings section'
+                                                        h1_091_span2.innerHTML = '- Stylized the battle search window in matchmaking, the group window and the game settings section'
 
-                                                        h1_091_span3.innerHTML = '• Minor restructuring of the function related to replacing textures in the lobby'
+                                                        h1_091_span3.innerHTML = '- Minor restructuring of the function related to replacing textures in the lobby'
 
-                                                        h1_091_span4.innerHTML = '• Fixed some bugs with animations in the "Friends", "Clan" section, etc.'
+                                                        h1_091_span4.innerHTML = '- Fixed some bugs with animations in the "Friends", "Clan" section, etc.'
 
-                                                        h1_091_span5.innerHTML = '• Added the "fastpick" function to matchmaking modes in the lobby'
+                                                        h1_091_span5.innerHTML = '- Added the "fastpick" function to matchmaking modes in the lobby'
 
                                                 };
 
@@ -12102,15 +12190,15 @@
 
                                 let detailsPageInfoSpan1 = element('span', 'obscDOMElement-menuDetailsPageInfoSpan menuInfoSpan_1', detailsPageInfoHandler);
 
-                                    detailsPageInfoSpan1.innerHTML = 'drawingwithblood'
+                                    detailsPageInfoSpan1.innerHTML = 'triplesixmode'
 
                                 let detailsPageInfoHeader2 = element('span', 'obscDOMElement-menuDetailsPageInfoHeader menuInfoHeader_2', detailsPageInfoHandler);
 
                                 if (language == 'RU') {
 
-                                        detailsPageHeaderSpan1.innerHTML = 'Obscurum — браузерная тема на Танки Онлайн, разрабатываемая на JavaScript и CSS более полугода, позволяющая игроку настроить практически каждый элемент дизайна сайта на своё усмотрение. Написано множество функций, упрощающих взаимодействие с игрой, например включение/выключение постоянного отображения резистов в окне игровой статистики по нажатию кнопки, функция "фастпика" в матчмейкинг в лобби и другие.'
+                                        detailsPageHeaderSpan1.innerHTML = 'Obscurum — браузерная тема на Танки Онлайн, разрабатываемая на JavaScript и CSS более года, позволяющая игроку настроить практически каждый элемент дизайна сайта на своё усмотрение. Написано множество функций, упрощающих взаимодействие с игрой, например включение/выключение постоянного отображения резистов в окне игровой статистики по нажатию кнопки, функция "фастпика" в матчмейкинг в лобби и другие.'
 
-                                        detailsPageHeaderSpan2.innerHTML = 'Если у вас имеются какие-либо вопросы, предложения или замечания, вы можете написать в Discord: @drawingwithblood'
+                                        detailsPageHeaderSpan2.innerHTML = 'Если у вас имеются какие-либо вопросы, предложения или замечания, вы можете написать в Discord: @triplesixmode'
 
                                         detailsPageHeaderSpan3.innerHTML = 'Другие проекты:'
 
@@ -12188,7 +12276,7 @@
 
                 let credits = element('span', 'obscDOMElement-credits', menuHandler);
 
-                    credits.innerHTML = `Obscurum ${version} // 04.06.2025`
+                    credits.innerHTML = `Obscurum ${version} // 15.05.2026`
 
                 document.addEventListener('keydown', function (event) {
 
