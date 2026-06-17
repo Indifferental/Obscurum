@@ -4127,7 +4127,7 @@
                                         background: rgb(0 0 0 / 25%);
                                         outline: 1px solid rgb(255 255 255 / 5%);
                                         box-shadow: 0 0 1em rgb(0 0 0 / 50%) !important;
-                                        backdrop-filter: 1em;
+                                        backdrop-filter: blur(1em);
                                         border-radius: unset;
                                         border-bottom-right-radius: 4em;
                                         corner-bottom-right-shape: bevel;
